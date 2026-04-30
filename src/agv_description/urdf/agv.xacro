@@ -954,8 +954,12 @@
     name="arm2_tool_link" >
   <visual> 
       <origin
-        xyz="0 0.145 -0.0748"
-        rpy="0 0 3.14159" />
+        xyz="0 -0.145 -0.092"
+        rpy="0 0 0" />
+
+           <!-- <origin
+        xyz="0 0.145 0.0748"
+        rpy="0 0 0" /> -->
       <geometry>
           <mesh
     filename="package://agv_description/meshes/tool.STL"
@@ -976,7 +980,8 @@
     name="arm2_toolscan_joint" type="fixed">
       <parent link="arm2_tool_link" />
       <child link="arm2_toolscan_link" />
-      <origin xyz="0 0.145 0" rpy="-1.5708 0 0" />
+      <!-- <origin xyz="0 0.2 0.0748" rpy="1.5708 0 0" /> -->
+      <origin xyz="0 -0.18 0.0748" rpy="-1.5708 3.14159 0" />
   </joint>
 
 </robot>

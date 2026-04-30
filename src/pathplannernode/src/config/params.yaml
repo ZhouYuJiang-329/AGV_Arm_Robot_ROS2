@@ -2,9 +2,9 @@ pathplanner_ros2_node:
   ros__parameters:
     scan_mode: "Short"
     spacing: 8
-    shrink_factor: 18
-    interpolation_points:5
-    attention_method:"EGA"
+    shrink_factor: 12
+    interpolation_points: 5
+    attention_method: "EGA"
     interactive_mode: false
     enable_visualization: false
 

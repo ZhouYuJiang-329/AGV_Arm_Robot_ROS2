@@ -383,46 +383,33 @@ class PathPlannerROS2Node(Node):
         """
         try:
             # 获取 TF 变换: camera -> base
-            try:
-                transform_camera_to_base = self.tf_buffer.lookup_transform(
-                    'arm2_cartesionbase_link',
-                    'camera_color_frame',
-                    rclpy.time.Time(),
-                    timeout=rclpy.duration.Duration(seconds=0.1)
-                )
-                self.get_logger().info('成功获取 TF 变换: camera_color_frame -> arm2_cartesionbase_link')
-                # 打印转换矩阵信息
-                self.get_logger().info(f'TF 变换矩阵:')
-                self.get_logger().info(f'  平移: x={transform_camera_to_base.transform.translation.x:.4f}, y={transform_camera_to_base.transform.translation.y:.4f}, z={transform_camera_to_base.transform.translation.z:.4f}')
-                self.get_logger().info(f'  旋转: x={transform_camera_to_base.transform.rotation.x:.4f}, y={transform_camera_to_base.transform.rotation.y:.4f}, z={transform_camera_to_base.transform.rotation.z:.4f}, w={transform_camera_to_base.transform.rotation.w:.4f}')
-            except Exception as e:
-                self.get_logger().error(f'获取 TF 变换失败: {e}')
-                return
-            
-            # 获取 TF 变换: toolscan -> tool (工具到末端的变换)
-            try:
-                transform_toolscan_to_tool = self.tf_buffer.lookup_transform(
-                    'arm2_tool_link',
-                    'arm2_toolscan_link',
-                   rclpy.time.Time(),
-                    timeout=rclpy.duration.Duration(seconds=0.1)
-                )
-                self.get_logger().info('成功获取 TF 变换: arm2_toolscan_link -> arm2_tool_link')
-            except Exception as e:
-                self.get_logger().error(f'获取工具 TF 变换失败: {e}')
-                return
+            transform_camera_to_base = self.tf_buffer.lookup_transform(
+                'arm2_cartesionbase_link',
+                'camera_color_frame',
+                rclpy.time.Time(),
+                timeout=rclpy.duration.Duration(seconds=0.1)
+            )
+            self.get_logger().info('===== TF: camera_color_frame -> arm2_cartesionbase_link =====')
+            self.get_logger().info(f'  平移: x={transform_camera_to_base.transform.translation.x:.4f}m, y={transform_camera_to_base.transform.translation.y:.4f}m, z={transform_camera_to_base.transform.translation.z:.4f}m')
+            self.get_logger().info(f'  旋转: x={transform_camera_to_base.transform.rotation.x:.4f}, y={transform_camera_to_base.transform.rotation.y:.4f}, z={transform_camera_to_base.transform.rotation.z:.4f}, w={transform_camera_to_base.transform.rotation.w:.4f}')
 
-            
-           
+          
+            transform_tool_to_toolscan = self.tf_buffer.lookup_transform(
+                'arm2_tool_link',   # target
+                'arm2_toolscan_link',       # source
+                rclpy.time.Time(),
+                timeout=rclpy.duration.Duration(seconds=0.1)
+            )
+            self.get_logger().info('===== TF: arm2_tool_link -> arm2_toolscan_link =====')
+            self.get_logger().info(f'  平移: x={transform_tool_to_toolscan.transform.translation.x:.4f}m, y={transform_tool_to_toolscan.transform.translation.y:.4f}m, z={transform_tool_to_toolscan.transform.translation.z:.4f}m')
+            self.get_logger().info(f'  旋转: x={transform_tool_to_toolscan.transform.rotation.x:.4f}, y={transform_tool_to_toolscan.transform.rotation.y:.4f}, z={transform_tool_to_toolscan.transform.rotation.z:.4f}, w={transform_tool_to_toolscan.transform.rotation.w:.4f}')
 
             pose_array = PoseArray()
             pose_array.header.stamp = transform_camera_to_base.header.stamp
-            pose_array.header.frame_id = 'arm2_cartesionbase_link' #camera_color_frame  arm2_cartesionbase_link
+            pose_array.header.frame_id = 'arm2_cartesionbase_link'
            
-            # 打印前5个相机坐标系下的点
-            self.get_logger().info('===== 相机坐标系下的前5个点 (camera_color_frame) =====')
-            for i, p in enumerate(points_6d[:5]):
-                self.get_logger().info(f'  点{i}: x={p[0]/1000.0:.4f}m, y={p[1]/1000.0:.4f}m, z={p[2]/1000.0:.4f}m, rx={p[3]:.4f}, ry={p[4]:.4f}, rz={p[5]:.4f}')
+            # 打印前5个点的转换过程
+            self.get_logger().info('===== 坐标转换过程 (前5个点) =====')
             
             for idx, p in enumerate(points_6d):
                 # p = [x, y, z, rx, ry, rz]
@@ -449,27 +436,154 @@ class PathPlannerROS2Node(Node):
                 pose_stamped.pose.orientation.z = quaternion[2]
                 pose_stamped.pose.orientation.w = quaternion[3]
                 
-                # 第1步: 变换到 arm2_cartesionbase_link 坐标系
-                # 此时表示 toolscan 应该在基座坐标系下的目标位姿
+                # 第1步: 变换到基座坐标系 (此时表示 toolscan 应该在基座坐标系下的目标位姿)
                 pose_in_base = do_transform_pose_stamped(pose_stamped, transform_camera_to_base)
                 
-                # # 第2步: 将目标点从 toolscan 坐标系转换到 tool_link 坐标系
-                # # 这样当末端(tool_link)到达转换后的点时，工具(toolscan)正好到达原始目标点
-                # pose_for_tool_link = do_transform_pose_stamped(pose_in_base, transform_toolscan_to_tool)
+                # 第2步: 计算 tool_link 的目标位姿
+              
+                pose_for_tool_link = self.compose_poses_inverse(pose_in_base.pose, transform_tool_to_toolscan.transform)
                 
-                pose_array.poses.append(pose_in_base.pose)
-            
-            # 打印前5个转换后的点
-            self.get_logger().info('===== 转换后的前5个点 (arm2_cartesionbase_link) =====')
-            for i, pose in enumerate(pose_array.poses[:5]):
-                self.get_logger().info(f'  点{i}: x={pose.position.x:.4f}m, y={pose.position.y:.4f}m, z={pose.position.z:.4f}m')
+                # # 打印前5个点
+                if idx < 5:
+                    self.get_logger().info(f'点{idx}:')
+                    self.get_logger().info(f'  相机坐标系: x={x_m:.4f}m, y={y_m:.4f}m, z={z_m:.4f}m,, x={quaternion[0]:.4f}, y={quaternion[1]:.4f}, z={quaternion[2]:.4f}, w={quaternion[3]:.4f}')
+                    self.get_logger().info(f'  基座(toolscan目标): x={pose_in_base.pose.position.x:.4f}m, y={pose_in_base.pose.position.y:.4f}m, z={pose_in_base.pose.position.z:.4f}m, x={pose_in_base.pose.orientation.x:.4f}, y={pose_in_base.pose.orientation.y:.4f}, z={pose_in_base.pose.orientation.z:.4f}, w={pose_in_base.pose.orientation.w:.4f}')
+                    self.get_logger().info(f'  基座(tool_link目标): x={pose_for_tool_link.position.x:.4f}m, y={pose_for_tool_link.position.y:.4f}m, z={pose_for_tool_link.position.z:.4f}m, x={pose_for_tool_link.orientation.x:.4f}, y={pose_for_tool_link.orientation.y:.4f}, z={pose_for_tool_link.orientation.z:.4f}, w={pose_for_tool_link.orientation.w:.4f}')
+                
+                pose_array.poses.append(pose_in_base.pose)    
+                # pose_array.poses.append(pose_for_tool_link)
             
             self.cartesian_path_pub.publish(pose_array)
-            self.get_logger().info(f'发布笛卡尔路径: {len(pose_array.poses)} 个点 (PoseArray) 在 arm2_cartesionbase_link 坐标系下 (工具坐标系补偿已应用)')
+            self.get_logger().info(f'发布笛卡尔路径: {len(pose_array.poses)} 个点 (PoseArray) 在 arm2_cartesionbase_link 坐标系下 (工具补偿已应用)')
             
         except Exception as e:
             self.get_logger().error(f'发布笛卡尔路径失败: {e}')
-
+    def compose_poses_inverse(self, pose_result, transform_b):
+        """位姿逆复合: pose_a = pose_result × inverse(transform_b)
+        
+        用于已知结果位姿和变换关系，求原始位姿。
+        
+        场景: 已知 toolscan 目标位姿 (pose_result) 和 tool->toolscan 的变换 (transform_b)，
+             求 tool_link 应该在哪里 (pose_a)
+        
+        数学: T_result = T_a × T_b  =>  T_a = T_result × inverse(T_b)
+        
+        pose_result: 结果位姿 (Pose) - 在基座坐标系下
+        transform_b: 从 pose_a 到 pose_result 的变换 (Transform)
+        返回: pose_a (Pose) - 在基座坐标系下
+        """
+        # 提取 pose_result 的位置和旋转
+        p_result = np.array([pose_result.position.x, pose_result.position.y, pose_result.position.z])
+        q_result = np.array([pose_result.orientation.x, pose_result.orientation.y, 
+                             pose_result.orientation.z, pose_result.orientation.w])
+        
+        # 提取 transform_b 的位置和旋转
+        pb = np.array([transform_b.translation.x, transform_b.translation.y, transform_b.translation.z])
+        qb = np.array([transform_b.rotation.x, transform_b.rotation.y, 
+                       transform_b.rotation.z, transform_b.rotation.w])
+        
+        # 四元数转旋转矩阵
+        def quat_to_matrix(q):
+            x, y, z, w = q
+            return np.array([
+                [1-2*(y*y+z*z), 2*(x*y-z*w),   2*(x*z+y*w)],
+                [2*(x*y+z*w),   1-2*(x*x+z*z), 2*(y*z-x*w)],
+                [2*(x*z-y*w),   2*(y*z+x*w),   1-2*(x*x+y*y)]
+            ])
+        
+        # 四元数共轭 (逆旋转)
+        def quat_conjugate(q):
+            return np.array([-q[0], -q[1], -q[2], q[3]])
+        
+        # 四元数乘法
+        def quat_multiply(q1, q2):
+            w1, x1, y1, z1 = q1[3], q1[0], q1[1], q1[2]
+            w2, x2, y2, z2 = q2[3], q2[0], q2[1], q2[2]
+            w = w1*w2 - x1*x2 - y1*y2 - z1*z2
+            x = w1*x2 + x1*w2 + y1*z2 - z1*y2
+            y = w1*y2 - x1*z2 + y1*w2 + z1*x2
+            z = w1*z2 + x1*y2 - y1*x2 + z1*w2
+            return np.array([x, y, z, w])
+        
+        # 计算 inverse(T_b)
+        # 旋转的逆 = 共轭
+        qb_inv = quat_conjugate(qb)
+        Rb = quat_to_matrix(qb)
+        # 平移的逆 = -R^T * p
+        pb_inv = -Rb.T @ pb
+        
+        # 计算 T_a = T_result × inverse(T_b)
+        # 旋转: q_a = q_result × qb_inv
+        q_a = quat_multiply(q_result, qb_inv)
+        
+        # 位置: p_a = R_result * pb_inv + p_result
+        R_result = quat_to_matrix(q_result)
+        p_a = R_result @ pb_inv + p_result
+        
+        # 构造结果 Pose
+        result = Pose()
+        result.position.x = p_a[0]
+        result.position.y = p_a[1]
+        result.position.z = p_a[2]
+        result.orientation.x = q_a[0]
+        result.orientation.y = q_a[1]
+        result.orientation.z = q_a[2]
+        result.orientation.w = q_a[3]
+        
+        return result
+    def compose_poses(self, pose_a, transform_b):
+        """位姿复合: pose_result = pose_a × transform_b
+        
+        pose_a: 在基座坐标系下的位姿 (Pose)
+        transform_b: 从 pose_a 的坐标系到目标坐标系的变换 (Transform)
+        返回: 复合后的位姿 (Pose)
+        
+        数学: T_result = T_a × T_b
+        位置: p_result = R_a * p_b + p_a
+        旋转: q_result = q_a × q_b (四元数乘法)
+        """
+        pb = np.array([transform_b.translation.x, transform_b.translation.y, transform_b.translation.z])
+        pa = np.array([pose_a.position.x, pose_a.position.y, pose_a.position.z])
+        qa = np.array([pose_a.orientation.x, pose_a.orientation.y, pose_a.orientation.z, pose_a.orientation.w])
+        qb = np.array([transform_b.rotation.x, transform_b.rotation.y, transform_b.rotation.z, transform_b.rotation.w])
+        
+        # 四元数转旋转矩阵
+        def quat_to_matrix(q):
+            x, y, z, w = q
+            return np.array([
+                [1-2*(y*y+z*z), 2*(x*y-z*w),   2*(x*z+y*w)],
+                [2*(x*y+z*w),   1-2*(x*x+z*z), 2*(y*z-x*w)],
+                [2*(x*z-y*w),   2*(y*z+x*w),   1-2*(x*x+y*y)]
+            ])
+        
+        # 四元数乘法: q_result = qa × qb
+        def quat_multiply(q1, q2):
+            w1, x1, y1, z1 = q1[3], q1[0], q1[1], q1[2]
+            w2, x2, y2, z2 = q2[3], q2[0], q2[1], q2[2]
+            w = w1*w2 - x1*x2 - y1*y2 - z1*z2
+            x = w1*x2 + x1*w2 + y1*z2 - z1*y2
+            y = w1*y2 - x1*z2 + y1*w2 + z1*x2
+            z = w1*z2 + x1*y2 - y1*x2 + z1*w2
+            return np.array([x, y, z, w])
+        
+        # 旋转平移向量
+        Ra = quat_to_matrix(qa)
+        p_result = Ra @ pb + pa
+        
+        # 四元数乘法
+        q_result = quat_multiply(qa, qb)
+        
+        # 构造结果 Pose
+        result = Pose()
+        result.position.x = p_result[0]
+        result.position.y = p_result[1]
+        result.position.z = p_result[2]
+        result.orientation.x = q_result[0]
+        result.orientation.y = q_result[1]
+        result.orientation.z = q_result[2]
+        result.orientation.w = q_result[3]
+        
+        return result
     def euler_to_quaternion(self, rx, ry, rz):
         """将欧拉角 (rx, ry, rz) 转换为四元数 [x, y, z, w]
         

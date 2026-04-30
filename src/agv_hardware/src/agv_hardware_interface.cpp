@@ -89,23 +89,23 @@ hardware_interface::CallbackReturn AgvHardwareInterface::on_init
             std::vector<std::array<double, 6>> cartesian_path;
             for (const auto& pose : msg->poses) {
                 // 直接使用位置（米）和四元数，转换为欧拉角
-                // tf2::Quaternion q(
-                //     pose.orientation.x,
-                //     pose.orientation.y,
-                //     pose.orientation.z,
-                //     pose.orientation.w);
-                    tf2::Quaternion q(
-                    0.13497,
-                    0.75322,
-                    -0.63979,
-                    -0.071439);
+                tf2::Quaternion q(
+                    pose.orientation.x,
+                    pose.orientation.y,
+                    pose.orientation.z,
+                    pose.orientation.w);
+                    // tf2::Quaternion q(
+                    // 0.13497,
+                    // 0.75322,
+                    // -0.63979,
+                    // -0.071439);
                 double rx, ry, rz;
                 tf2::Matrix3x3(q).getRPY(rx, ry, rz);
 
                 std::array<double, 6> p = {
                     pose.position.x,
                     pose.position.y,
-                    pose.position.z + 0.2,
+                    pose.position.z ,
                     rx, ry, rz
                 };
                 cartesian_path.push_back(p);
