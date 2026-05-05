@@ -211,7 +211,7 @@ class InteractiveSegmentationROS2:
         self.pc_processor = PointCloudProcessor(self.fx, self.fy, self.cx, self.cy)
         self.path_generator = PathGenerator(scan_mode=default_scan, spacing=default_spacing)
         self.path_optimizer = PathOptimizer()
-        self.coord_calculator = LocalCoordinateCalculator(method='weighted')
+        self.coord_calculator = LocalCoordinateCalculator(method='jiaquan')
         self.visualizer = PathVisualizer()
         self.attention_optimizer = None
     
@@ -517,7 +517,8 @@ class InteractiveSegmentationROS2:
         self.local_frames = self.coord_calculator.compute(
             self.scan_points_3d,
             self.scan_normals,
-            self.scan_orig_indices
+            self.scan_orig_indices,
+            alpha=1.0
         )
     def local_frames_to_scan_points(self):
         """将局部坐标系转换为输出格式"""
