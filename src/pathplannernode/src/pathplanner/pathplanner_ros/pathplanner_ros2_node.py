@@ -450,8 +450,9 @@ class PathPlannerROS2Node(Node):
                     self.get_logger().info(f'  基座(toolscan目标): x={pose_in_base.pose.position.x:.4f}m, y={pose_in_base.pose.position.y:.4f}m, z={pose_in_base.pose.position.z:.4f}m, x={pose_in_base.pose.orientation.x:.4f}, y={pose_in_base.pose.orientation.y:.4f}, z={pose_in_base.pose.orientation.z:.4f}, w={pose_in_base.pose.orientation.w:.4f}')
                     self.get_logger().info(f'  基座(tool_link目标): x={pose_for_tool_link.position.x:.4f}m, y={pose_for_tool_link.position.y:.4f}m, z={pose_for_tool_link.position.z:.4f}m, x={pose_for_tool_link.orientation.x:.4f}, y={pose_for_tool_link.orientation.y:.4f}, z={pose_for_tool_link.orientation.z:.4f}, w={pose_for_tool_link.orientation.w:.4f}')
                 
-                pose_array.poses.append(pose_in_base.pose)    
-                # pose_array.poses.append(pose_for_tool_link)
+                # 发布给控制器的是 arm2_tool_link 的目标位姿；
+                # pose_in_base.pose 是 arm2_toolscan_link 的目标位姿，仅用于补偿计算和日志。
+                pose_array.poses.append(pose_for_tool_link)
             
             self.cartesian_path_pub.publish(pose_array)
             self.get_logger().info(f'发布笛卡尔路径: {len(pose_array.poses)} 个点 (PoseArray) 在 arm2_cartesionbase_link 坐标系下 (工具补偿已应用)')
