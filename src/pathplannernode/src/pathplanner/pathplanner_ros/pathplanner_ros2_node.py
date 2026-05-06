@@ -389,9 +389,7 @@ class PathPlannerROS2Node(Node):
                 rclpy.time.Time(),
                 timeout=rclpy.duration.Duration(seconds=0.1)
             )
-            self.get_logger().info('===== TF: camera_color_frame -> arm2_cartesionbase_link =====')
-            self.get_logger().info(f'  平移: x={transform_camera_to_base.transform.translation.x:.4f}m, y={transform_camera_to_base.transform.translation.y:.4f}m, z={transform_camera_to_base.transform.translation.z:.4f}m')
-            self.get_logger().info(f'  旋转: x={transform_camera_to_base.transform.rotation.x:.4f}, y={transform_camera_to_base.transform.rotation.y:.4f}, z={transform_camera_to_base.transform.rotation.z:.4f}, w={transform_camera_to_base.transform.rotation.w:.4f}')
+           
 
           
             transform_tool_to_toolscan = self.tf_buffer.lookup_transform(
@@ -400,16 +398,13 @@ class PathPlannerROS2Node(Node):
                 rclpy.time.Time(),
                 timeout=rclpy.duration.Duration(seconds=0.1)
             )
-            self.get_logger().info('===== TF: arm2_tool_link -> arm2_toolscan_link =====')
-            self.get_logger().info(f'  平移: x={transform_tool_to_toolscan.transform.translation.x:.4f}m, y={transform_tool_to_toolscan.transform.translation.y:.4f}m, z={transform_tool_to_toolscan.transform.translation.z:.4f}m')
-            self.get_logger().info(f'  旋转: x={transform_tool_to_toolscan.transform.rotation.x:.4f}, y={transform_tool_to_toolscan.transform.rotation.y:.4f}, z={transform_tool_to_toolscan.transform.rotation.z:.4f}, w={transform_tool_to_toolscan.transform.rotation.w:.4f}')
+           
 
             pose_array = PoseArray()
             pose_array.header.stamp = transform_camera_to_base.header.stamp
             pose_array.header.frame_id = 'arm2_cartesionbase_link'
            
-            # 打印前5个点的转换过程
-            self.get_logger().info('===== 坐标转换过程 (前5个点) =====')
+         
             
             for idx, p in enumerate(points_6d):
                 # p = [x, y, z, rx, ry, rz]
@@ -442,16 +437,6 @@ class PathPlannerROS2Node(Node):
                 # 第2步: 计算 tool_link 的目标位姿
               
                 pose_for_tool_link = self.compose_poses_inverse(pose_in_base.pose, transform_tool_to_toolscan.transform)
-                
-                # # 打印前5个点
-                if idx < 5:
-                    self.get_logger().info(f'点{idx}:')
-                    self.get_logger().info(f'  相机坐标系: x={x_m:.4f}m, y={y_m:.4f}m, z={z_m:.4f}m,, x={quaternion[0]:.4f}, y={quaternion[1]:.4f}, z={quaternion[2]:.4f}, w={quaternion[3]:.4f}')
-                    self.get_logger().info(f'  基座(toolscan目标): x={pose_in_base.pose.position.x:.4f}m, y={pose_in_base.pose.position.y:.4f}m, z={pose_in_base.pose.position.z:.4f}m, x={pose_in_base.pose.orientation.x:.4f}, y={pose_in_base.pose.orientation.y:.4f}, z={pose_in_base.pose.orientation.z:.4f}, w={pose_in_base.pose.orientation.w:.4f}')
-                    self.get_logger().info(f'  基座(tool_link目标): x={pose_for_tool_link.position.x:.4f}m, y={pose_for_tool_link.position.y:.4f}m, z={pose_for_tool_link.position.z:.4f}m, x={pose_for_tool_link.orientation.x:.4f}, y={pose_for_tool_link.orientation.y:.4f}, z={pose_for_tool_link.orientation.z:.4f}, w={pose_for_tool_link.orientation.w:.4f}')
-                
-                # 发布给控制器的是 arm2_tool_link 的目标位姿；
-                # pose_in_base.pose 是 arm2_toolscan_link 的目标位姿，仅用于补偿计算和日志。
                 pose_array.poses.append(pose_for_tool_link)
             
             self.cartesian_path_pub.publish(pose_array)

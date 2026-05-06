@@ -511,6 +511,8 @@ class LocalCoordinateCalculator:
             raw_tangents[0] = np.array([1.0, 0.0, 0.0])
         else:
             raw_tangents[0] = points[1] - points[0]
+            if(raw_tangents[0][0]<0):
+                raw_tangents[0][0]=-raw_tangents[0][0]
             raw_tangents[-1] = points[-1] - points[-2]
             for i in range(1, N - 1):
                 raw_tangents[i] = points[i + 1] - points[i - 1]
@@ -518,10 +520,16 @@ class LocalCoordinateCalculator:
             raw_tangents = np.divide(raw_tangents, tan_norms,
                                      out=np.zeros_like(raw_tangents),
                                      where=(tan_norms != 0))
-
+        # for i in range(0, 10):     
+        #     print(f"raw_tangents[{i}]:")
+        #     print(raw_tangents[i])
+        #     print(f"points{i}:")
+        #     print(points[i])
+            
         # 投影到切平面 → 局部自然方向
         dot_tz = np.sum(raw_tangents * normals, axis=1, keepdims=True)
         local_x_dir = raw_tangents - dot_tz * normals
+        # print("local_x_dir[0]:", local_x_dir[0])
         local_x_norms = np.linalg.norm(local_x_dir, axis=1, keepdims=True)
         local_x_dir = np.divide(local_x_dir, local_x_norms,
                                 out=np.zeros_like(local_x_dir),
@@ -533,7 +541,11 @@ class LocalCoordinateCalculator:
         if scan_orig_indices is not None:
             for i, idx in enumerate(scan_orig_indices):
                 if idx % 2 == 0 and np.linalg.norm(local_x_dir[i]) > 1e-6:
-                    reference_tangent = local_x_dir[i].copy()
+                    reference_tangent = local_x_dir[i+1].copy()
+                    # [    0.99999  0.00011112  -0.0040693]
+                    # [   -0.99948   -0.032236  -0.0015641]
+                    if(reference_tangent[0]<0):
+                        reference_tangent[0]=-reference_tangent[0]
                     break
         if reference_tangent is None:
             for i in range(N):
