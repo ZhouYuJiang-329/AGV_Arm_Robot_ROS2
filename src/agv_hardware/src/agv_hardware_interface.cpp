@@ -45,6 +45,7 @@ hardware_interface::CallbackReturn AgvHardwareInterface::on_init
     joint_state_pub_ = cmd_node_->create_publisher<std_msgs::msg::Float64MultiArray>("arm_joint_states", 10);
     cartesian_pose_pub_ = cmd_node_->create_publisher<std_msgs::msg::Float64MultiArray>("arm_cartesian_pose", 10);
     click_point_pub_ = cmd_node_->create_publisher<geometry_msgs::msg::PointStamped>("/click_point", 10);
+    arm_state_pub_ = cmd_node_->create_publisher<std_msgs::msg::Int32>("arm_operation_state", 10);
 
     // 2. 关节指令订阅者
     joint_cmd_sub_ = cmd_node_->create_subscription<std_msgs::msg::Float64MultiArray>(
@@ -73,6 +74,8 @@ hardware_interface::CallbackReturn AgvHardwareInterface::on_init
                     "内容: [%.3f, %.3f, %.3f, %.3f, %.3f, %.3f]", 
                     p[0], p[1], p[2], p[3], p[4], p[5]);
                 robot_controller_->sendCartesianCommand(points, "linear", 100.0);
+                // robot_controller_->robot_->moveReset( robot_controller_->ec_);
+              
             }
         });
 
@@ -114,10 +117,10 @@ hardware_interface::CallbackReturn AgvHardwareInterface::on_init
             if (!cartesian_path.empty()) {
                 std::lock_guard<std::mutex> lock(io_mutex_);
                 RCLCPP_INFO(cmd_node_->get_logger(), "下发整条规划轨迹，共 %zu 个点", cartesian_path.size());
-                for(int i=0; i<cartesian_path.size(); i++){
-                    robot_controller_->sendCartesianCommand({cartesian_path[i]}, "linear", 100.0);
-                    robot_controller_->waitForMotionComplete(5000);
-                }
+                // for(int i=0; i<cartesian_path.size(); i++){
+                //     robot_controller_->sendCartesianCommand({cartesian_path[i]}, "linear", 100.0);
+                //     robot_controller_->waitForMotionComplete(5000);
+                // }
             }
         });
     
@@ -195,6 +198,13 @@ hardware_interface::return_type AgvHardwareInterface::read(
         auto p_msg = std_msgs::msg::Float64MultiArray();
         p_msg.data.assign(posture_positions_.begin(), posture_positions_.end());
         cartesian_pose_pub_->publish(p_msg);
+    }
+
+    // 发布机械臂操作状态
+    if (arm_state_pub_) {
+        auto state_msg = std_msgs::msg::Int32();
+        state_msg.data = static_cast<int32_t>(robot_controller_->GetRobotState());
+        arm_state_pub_->publish(state_msg);
     }
 
     // 4. WebSocket 状态上报逻辑

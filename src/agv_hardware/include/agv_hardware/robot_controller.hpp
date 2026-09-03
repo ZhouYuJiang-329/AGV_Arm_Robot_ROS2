@@ -19,6 +19,8 @@ namespace agv_hardware {
  */
 class RobotController {
 public:
+    std::shared_ptr<rokae::xMateRobot> robot_;
+    error_code ec_;
     /**
      * @brief 构造函数
      * @param config 配置参数
@@ -103,6 +105,8 @@ public:
      */
     const std::string& getCurrentCommandId() const { return current_cmd_id_; }
 
+    rokae::OperationState GetRobotState();
+
 private:
     /**
      * @brief 非实时模式发送关节命令
@@ -122,7 +126,7 @@ private:
                                   const std::string& move_type, double speed);
 
     AgvConfig config_;
-    std::shared_ptr<rokae::xMateRobot> robot_;
+    
     std::shared_ptr<rokae::RtMotionControlCobot<6>> rt_controller_;
     
     std::atomic<bool> is_connected_{false};
@@ -130,7 +134,7 @@ private:
     std::atomic<bool> nrt_executing_{false};
     std::string current_cmd_id_;
     
-    error_code ec_;
+   
     std::mutex mutex_;
     
     // RT 模式回调初始化标志

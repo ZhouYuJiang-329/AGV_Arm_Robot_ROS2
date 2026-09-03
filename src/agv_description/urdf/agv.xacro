@@ -981,7 +981,7 @@
       <parent link="arm2_tool_link" />
       <child link="arm2_toolscan_link" />
       <!-- <origin xyz="0 0.2 0.0748" rpy="1.5708 0 0" /> -->
-      <origin xyz="0 -0.18 0.0748" rpy="-1.5708 3.14159 0" />
+      <origin xyz="0 -0.21 0.0748" rpy="-1.5708 3.14159 0" />
   </joint>
 
 </robot>

@@ -60,6 +60,37 @@ void RobotController::disconnect()
     }
 }
 
+//   enum class OperationState {
+//     idle             = 0, ///< 机器人静止
+//     jog              = 1, ///< jog状态(未运动)
+//     rtControlling    = 2, ///< 实时模式控制中
+//     drag             = 3, ///< 拖动已开启
+//     rlProgram        = 4, ///< RL工程运行中
+//     demo             = 5, ///< Demo演示中
+//     dynamicIdentify  = 6, ///< 动力学辨识中
+//     frictionIdentify = 7, ///< 摩擦力辨识中
+//     loadIdentify     = 8, ///< 负载辨识中
+//     moving           = 9, ///< 机器人运动中
+//     jogging          = 10, ///< Jog运动中
+//     unknown          = Unknown ///< 未知
+//   };
+rokae::OperationState RobotController::GetRobotState()
+{
+    if (!is_connected_) {
+        return rokae::OperationState::unknown;
+    }
+    
+    try {
+        ec_.clear();
+        auto state = robot_->operationState(ec_);
+        if (!ec_) {
+            return state;
+        }
+    }
+    catch (const std::exception& e) {
+        std::cerr << "[RobotController] 获取机器人状态异常：" << e.what() << std::endl;
+    }
+}
 bool RobotController::activate()
 {
     if (!is_connected_) {
@@ -319,12 +350,14 @@ bool RobotController::sendNrtCartesianCommand(const std::vector<std::array<doubl
         // 如果当前正在执行，先停止并重置，允许新命令覆盖
         if (nrt_executing_) {
             std::cout << "[RobotController] 停止当前笛卡尔运动以执行新命令..." << std::endl;
+          
             ec_.clear();
             robot_->moveReset(ec_);
             nrt_executing_ = false;
         }
-        
+      
         ec_.clear();
+        robot_->moveStart(ec_);
         robot_->moveReset(ec_);  // 重置队列
         
         for (const auto& point : points) {
@@ -366,6 +399,11 @@ bool RobotController::sendNrtCartesianCommand(const std::vector<std::array<doubl
         
         ec_.clear();
         robot_->moveStart(ec_);
+        if (ec_) {
+            std::cerr << "[RobotController] moveStart movl失败：" << ec_.message() << std::endl;
+         
+            return false;
+        }
         nrt_executing_ = true;
 
         std::cout << "[RobotController] 发送非实时笛卡尔命令：点数=" << points.size() 

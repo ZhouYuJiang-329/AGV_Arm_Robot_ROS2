@@ -14,6 +14,7 @@
 #include "agv_bridge/bridge_manager.hpp"
 
 #include <std_msgs/msg/float64_multi_array.hpp>
+#include <std_msgs/msg/int32.hpp>
 #include <geometry_msgs/msg/pose_array.hpp>
 #include <geometry_msgs/msg/point_stamped.hpp>
 #include <tf2_ros/transform_listener.h>
@@ -91,6 +92,7 @@ private:
     rclcpp::Publisher<std_msgs::msg::Float64MultiArray>::SharedPtr joint_state_pub_;
     rclcpp::Publisher<std_msgs::msg::Float64MultiArray>::SharedPtr cartesian_pose_pub_;
     rclcpp::Publisher<geometry_msgs::msg::PointStamped>::SharedPtr click_point_pub_;
+    rclcpp::Publisher<std_msgs::msg::Int32>::SharedPtr arm_state_pub_;
     rclcpp::Subscription<std_msgs::msg::Float64MultiArray>::SharedPtr joint_cmd_sub_;
     rclcpp::Subscription<std_msgs::msg::Float64MultiArray>::SharedPtr cartesian_cmd_sub_;
     rclcpp::Subscription<geometry_msgs::msg::PoseArray>::SharedPtr cartesian_path_sub_;
