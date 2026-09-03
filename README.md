@@ -308,3 +308,5 @@ colcon test-result --verbose
 | 启动服务 | `src/startup/README.md` | WS 启停服务使用 |
 | 手眼标定(第三方) | `src/moveit2_calibration/README.md` | 上游项目文档 |
 | pathplanner | `src/pathplannernode/src/pathplanner/ROS_README.md`、`Python_README.md` | ROS 节点与算法工程说明 |
+| **跨仓库接口契约** | `docs/AGV_PAUT_集成契约.md` | 本仓库（机器人平台）与 `PAUT_ros2`（超声感控）之间的话题/TF/启动约定 |
+| **话题/服务/动作清单** | `docs/话题清单.md` | 本仓库全部 ROS 通信接口（话题/服务/动作）静态清单 |
