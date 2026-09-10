@@ -244,6 +244,8 @@ source install/setup.bash
 
 # 运行整机
 ros2 launch agv_bringup agv.launch.xml
+ros2 topic pub --once /cmd_arm_joint std_msgs/msg/Float64MultiArray "{data:[1.047,-1.570,-2.0943,-2.6179,-1.8849,0.1745]}"
+
 
 # 相机 / 路径规划 / 底盘驱动 / 启动服务
 ros2 launch camera camera_with_tf.launch.py

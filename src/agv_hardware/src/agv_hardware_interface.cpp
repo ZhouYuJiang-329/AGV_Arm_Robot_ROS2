@@ -117,10 +117,10 @@ hardware_interface::CallbackReturn AgvHardwareInterface::on_init
             if (!cartesian_path.empty()) {
                 std::lock_guard<std::mutex> lock(io_mutex_);
                 RCLCPP_INFO(cmd_node_->get_logger(), "下发整条规划轨迹，共 %zu 个点", cartesian_path.size());
-                // for(int i=0; i<cartesian_path.size(); i++){
-                //     robot_controller_->sendCartesianCommand({cartesian_path[i]}, "linear", 100.0);
-                //     robot_controller_->waitForMotionComplete(5000);
-                // }
+                for(int i=0; i<cartesian_path.size(); i++){
+                    robot_controller_->sendCartesianCommand({cartesian_path[i]}, "linear", 100.0);
+                    robot_controller_->waitForMotionComplete(5000);
+                }
             }
         });
     
