@@ -27,9 +27,17 @@ DuctRobotMove::DuctRobotMove() : serial_fd_(-1), ch_(16, 1000)
     ch_[10] = 3;
 }
 
+DuctRobotMove::~DuctRobotMove()
+{
+    // Resource cleanup only; explicit moveshutdown retains its existing behavior.
+    if (serial_fd_ >= 0) close(serial_fd_);
+}
+
 bool DuctRobotMove::init(const std::string& port)
 {
     std::cout << "[DuctRobot] 正在打开涵道串口: " << port << std::endl;
+    if (serial_fd_ >= 0) close(serial_fd_);
+    serial_fd_ = -1;
     serial_fd_ = open(port.c_str(), O_RDWR | O_NOCTTY | O_NDELAY);
     if(serial_fd_ == -1)
     {
@@ -41,6 +49,7 @@ bool DuctRobotMove::init(const std::string& port)
     if (ioctl(serial_fd_, TCGETS2, &options) < 0) {
         std::cerr << "[DuctRobot] 无法获取串口配置 (TCGETS2)" << std::endl;
         close(serial_fd_);
+        serial_fd_ = -1;
         return false;
     }
 
@@ -65,6 +74,7 @@ bool DuctRobotMove::init(const std::string& port)
     if (ioctl(serial_fd_, TCSETS2, &options) < 0) {
         std::cerr << "[DuctRobot] 无法应用串口配置 (TCSETS2)" << std::endl;
         close(serial_fd_);
+        serial_fd_ = -1;
         return false;
     }
     std::cout << "[DuctRobot] 第一阶段：使能步进电机..." << std::endl;

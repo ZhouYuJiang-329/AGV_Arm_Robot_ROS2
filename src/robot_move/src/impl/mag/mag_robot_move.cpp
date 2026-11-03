@@ -18,9 +18,17 @@ MagRobotMove::MagRobotMove()
 {
 }
 
+MagRobotMove::~MagRobotMove()
+{
+    // Resource cleanup only; explicit moveshutdown retains its existing behavior.
+    if (serial_fd_ >= 0) close(serial_fd_);
+}
+
 bool MagRobotMove::init(const std::string& port)
 {
     std::cout << "[MagRobot] 正在打开串口: " << port << " (115200, 8E1)..." << std::endl;
+    if (serial_fd_ >= 0) close(serial_fd_);
+    serial_fd_ = -1;
     serial_fd_ = open(port.c_str(), O_RDWR | O_NOCTTY | O_NDELAY);
     if(serial_fd_ == -1)
     {
@@ -32,6 +40,7 @@ bool MagRobotMove::init(const std::string& port)
     if (ioctl(serial_fd_, TCGETS2, &options) < 0) {
         std::cerr << "[MagRobot] 无法获取串口配置 (TCGETS2)" << std::endl;
         close(serial_fd_);
+        serial_fd_ = -1;
         return false;
     }
 
@@ -56,6 +65,7 @@ bool MagRobotMove::init(const std::string& port)
     if (ioctl(serial_fd_, TCSETS2, &options) < 0) {
         std::cerr << "[MagRobot] 无法应用串口配置 (TCSETS2)" << std::endl;
         close(serial_fd_);
+        serial_fd_ = -1;
         return false;
     }
 

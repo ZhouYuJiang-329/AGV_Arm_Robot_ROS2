@@ -1,6 +1,9 @@
 #ifndef UNIVERSAL_ROBOT_DRIVER_HPP
 #define UNIVERSAL_ROBOT_DRIVER_HPP
 
+#include <atomic>
+#include <functional>
+#include <thread>
 #include <memory>
 #include <mutex>
 #include <string>
@@ -27,12 +30,13 @@ private:
     rclcpp::TimerBase::SharedPtr timer_;
 
     std::mutex robot_mutex_;
-    rclcpp::Time last_cmd_time_;
+    std::mutex task_mutex_;
+    std::thread task_thread_;
+    std::atomic<bool> task_running_{false};
+    std::atomic<bool> shutting_down_{false};
+    int pose_loop_count_ = 0;
 
-    double target_linear_x_ = 0.0;
-    double target_linear_y_ = 0.0;
-    double target_angular_z_ = 0.0;
-
+    void startTask(std::function<void(RobotMove&)> task);
     void cmdVelCallback(const geometry_msgs::msg::Twist::SharedPtr msg);
     void scanconfigCallback(const geometry_msgs::msg::Twist::SharedPtr msg);
     void scannerctrlCallback(const std_msgs::msg::Empty::SharedPtr msg);
@@ -42,7 +46,12 @@ private:
 
 public:
     explicit UniversalRobotDriver(const std::string& node_name);
+    // Supply an already-initialized driver for embedding or hardware-free tests.
+    UniversalRobotDriver(const std::string& node_name, std::unique_ptr<RobotMove> robot);
     ~UniversalRobotDriver() override;
+
+private:
+    friend struct UniversalRobotDriverTestAccess;
 };
 
 #endif

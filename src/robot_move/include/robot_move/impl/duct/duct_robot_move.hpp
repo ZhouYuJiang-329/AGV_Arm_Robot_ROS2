@@ -17,6 +17,7 @@ private:
 
 public:
     DuctRobotMove();
+    ~DuctRobotMove() override;
 
     bool init(const std::string& port) override;
     void setVelocity(double linear_x, double vy, double angle_z) override;

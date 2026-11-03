@@ -12,8 +12,17 @@
 int main(int argc, char** argv)
 {
     rclcpp::init(argc, argv);
-    auto node = std::make_shared<UniversalRobotDriver>("robot_gotarget_node");
-    rclcpp::spin(node);
+    try
+    {
+        auto node = std::make_shared<UniversalRobotDriver>("robot_gotarget_node");
+        rclcpp::spin(node);
+    }
+    catch (const std::exception& error)
+    {
+        RCLCPP_ERROR(rclcpp::get_logger("robot_move_node"), "%s", error.what());
+        rclcpp::shutdown();
+        return 1;
+    }
     rclcpp::shutdown();
     return 0;
 }
