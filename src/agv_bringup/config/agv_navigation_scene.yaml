@@ -1,0 +1,23 @@
+# Simplified holonomic chassis, not a calibrated steering-wheel dynamics model.
+world_name: agv_navigation
+bounds: [-6.0, 6.0, -6.0, 6.0]
+resolution: 0.05
+wall_thickness: 0.2
+start: [-4.0, -4.0, 0.0]
+body:
+  # Rounded from the existing base_link.STL bounds: 0.74966 x 1.247997 m.
+  size: [0.75, 1.25, 0.76]
+  mesh_z: 0.775
+  lidar_z: 0.9
+obstacles:
+  - name: central_block
+    center: [0.0, 0.0]
+    size: [2.0, 3.0]
+  - name: north_fixture
+    center: [-3.8, 1.5]
+    size: [0.8, 0.8]
+# Seen by lidar but deliberately excluded from the prior map.
+unmapped_obstacles:
+  - name: unmapped_crate
+    center: [2.5, -2.4]
+    size: [0.8, 0.8]
