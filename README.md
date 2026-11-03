@@ -106,7 +106,7 @@ world ──► base_link（移动底盘，mass≈40.7kg）
 - Subscriber：`radar_heartbeat`、`camera_heartbeat`（`std_msgs/Header`）→ 2s 内有心跳判定在线
 - 查询方法：`isRadarOnline() / isCameraOnline() / getBatteryLevel()`
 
-**依赖**：rclcpp / geometry_msgs / std_msgs；被 `agv_hardware`（自检、底盘命令）调用，无第三方 SDK。
+**依赖**：rclcpp / geometry_msgs / std_msgs；被 `agv_hardware`（自检、状态）调用，无第三方 SDK。
 
 ### 4.3 `agv_hardware` — 硬件接口与机械臂/底盘控制器（核心包）
 
@@ -115,10 +115,11 @@ world ──► base_link（移动底盘，mass≈40.7kg）
 **核心文件**：
 | 文件 | 内容 |
 |------|------|
-| `include/agv_hardware/agv_hardware.hpp` | `AgvHardwareInterface`，实现 `on_init/on_configure/on_activate/on_deactivate/read/write`，聚合 `RobotController`、WS 客户端/服务器、`CommandParser`、`AGVRobotMove` |
-| `src/agv_hardware_interface.cpp` | 生命周期逻辑：`on_configure` 连机械臂(`robot_ip`)、`read()` 上报关节/位姿并周期性 `buildStatusMessage` 上报上位、`write()` 在 RT 模式下把 `joint_commands_` 下发实时核；`handleCommand()` 分发 check/急停/机械臂/相机/底盘命令 |
+| `include/agv_hardware/agv_hardware.hpp` | `AgvHardwareInterface`，实现 `on_init/on_configure/on_activate/on_deactivate/on_cleanup/on_shutdown/read/write`，聚合 `RobotController`、WS 客户端/服务器、`CommandParser`、`AGVRobotMove` |
+| `src/agv_hardware_interface.cpp` | 生命周期逻辑：`on_configure` 初始化底盘后连接机械臂(`robot_ip`)、`read()` 上报关节/位姿并周期性 `buildStatusMessage` 上报上位、`write()` 在 RT 模式下把 `joint_commands_` 下发实时核；`handleCommand()` 分发 check/急停/机械臂/相机/底盘命令 |
 | `include/agv_hardware/robot_controller.hpp` + `src/robot_controller.cpp` | `RobotController`，封装 Rokae SDK：`connect / activate / deactivate`（RT 或 NRT 模式）、关节与笛卡尔 moveAppend/moveStart 指令队列 |
-| `include/robot_gotarget.hpp` | 底盘抽象基类 `RobotMove`(`init/setVelocity/send_loop/moveshutdown/movebydistance/rotatebyangle/getpose`) 及 `AGVRobotMove`（仙工 SEFA 控制器，TCP 四端口）等派生 |
+| `robot_move::robot_move_impl`（包依赖） | 复用 `robot_move` 的 AGVRobotMove → Seer Client → Transport；旧 `robot_gotarget.hpp` 和重复 cJSON 已移除 |
+| `include/agv_hardware/config.hpp` + `src/config.cpp` | 从硬件参数解析底盘 IPv4、限速、DO及重定位选项；启动用法见 [接入说明](src/agv_hardware/README.md) |
 | `agv_hardware_interface.xml` | pluginlib 插件描述 |
 | `ROS2.md` | 与上位机的完整 WebSocket JSON 协议文档 |
 | `websocket_server.py` / `AGVWebSocketServerFixed.cs` | 配套的上位机**模拟服务器**参考实现（端口 9000，非本包运行时依赖） |
@@ -130,7 +131,7 @@ world ──► base_link（移动底盘，mass≈40.7kg）
 
 **通信 / 第三方**：
 - 机械臂：Rokae **xCoreSDK**（`include/rokae/`，动态库在 `lib/Linux/{x86_64,aarch64}`），TCP 到控制器；RT 模式走 `RtControllerMode::jointPosition`，NRT 模式走 `moveAppend + moveStart` 指令队列。
-- 底盘：仙工 Seer 自定义帧 `0x5A 0x01 + seq + len + type + JSON`（cJSON 组包），TCP 端口 19210(抱闸)/19204(查询)/19205(控制)/19206(导航)；命令 type 如 6001(松刹车)、2010(setVelocity)、3055/3056(平动/转动) 等。
+- 底盘：仙工 Seer 自定义帧 `0x5A 0x01 + seq + len + type + JSON`（cJSON 组包），TCP 端口 19210(其他配置)/19204(查询)/19205(控制)/19206(导航)；命令 type 如 6001(设置DO，电气用途依接线确定)、2010(setVelocity)、3055/3056(平动/转动) 等。
 - Eigen 以 `external/Eigen` 头文件-only 形式内置。
 
 ### 4.4 `agv_description` — 机器人模型描述包

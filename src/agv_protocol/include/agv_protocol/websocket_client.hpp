@@ -1,7 +1,7 @@
 #pragma once
 
 #include <websocketpp/client.hpp>
-#include <websocketpp/config/asio_client.hpp>
+#include <websocketpp/config/asio_no_tls_client.hpp>
 #include <websocketpp/common/connection_hdl.hpp>
 #include <functional>
 #include <thread>

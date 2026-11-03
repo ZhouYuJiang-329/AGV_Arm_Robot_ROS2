@@ -1,6 +1,7 @@
 #include "agv_protocol/command_parser.hpp"
 #include <iostream>
 #include <algorithm>
+#include <cmath>
 
 namespace agv_protocol {
 
@@ -104,9 +105,9 @@ bool CommandParser::parsePayload(const Json::Value& payload, CommandData& cmd)
 
     // 3. 解析底盘命令 (支持 "chassis" 或 "agv" 格式)
     if (payload.isMember("chassis")) {
-        parseChassisCommand(payload["chassis"], cmd);
+        if (!parseChassisCommand(payload["chassis"], cmd)) return false;
     } else if (payload.isMember("agv")) {
-        parseAgvCommand(payload["agv"], cmd);
+        if (!parseAgvCommand(payload["agv"], cmd)) return false;
     }
 
     // 4. 解析相机命令
@@ -166,13 +167,19 @@ bool CommandParser::parseArmCommands(const Json::Value& arms, std::vector<ArmCom
 
 bool CommandParser::parseChassisCommand(const Json::Value& chassis, CommandData& cmd)
 {
+    if (!chassis.isObject()) return false;
     std::string command = safeGetString(chassis, "command");
     const Json::Value& params = chassis["parameters"];
 
     if (command == "emergency_stop") {
         cmd.emergency_stop = true;
     } else if (command == "velocity_move") {
-        if (params.isObject()) {
+        if (!params.isObject()) return false;
+        // 底盘速度字段如有提供，必须为有限数值，不能把字符串等非法值静默改成0。
+        for (const auto* key : {"vx", "vy", "wz", "x", "y", "yaw"}) {
+            if (params.isMember(key) && (!params[key].isNumeric() || !std::isfinite(params[key].asDouble()))) return false;
+        }
+        {
             cmd.chassis_velocity[0] = params.isMember("vx") ? safeGetDouble(params, "vx") : safeGetDouble(params, "x");
             cmd.chassis_velocity[1] = params.isMember("vy") ? safeGetDouble(params, "vy") : safeGetDouble(params, "y");
             cmd.chassis_velocity[2] = params.isMember("wz") ? safeGetDouble(params, "wz") : safeGetDouble(params, "yaw");
@@ -189,7 +196,11 @@ bool CommandParser::parseAgvCommand(const Json::Value& agv, CommandData& cmd)
     std::string command = safeGetString(agv, "command");
     const Json::Value& data = agv["data"];
     
+    if (command == "move" && !data.isObject()) return false;
     if (command == "move" && data.isObject()) {
+        for (const auto* key : {"vx", "vy", "wz"}) {
+            if (data.isMember(key) && (!data[key].isNumeric() || !std::isfinite(data[key].asDouble()))) return false;
+        }
         // 解析速度参数
         cmd.chassis_velocity[0] = data.isMember("vx") ? safeGetDouble(data, "vx") : 0.0;
         cmd.chassis_velocity[1] = data.isMember("vy") ? safeGetDouble(data, "vy") : 0.0;

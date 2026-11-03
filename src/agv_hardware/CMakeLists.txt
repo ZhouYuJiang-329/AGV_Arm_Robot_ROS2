@@ -18,6 +18,7 @@ find_package(pluginlib REQUIRED)
 find_package(jsoncpp REQUIRED)
 find_package(agv_protocol REQUIRED)
 find_package(agv_bridge REQUIRED)
+find_package(robot_move REQUIRED)
 
 # ============ OpenSSL 配置（先注释掉，使用非TLS版本）============
 # find_package(OpenSSL REQUIRED)
@@ -42,8 +43,10 @@ add_library(
   SHARED
   src/agv_hardware_interface.cpp
   src/robot_controller.cpp
-  include/cJSON.c
+  src/config.cpp
 )
+
+target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
 
 # 添加编译定义
 target_compile_definitions(${PROJECT_NAME} PRIVATE
@@ -63,11 +66,13 @@ ament_target_dependencies(${PROJECT_NAME}
   pluginlib
   jsoncpp
   agv_bridge
+  robot_move
 )
 
 # 普通CMake target依赖
 target_link_libraries(${PROJECT_NAME}
   agv_protocol::agv_protocol
+  robot_move::robot_move_impl
   eigen
   Rokae::Rokae
   jsoncpp_lib
@@ -115,6 +120,29 @@ ament_export_dependencies(
   jsoncpp
   agv_protocol
   agv_bridge
+  robot_move
 )
+
+if(BUILD_TESTING)
+  enable_testing()
+  find_package(Python3 REQUIRED COMPONENTS Interpreter)
+  add_executable(chassis_config_test test/chassis_config_test.cpp src/config.cpp)
+  target_compile_features(chassis_config_test PRIVATE cxx_std_17)
+  add_test(NAME chassis_config_test COMMAND chassis_config_test)
+
+  add_executable(chassis_hardware_test test/chassis_hardware_test.cpp)
+  target_link_libraries(chassis_hardware_test ${PROJECT_NAME})
+  ament_target_dependencies(chassis_hardware_test rclcpp rclcpp_lifecycle std_msgs geometry_msgs
+    tf2_ros tf2_geometry_msgs hardware_interface pluginlib agv_protocol agv_bridge robot_move)
+  add_test(NAME chassis_hardware_test COMMAND chassis_hardware_test)
+  add_test(NAME chassis_loopback_test COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/test/chassis_loopback_test.py $<TARGET_FILE:chassis_hardware_test>)
+  find_program(XACRO_EXECUTABLE xacro REQUIRED)
+  add_test(NAME chassis_model_test COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/test/chassis_model_test.py $<TARGET_FILE:chassis_hardware_test>
+    ${CMAKE_CURRENT_SOURCE_DIR}/.. ${XACRO_EXECUTABLE})
+  set_tests_properties(chassis_model_test chassis_config_test chassis_hardware_test chassis_loopback_test
+    PROPERTIES TIMEOUT 30)
+endif()
 
 ament_package()

@@ -18,21 +18,16 @@ hardware_interface::CallbackReturn AgvHardwareInterface::on_init
     info_ = info;
     
     config_ = AgvConfig();
+    std::string config_error;
+    if (!loadChassisConfig(info.hardware_parameters, config_, config_error))
+    {
+        RCLCPP_ERROR(rclcpp::get_logger("AgvHardware"), "%s", config_error.c_str());
+        return hardware_interface::CallbackReturn::ERROR;
+    }
     robot_controller_ = std::make_unique<RobotController>(config_);
     
-    ws_client_ = std::make_unique<agv_protocol::WebSocketClientWrapper>(
-        config_.server_uri,
-        config_.reconnect_interval_ms
-    );
-    agv_ = std::make_unique<AGVRobotMove>();
-    agvIP = "192.168.1.109";
-    agv_->init(agvIP);
-    ws_server_ = std::make_unique<agv_protocol::WebSocketServerWrapper>(config_.local_server_port);
-    
-    // 统一指令处理器
-    auto cmd_handler = [this](const std::string& msg) { handleCommand(msg); };
-    ws_client_->setMessageHandler(cmd_handler);
-    // ws_server_->setMessageHandler(cmd_handler);
+    agv_ = createChassis();
+    if (!agv_) return hardware_interface::CallbackReturn::ERROR;
 
     // ==================== 初始化 ROS 2 话题接口 ====================
     cmd_node_ = std::make_shared<rclcpp::Node>("agv_hardware_topic_node");
@@ -128,58 +123,204 @@ hardware_interface::CallbackReturn AgvHardwareInterface::on_init
     return hardware_interface::CallbackReturn::SUCCESS;
 }
 
-hardware_interface::CallbackReturn AgvHardwareInterface::on_configure(
-    const rclcpp_lifecycle::State & /*previous_state*/)
+AgvHardwareInterface::~AgvHardwareInterface()
 {
-    return robot_controller_->connect() ? 
-        hardware_interface::CallbackReturn::SUCCESS : 
-        hardware_interface::CallbackReturn::ERROR;
+    cleanupResources();
 }
 
-hardware_interface::CallbackReturn AgvHardwareInterface::on_activate(
-    const rclcpp_lifecycle::State & /*previous_state*/)
+std::unique_ptr<AGVRobotMove> AgvHardwareInterface::createChassis()
 {
-    if (!robot_controller_->activate()) {
-        return hardware_interface::CallbackReturn::ERROR;
-    }
-    
-    joint_positions_ = robot_controller_->getJointPositions();
-    ws_client_->start();
-    ws_server_->start();
-
-    // 启动独立线程处理 ROS 2 话题回调
-    executor_ = std::make_shared<rclcpp::executors::SingleThreadedExecutor>();
-    executor_->add_node(cmd_node_);
-    executor_thread_ = std::make_unique<std::thread>([this]() {
-        executor_->spin();
-    });
-    
-    return hardware_interface::CallbackReturn::SUCCESS;
+    return std::make_unique<AGVRobotMove>();
+}
+bool AgvHardwareInterface::connectArm()
+{
+    return robot_controller_ && robot_controller_->connect();
+}
+bool AgvHardwareInterface::activateArm()
+{
+    return robot_controller_ && robot_controller_->activate();
+}
+void AgvHardwareInterface::deactivateArm()
+{
+    if (robot_controller_)
+        robot_controller_->deactivate();
+}
+void AgvHardwareInterface::disconnectArm()
+{
+    if (robot_controller_)
+        robot_controller_->disconnect();
 }
 
-hardware_interface::CallbackReturn AgvHardwareInterface::on_deactivate(
-    const rclcpp_lifecycle::State &)
+bool AgvHardwareInterface::configureChassis()
 {
-    // 停止 Executor 线程
-    if (executor_) {
-        executor_->cancel();
-    }
-    if (executor_thread_ && executor_thread_->joinable()) {
-        executor_thread_->join();
-    }
+    std::lock_guard<std::mutex> lock(chassis_mutex_);
+    if (!agv_)
+        return false;
+    AGVRobotMove::InitOptions options;
+    options.set_do = config_.agv_init_set_do;
+    options.do_id = config_.agv_init_do_id;
+    options.do_status = config_.agv_init_do_status;
+    options.relocate = config_.agv_init_relocate;
+    return agv_->setSpeedLimits(config_.agv_max_linear_speed, config_.agv_max_angular_speed) &&
+           agv_->setInitOptions(options) && agv_->init(config_.chassis_ip);
+}
 
-    ws_server_->stop();
-    ws_client_->stop();
+void AgvHardwareInterface::startCommandProcessing()
+{
+    // 停止后的ASIO对象不复用，每轮激活都创建新的包装实例。
     {
         std::lock_guard<std::mutex> lock(io_mutex_);
-        enable_status_report_ = false;
+        ws_client_ = std::make_unique<agv_protocol::WebSocketClientWrapper>(
+            config_.server_uri, config_.reconnect_interval_ms);
+        ws_server_ =
+            std::make_unique<agv_protocol::WebSocketServerWrapper>(config_.local_server_port);
+        ws_client_->setMessageHandler([this](const std::string& message)
+                                      { handleCommand(message); });
     }
-    robot_controller_->deactivate();
+    executor_ = std::make_shared<rclcpp::executors::SingleThreadedExecutor>();
+    executor_->add_node(cmd_node_);
+    executor_running_.store(true);
+    executor_thread_ = std::make_unique<std::thread>(
+        [this]()
+        {
+            try
+            {
+                // 有界等待同时覆盖刚启动就停用的情况，避免cancel先于spin发生而遗留线程。
+                while (executor_running_.load() && rclcpp::ok())
+                    executor_->spin_once(std::chrono::milliseconds(50));
+            }
+            catch (const std::exception& e)
+            {
+                RCLCPP_ERROR(rclcpp::get_logger("AgvHardware"), "Executor异常: %s", e.what());
+            }
+        });
+    ws_server_->start();
+    ws_client_->start();
+}
+
+void AgvHardwareInterface::stopCommandProcessing()
+{
+    accept_commands_.store(false);
+    // join时不持有底盘锁，以便在途命令能够完成。
+    if (ws_client_)
+        ws_client_->stop();
+    if (ws_server_)
+        ws_server_->stop();
+    executor_running_.store(false);
+    if (executor_)
+        executor_->cancel();
+    if (executor_thread_ && executor_thread_->joinable())
+        executor_thread_->join();
+    executor_thread_.reset();
+    if (executor_ && cmd_node_)
+        executor_->remove_node(cmd_node_);
+    executor_.reset();
+
+    {
+        std::lock_guard<std::mutex> lock(chassis_mutex_); // 等待其他在途底盘调用完成。
+    }
+    std::lock_guard<std::mutex> lock(io_mutex_);
+    enable_status_report_ = false;
+    ws_client_.reset();
+    ws_server_.reset();
+}
+
+void AgvHardwareInterface::cleanupResources()
+{
+    stopCommandProcessing();
+    if (arm_active_)
+    {
+        deactivateArm();
+        arm_active_ = false;
+    }
+    {
+        std::lock_guard<std::mutex> lock(chassis_mutex_);
+        if (agv_)
+        {
+            agv_->cancelPendingOperations();
+            agv_->moveshutdown();
+        }
+    }
+    disconnectArm();
+    configured_ = false;
+}
+
+hardware_interface::CallbackReturn
+AgvHardwareInterface::on_configure(const rclcpp_lifecycle::State&)
+{
+    if (accept_commands_.load())
+        return hardware_interface::CallbackReturn::ERROR;
+    cleanupResources();
+    try
+    {
+        if (!configureChassis() || !connectArm())
+        {
+            cleanupResources();
+            return hardware_interface::CallbackReturn::ERROR;
+        }
+        configured_ = true;
+        return hardware_interface::CallbackReturn::SUCCESS;
+    }
+    catch (const std::exception& e)
+    {
+        RCLCPP_ERROR(rclcpp::get_logger("AgvHardware"), "配置失败: %s", e.what());
+        cleanupResources();
+        return hardware_interface::CallbackReturn::ERROR;
+    }
+}
+
+hardware_interface::CallbackReturn AgvHardwareInterface::on_activate(const rclcpp_lifecycle::State&)
+{
+    if (!configured_ || accept_commands_.load())
+        return hardware_interface::CallbackReturn::ERROR;
+    try
+    {
+        // 进入激活尝试后即纳入回滚，activateArm抛异常也要撤销可能已完成的部分动作。
+        arm_active_ = true;
+        if (!activateArm())
+        {
+            deactivateArm();
+            arm_active_ = false;
+            return hardware_interface::CallbackReturn::ERROR;
+        }
+        joint_positions_ = robot_controller_->getJointPositions();
+        startCommandProcessing();
+        accept_commands_.store(true);
+        return hardware_interface::CallbackReturn::SUCCESS;
+    }
+    catch (const std::exception& e)
+    {
+        RCLCPP_ERROR(rclcpp::get_logger("AgvHardware"), "激活失败: %s", e.what());
+        on_deactivate(rclcpp_lifecycle::State());
+        return hardware_interface::CallbackReturn::ERROR;
+    }
+}
+
+hardware_interface::CallbackReturn
+AgvHardwareInterface::on_deactivate(const rclcpp_lifecycle::State&)
+{
+    stopCommandProcessing();
+    if (arm_active_)
+    {
+        deactivateArm();
+        arm_active_ = false;
+    }
     return hardware_interface::CallbackReturn::SUCCESS;
 }
 
-hardware_interface::return_type AgvHardwareInterface::read(
-    const rclcpp::Time & /*time*/, const rclcpp::Duration & /*period*/)
+hardware_interface::CallbackReturn AgvHardwareInterface::on_cleanup(const rclcpp_lifecycle::State&)
+{
+    cleanupResources();
+    return hardware_interface::CallbackReturn::SUCCESS;
+}
+hardware_interface::CallbackReturn AgvHardwareInterface::on_shutdown(const rclcpp_lifecycle::State&)
+{
+    cleanupResources();
+    return hardware_interface::CallbackReturn::SUCCESS;
+}
+
+hardware_interface::return_type AgvHardwareInterface::read(const rclcpp::Time& /*time*/,
+                                                           const rclcpp::Duration& /*period*/)
 {
     // 1. 更新硬件状态
     {
@@ -207,29 +348,32 @@ hardware_interface::return_type AgvHardwareInterface::read(
         arm_state_pub_->publish(state_msg);
     }
 
-    // 4. WebSocket 状态上报逻辑
-    if (!ws_client_->isConnected()) {
-        enable_status_report_ = false;
-    }
+    // 4. WebSocket对象与生命周期切换同步，避免停用时释放仍被read使用的对象。
+    {
+        std::lock_guard<std::mutex> lock(io_mutex_);
+        if (!ws_client_ || !ws_client_->isConnected()) {
+            enable_status_report_ = false;
+        }
 
-    if (enable_status_report_) {
-        // std::cerr << "[WSClient] 开始上报：" << std::endl;
-        static int report_skip = 0;            // 静态计数器，跨调用保持
-        const int SKIP_COUNT = 50;             // 每10次read上报一次，可自行调整
+        if (enable_status_report_) {
+            // std::cerr << "[WSClient] 开始上报：" << std::endl;
+            static int report_skip = 0;            // 静态计数器，跨调用保持
+            const int SKIP_COUNT = 50;             // 每10次read上报一次，可自行调整
 
-        if (++report_skip >= SKIP_COUNT) {
-            report_skip = 0;                   // 重置计数器
+            if (++report_skip >= SKIP_COUNT) {
+                report_skip = 0;                   // 重置计数器
 
-            try {
-                const std::string robot_id = "mobile_dual_arm_robot";
-                ws_client_->send(command_parser_.buildStatusMessage(joint_positions_, robot_id));
-                ws_client_->send(command_parser_.buildPosturePositionsMessage(posture_positions_, robot_id));
-            } catch (const std::exception& e) {
-                std::cerr << "[AgvHardware] 状态上报异常: " << e.what() << std::endl;
+                try {
+                    const std::string robot_id = "mobile_dual_arm_robot";
+                    ws_client_->send(command_parser_.buildStatusMessage(joint_positions_, robot_id));
+                    ws_client_->send(command_parser_.buildPosturePositionsMessage(posture_positions_, robot_id));
+                } catch (const std::exception& e) {
+                    std::cerr << "[AgvHardware] 状态上报异常: " << e.what() << std::endl;
+                }
             }
         }
-    }
 
+    }
     set_state("arm2_joint1/position", joint_positions_[0]);
     set_state("arm2_joint2/position", joint_positions_[1]);
     set_state("arm2_joint3/position", joint_positions_[2]);
@@ -253,6 +397,7 @@ hardware_interface::return_type AgvHardwareInterface::write(
 
 void AgvHardwareInterface::handleCommand(const std::string& json_str)
 {
+    if (!accept_commands_.load()) return;
     auto cmd_opt = command_parser_.parse(json_str);
     if (!cmd_opt) return;
     
@@ -337,11 +482,8 @@ void AgvHardwareInterface::handleCommand(const std::string& json_str)
 
     // 5. 处理底盘控制
     if (cmd.has_chassis_command) {
-        agv_bridge::BridgeManager::publishChassisCmd(
-            cmd.chassis_velocity[0],
-            cmd.chassis_velocity[1],
-            cmd.chassis_velocity[2]
-        );
+        std::lock_guard<std::mutex> lock(chassis_mutex_);
+        if (!accept_commands_.load() || !agv_) return;
         double vx = cmd.chassis_velocity[0];
         double vy = cmd.chassis_velocity[1];
         double wz = cmd.chassis_velocity[2];

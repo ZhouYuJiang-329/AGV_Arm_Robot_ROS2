@@ -1,10 +1,24 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:arg name="chassis_ip" default="192.168.1.109"/>
+  <xacro:arg name="agv_max_linear_speed" default="0.0"/>
+  <xacro:arg name="agv_max_angular_speed" default="0.0"/>
+  <xacro:arg name="agv_init_set_do" default="true"/>
+  <xacro:arg name="agv_init_do_id" default="0"/>
+  <xacro:arg name="agv_init_do_status" default="true"/>
+  <xacro:arg name="agv_init_relocate" default="true"/>
   <ros2_control name="Agv" type="system">
       <hardware>
           <!-- By default, set up controllers for simulation. This won't work on real hardware -->
           <!-- <plugin>mock_components/GenericSystem</plugin> -->
           <plugin>agv_hardware/AgvHardwareInterface</plugin>
+          <param name="chassis_ip">$(arg chassis_ip)</param>
+          <param name="agv_max_linear_speed">$(arg agv_max_linear_speed)</param>
+          <param name="agv_max_angular_speed">$(arg agv_max_angular_speed)</param>
+          <param name="agv_init_set_do">$(arg agv_init_set_do)</param>
+          <param name="agv_init_do_id">$(arg agv_init_do_id)</param>
+          <param name="agv_init_do_status">$(arg agv_init_do_status)</param>
+          <param name="agv_init_relocate">$(arg agv_init_relocate)</param>
       </hardware>
       <joint name="arm1_joint1">
           <command_interface name="position"/>

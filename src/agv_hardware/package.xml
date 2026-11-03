@@ -19,9 +19,13 @@
   <depend>pluginlib</depend>
   <depend>agv_protocol</depend>
   <depend>agv_bridge</depend>
+  <depend>robot_move</depend>
   <depend>jsoncpp</depend>
   <depend>boost</depend>
 
+  <test_depend>xacro</test_depend>
+  <test_depend>launch_xml</test_depend>
+  <test_depend>launch_ros</test_depend>
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
 

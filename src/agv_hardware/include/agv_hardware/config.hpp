@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <unordered_map>
 
 namespace agv_hardware {
 
@@ -17,6 +18,15 @@ struct AgvConfig {
     /// @brief 底盘控制 IP 地址
     std::string chassis_ip = "192.168.1.109";
     
+    /// 合成线速度上限（m/s）和角速度上限（rad/s）；0表示未配置。
+    double agv_max_linear_speed = 0.0;
+    double agv_max_angular_speed = 0.0;
+    /// 初始化动作保持旧默认值，可通过硬件参数关闭。
+    bool agv_init_set_do = true;
+    int agv_init_do_id = 0;
+    bool agv_init_do_status = true;
+    bool agv_init_relocate = true;
+
     /// @brief 本地控制机 IP 地址
     std::string local_ip = "192.168.1.100";
     
@@ -46,5 +56,9 @@ struct AgvConfig {
     /// @brief 非实时模式转弯区大小（mm）
     double nrt_zone = 50.0;
 };
+
+/** @brief 严格解析底盘硬件参数；失败时不修改config，并通过error返回原因。 */
+bool loadChassisConfig(const std::unordered_map<std::string, std::string>& parameters,
+                       AgvConfig& config, std::string& error);
 
 } // namespace agv_hardware

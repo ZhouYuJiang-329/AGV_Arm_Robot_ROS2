@@ -1,4 +1,12 @@
 <launch>
+    <arg name="chassis_ip" default="192.168.1.109"/>
+    <arg name="agv_max_linear_speed" default="0.0"/>
+    <arg name="agv_max_angular_speed" default="0.0"/>
+    <arg name="agv_init_set_do" default="true"/>
+    <arg name="agv_init_do_id" default="0"/>
+    <arg name="agv_init_do_status" default="true"/>
+    <arg name="agv_init_relocate" default="true"/>
+
     <let name ="urdf_path"
          value="$(find-pkg-share agv_description)/urdf/agv_robot.urdf.xacro"/>
     <let name ="rviz_config_path"
@@ -6,7 +14,7 @@
 
     <node pkg="robot_state_publisher" exec="robot_state_publisher">
         <param name="robot_description"
-                value="$(command 'xacro $(var urdf_path)')" />
+                value="$(command 'xacro $(var urdf_path) chassis_ip:=$(var chassis_ip) agv_max_linear_speed:=$(var agv_max_linear_speed) agv_max_angular_speed:=$(var agv_max_angular_speed) agv_init_set_do:=$(var agv_init_set_do) agv_init_do_id:=$(var agv_init_do_id) agv_init_do_status:=$(var agv_init_do_status) agv_init_relocate:=$(var agv_init_relocate)')" />
     </node>
 
     <node pkg="controller_manager" exec="ros2_control_node">

@@ -22,12 +22,13 @@
 #include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
 #include <rclcpp/rclcpp.hpp>
 
+#include <atomic>
 #include <array>
 #include <memory>
 #include <mutex>
 #include <string>
 
-#include "robot_gotarget.hpp"
+#include "robot_move/impl/agv/agv_robot_move.hpp"
 
 namespace agv_hardware {
 
@@ -39,6 +40,13 @@ namespace agv_hardware {
  */
 class AgvHardwareInterface : public hardware_interface::SystemInterface {
 public:
+    /// 先回收回调和线程，再释放底盘及机械臂连接。
+    ~AgvHardwareInterface() override;
+    /// 清理配置资源，允许随后重新配置；不发送底盘停车指令。
+    hardware_interface::CallbackReturn on_cleanup(const rclcpp_lifecycle::State&) override;
+    /// 复用幂等清理，覆盖未激活及失败退出路径。
+    hardware_interface::CallbackReturn on_shutdown(const rclcpp_lifecycle::State&) override;
+
     /// @brief 生命周期配置回调
     hardware_interface::CallbackReturn
         on_configure(const rclcpp_lifecycle::State & previous_state) override;
@@ -63,7 +71,29 @@ public:
     hardware_interface::return_type
         write(const rclcpp::Time & time, const rclcpp::Duration & period) override;
 
+protected:
+    // 生命周期协作入口供无硬件测试替换，默认实现仍使用真实驱动和SDK。
+    /// 创建底盘策略对象，构造阶段不建立连接。
+    virtual std::unique_ptr<AGVRobotMove> createChassis();
+    /// 委托现有机械臂控制器连接设备。
+    virtual bool connectArm();
+    /// 委托机械臂控制器激活，返回实际结果。
+    virtual bool activateArm();
+    /// 保留现有机械臂停用语义。
+    virtual void deactivateArm();
+    /// 释放机械臂连接；对象不存在时无操作。
+    virtual void disconnectArm();
+
 private:
+    friend struct HardwareTestAccess;
+    /// 每轮激活创建新的WebSocket包装对象和executor。
+    void startCommandProcessing();
+    /// 先关闭准入，再回收来源及在途底盘请求。
+    void stopCommandProcessing();
+    /// 停止命令处理后断开底盘及机械臂，可重复调用。
+    void cleanupResources();
+    /// 应用已校验的限速和初始化选项，再初始化底盘。
+    bool configureChassis();
     /**
      * @brief 发送关节位置数据到上位机
      * @param positions 6 个关节的角度数组
@@ -107,7 +137,10 @@ private:
     std::unique_ptr<agv_protocol::WebSocketServerWrapper> ws_server_;        ///< 本地 WebSocket 服务器
     agv_protocol::CommandParser command_parser_;                  ///< 命令解析器
     std::unique_ptr<AGVRobotMove> agv_;
-    std::string agvIP;
+    std::mutex chassis_mutex_;  ///< 保护底盘命令和连接释放，不占用机械臂实时锁。
+    std::atomic<bool> accept_commands_{false};
+    bool configured_ = false;
+    bool arm_active_ = false;
 
     // ==================== 状态数据 ====================
     bool enable_status_report_ = false;  // 是否允许回传状态数据
@@ -118,6 +151,7 @@ private:
     std::mutex io_mutex_;                           ///< IO 互斥锁
 
     // ==================== 异步 Executor ====================
+    std::atomic<bool> executor_running_{false};
     std::shared_ptr<rclcpp::executors::SingleThreadedExecutor> executor_;
     std::unique_ptr<std::thread> executor_thread_;
 };
