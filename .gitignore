@@ -11,3 +11,4 @@ __pycache__/
 *.tmp              # 所有临时文件
 *.pt
 .trae/
+docs/agv_docs
