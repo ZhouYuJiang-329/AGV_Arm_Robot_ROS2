@@ -197,3 +197,15 @@ Nav2的0.15米到位容差作用于AMCL定位估计；测试另外用Gazebo实�
 运行记录保存在`/tmp/agv-nav-validation/`；最终端到端结果是`navigation-result.json`，成功运行日志为`navigation-test-staged.log`及`launch-staged.log`。后续只调整了模型/地面颜色与RViz视图，已核对地图、Nav2参数和物理定义与成功测试时一致，并重新验证启动和数据链路。
 
 取消时Nav2可能打印follow_path在halt阶段等待结果的错误日志；本次以外层任务返回Canceled、控制器取消确认和实际零速度共同判定取消结果，没有把该日志当成成功证据。
+
+## 9. 自己建图后导航
+
+新增`agv_mapping_sim.launch.py`可使用SLAM Toolbox和仿真雷达从零建图；建图时不启动AMCL或Nav2。步骤见[AGV仿真建图练习](AGV仿真建图练习.md)。
+
+导航入口新增可选`map`参数：
+
+```bash
+ros2 launch agv_bringup agv_navigation_sim.launch.py map:="$PWD/maps/practice.yaml"
+```
+
+加载外部地图后可先在RViz使用`2D Pose Estimate`指定初始位置和朝向，或传入`initial_pose:="[x, y, yaw]"`自动初始化（地图坐标，米/弧度），再下发目标。不传`map`参数仍使用本说明前面的预生成地图与自动初始定位。

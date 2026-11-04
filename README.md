@@ -304,6 +304,7 @@ colcon test-result --verbose
 
 | 文档 | 位置 | 内容 |
 |------|------|------|
+| [Nav2 + Gazebo 基础教程](docs/Nav2与Gazebo基础教程.md) | `docs/Nav2与Gazebo基础教程.md` | Jazzy/Harmonic 入门、项目实操、TF/定位/规划/避障与排错 |
 | 协作约定 | `src/AGENTS.md` | 结构 / 构建命令 / 代码风格 / 提交规范 |
 | 通信协议 | `src/agv_hardware/ROS2.md` | 与上位机 WS JSON 完整协议 |
 | 硬件包速览 | `src/agv_hardware/READEME.md` | 下位机职责 / 流程 |

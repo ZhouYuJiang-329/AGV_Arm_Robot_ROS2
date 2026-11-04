@@ -11,6 +11,25 @@ from rosgraph_msgs.msg import Clock
 def main():
     rclpy.init()
     node = Node('agv_simulation_ready')
+    if node.declare_parameter('wait_for_localization', False).value:
+        from tf2_ros import Buffer, TransformListener
+        buffer = Buffer()
+        listener = TransformListener(buffer, node)
+        node.get_logger().info('Waiting for initial localization: use RViz 2D Pose Estimate')
+        try:
+            while rclpy.ok():
+                rclpy.spin_once(node, timeout_sec=.1)
+                if buffer.can_transform('map', 'base_link', rclpy.time.Time()):
+                    node.get_logger().info('Initial localization ready; starting navigation lifecycle manager')
+                    return
+        except (KeyboardInterrupt, rclpy.executors.ExternalShutdownException):
+            raise SystemExit(1)
+        finally:
+            del listener
+            node.destroy_node()
+            if rclpy.ok():
+                rclpy.shutdown()
+        raise SystemExit(1)
     received = set()
     subscriptions = [
         node.create_subscription(Odometry, '/odom', lambda m: received.add('odom'), qos_profile_sensor_data),
@@ -22,7 +41,7 @@ def main():
         rclpy.spin_once(node, timeout_sec=.1)
     success = received == {'odom', 'scan', 'clock'}
     if success:
-        node.get_logger().info('Simulator feedback ready; starting navigation and RViz')
+        node.get_logger().info('Simulator feedback ready; starting requested application and RViz')
     else:
         node.get_logger().error('Missing simulator inputs: ' + str({'odom', 'scan', 'clock'}-received))
     del subscriptions

@@ -9,6 +9,21 @@ import yaml
 PACKAGE = Path(sys.argv.pop(1)).resolve()
 sys.path.insert(0, str(PACKAGE))
 from agv_bringup_sim.assets import generate_assets
+from agv_bringup_sim.initial_pose import parse_initial_pose
+
+
+class InitialPoseTest(unittest.TestCase):
+    def test_empty_keeps_existing_initialization_policy(self):
+        self.assertIsNone(parse_initial_pose('  '))
+
+    def test_valid_pose_retains_map_coordinates_and_radians(self):
+        self.assertEqual(parse_initial_pose('[-4, -4.25, 1.5708]'), (-4.0, -4.25, 1.5708))
+
+    def test_invalid_pose_is_rejected(self):
+        for value in ('null', '{}', '[1, 2]', '[1, 2, 3, 4]', '[true, 0, 0]',
+                      '["1", 2, 3]', '[NaN, 0, 0]', '[1e999, 0, 0]', 'bad'):
+            with self.subTest(value=value), self.assertRaisesRegex(ValueError, 'initial_pose'):
+                parse_initial_pose(value)
 
 
 class SimulationAssetsTest(unittest.TestCase):
@@ -70,6 +85,21 @@ class SimulationAssetsTest(unittest.TestCase):
         self.assertGreater(control['FollowPath']['max_vel_y'], 0)
         self.assertEqual(params['amcl']['ros__parameters']['robot_model_type'], 'nav2_amcl::OmniMotionModel')
         self.assertGreater(params['velocity_smoother']['ros__parameters']['max_velocity'][1], 0)
+
+    def test_slam_frames_and_range_match_the_simulated_sensor(self):
+        slam = yaml.safe_load((PACKAGE/'config/agv_slam_sim.yaml').read_text())['slam_toolbox']['ros__parameters']
+        sensor = ET.parse(self.assets['robot']).find('.//sensor')
+        urdf = ET.fromstring(self.assets['description'])
+        frames = {link.get('name') for link in urdf.findall('link')}
+        self.assertIn(slam['base_frame'], frames)
+        nav = yaml.safe_load(Path(self.assets['params']).read_text())['amcl']['ros__parameters']
+        self.assertEqual(slam['base_frame'], nav['base_frame_id'])
+        self.assertEqual(slam['map_frame'], nav['global_frame_id'])
+        self.assertEqual(slam['odom_frame'], nav['odom_frame_id'])
+        self.assertEqual(slam['scan_topic'], '/scan')
+        self.assertEqual(slam['min_laser_range'], float(sensor.find('lidar/range/min').text))
+        self.assertEqual(slam['max_laser_range'], float(sensor.find('lidar/range/max').text))
+        self.assertTrue(slam['use_sim_time'])
 
 
 if __name__ == '__main__':
