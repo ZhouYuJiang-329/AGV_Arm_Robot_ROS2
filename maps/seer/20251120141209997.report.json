@@ -1,0 +1,21 @@
+{
+  "source": "/opt/Roboshop/bin/location/appInfo/robots/All/2D0024001647393436343431/maps/20251120141209997.smap",
+  "map_name": "20251120141209997",
+  "resolution": 0.02,
+  "origin": [
+    -9.672999999999998,
+    -2.235,
+    0.0
+  ],
+  "width": 1994,
+  "height": 644,
+  "obstacle_points": 4787,
+  "occupied_cells": 4787,
+  "free_cells": 0,
+  "unknown_cells": 1279349,
+  "free_space_policy": "none; absent points remain unknown",
+  "ignored_fields": [
+    "advancedLineList"
+  ],
+  "note": "Feature lines, routes and semantic restrictions are not automatically treated as physical obstacles."
+}

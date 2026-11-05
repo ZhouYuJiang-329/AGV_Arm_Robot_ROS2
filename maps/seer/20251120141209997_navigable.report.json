@@ -1,0 +1,20 @@
+{
+  "source": "/opt/Roboshop/bin/location/appInfo/robots/All/2D0024001647393436343431/maps/20251120141209997.smap",
+  "map_name": "20251120141209997",
+  "resolution": 0.02,
+  "origin": [
+    -9.672999999999998,
+    -2.235,
+    0.0
+  ],
+  "width": 1994,
+  "height": 644,
+  "obstacle_points": 4787,
+  "occupied_cells": 5103,
+  "free_cells": 1268497,
+  "unknown_cells": 10536,
+  "free_space_policy": "user-confirmed bounds interior",
+  "feature_lines_drawn": 99,
+  "ignored_fields": [],
+  "note": "Only explicitly selected FeatureLine geometry is rasterized; routes and semantic restrictions are not imported."
+}

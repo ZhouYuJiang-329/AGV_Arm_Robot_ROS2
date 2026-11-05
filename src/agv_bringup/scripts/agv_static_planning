@@ -1,0 +1,4 @@
+#!/usr/bin/python3
+from agv_bringup_sim.static_planning import main
+if __name__ == '__main__':
+    main()

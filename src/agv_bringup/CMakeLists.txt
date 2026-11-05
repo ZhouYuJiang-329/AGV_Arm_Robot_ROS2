@@ -8,7 +8,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(ament_cmake_python REQUIRED)
 ament_python_install_package(agv_bringup_sim)
-install(PROGRAMS scripts/agv_simulation_adapter scripts/agv_simulation_ready DESTINATION lib/${PROJECT_NAME})
+install(PROGRAMS scripts/agv_simulation_adapter scripts/agv_simulation_ready scripts/agv_static_planning DESTINATION lib/${PROJECT_NAME})
 
 install(
   DIRECTORY launch config
