@@ -17,6 +17,8 @@ namespace robot_move::seer
 class Transport
 {
   public:
+    /// 最近事务失败类型；供独占使用本对象的数据源区分恢复和诊断原因。
+    enum class Error { None, NotConnected, Timeout, Protocol, Io };
     /** @brief 创建未连接的传输对象，四个socket句柄均初始化为无效状态。 */
     Transport() = default;
     /** @brief 关闭所有连接，不发送业务命令。 */
@@ -33,6 +35,10 @@ class Transport
      * @note 每个端口连接尝试上限1秒；不发送DO、重定位等业务请求，不能与其他调用并发。
      */
     bool connect(const std::string& ip);
+    /** @brief 仅连接指定通道；空/非法集合拒绝，重复通道只连接一次。 */
+    bool connect(const std::string& ip, const std::vector<ApiChannel>& channels);
+    /** @brief 获取最近事务结果；并发调用者应自行关联请求与结果。 */
+    Error lastError();
     /** @brief 与事务串行地关闭全部连接并清空句柄，可重复调用，不发送停车指令。 */
     void disconnect();
     /**
@@ -61,6 +67,7 @@ class Transport
     std::array<int, 4> sockets_{{-1, -1, -1, -1}};
     /// 全部通道共用的16位请求序号，递增后允许自然回绕。
     uint16_t sequence_ = 0;
+    Error last_error_ = Error::None;
     /// 保护序号分配、完整请求/响应及连接关闭，避免并发串读。
     std::timed_mutex mutex_;
     /**

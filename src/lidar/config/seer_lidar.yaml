@@ -1,0 +1,24 @@
+/**:
+  ros__parameters:
+    use_sim_time: false
+    request_rate_hz: 5.0
+    request_timeout_ms: 1000
+    stale_timeout_sec: 1.0
+    stamp_mode: receive_time
+    devices: [laser_front, laser_back]
+    device:
+      laser_front:
+        enabled: true
+        topic: /scan_front
+        frame_id: laser_front_link
+        # Deliberately wider than device metadata: map actual beam angles.
+        angle_min_deg: -135.0
+        angle_max_deg: 135.0
+        angle_increment_deg: 0.5
+      laser_back:
+        enabled: true
+        topic: /scan_back
+        frame_id: laser_back_link
+        angle_min_deg: -135.0
+        angle_max_deg: 135.0
+        angle_increment_deg: 0.5

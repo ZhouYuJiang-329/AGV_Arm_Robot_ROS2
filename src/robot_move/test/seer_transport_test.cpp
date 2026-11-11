@@ -3,6 +3,39 @@ int main()
 {
     try
     {
+        // Status-only acquisition must work without any control/navigation services.
+        {
+            int listener = socket(AF_INET, SOCK_STREAM | SOCK_NONBLOCK, 0);
+            require(listener >= 0, "status listener creation failed");
+            int reuse = 1;
+            setsockopt(listener, SOL_SOCKET, SO_REUSEADDR, &reuse, sizeof(reuse));
+            sockaddr_in address{};
+            address.sin_family = AF_INET;
+            address.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
+            address.sin_port = htons(19204);
+            require(bind(listener, reinterpret_cast<sockaddr*>(&address), sizeof(address)) == 0 &&
+                    listen(listener, 8) == 0, "test requires loopback port 19204");
+            Transport transport;
+            require(transport.connect("127.0.0.1", {ApiChannel::Status, ApiChannel::Status}),
+                    "status-only connect failed");
+            require(TransportTestAccess::statusSocket(transport) >= 0 &&
+                    TransportTestAccess::controlSocket(transport) == -1 &&
+                    TransportTestAccess::navigationSocket(transport) == -1 &&
+                    TransportTestAccess::doSocket(transport) == -1, "unselected channels connected");
+            const int peer = accept(listener, nullptr, nullptr);
+            require(peer >= 0, "no status connection");
+            require(accept(listener, nullptr, nullptr) == -1, "duplicate channel connected twice");
+            close(peer);
+            require(!transport.connect("127.0.0.1", {}), "empty channels accepted");
+            require(TransportTestAccess::statusSocket(transport) == -1, "empty connect leaked fd");
+            require(!transport.connect("127.0.0.1", {static_cast<ApiChannel>(99)}),
+                    "invalid channel accepted");
+            require(!transport.connect("127.0.0.1"), "legacy connect ignored unavailable ports");
+            require(TransportTestAccess::statusSocket(transport) == -1 &&
+                    TransportTestAccess::controlSocket(transport) == -1,
+                    "legacy partial failure leaked connection");
+            close(listener);
+        }
         {
             Transport t;
             const std::vector<uint8_t> expected{0x5A, 1,    0, 1, 0, 0, 0, 0,

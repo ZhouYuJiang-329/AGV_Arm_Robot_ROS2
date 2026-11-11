@@ -27,12 +27,20 @@ bool waitForSocket(int sock_fd, short events, std::chrono::steady_clock::time_po
                              deadline - std::chrono::steady_clock::now())
                              .count();
         if (remaining <= 0)
+        {
+            errno = ETIMEDOUT;
             return false;
+        }
         pollfd descriptor{sock_fd, events, 0};
         int result = poll(&descriptor, 1, static_cast<int>(remaining));
         if (result > 0)
             return (descriptor.revents & events) != 0;
-        if (result == 0 || errno != EINTR)
+        if (result == 0)
+        {
+            errno = ETIMEDOUT;
+            return false;
+        }
+        if (errno != EINTR)
             return false;
     }
 }
@@ -157,24 +165,34 @@ bool Transport::request(ApiChannel channel, uint16_t api, const std::string& req
     // 锁等待也受上层任务剩余时间约束，不能在排队后重新获得完整的事务时限。
     deadline = std::min(deadline, std::chrono::steady_clock::now() + std::chrono::seconds(1));
     std::unique_lock<std::timed_mutex> lock(mutex_, std::defer_lock);
-    if (!lock.try_lock_until(deadline) || std::chrono::steady_clock::now() >= deadline)
+    if (!lock.try_lock_until(deadline))
+        return false;
+    last_error_ = Error::None;
+    if (std::chrono::steady_clock::now() >= deadline)
     {
+        last_error_ = Error::Timeout;
         std::cerr << "[AGV] API " << api << " 等待请求锁超时" << std::endl;
         return false;
     }
     int& sock_fd = sockets_.at(static_cast<size_t>(channel));
     if (sock_fd < 0)
+    {
+        last_error_ = Error::NotConnected;
         return false;
+    }
 
     // 收发中断或帧校验失败后，连接中的边界不再可信；关闭它以免迟到响应串入下一次请求。
-    auto fail = [&](const char* reason)
+    auto fail = [&](const char* reason, Error error = Error::Io)
     {
+        last_error_ = error == Error::Io && (errno == ETIMEDOUT || std::chrono::steady_clock::now() >= deadline)
+                          ? Error::Timeout : error;
         std::cerr << "[AGV] API " << api << " 请求失败: " << reason << std::endl;
         close(sock_fd);
         sock_fd = -1;
         return false;
     };
     const auto frame = packFrame(api, request_json);
+    errno = 0;
     if (!sendAll(sock_fd, frame, deadline))
         return fail("发送超时或连接异常");
 
@@ -190,13 +208,13 @@ bool Transport::request(ApiChannel channel, uint16_t api, const std::string& req
                             (uint32_t(header[6]) << 8) | header[7];
     if (header[0] != 0x5A || header[1] != frame[1] || sequence != expected_sequence ||
         type != api + 10000)
-        return fail("响应同步头、版本、序号或编号不匹配");
+        return fail("响应同步头、版本、序号或编号不匹配", Error::Protocol);
     // 保留区第5字节标识压缩格式；当前只支持未压缩数据。
     if (header[14] != 0)
-        return fail("暂不支持压缩响应");
+        return fail("暂不支持压缩响应", Error::Protocol);
     constexpr uint32_t MAX_RESPONSE_SIZE = 4 * 1024 * 1024;
     if (length > MAX_RESPONSE_SIZE)
-        return fail("响应正文超过长度限制");
+        return fail("响应正文超过长度限制", Error::Protocol);
 
     std::vector<uint8_t> body(length);
     if (!receiveExact(sock_fd, body.data(), body.size(), deadline))
@@ -216,16 +234,29 @@ Transport::~Transport()
 /** @brief 建立四端口连接，任一端口失败则关闭本轮已建立的连接。 */
 bool Transport::connect(const std::string& address)
 {
+    return connect(address, {ApiChannel::Other, ApiChannel::Status,
+                             ApiChannel::Control, ApiChannel::Navigation});
+}
+
+bool Transport::connect(const std::string& address, const std::vector<ApiChannel>& channels)
+{
     disconnect();
+    if (channels.empty())
+        return false;
+    for (auto channel : channels)
+        if (static_cast<size_t>(channel) >= sockets_.size())
+            return false;
     const auto ip = address.substr(0, address.find(':'));
     // 通道数组按状态、控制、导航、其他排列；连接尝试顺序保持既有行为。
     constexpr std::array<int, 4> ports{{19204, 19205, 19206, 19210}};
     bool success = true;
-    constexpr std::array<ApiChannel, 4> order{
-        {ApiChannel::Other, ApiChannel::Status, ApiChannel::Control, ApiChannel::Navigation}};
-    for (ApiChannel channel : order)
+    std::array<bool, 4> visited{};
+    for (ApiChannel channel : channels)
     {
         const auto i = static_cast<size_t>(channel);
+        if (visited[i])
+            continue;
+        visited[i] = true;
         const bool connected = connectPort(ip, ports[i], sockets_[i]);
         if (!connected)
             std::cerr << "[Seer] 连接端口失败: " << ports[i] << std::endl;
@@ -234,6 +265,12 @@ bool Transport::connect(const std::string& address)
     if (!success)
         disconnect();
     return success;
+}
+
+Transport::Error Transport::lastError()
+{
+    std::lock_guard<std::timed_mutex> lock(mutex_);
+    return last_error_;
 }
 
 /** @brief 在事务锁保护下关闭全部通道并清空句柄，重复调用不会误关复用后的描述符。 */

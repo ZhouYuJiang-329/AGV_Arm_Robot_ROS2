@@ -1,0 +1,133 @@
+{
+  "lasers": [
+    {
+      "beams": [
+        {
+          "rssi": 30
+        },
+        {
+          "rssi": 30
+        },
+        {
+          "rssi": 30
+        },
+        {
+          "rssi": 30
+        },
+        {
+          "angle": -124.6,
+          "dist": 6.388,
+          "rssi": 6.0625,
+          "valid": true
+        },
+        {
+          "angle": -124.1,
+          "dist": 6.031,
+          "rssi": 45.0625,
+          "valid": true
+        },
+        {
+          "angle": -11.6,
+          "rssi": 30
+        },
+        {
+          "angle": -8.1,
+          "rssi": 30
+        }
+      ],
+      "device_info": {
+        "device_name": "laser_front",
+        "id": 3,
+        "max_angle": 130,
+        "max_range": 40,
+        "min_angle": -125,
+        "min_range": 0.001,
+        "pub_step": 0.5,
+        "real_step": 0.5,
+        "scan_freq": 30
+      },
+      "header": {
+        "data_nsec": "9007199254740993",
+        "frame_id": "FocueRay-h100-TCP"
+      },
+      "install_info": {
+        "upside": true,
+        "x": 0.55,
+        "y": -0.295,
+        "yaw": -47,
+        "z": 0.6
+      }
+    },
+    {
+      "beams": [
+        {
+          "angle": -134,
+          "dist": 6.528,
+          "rssi": 75.0625,
+          "valid": true
+        },
+        {
+          "angle": -133.5,
+          "dist": 6.54,
+          "rssi": 75.0625,
+          "valid": true
+        },
+        {
+          "angle": -133,
+          "dist": 6.556,
+          "rssi": 76.0625,
+          "valid": true
+        },
+        {
+          "angle": -132.5,
+          "dist": 6.564,
+          "rssi": 71.0625,
+          "valid": true
+        },
+        {
+          "angle": -132,
+          "dist": 6.541,
+          "rssi": 65.0625,
+          "valid": true
+        },
+        {
+          "angle": -131.5,
+          "dist": 6.228,
+          "rssi": 98.0625,
+          "valid": true
+        },
+        {
+          "angle": -129.5,
+          "rssi": 30
+        },
+        {
+          "angle": -106,
+          "rssi": 30
+        }
+      ],
+      "device_info": {
+        "device_name": "laser_back",
+        "id": 4,
+        "max_angle": 121,
+        "max_range": 40,
+        "min_angle": -134,
+        "min_range": 0.001,
+        "pub_step": 0.5,
+        "real_step": 0.5,
+        "scan_freq": 30
+      },
+      "header": {
+        "data_nsec": "9007199254740994",
+        "frame_id": "FocueRay-h100-TCP"
+      },
+      "install_info": {
+        "upside": true,
+        "x": -0.55,
+        "y": 0.295,
+        "yaw": 142,
+        "z": 0.6
+      }
+    }
+  ],
+  "ret_code": 0
+}
