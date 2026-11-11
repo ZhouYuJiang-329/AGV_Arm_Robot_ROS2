@@ -12,6 +12,9 @@ find_package(rcl_interfaces REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(Threads REQUIRED)
+find_package(nav_msgs REQUIRED)
+find_package(diagnostic_msgs REQUIRED)
+find_package(tf2_ros REQUIRED)
 
 add_library(robot_move_impl
   src/cJSON.c
@@ -21,6 +24,8 @@ add_library(robot_move_impl
   src/impl/mag/mag_robot_move.cpp
   src/impl/agv/agv_robot_move.cpp
   src/impl/agv/seer/seer_client.cpp
+  src/impl/agv/seer/seer_velocity_source.cpp
+  src/odometry/integrator.cpp
   src/impl/agv/seer/seer_transport.cpp
 )
 target_compile_features(robot_move_impl PUBLIC cxx_std_17)
@@ -67,8 +72,27 @@ install(TARGETS robot_move_node
   DESTINATION lib/${PROJECT_NAME}
 )
 
+add_library(seer_odometry_ros src/odometry/odometry_node.cpp)
+ament_target_dependencies(seer_odometry_ros rclcpp rcl_interfaces nav_msgs diagnostic_msgs tf2_ros)
+target_link_libraries(seer_odometry_ros robot_move_impl)
+add_executable(seer_odometry_node src/odometry/odometry_main.cpp)
+target_link_libraries(seer_odometry_node seer_odometry_ros)
+install(TARGETS seer_odometry_ros ARCHIVE DESTINATION lib LIBRARY DESTINATION lib)
+install(TARGETS seer_odometry_node DESTINATION lib/${PROJECT_NAME})
+install(DIRECTORY launch config DESTINATION share/${PROJECT_NAME})
+
 if(BUILD_TESTING)
   enable_testing()
+  find_package(tf2_msgs REQUIRED)
+  find_package(rosgraph_msgs REQUIRED)
+  add_executable(odometry_test test/odometry_test.cpp)
+  target_link_libraries(odometry_test robot_move_impl)
+  add_test(NAME odometry_test COMMAND odometry_test)
+  add_executable(odometry_node_test test/odometry_node_test.cpp)
+  target_link_libraries(odometry_node_test seer_odometry_ros)
+  ament_target_dependencies(odometry_node_test tf2_msgs rosgraph_msgs)
+  add_test(NAME odometry_node_test COMMAND odometry_node_test)
+  set_tests_properties(odometry_test odometry_node_test PROPERTIES TIMEOUT 30 ENVIRONMENT "ROS_DOMAIN_ID=218")
   foreach(test_name seer_transport_test seer_client_test agv_robot_move_test agv_integration_test)
     add_executable(${test_name} test/${test_name}.cpp)
     target_link_libraries(${test_name} robot_move_impl)

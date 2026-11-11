@@ -1,0 +1,17 @@
+# User confirmed coincident origins; base +X = Seer +Y, base +Y = Seer -X.
+seer_odometry:
+  ros__parameters:
+    request_rate_hz: 5.0
+    request_timeout_ms: 1000
+    max_integration_interval_sec: 0.6
+    stale_timeout_sec: 1.0
+    publish_tf: true
+    base_transform_confirmed: true
+    base_x_in_seer: 0.0
+    base_y_in_seer: 0.0
+    base_yaw_in_seer: 1.5707963267948966
+    initial_position_variance: 0.01
+    initial_yaw_variance: 0.01
+    linear_velocity_variance: 0.0025
+    angular_velocity_variance: 0.0025
+    gap_variance: 100.0
