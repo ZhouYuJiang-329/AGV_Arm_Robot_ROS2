@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<robot name="agv_lidar_mount" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <link name="base_link"/>
+  <xacro:include filename="lidar_mounts.xacro"/>
+  <xacro:back_lidar_mount/>
+  <xacro:front_lidar_mount/>
+</robot>

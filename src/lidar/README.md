@@ -80,11 +80,11 @@ ros2 launch agv_bringup agv.launch.xml \
 
 ## TF 与导航限制
 
-本包不发布 TF，也不直接修改底盘现有 URDF。设备返回的安装 x/y/z/yaw/upside 保存在类型数据中，并在诊断中显示原始值，供现场核对。
+采集节点本身不发布 TF。`agv_description` 通过共用外参 YAML 和 Xacro 固定关节提供 `base_link → laser_front_link`、`base_link → laser_back_link`。整机默认关闭，可分别通过 `front_lidar_tf_owner`、`back_lidar_tf_owner` 选择 description / standalone / off；每条 TF 只有一个发布者。独立采集 launch 不自动启动 TF。
 
-尚需标定 `base_link → laser_front_link` 和 `base_link → laser_back_link`：确认安装参考点、yaw 单位、upside 含义以及波束是否已应用安装补偿后，由 URDF 固定关节或独立固定 TF 发布器统一提供。每条 TF 只有一个发布者；不能只根据 yaw 推导倒装变换。
+当前前后雷达 yaw 分别为 -135°、54°，roll/pitch 均为 0°；位置分别为 (-0.295,-0.550,-0.240) m 和 (0.295,0.550,-0.240) m。两路真实扫描对齐已获现场确认；高度尚未独立实测，选取墙段残差约 5 cm，不称为高精度外参标定完成。配置、启动及验证依据见 [雷达安装 TF](../../docs/前雷达安装TF.md)。
 
-在此之前可在 RViz 中把 Fixed Frame 分别设为 `laser_front_link` 或 `laser_back_link` 查看各自扫描，但不能据此认定底盘坐标系中点云位置正确。本包不提供 `/odom`、双雷达 `/scan` 融合或导航启动。
+设备返回的安装 x/y/z/yaw/upside 仍仅用于诊断核对，不自动应用。不要仅根据 upside 设置 roll，也不要在扫描和 TF 中重复旋转。在 RViz 中将 Fixed Frame 设为 base_link，对照现场物体检查两路扫描；本包不提供 `/odom`、双雷达 `/scan` 融合或导航启动。
 
 ## 验证
 

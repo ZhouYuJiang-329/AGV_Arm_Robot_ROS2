@@ -1,0 +1,26 @@
+# Installation coordinates in ROS base_link; metres and degrees.
+# Current values passed an on-site scan alignment check; height is not independently verified.
+# Any new null values MUST be measured/confirmed before enabling the corresponding TF.
+# Controller screenshot is reference data, not an established base_link transform.
+front:
+  x_m: -0.295
+  y_m: -0.55
+  z_relative_m: -0.24  # User-selected temporary value, NOT calibrated.
+  roll_deg: 0.0
+  pitch_deg: 0.0
+  yaw_deg: -135.0
+# User-approved symmetric position; yaw refined with a stationary scan comparison.
+# Still provisional: NOT a complete measured installation calibration.
+back:
+  x_m: 0.295
+  y_m: 0.55
+  z_relative_m: -0.24
+  roll_deg: 0.0
+  pitch_deg: 0.0
+  yaw_deg: 54.0  # Provisional: +9 deg supported by stationary scan comparison.
+reference_only:
+  controller_model: {x_m: 0.55, y_m: -0.295, z_m: 0.60, yaw_deg: -47.0, upside: true}
+  estimated_sensor_ground_height_m: 0.50  # May not refer to optical origin.
+  base_link_ground_height_m: null
+  calibration_status: scan_alignment_verified_height_pending
+# Rear TF defaults off in launch; enable explicitly for provisional preview.

@@ -1,5 +1,8 @@
 <launch>
     <arg name="chassis_ip" default="192.168.1.109"/>
+    <arg name="front_lidar_tf_owner" default="off"/>
+    <arg name="back_lidar_tf_owner" default="off"/>
+    <arg name="lidar_mounts_file" default="$(find-pkg-share agv_description)/config/lidar_mounts.yaml"/>
     <arg name="enable_odometry" default="false"/>
     <arg name="odometry_publish_tf" default="true"/>
     <arg name="odometry_params_file" default="$(find-pkg-share robot_move)/config/seer_odometry.yaml"/>
@@ -13,15 +16,23 @@
     <arg name="agv_init_do_status" default="true"/>
     <arg name="agv_init_relocate" default="true"/>
 
-    <let name ="urdf_path"
-         value="$(find-pkg-share agv_description)/urdf/agv_robot.urdf.xacro"/>
     <let name ="rviz_config_path"
          value="$(find-pkg-share agv_bringup)/config/agv_moveit.rviz"/>
 
-    <node pkg="robot_state_publisher" exec="robot_state_publisher">
-        <param name="robot_description"
-                value="$(command 'xacro $(var urdf_path) chassis_ip:=$(var chassis_ip) agv_max_linear_speed:=$(var agv_max_linear_speed) agv_max_angular_speed:=$(var agv_max_angular_speed) agv_init_set_do:=$(var agv_init_set_do) agv_init_do_id:=$(var agv_init_do_id) agv_init_do_status:=$(var agv_init_do_status) agv_init_relocate:=$(var agv_init_relocate)')" />
-    </node>
+    <include file="$(find-pkg-share agv_description)/launch/robot_description.launch.py">
+        <arg name="model" value="full"/>
+        <arg name="front_lidar_tf_owner" value="$(var front_lidar_tf_owner)"/>
+        <arg name="back_lidar_tf_owner" value="$(var back_lidar_tf_owner)"/>
+        <arg name="lidar_mounts_file" value="$(var lidar_mounts_file)"/>
+        <arg name="use_sim_time" value="$(var use_sim_time)"/>
+        <arg name="chassis_ip" value="$(var chassis_ip)"/>
+        <arg name="agv_max_linear_speed" value="$(var agv_max_linear_speed)"/>
+        <arg name="agv_max_angular_speed" value="$(var agv_max_angular_speed)"/>
+        <arg name="agv_init_set_do" value="$(var agv_init_set_do)"/>
+        <arg name="agv_init_do_id" value="$(var agv_init_do_id)"/>
+        <arg name="agv_init_do_status" value="$(var agv_init_do_status)"/>
+        <arg name="agv_init_relocate" value="$(var agv_init_relocate)"/>
+    </include>
 
     <node pkg="controller_manager" exec="ros2_control_node">
         <param from="$(find-pkg-share agv_bringup)/config/ros2_controllers.yaml" />

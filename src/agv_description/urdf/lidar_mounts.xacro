@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:arg name="enable_front_lidar_tf" default="false"/>
+  <xacro:arg name="enable_back_lidar_tf" default="false"/>
+  <xacro:arg name="lidar_mounts_file" default="$(find agv_description)/config/lidar_mounts.yaml"/>
+  <xacro:macro name="front_lidar_mount" params="">
+    <xacro:if value="$(arg enable_front_lidar_tf)">
+      <xacro:property name="mount" value="${xacro.load_yaml('$(arg lidar_mounts_file)')['front']}"/>
+      <!-- float(null) deliberately fails: unconfirmed coordinates are not zeros. -->
+      <link name="laser_front_link"/>
+      <joint name="laser_front_mount_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="laser_front_link"/>
+        <origin xyz="${float(mount['x_m'])} ${float(mount['y_m'])} ${float(mount['z_relative_m'])}"
+                rpy="${float(mount['roll_deg']) * pi / 180.0} ${float(mount['pitch_deg']) * pi / 180.0} ${float(mount['yaw_deg']) * pi / 180.0}"/>
+      </joint>
+    </xacro:if>
+  </xacro:macro>
+  <xacro:macro name="back_lidar_mount" params="">
+    <xacro:if value="$(arg enable_back_lidar_tf)">
+      <xacro:property name="mount" value="${xacro.load_yaml('$(arg lidar_mounts_file)')['back']}"/>
+      <!-- float(null) deliberately fails: unconfirmed coordinates are not zeros. -->
+      <link name="laser_back_link"/>
+      <joint name="laser_back_mount_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="laser_back_link"/>
+        <origin xyz="${float(mount['x_m'])} ${float(mount['y_m'])} ${float(mount['z_relative_m'])}"
+                rpy="${float(mount['roll_deg']) * pi / 180.0} ${float(mount['pitch_deg']) * pi / 180.0} ${float(mount['yaw_deg']) * pi / 180.0}"/>
+      </joint>
+    </xacro:if>
+  </xacro:macro>
+</robot>
