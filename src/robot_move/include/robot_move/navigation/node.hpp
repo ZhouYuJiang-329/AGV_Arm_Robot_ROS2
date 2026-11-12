@@ -8,6 +8,7 @@
 #include <tf2_msgs/msg/tf_message.hpp>
 #include <diagnostic_msgs/msg/diagnostic_array.hpp>
 #include <std_srvs/srv/trigger.hpp>
+#include <std_msgs/msg/header.hpp>
 namespace robot_move::navigation
 {
 class Node : public rclcpp::Node
@@ -29,7 +30,13 @@ private:
   rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr recovery_;
   rclcpp::Publisher<diagnostic_msgs::msg::DiagnosticArray>::SharedPtr diagnostics_;
   rclcpp::TimerBase::SharedPtr timer_;
+  rclcpp::Subscription<std_msgs::msg::Header>::SharedPtr execution_heartbeat_;
   bool connected_ = false;
+  bool tf_ownership_valid_ = true;
+  std::map<std::string, std::string> tf_expected_parent_, tf_owner_;
+  std::map<std::string, bool> tf_expected_static_;
+  rclcpp::Subscription<tf2_msgs::msg::TFMessage>::SharedPtr static_tf_;
+  void observeTf(const tf2_msgs::msg::TFMessage &, const rclcpp::MessageInfo &, bool);
   int64_t command_barrier_ = 0;
   std::string address_;
   void diagnostics();

@@ -1,5 +1,8 @@
 #include "robot_move/navigation/node.hpp"
 #include <algorithm>
+#include <iomanip>
+#include <sstream>
+#include "robot_move/odometry/integrator.hpp"
 #include <rcl_interfaces/msg/parameter_descriptor.hpp>
 #include <tf2_ros/qos.hpp>
 namespace robot_move::navigation
@@ -36,10 +39,18 @@ Node::Node(const rclcpp::NodeOptions & options, Worker::Send sender)
   if (address_.empty()) {throw std::invalid_argument("connection is required");}
   c.validate(); client_ = std::make_unique<seer::Client>();
   const bool injected = static_cast<bool>(sender);
+  const bool base_confirmed = declare_parameter<bool>("base_transform_confirmed", false, d);
+  const double base_x = real("base_x_in_seer", 0.0);
+  const double base_y = real("base_y_in_seer", 0.0);
+  const double base_yaw = real("base_yaw_in_seer", 0.0);
+  if (!finite(base_x) || !finite(base_y) || !finite(base_yaw) ||
+    (!injected && c.motion_enabled && !base_confirmed))
+  {throw std::invalid_argument("navigation requires confirmed finite base-to-Seer transform");}
   if (!sender) {
-    sender = [this](Velocity v, int duration, Time deadline) {
+    sender = [this, base_x, base_y, base_yaw](Velocity v, int duration, Time deadline) {
         if (!connected_) {return false;}
-        return client_->setVelocity(v.x, v.y, v.w, duration, deadline);
+        const auto seer_v = odometry::toSeer({v.x, v.y, v.w}, base_x, base_y, base_yaw);
+        return client_->setVelocity(seer_v.vx, seer_v.vy, seer_v.w, duration, deadline);
       };
   }
   worker_ = std::make_unique<Worker>(c, std::move(sender));
@@ -89,10 +100,15 @@ Node::Node(const rclcpp::NodeOptions & options, Worker::Send sender)
   if (pairs.empty()) {throw std::invalid_argument("navigation requires dynamic TF edges");}
   for (const auto & edge : pairs) {
     g.require("tf:" + edge, tf_age);
+    const auto split = edge.find("->");
+    if (split == std::string::npos) {throw std::invalid_argument("invalid TF edge");}
+    tf_expected_parent_[edge.substr(split + 2)] = edge.substr(0, split);
+    tf_expected_static_[edge.substr(split + 2)] = false;
   }
   tf_ = create_subscription<tf2_msgs::msg::TFMessage>("/tf", tf2_ros::DynamicListenerQoS(),
-      [this](tf2_msgs::msg::TFMessage::ConstSharedPtr m) {
+      [this](tf2_msgs::msg::TFMessage::ConstSharedPtr m, const rclcpp::MessageInfo & info) {
         std::lock_guard<std::mutex> lock(worker_->mutex);
+        observeTf(*m, info, false);
         for (const auto & t : m->transforms) {
           auto name = "tf:" + t.header.frame_id + "->" + t.child_frame_id;
           if (!worker_->guard.inputs.count(name)) {continue;}
@@ -103,6 +119,23 @@ Node::Node(const rclcpp::NodeOptions & options, Worker::Send sender)
         }
         worker_->wake();
     });
+  auto static_edges = declare_parameter<std::vector<std::string>>("required_static_tf_edges",
+      std::vector<std::string>{}, d);
+  for (const auto & edge : static_edges) {
+    const auto split = edge.find("->");
+    if (split == std::string::npos) {throw std::invalid_argument("invalid static TF edge");}
+    const auto child = edge.substr(split + 2);
+    if (tf_expected_parent_.count(child)) {throw std::invalid_argument("duplicate TF child");}
+    tf_expected_parent_[child] = edge.substr(0, split);
+    tf_expected_static_[child] = true;
+  }
+  g.require("tf_ownership", tf_age);
+  static_tf_ = create_subscription<tf2_msgs::msg::TFMessage>("/tf_static",
+    tf2_ros::StaticListenerQoS(),
+      [this](tf2_msgs::msg::TFMessage::ConstSharedPtr m, const rclcpp::MessageInfo & info) {
+        std::lock_guard<std::mutex> lock(worker_->mutex);
+        observeTf(*m, info, true); worker_->wake();
+      });
   // Select the actual localization provider explicitly. Empty means TF-only
   // localization (e.g. AMCL); Seer default requires strict status/quality fields.
   auto localization_name = declare_parameter<std::string>("localization_diagnostic",
@@ -142,6 +175,17 @@ Node::Node(const rclcpp::NodeOptions & options, Worker::Send sender)
           }
       });
   }
+  if (declare_parameter<bool>("require_execution_heartbeat", false, d)) {
+    g.require("execution_heartbeat", real("execution_heartbeat_timeout", 0.4));
+    execution_heartbeat_ = create_subscription<std_msgs::msg::Header>(
+      "/navigation/execution_heartbeat", rclcpp::QoS(1),
+      [this](std_msgs::msg::Header::ConstSharedPtr m) {
+        std::lock_guard<std::mutex> lock(worker_->mutex);
+        worker_->guard.input("execution_heartbeat", rclcpp::Time(m->stamp).seconds(),
+          now().seconds(), m->frame_id == "navigation_execution_gate", Clock::now());
+        worker_->wake();
+      });
+  }
   commands_ = create_subscription<geometry_msgs::msg::Twist>("cmd_vel", rclcpp::QoS(1),
       [this](geometry_msgs::msg::Twist::ConstSharedPtr m, const rclcpp::MessageInfo & info) {
         std::lock_guard<std::mutex> lock(worker_->mutex);
@@ -172,6 +216,23 @@ Node::Node(const rclcpp::NodeOptions & options, Worker::Send sender)
   worker_->start();
 }
 Node::~Node() {if (worker_) {worker_->shutdown();}}
+void Node::observeTf(
+  const tf2_msgs::msg::TFMessage & message, const rclcpp::MessageInfo & info, bool is_static)
+{
+  std::ostringstream owner;
+  for (auto byte : info.get_rmw_message_info().publisher_gid.data) {
+    owner << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(byte);
+  }
+  for (const auto & tf : message.transforms) {
+    const auto & child = tf.child_frame_id;
+    if (!tf_expected_parent_.count(child)) {continue;}
+    if (tf.header.frame_id != tf_expected_parent_.at(child) ||
+      is_static != tf_expected_static_.at(child) ||
+      (tf_owner_.count(child) && tf_owner_.at(child) != owner.str()))
+    {tf_ownership_valid_ = false;}
+    tf_owner_.emplace(child, owner.str());
+  }
+}
 void Node::diagnostics()
 {
   diagnostic_msgs::msg::DiagnosticArray message; message.header.stamp = now();
@@ -179,12 +240,18 @@ void Node::diagnostics()
   s.hardware_id = "seer_2010";
   std::lock_guard<std::mutex> lock(worker_->mutex); auto & g = worker_->guard;
   const auto t = Clock::now();
+  const bool ownership = tf_ownership_valid_ && tf_owner_.size() == tf_expected_parent_.size();
+  const double stamp = now().seconds();
+  g.input("tf_ownership", stamp, stamp, ownership, t);
+  worker_->wake();
   s.level = g.state == "Fault" ? 2 : g.state == "Active" || g.state == "Ready" ? 0 : 1;
   s.message = g.state + ": " + g.reason;
   auto add = [&](const std::string & key, const std::string & v) {
       diagnostic_msgs::msg::KeyValue entry; entry.key = key; entry.value = v;
       s.values.push_back(entry);
     };
+  add("tf_ownership_valid", ownership ? "true" : "false");
+  add("controller_connected", connected_ ? "true" : "false");
   add("state", g.state); add("stop_reason", g.reason);
   add("valid_command_age_sec",
       g.last_command ? std::to_string(seconds(t, *g.last_command)) : "never");

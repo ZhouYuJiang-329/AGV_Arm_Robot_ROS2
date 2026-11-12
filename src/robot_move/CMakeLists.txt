@@ -107,7 +107,7 @@ target_include_directories(navigation_guard_core PUBLIC include)
 target_link_libraries(navigation_guard_core Threads::Threads)
 add_library(navigation_guard_ros src/navigation/node.cpp)
 ament_target_dependencies(navigation_guard_ros rclcpp rcl_interfaces geometry_msgs sensor_msgs
-  nav_msgs tf2_msgs tf2_ros diagnostic_msgs std_srvs)
+  nav_msgs tf2_msgs tf2_ros diagnostic_msgs std_srvs std_msgs)
 target_link_libraries(navigation_guard_ros navigation_guard_core robot_move_impl)
 add_executable(navigation_guard_node src/navigation/main.cpp)
 target_link_libraries(navigation_guard_node navigation_guard_ros)

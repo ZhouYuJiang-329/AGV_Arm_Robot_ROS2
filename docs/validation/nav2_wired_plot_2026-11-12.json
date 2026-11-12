@@ -1,0 +1,9 @@
+{
+  "topics_received": [
+    "map",
+    "front",
+    "back",
+    "footprint"
+  ],
+  "image": "docs/validation/nav2_wired_costmap_2026-11-12.png"
+}

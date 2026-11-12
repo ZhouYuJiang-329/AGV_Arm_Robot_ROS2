@@ -7,6 +7,8 @@ namespace robot_move::odometry
 using seer::Velocity;
 // Position of base origin in Seer coordinates; yaw is base orientation in Seer.
 Velocity toBase(Velocity source, double x, double y, double yaw);
+// Inverse of toBase, including the reference-point angular velocity term.
+Velocity toSeer(Velocity base, double x, double y, double yaw);
 class Integrator
 {
 public:

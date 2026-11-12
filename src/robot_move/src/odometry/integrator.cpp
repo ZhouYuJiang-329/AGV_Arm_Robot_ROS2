@@ -10,6 +10,11 @@ Velocity toBase(Velocity v, double x, double y, double yaw)
   return {std::cos(yaw) * vx + std::sin(yaw) * vy,
     -std::sin(yaw) * vx + std::cos(yaw) * vy, v.w};
 }
+Velocity toSeer(Velocity v, double x, double y, double yaw)
+{
+  return {std::cos(yaw) * v.vx - std::sin(yaw) * v.vy + v.w * y,
+    std::sin(yaw) * v.vx + std::cos(yaw) * v.vy - v.w * x, v.w};
+}
 Integrator::Integrator(double interval)
 : max_interval_(interval)
 {

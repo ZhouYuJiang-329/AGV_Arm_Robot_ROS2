@@ -1,0 +1,5 @@
+{
+  "action": "/compute_path_to_pose",
+  "motion_output": false,
+  "error": "fresh map/base TF or planner unavailable"
+}

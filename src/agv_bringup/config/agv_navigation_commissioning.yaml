@@ -1,0 +1,12 @@
+# Copy to a site review record only after measurements and acceptance.
+footprint_and_locked_arm_envelope_confirmed: false
+holonomic_axes_and_limits_confirmed: false
+lidar_extrinsics_and_height_confirmed: false
+map_identity_alignment_and_time_confirmed: false
+controller_duration_and_stopping_confirmed: false
+exclusive_control_confirmed: false
+# Bind the reviewed ROS YAML AND image to the exact controller map.
+ros_map_yaml_sha256: ''
+ros_map_image_sha256: ''
+seer_map: ''
+seer_map_md5: ''

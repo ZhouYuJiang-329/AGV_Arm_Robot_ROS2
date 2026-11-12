@@ -10,15 +10,25 @@ int main(int argc, char ** argv)
     rclcpp::NodeOptions options;
     options.parameter_overrides({rclcpp::Parameter("connection", "127.0.0.1"),
         rclcpp::Parameter("motion_enabled", true),
+        rclcpp::Parameter("require_execution_heartbeat", true),
         rclcpp::Parameter("input_freshness_contract_verified", true),
         rclcpp::Parameter("required_scan_topics", std::vector<std::string>{"/test_scan"}),
         rclcpp::Parameter("required_tf_edges", std::vector<std::string>{"map->odom"})});
+    bool refused_unconfirmed = false;
+    try {
+      auto unconfirmed = std::make_shared<Node>(options);
+    } catch (const std::invalid_argument &) {
+      refused_unconfirmed = true;
+    }
+    require(refused_unconfirmed, "unconfirmed real command transform must fail before connect");
     std::atomic<int> motion{0}, zeros{0};
     auto guard = std::make_shared<Node>(options, [&](Velocity v, int duration, Time) {
           require(duration == 800, "finite duration");
           if (v.x != 0) {++motion;} else {++zeros;} return true;
       });
     auto io = std::make_shared<rclcpp::Node>("navigation_test_io");
+    auto heartbeat = io->create_publisher<std_msgs::msg::Header>(
+      "/navigation/execution_heartbeat", 1);
     auto scans = io->create_publisher<sensor_msgs::msg::LaserScan>("/test_scan",
       rclcpp::SensorDataQoS());
     auto odom = io->create_publisher<nav_msgs::msg::Odometry>("odom", 1);
@@ -40,9 +50,14 @@ int main(int argc, char ** argv)
             }
           }
       });
+    bool heartbeat_enabled = true;
     bool scan_enabled = true, odom_enabled = true, tf_enabled = true, localization_valid = true;
     auto timer = io->create_wall_timer(40ms, [&] {
           const auto stamp = io->now();
+          if (heartbeat_enabled) {
+            std_msgs::msg::Header h; h.stamp = stamp;
+            h.frame_id = "navigation_execution_gate"; heartbeat->publish(h);
+          }
           if (scan_enabled) {
             sensor_msgs::msg::LaserScan s; s.header.stamp = stamp; s.header.frame_id = "laser";
             s.angle_increment = .1; s.range_min = .1; s.range_max = 10; s.ranges = {1};
@@ -99,15 +114,25 @@ int main(int argc, char ** argv)
     spin(700ms); require(state == "Ready" && motion == 0 && zeros == 0, "startup no command");
     spin(350ms, true); require(motion > 2 && zeros == 0, "continuous normal commands");
     spin(650ms); require(state == "StopRequested" && zeros == 1, "watchdog zero"); reset();
-    for (int fault = 0; fault < 4; ++fault) {
+    for (int fault = 0; fault < 5; ++fault) {
       spin(150ms, true); auto before = zeros.load();
       if (fault == 0) {scan_enabled = false;} if (fault == 1) {odom_enabled = false;}
       if (fault == 2) {tf_enabled = false;} if (fault == 3) {localization_valid = false;}
+      if (fault == 4) {heartbeat_enabled = false;}
       spin(1000ms, true);
       require(state == "Fault" && zeros == before + 1, "required input fault stop");
       if (fault == 1) {require(!confirmed, "missing feedback claimed stopped");}
-      scan_enabled = odom_enabled = tf_enabled = localization_valid = true; reset();
+      heartbeat_enabled = scan_enabled = odom_enabled = tf_enabled = localization_valid = true;
+      reset();
     }
+    auto duplicate_tf = io->create_publisher<tf2_msgs::msg::TFMessage>("/tf", 10);
+    spin(200ms, true);
+    tf2_msgs::msg::TFMessage duplicate;
+    geometry_msgs::msg::TransformStamped edge;
+    edge.header.stamp = io->now(); edge.header.frame_id = "map"; edge.child_frame_id = "odom";
+    edge.transform.rotation.w = 1; duplicate.transforms.push_back(edge);
+    duplicate_tf->publish(duplicate); spin(350ms, true);
+    require(state == "Fault", "duplicate TF publisher must latch motion fault");
     executor.remove_node(guard); guard.reset(); rclcpp::shutdown();
   } catch (const std::exception & e) {
     std::cerr << e.what() << '\n'; rclcpp::shutdown(); return 1;

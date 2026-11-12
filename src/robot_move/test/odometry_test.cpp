@@ -29,11 +29,17 @@ int main()
       near(v.vx, 9);
     }
     require(SeerVelocitySource::parse("{\"vx\":0,\"vy\":1,\"w\":0}", v), "valid feedback rejected");
+    const auto command = toSeer({.05, 0, 0}, 0, 0, std::acos(-1.0) / 2);
+    near(command.vx, 0); near(command.vy, .05);
     auto transformed = toBase({1, 2, 3}, 2, 1, std::acos(-1.0) / 2);
     near(transformed.vx, 8); near(transformed.vy, 2); near(transformed.w, 3);
     for (const auto & velocity : {Velocity{0, 0, 0}, Velocity{1, 0, 0}, Velocity{0, 1, 0},
         Velocity{0, 0, 1}, Velocity{1, 1, 1}})
     {
+      const auto roundtrip = toBase(toSeer(velocity, .2, -.3, 1.5707963267948966),
+        .2, -.3, 1.5707963267948966);
+      near(roundtrip.vx, velocity.vx); near(roundtrip.vy, velocity.vy);
+      near(roundtrip.w, velocity.w);
       Integrator i(2);
       require(i.accept(velocity, 100), "first rejected"); near(i.x, 0);
       require(i.accept(velocity, 101), "second rejected");
