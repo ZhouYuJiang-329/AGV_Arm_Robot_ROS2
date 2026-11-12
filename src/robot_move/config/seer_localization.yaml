@@ -1,0 +1,33 @@
+seer_localization:
+  ros__parameters:
+    use_sim_time: false
+    stamp_mode: receive_time
+    # REQUIRED: exact current_map from API 1000; do not infer from ROS YAML name.
+    expected_map: ""
+    expected_map_md5: ""
+    # T_ros_map_seer_map: metres/radians. Identity follows converter, pending field verification.
+    map_alignment_confirmed: false
+    map_x_in_ros_m: 0.0
+    map_y_in_ros_m: 0.0
+    map_yaw_in_ros_rad: 0.0
+    # T_seer_robot_base_link: agrees with user CAD confirmation recorded 2026-11-11.
+    # Verify API1004 uses this same origin; mechanical confirmation is not localization calibration.
+    base_transform_confirmed: false
+    base_x_in_seer_m: 0.0
+    base_y_in_seer_m: 0.0
+    base_yaw_in_seer_rad: 1.5707963267948966
+    request_rate_hz: 2.0
+    request_timeout_sec: 1.0
+    max_query_latency_sec: 0.6
+    max_sample_age_sec: 0.8
+    max_odom_bracket_sec: 0.4
+    max_odom_age_sec: 0.5
+    require_confidence: true
+    min_confidence: 0.5
+    max_correction_translation_m: 0.5
+    max_correction_rotation_rad: 0.5
+    recovery_translation_m: 0.1
+    recovery_rotation_rad: 0.1
+    # Persistent jump correction must be stable for N distinct query responses.
+    # This cannot detect controller-cached samples. 0 means reject until restart.
+    jump_recovery_samples: 3

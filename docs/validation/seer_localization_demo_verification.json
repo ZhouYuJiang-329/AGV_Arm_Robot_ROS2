@@ -1,0 +1,11 @@
+{
+  "odom_count": 1151,
+  "map_odom_count": 228,
+  "max_odom_step_m": 0.0014493758806046193,
+  "max_map_odom_correction_m": 0.7999996947673864,
+  "diagnostics": [
+    "jump_quarantined",
+    "persistent_correction_accepted",
+    "receive_time_approximation"
+  ]
+}
