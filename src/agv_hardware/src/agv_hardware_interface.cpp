@@ -153,6 +153,7 @@ void AgvHardwareInterface::disconnectArm()
 
 bool AgvHardwareInterface::configureChassis()
 {
+    if (config_.external_navigation) return true;
     std::lock_guard<std::mutex> lock(chassis_mutex_);
     if (!agv_)
         return false;
@@ -481,7 +482,7 @@ void AgvHardwareInterface::handleCommand(const std::string& json_str)
     }
 
     // 5. 处理底盘控制
-    if (cmd.has_chassis_command) {
+    if (cmd.has_chassis_command && !config_.external_navigation) {
         std::lock_guard<std::mutex> lock(chassis_mutex_);
         if (!accept_commands_.load() || !agv_) return;
         double vx = cmd.chassis_velocity[0];

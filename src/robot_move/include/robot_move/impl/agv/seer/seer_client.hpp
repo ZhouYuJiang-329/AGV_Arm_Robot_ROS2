@@ -41,7 +41,7 @@ class IClient
      * @param vx X方向速度，m/s，正值向前。
      * @param vy Y方向速度，m/s，正值向左。
      * @param w 角速度，rad/s，正值逆时针。
-     * @param duration 持续时间，ms；0表示持续保持速度，其他值由控制器判定。
+     * @param duration 持续时间，ms；0表示持续保持速度，正值为有限请求时长（配置项文档范围0–5000）；到期制动和固件支持待目标设备验证。
      * @param deadline 调用方的绝对截止时间。
      * @return 本次速度请求成功应答返回true，否则返回false。
      * @note 应用层限速由AGVRobotMove处理，真实Client只负责协议字段和应答。

@@ -141,7 +141,7 @@ class AGVRobotMove : public RobotMove
      * @param vx 前后速度，m/s，正值向前。
      * @param vy 左右速度，m/s，正值向左。
      * @param wz 角速度，rad/s，正值逆时针。
-     * @note 零速度允许；duration固定为0，表示持续保持所设速度。非法参数不发送，
+     * @note 零速度允许；duration固定为800ms；目标固件到期行为待实机验证。非法参数不发送，
      *       不会自动停止此前的运动；客户端失败仅记录日志，本接口不返回执行结果。
      */
     void setVelocity(double vx, double vy, double wz) override;

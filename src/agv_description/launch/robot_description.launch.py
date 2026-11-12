@@ -12,6 +12,7 @@ import yaml
 
 
 HARDWARE_ARGS = (
+    ('external_navigation', 'false'),
     ('chassis_ip', '192.168.1.109'),
     ('agv_max_linear_speed', '0.0'), ('agv_max_angular_speed', '0.0'),
     ('agv_init_set_do', 'true'), ('agv_init_do_id', '0'),

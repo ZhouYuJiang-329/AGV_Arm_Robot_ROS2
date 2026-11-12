@@ -33,6 +33,9 @@ private:
     struct DeviceState
     {
         std::optional<uint64_t> stamp;
+        std::optional<uint64_t> anchor_stamp;
+        Deadline anchor_time{};
+        bool clock_fault = false;
         std::optional<int> id;
         Deadline updated{};
         size_t frames = 0, duplicates = 0, resets = 0, valid = 0, rejected = 0,

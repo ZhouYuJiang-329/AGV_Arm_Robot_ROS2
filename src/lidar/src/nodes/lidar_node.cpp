@@ -188,22 +188,37 @@ void LidarNode::accept(const ScanBatch& batch, const rclcpp::Time& received)
             std::lock_guard<std::mutex> lock(state_mutex_);
             auto& state = states_[i];
             state.present = found != batch.scans.end();
-            if (!state.present || !found->source_stamp || found->beams.empty())
+            if (!state.present || (!found->source_stamp || *found->source_stamp == 0) || found->beams.empty())
             {
                 state.error = !state.present ? "device missing from batch" :
-                    !found->source_stamp ? "missing/invalid source timestamp" : "empty beams";
+                    (!found->source_stamp || *found->source_stamp == 0) ? "missing/invalid source timestamp" : "empty beams";
                 continue;
             }
+            if (state.clock_fault) {state.error = "source clock reset; restart required"; continue;}
+            if (std::chrono::duration<double>(Clock::now() - batch.request_started).count() >= stale_seconds_)
+            {state.error = "query latency exceeds freshness bound"; continue;}
             if (state.stamp == found->source_stamp)
             {
                 ++state.duplicates;
                 continue;
             }
             if (state.stamp && *found->source_stamp < *state.stamp)
-                ++state.resets;
+            {
+                ++state.resets; state.clock_fault = true;
+                state.error = "source clock reset; restart required"; continue;
+            }
+            if (!state.anchor_stamp)
+            {state.anchor_stamp = found->source_stamp; state.anchor_time = batch.request_started;}
+            const double source_elapsed = (*found->source_stamp - *state.anchor_stamp) * 1e-9;
+            const double elapsed = std::chrono::duration<double>(batch.received - state.anchor_time).count();
+            if (elapsed - source_elapsed >= stale_seconds_ || source_elapsed - elapsed > stale_seconds_)
+            {state.error = "source progression inconsistent with steady time"; continue;}
         }
         auto built = buildLaserScan(*found, device.config);
-        built.message.header.stamp = received;
+        // Conservative request-start stamp; never conceal request latency by
+        // restamping an old response at completion. Absolute device age is unknown.
+        built.message.header.stamp = received - rclcpp::Duration(
+            std::chrono::duration_cast<std::chrono::nanoseconds>(Clock::now() - batch.request_started));
         if (stop_)
             return;
         device.publisher->publish(built.message);

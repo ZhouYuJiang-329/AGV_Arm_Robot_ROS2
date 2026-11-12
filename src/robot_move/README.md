@@ -67,7 +67,7 @@ if (!robot.connect(ip)) { /* 连接失败 */ }
 
 ## ROS接口与任务管理
 
-订阅 `cmd_vel`、`scan_config`、`scan_ctrl`、`robot_distance_move`、`robot_rotate_move`，发布 `agv_pose`。
+AGV旧模式订阅 `legacy_cmd_vel`（非AGV仍用 `cmd_vel`）、`scan_config`、`scan_ctrl`、`robot_distance_move`、`robot_rotate_move`，发布 `agv_pose`。
 
 平移消息通过 `linear.z` 提供距离，`linear.x/y` 提供速度；旋转通过 `angular.z` 提供转角，`angular.y` 提供角速度。距离/转角必须为正，方向由速度正负表达。
 
@@ -124,3 +124,10 @@ Client将响应解析/通道失效包含在串行调用锁中，Transport内部�
 ## 只读地图定位
 
 新增 `seer_localization_node`，复用Transport读取1004、1021、1000，按相同时刻的历史odom TF计算动态map→odom，不修改连续odom。默认不执行重定位或任何控制操作；未确认的地图/参考点与接收时间近似均通过诊断标明。构建、独立显示入口、RViz操作、参数语义、并发实测和待验收项见[仙工定位接入](../../docs/仙工定位接入.md)。
+
+## Nav2 导航停止保护
+
+专用 `navigation_guard_node` 接收 `/cmd_vel`，不再由旧AGV节点消费导航速度。默认拒绝运动，
+使用有限duration、命令超时、输入健康门禁、有界停车和独立停止确认。
+完整参数、启动、测试、覆盖边界及实机待验项见 [导航停止机制](../../docs/导航停止机制.md)。
+旧AGV速度调用也改为800ms有限duration；定距离/旋转及旧入口不受导航状态机保护。

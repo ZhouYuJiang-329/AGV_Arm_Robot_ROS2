@@ -22,6 +22,7 @@ struct AgvConfig {
     double agv_max_linear_speed = 0.0;
     double agv_max_angular_speed = 0.0;
     /// 初始化动作保持旧默认值，可通过硬件参数关闭。
+    bool external_navigation = false;
     bool agv_init_set_do = true;
     int agv_init_do_id = 0;
     bool agv_init_do_status = true;

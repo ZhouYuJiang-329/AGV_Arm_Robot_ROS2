@@ -231,12 +231,12 @@ bool AGVRobotMove::init(const std::string& seer_ip)
     return connect(seer_ip) && initializeActions();
 }
 
-/** @brief 参数有效才下发持续速度；等待命令应答但不等待运动结束，失败记录日志。 */
+/** @brief 参数有效才下发800ms有限速度（到期行为待目标固件验证）；等待命令应答但不等待运动结束，失败记录日志。 */
 void AGVRobotMove::setVelocity(double vx, double vy, double wz)
 {
     if (!validateVelocity(vx, vy, wz))
         return;
-    if (!client_->setVelocity(vx, vy, wz, 0))
+    if (!client_->setVelocity(vx, vy, wz, 800))
         std::cerr << "[AGV] 速度指令未被接受" << std::endl;
 }
 

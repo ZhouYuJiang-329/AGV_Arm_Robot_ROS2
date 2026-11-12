@@ -65,6 +65,8 @@ bool loadChassisConfig(const std::unordered_map<std::string, std::string>& param
              [&](const std::string& s) { candidate.agv_max_linear_speed = nonnegative(s); });
         read("agv_max_angular_speed",
              [&](const std::string& s) { candidate.agv_max_angular_speed = nonnegative(s); });
+        read("external_navigation",
+             [&](const std::string& s) { candidate.external_navigation = boolean(s); });
         read("agv_init_set_do",
              [&](const std::string& s) { candidate.agv_init_set_do = boolean(s); });
         read("agv_init_do_status",

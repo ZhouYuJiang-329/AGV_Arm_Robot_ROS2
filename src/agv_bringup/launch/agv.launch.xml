@@ -1,4 +1,6 @@
 <launch>
+    <arg name="navigation_mode" default="false"/>
+    <arg name="navigation_guard_params" default="$(find-pkg-share robot_move)/config/navigation_guard.yaml"/>
     <arg name="chassis_ip" default="192.168.1.109"/>
     <arg name="front_lidar_tf_owner" default="off"/>
     <arg name="back_lidar_tf_owner" default="off"/>
@@ -20,6 +22,7 @@
          value="$(find-pkg-share agv_bringup)/config/agv_moveit.rviz"/>
 
     <include file="$(find-pkg-share agv_description)/launch/robot_description.launch.py">
+        <arg name="external_navigation" value="$(var navigation_mode)"/>
         <arg name="model" value="full"/>
         <arg name="front_lidar_tf_owner" value="$(var front_lidar_tf_owner)"/>
         <arg name="back_lidar_tf_owner" value="$(var back_lidar_tf_owner)"/>
@@ -32,6 +35,11 @@
         <arg name="agv_init_do_id" value="$(var agv_init_do_id)"/>
         <arg name="agv_init_do_status" value="$(var agv_init_do_status)"/>
         <arg name="agv_init_relocate" value="$(var agv_init_relocate)"/>
+    </include>
+
+    <include if="$(var navigation_mode)" file="$(find-pkg-share robot_move)/launch/navigation_guard.launch.py">
+        <arg name="connection" value="$(var chassis_ip)"/>
+        <arg name="params_file" value="$(var navigation_guard_params)"/>
     </include>
 
     <node pkg="controller_manager" exec="ros2_control_node">

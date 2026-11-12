@@ -301,7 +301,7 @@ int main()
             t.robot.setVelocity(0, 0, 0);
             t.robot.setVelocity(-.3, -.4, -.2);
             check(t.state->calls == std::vector<std::string>{"velocity", "velocity"} &&
-                      t.state->duration == 0,
+                      t.state->duration == 800,
                   "valid velocity not sent");
             check(t.state->args == std::vector<double>{-.3, -.4, -.2}, "direction changed");
         }

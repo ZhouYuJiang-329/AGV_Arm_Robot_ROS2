@@ -88,7 +88,7 @@ UniversalRobotDriver::UniversalRobotDriver(const std::string& node_name, std::un
 
     // 创建速度控制订阅者
     robot_move_sub_ = this->create_subscription<geometry_msgs::msg::Twist>(
-        "cmd_vel", 10,
+        type == "agv" ? "legacy_cmd_vel" : "cmd_vel", 1,
         std::bind(&UniversalRobotDriver::cmdVelCallback, this, std::placeholders::_1));
 
     // 创建扫描器配置订阅者

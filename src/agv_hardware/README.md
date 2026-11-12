@@ -82,3 +82,10 @@ colcon test-result --verbose
 新增测试：`chassis_config_test`、`chassis_hardware_test`、`chassis_loopback_test`、`chassis_model_test`。
 机械臂仅替换生命周期协作进行测试；本地模拟服务只监听127.0.0.1的19204/19205/19206/19210端口，需确保这些本地端口空闲。
 测试覆盖真实JSON解析、驱动分层及硬件模型参数解析，并非真实整机运动验收。
+
+## 导航模式
+
+整机 `agv.launch.xml navigation_mode:=true` 向硬件传入 `external_navigation=true`：
+插件不连接/初始化底盘并拒绝WebSocket底盘命令，由专用导航驱动独占。机械臂流程保留。
+旧模式速度现为固定800ms有限duration，不具备导航状态机，控制器到期行为仍待实机验收。
+见 [导航停止机制](../../docs/导航停止机制.md)。

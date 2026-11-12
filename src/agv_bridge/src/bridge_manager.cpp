@@ -16,7 +16,7 @@ void BridgeManager::init(std::shared_ptr<rclcpp::Node> node) {
 
 void BridgeManager::setupPublishers() {
     if (!node_) return;
-    chassis_pub_ = node_->create_publisher<geometry_msgs::msg::Twist>("cmd_vel", 10);
+    chassis_pub_ = node_->create_publisher<geometry_msgs::msg::Twist>("legacy_cmd_vel", 10);
     status_pub_ = node_->create_publisher<std_msgs::msg::String>("robot_status", 10);
 }
 

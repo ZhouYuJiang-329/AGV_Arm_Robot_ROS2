@@ -71,8 +71,8 @@ def main():
         assert not errors, errors
         assert len(requests) == 3, requests
         assert all(port == 19205 and api == 2010 for port, api, _ in requests), requests
-        assert requests[0][2] == {"vx": .1, "vy": .2, "w": -.3, "duration": 0}, requests
-        assert requests[1][2] == {"vx": .2, "vy": 0, "w": .1, "duration": 0}, requests
+        assert requests[0][2] == {"vx": .1, "vy": .2, "w": -.3, "duration": 800}, requests
+        assert requests[1][2] == {"vx": .2, "vy": 0, "w": .1, "duration": 800}, requests
         assert requests[2][2] == requests[0][2], requests
         print("PASS: hardware JSON -> AGV -> Client -> Transport; error response; cleanup")
     finally:

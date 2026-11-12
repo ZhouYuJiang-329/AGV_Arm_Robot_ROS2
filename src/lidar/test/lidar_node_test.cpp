@@ -44,7 +44,9 @@ public:
             if (mode == 3 && std::string(name) == "laser_back") continue;
             lidar::DeviceScan scan;
             scan.name = name;
-            scan.source_stamp = mode == 1 ? stamp_ : ++stamp_;
+            scan.source_stamp = mode == 1 ? stamp_ : static_cast<uint64_t>(
+                std::chrono::duration_cast<std::chrono::nanoseconds>(
+                    lidar::Clock::now().time_since_epoch()).count());
             if (mode == 4) { stamp_ = 1; scan.source_stamp = 1; }
             if (mode == 5) scan.source_stamp.reset();
             scan.range_min = 0.1;
@@ -123,7 +125,10 @@ int main(int argc, char** argv)
         require(control->connects >= 2 && heartbeats > missing_heartbeat,
                 "reconnect did not resume output");
         control->mode = 4;
+        spin(150ms);
+        const auto before_reset = front;
         spin(350ms);
+        require(front == before_reset, "clock reset refreshed scan timestamps");
         require(last.status[1].level >= 1, "source clock reset not diagnosed");
         control->mode = 5;
         spin(350ms);

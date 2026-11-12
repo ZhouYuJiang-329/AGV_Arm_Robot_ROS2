@@ -68,7 +68,7 @@ class FakeClient : public IClient
     }
     bool setVelocity(double x, double y, double w, int duration, Deadline) override
     {
-        check(duration == 0, "duration changed");
+        check(duration == 800, "finite duration missing");
         std::unique_lock<std::mutex> lock(s->mutex);
         ++s->velocities;
         s->speed = {x, y, w};
@@ -228,6 +228,20 @@ void simulatedTests()
                   h.state->do_count == 2,
               "reconfigure failed");
         check(h.on_shutdown(previous) == Return::SUCCESS, "shutdown failed");
+    }
+    {
+        TestHardware h;
+        auto external = info(true);
+        external.hardware_parameters["external_navigation"] = "true";
+        check(h.on_init(external) == Return::SUCCESS, "external on_init");
+        HardwareTestAccess::local(h);
+        check(h.on_configure(previous) == Return::SUCCESS, "external configure");
+        check(h.on_activate(previous) == Return::SUCCESS, "external activate");
+        HardwareTestAccess::command(h, chassis);
+        HardwareTestAccess::command(h, agv);
+        check(h.state->connects == 0 && h.state->do_count == 0 && h.state->relocates == 0 &&
+              h.state->velocities == 0, "navigation mode bypassed exclusive chassis owner");
+        check(h.on_shutdown(previous) == Return::SUCCESS, "external shutdown");
     }
     for (int failure = 0; failure < 3; ++failure)
     {

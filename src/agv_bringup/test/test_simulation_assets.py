@@ -12,6 +12,34 @@ from agv_bringup_sim.assets import generate_assets
 from agv_bringup_sim.initial_pose import parse_initial_pose
 
 
+class NavigationGuardLaunchTest(unittest.TestCase):
+    def test_real_navigation_excludes_direct_chassis_control(self):
+        from launch.frontend import Parser
+        import subprocess
+        root, parser = Parser.load(str(PACKAGE/'launch/agv.launch.xml'))
+        parser.parse_description(root)
+        launch = ET.parse(PACKAGE/'launch/agv.launch.xml').getroot()
+        includes = launch.findall('include')
+        description = next(i for i in includes if 'robot_description.launch.py' in i.get('file'))
+        args = {a.get('name'): a.get('value') for a in description.findall('arg')}
+        self.assertEqual(args['external_navigation'], '$(var navigation_mode)')
+        guard = next(i for i in includes if 'navigation_guard.launch.py' in i.get('file'))
+        self.assertEqual(guard.get('if'), '$(var navigation_mode)')
+        model = PACKAGE.parent/'agv_description/urdf/agv_robot.urdf.xacro'
+        urdf = ET.fromstring(subprocess.check_output(['xacro', str(model),
+                                                     'external_navigation:=true',
+                                                     'lidar_mounts_file:=' + str(
+                                                         PACKAGE.parent/'agv_description/config/lidar_mounts.yaml')]))
+        params = {p.get('name'): p.text for p in urdf.findall('.//ros2_control/hardware/param')}
+        self.assertEqual(params['external_navigation'], 'true')
+        config = yaml.safe_load((PACKAGE.parent/'robot_move/config/navigation_guard.yaml').read_text())
+        config = config['navigation_guard']['ros__parameters']
+        self.assertFalse(config['motion_enabled'])
+        self.assertFalse(config['input_freshness_contract_verified'])
+        self.assertGreater(config['controller_duration_ms'],
+                           config['cmd_vel_timeout']*1000 + config['request_timeout_ms'] + 20)
+
+
 class InitialPoseTest(unittest.TestCase):
     def test_empty_keeps_existing_initialization_policy(self):
         self.assertIsNone(parse_initial_pose('  '))

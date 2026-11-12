@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:arg name="external_navigation" default="false"/>
   <xacro:arg name="chassis_ip" default="192.168.1.109"/>
   <xacro:arg name="agv_max_linear_speed" default="0.0"/>
   <xacro:arg name="agv_max_angular_speed" default="0.0"/>
@@ -12,6 +13,7 @@
           <!-- By default, set up controllers for simulation. This won't work on real hardware -->
           <!-- <plugin>mock_components/GenericSystem</plugin> -->
           <plugin>agv_hardware/AgvHardwareInterface</plugin>
+          <param name="external_navigation">$(arg external_navigation)</param>
           <param name="chassis_ip">$(arg chassis_ip)</param>
           <param name="agv_max_linear_speed">$(arg agv_max_linear_speed)</param>
           <param name="agv_max_angular_speed">$(arg agv_max_angular_speed)</param>
