@@ -109,7 +109,8 @@ local_costmap:
       - obstacle_layer
       - inflation_layer
       obstacle_layer:
-        plugin: nav2_costmap_2d::ObstacleLayer
+        plugin: agv_bringup::MeasuredRayObstacleLayer
+        clearing_max_age_sec: 0.6
         observation_sources: front back
         min_obstacle_height: -1.0
         max_obstacle_height: 1.0
@@ -169,7 +170,8 @@ global_costmap:
         plugin: nav2_costmap_2d::StaticLayer
         map_subscribe_transient_local: true
       obstacle_layer:
-        plugin: nav2_costmap_2d::ObstacleLayer
+        plugin: agv_bringup::MeasuredRayObstacleLayer
+        clearing_max_age_sec: 0.6
         observation_sources: front back
         min_obstacle_height: -1.0
         max_obstacle_height: 1.0

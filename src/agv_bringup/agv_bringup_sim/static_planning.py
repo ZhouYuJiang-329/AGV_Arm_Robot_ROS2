@@ -8,12 +8,16 @@ from rclpy.qos import DurabilityPolicy, QoSProfile
 from geometry_msgs.msg import PoseStamped, PoseWithCovarianceStamped
 from nav_msgs.msg import Path
 from nav2_msgs.action import ComputePathToPose
+from tf2_ros import Buffer, TransformListener, TransformException
 
 
 class StaticPlanning(Node):
     """Compute paths only; never publish velocity commands or move a robot."""
     def __init__(self):
         super().__init__('agv_static_planning')
+        self.use_robot_start = self.declare_parameter('use_robot_start', False).value
+        self.tf_buffer = Buffer() if self.use_robot_start else None
+        self.tf_listener = TransformListener(self.tf_buffer, self) if self.use_robot_start else None
         qos = QoSProfile(depth=1, durability=DurabilityPolicy.TRANSIENT_LOCAL)
         self.paths = self.create_publisher(Path, '/plan', qos)
         self.starts = self.create_publisher(PoseStamped, '/planning_start', qos)
@@ -23,10 +27,14 @@ class StaticPlanning(Node):
         self.completed_revision = -1
         self.busy = False
         self.client = ActionClient(self, ComputePathToPose, '/compute_path_to_pose')
-        self.start_sub = self.create_subscription(PoseWithCovarianceStamped, '/initialpose', self.on_start, 10)
+        self.start_sub = (None if self.use_robot_start else self.create_subscription(
+            PoseWithCovarianceStamped, '/initialpose', self.on_start, 10))
         self.goal_sub = self.create_subscription(PoseStamped, '/goal_pose', self.on_goal, 10)
         self.timer = self.create_timer(.2, self.plan)
-        self.get_logger().info('Select start with 2D Pose Estimate, then goal with 2D Goal Pose. Static planning only.')
+        self.get_logger().info(
+            'Select a goal with 2D Goal Pose; start uses current robot TF. Planning only.'
+            if self.use_robot_start else
+            'Select start with 2D Pose Estimate, then goal with 2D Goal Pose. Static planning only.')
 
     def valid(self, message):
         p, q = message.pose.position, message.pose.orientation
@@ -56,15 +64,35 @@ class StaticPlanning(Node):
             self.goal = message
             self.goals.publish(message)
             self.clear_path()
-            if self.start is None:
+            if self.start is None and not self.use_robot_start:
                 self.get_logger().info('Goal received; select a start with 2D Pose Estimate')
 
     def plan(self):
-        if self.busy or self.start is None or self.goal is None or self.completed_revision == self.revision or not self.client.server_is_ready():
+        if self.busy or self.goal is None or self.completed_revision == self.revision or not self.client.server_is_ready():
+            return
+        if self.use_robot_start:
+            try:
+                transform = self.tf_buffer.lookup_transform('map', 'base_link', rclpy.time.Time())
+                age = (self.get_clock().now().nanoseconds * 1e-9 -
+                       transform.header.stamp.sec - transform.header.stamp.nanosec * 1e-9)
+                if not 0 <= age < .8:
+                    raise RuntimeError('current robot TF is stale')
+                self.start = PoseStamped(header=transform.header)
+                self.start.pose.position.x = transform.transform.translation.x
+                self.start.pose.position.y = transform.transform.translation.y
+                self.start.pose.orientation = transform.transform.rotation
+                self.starts.publish(self.start)
+            except (TransformException, RuntimeError) as error:
+                self.get_logger().warning(f'Waiting for current robot pose: {error}',
+                                          throttle_duration_sec=2.0)
+                return
+        if self.start is None:
             return
         request = ComputePathToPose.Goal()
         request.start, request.goal = self.start, self.goal
-        request.start.header.stamp = request.goal.header.stamp = self.get_clock().now().to_msg()
+        request.goal.header.stamp = self.get_clock().now().to_msg()
+        if not self.use_robot_start:
+            request.start.header.stamp = request.goal.header.stamp
         request.use_start = True
         request.planner_id = 'GridBased'
         self.busy = True

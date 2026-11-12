@@ -75,6 +75,10 @@ void Guard::command(Velocity v, bool valid, Time now)
     std::hypot(v.x, v.y) <= config.linear_limit && std::abs(v.w) <= config.angular_limit;
   if (!valid) {stop("invalid_command", true, now); return;}
   if (v.x == 0 && v.y == 0 && v.w == 0) {
+    // An idle upstream zero is not a request to take control of the chassis.
+    // API2010 can cancel an existing controller task even at zero velocity.
+    // After accepted motion, keep the normal stop/ACK/recovery contract.
+    if (!last_command && (state == "WaitingForInputs" || state == "Ready")) {return;}
     last_command = now; stop("explicit_zero", false, now); return;
   }
   if (state == "Fault" || state == "StopRequested" || !healthy(now)) {return;}

@@ -1,0 +1,316 @@
+{
+  "date": "2026-11-12",
+  "motion_command_sent": false,
+  "actual_global_grid_resolution_m": 0.019999999552965164,
+  "configured_resolution_m": 0.05,
+  "actual_plugin": "agv_bringup::MeasuredRayObstacleLayer",
+  "clearing_max_age_sec": 0.6,
+  "static_map_unchanged": true,
+  "source_scan_count_before": 216,
+  "source_scan_count_after": 216,
+  "old_ghost_cell": {
+    "index_xy": [
+      684,
+      149
+    ],
+    "world_xy": [
+      4.016999694,
+      0.754999933
+    ],
+    "static_occupancy": 0,
+    "combined_costmap_occupancy_before": 100,
+    "combined_costmap_occupancy_after": 99,
+    "interpretation": "old lethal mark removed; still inflated, not free"
+  },
+  "live_comparison_limit": "planner was reinitialized; environment and observations changed; live before/after is not isolated proof",
+  "isolated_regression": {
+    "fixture_origin_xy": [
+      1.778636671615047,
+      2.0015091581232967
+    ],
+    "resolution": 0.019999999552965164,
+    "global_beam_angle_rad": 0.47907285790908527,
+    "old_person_range_m": 2.1429998874664307,
+    "new_wall_range_m": 5.215000152587891,
+    "cell_xy": [
+      184,
+      149
+    ],
+    "original_nav2_layer_cost": 254,
+    "measured_ray_layer_cost": 0
+  },
+  "after_diagnostics": {
+    "/seer_localization/map_to_odom": {
+      "message": "receive_time_approximation",
+      "values": {
+        "time_mode": "1004 receive time; internal sample age unknown; create_on ignored",
+        "coordinate_status": "UNVERIFIED_ASSUMPTION",
+        "map": "20251120141209997",
+        "reloc_status": "1.000000",
+        "confidence": "0.837200",
+        "pending_reason": "",
+        "tf_publish_mode": "bounded_odom_hold",
+        "tf_support_stamp_sec": "1794472634.559097",
+        "accepted_pose_stamp_sec": "1794472634.324402",
+        "query_pose_receive_age_sec": "0.355121",
+        "latest_odom_age_sec": "0.120374",
+        "pose_odom_stamp_difference_sec": "0.000000",
+        "response_age_sec": "0.355069",
+        "query_bundle_latency_sec": "0.003263",
+        "odom_bracket_sec": "0.199932",
+        "tf_available": "true",
+        "updates": "6708.000000",
+        "queries": "6713.000000",
+        "query_failures": "3.000000",
+        "jump_pending_samples": "0.000000",
+        "device_sample_age": "unknown; repeated cached poses cannot be detected"
+      }
+    },
+    "/lidar_node/acquisition": {
+      "message": "Running",
+      "values": {
+        "request_ms": "11.440745",
+        "errors": "0",
+        "connections": "1",
+        "stamp_mode": "receive_time (network latency included)"
+      }
+    },
+    "/lidar_node/laser_front": {
+      "message": "fresh scan",
+      "values": {
+        "age_sec": "0.095953",
+        "frames": "284",
+        "average_hz": "5.003888",
+        "duplicates": "0",
+        "clock_resets": "0",
+        "valid_points": "495",
+        "rejected_points": "15",
+        "outside_points": "0",
+        "collisions": "0",
+        "source_stamp": "9431557854434",
+        "device_id": "3",
+        "install_x_raw": "0.550000",
+        "install_y_raw": "-0.295000",
+        "install_z_raw": "0.600000",
+        "install_yaw_raw": "-47.000000",
+        "install_upside_raw": "true"
+      }
+    },
+    "/lidar_node/laser_back": {
+      "message": "fresh scan",
+      "values": {
+        "age_sec": "0.095988",
+        "frames": "284",
+        "average_hz": "5.003885",
+        "duplicates": "0",
+        "clock_resets": "0",
+        "valid_points": "468",
+        "rejected_points": "48",
+        "outside_points": "0",
+        "collisions": "0",
+        "source_stamp": "9431579080180",
+        "device_id": "4",
+        "install_x_raw": "-0.550000",
+        "install_y_raw": "0.295000",
+        "install_z_raw": "0.600000",
+        "install_yaw_raw": "142.000000",
+        "install_upside_raw": "true"
+      }
+    },
+    "/seer_odometry/estimated_odometry": {
+      "message": "estimated odometry degraded: lost displacement unrecoverable",
+      "values": {
+        "source": "1005 actual vx/vy/w; estimated odometry",
+        "time_mode": "steady receive intervals; ROS receive stamps",
+        "device_sample_age": "unknown; no verified sample timestamp; duplicates undetectable",
+        "response_age_sec": "0.126960",
+        "valid_response_hz": "4.988836",
+        "request_ms": "0.491626",
+        "integration_interval_sec": "0.199932",
+        "skipped_integrations": "3.000000",
+        "reconnections": "1.000000",
+        "errors": "3.000000",
+        "quality_degraded": "true"
+      }
+    },
+    "lifecycle_manager_real_planning: Nav2 Health": {
+      "message": "Managed nodes are active",
+      "values": {}
+    }
+  },
+  "remaining_items": [
+    "missing dist/valid beams near target; unknown is not verified free space",
+    "long-running lidar source/steady progression rejection; restart restored data but cause unresolved",
+    "odometry quality_degraded=true due skipped integration; preserved continuous odom",
+    "localization coordinate_status=UNVERIFIED_ASSUMPTION; device sample age unknown",
+    "hardware navigation and stop acceptance remain incomplete"
+  ],
+  "build": {
+    "packages": [
+      "agv_bringup",
+      "robot_move",
+      "lidar",
+      "agv_description",
+      "agv_hardware",
+      "agv_protocol"
+    ],
+    "passed": true
+  },
+  "ctest": {
+    "total": 33,
+    "passed": 31,
+    "failed": 2,
+    "packages": {
+      "robot_move": {
+        "total": 21,
+        "failed": [
+          "uncrustify"
+        ]
+      },
+      "lidar": {
+        "total": 4,
+        "failed": []
+      },
+      "agv_hardware": {
+        "total": 4,
+        "failed": [
+          "chassis_model_test"
+        ]
+      },
+      "agv_description": {
+        "total": 1,
+        "failed": []
+      },
+      "agv_bringup": {
+        "total": 3,
+        "failed": []
+      }
+    }
+  },
+  "latest_readonly_recheck": {
+    "created": "20261112-165359",
+    "scan_count": 216,
+    "parameters": {
+      "obstacle_layer.plugin": "agv_bringup::MeasuredRayObstacleLayer",
+      "obstacle_layer.clearing_max_age_sec": 0.6,
+      "global_frame": "map",
+      "resolution": 0.05,
+      "plugins": [
+        "static_layer",
+        "obstacle_layer",
+        "inflation_layer"
+      ],
+      "obstacle_layer.enabled": true,
+      "obstacle_layer.front.clearing": true,
+      "obstacle_layer.back.clearing": true,
+      "obstacle_layer.front.marking": true,
+      "obstacle_layer.back.marking": true,
+      "obstacle_layer.front.raytrace_max_range": 4.0,
+      "obstacle_layer.back.raytrace_max_range": 4.0,
+      "obstacle_layer.front.obstacle_max_range": 3.5,
+      "obstacle_layer.back.obstacle_max_range": 3.5,
+      "obstacle_layer.front.observation_persistence": 0.0,
+      "obstacle_layer.back.observation_persistence": 0.0,
+      "inflation_layer.inflation_radius": 1.65
+    },
+    "diagnostics": {
+      "/seer_localization/map_to_odom": {
+        "message": "receive_time_approximation",
+        "values": {
+          "time_mode": "1004 receive time; internal sample age unknown; create_on ignored",
+          "coordinate_status": "UNVERIFIED_ASSUMPTION",
+          "map": "20251120141209997",
+          "reloc_status": "1.000000",
+          "confidence": "0.837200",
+          "pending_reason": "",
+          "tf_publish_mode": "bounded_odom_hold",
+          "tf_support_stamp_sec": "1794473661.812972",
+          "accepted_pose_stamp_sec": "1794473661.592788",
+          "query_pose_receive_age_sec": "0.236946",
+          "latest_odom_age_sec": "0.016513",
+          "pose_odom_stamp_difference_sec": "0.000000",
+          "response_age_sec": "0.236697",
+          "query_bundle_latency_sec": "0.010279",
+          "odom_bracket_sec": "0.201513",
+          "tf_available": "true",
+          "updates": "8762.000000",
+          "queries": "8767.000000",
+          "query_failures": "3.000000",
+          "jump_pending_samples": "0.000000",
+          "device_sample_age": "unknown; repeated cached poses cannot be detected"
+        }
+      },
+      "/lidar_node/acquisition": {
+        "message": "Running",
+        "values": {
+          "request_ms": "13.576646",
+          "errors": "0",
+          "connections": "1",
+          "stamp_mode": "receive_time (network latency included)"
+        }
+      },
+      "/lidar_node/laser_front": {
+        "message": "fresh scan",
+        "values": {
+          "age_sec": "0.174655",
+          "frames": "5415",
+          "average_hz": "4.996513",
+          "duplicates": "0",
+          "clock_resets": "0",
+          "valid_points": "495",
+          "rejected_points": "15",
+          "outside_points": "0",
+          "collisions": "0",
+          "source_stamp": "10458413287332",
+          "device_id": "3",
+          "install_x_raw": "0.550000",
+          "install_y_raw": "-0.295000",
+          "install_z_raw": "0.600000",
+          "install_yaw_raw": "-47.000000",
+          "install_upside_raw": "true"
+        }
+      },
+      "/lidar_node/laser_back": {
+        "message": "fresh scan",
+        "values": {
+          "age_sec": "0.174688",
+          "frames": "5415",
+          "average_hz": "4.996513",
+          "duplicates": "0",
+          "clock_resets": "0",
+          "valid_points": "467",
+          "rejected_points": "49",
+          "outside_points": "0",
+          "collisions": "0",
+          "source_stamp": "10458401650670",
+          "device_id": "4",
+          "install_x_raw": "-0.550000",
+          "install_y_raw": "0.295000",
+          "install_z_raw": "0.600000",
+          "install_yaw_raw": "142.000000",
+          "install_upside_raw": "true"
+        }
+      },
+      "lifecycle_manager_real_planning: Nav2 Health": {
+        "message": "Managed nodes are active",
+        "values": {}
+      },
+      "/seer_odometry/estimated_odometry": {
+        "message": "estimated odometry degraded: lost displacement unrecoverable",
+        "values": {
+          "source": "1005 actual vx/vy/w; estimated odometry",
+          "time_mode": "steady receive intervals; ROS receive stamps",
+          "device_sample_age": "unknown; no verified sample timestamp; duplicates undetectable",
+          "response_age_sec": "0.122058",
+          "valid_response_hz": "4.990709",
+          "request_ms": "1.944790",
+          "integration_interval_sec": "0.201512",
+          "skipped_integrations": "3.000000",
+          "reconnections": "1.000000",
+          "errors": "3.000000",
+          "quality_degraded": "true"
+        }
+      }
+    }
+  }
+}

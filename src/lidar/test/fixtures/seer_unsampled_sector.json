@@ -1,0 +1,877 @@
+{
+  "ret_code": 0,
+  "lasers": [
+    {
+      "device_info": {
+        "device_name": "laser_front",
+        "id": 3,
+        "max_angle": 130,
+        "max_range": 40,
+        "min_angle": -125,
+        "min_range": 0.001,
+        "pub_step": 0.09996297667530545,
+        "real_step": 0.09996297667530545,
+        "scan_freq": 30
+      },
+      "header": {
+        "data_nsec": "984561129307",
+        "frame_id": "FocueRay-h100-TCP",
+        "pub_nsec": "984561129349"
+      },
+      "install_info": {
+        "upside": true,
+        "x": 0.55,
+        "y": -0.295,
+        "yaw": -47,
+        "z": 0.6
+      },
+      "beams": [
+        {
+          "angle": 33,
+          "dist": 3.075,
+          "rssi": 30.0625,
+          "valid": true
+        },
+        {
+          "angle": 33.1,
+          "dist": 3.077,
+          "rssi": 29.0625,
+          "valid": true
+        },
+        {
+          "angle": 33.2,
+          "dist": 3.08,
+          "rssi": 29.0625,
+          "valid": true
+        },
+        {
+          "angle": 33.3,
+          "dist": 3.07,
+          "rssi": 29.0625,
+          "valid": true
+        },
+        {
+          "angle": 33.4,
+          "dist": 3.073,
+          "rssi": 38.0625,
+          "valid": true
+        },
+        {
+          "angle": 33.5,
+          "dist": 3.078,
+          "rssi": 41.0625,
+          "valid": true
+        },
+        {
+          "angle": 33.6,
+          "dist": 3.065,
+          "rssi": 42.0625,
+          "valid": true
+        },
+        {
+          "angle": 33.7,
+          "dist": 3.065,
+          "rssi": 43.0625,
+          "valid": true
+        },
+        {
+          "angle": 33.8,
+          "dist": 3.07,
+          "rssi": 44.0625,
+          "valid": true
+        },
+        {
+          "angle": 33.9,
+          "dist": 3.067,
+          "rssi": 44.0625,
+          "valid": true
+        },
+        {
+          "angle": 34,
+          "dist": 3.063,
+          "rssi": 44.0625,
+          "valid": true
+        },
+        {
+          "angle": 34.1,
+          "dist": 3.058,
+          "rssi": 44.0625,
+          "valid": true
+        },
+        {
+          "angle": 34.2,
+          "dist": 3.065,
+          "rssi": 44.0625,
+          "valid": true
+        },
+        {
+          "angle": 34.3,
+          "dist": 3.063,
+          "rssi": 45.0625,
+          "valid": true
+        },
+        {
+          "angle": 34.4,
+          "dist": 3.056,
+          "rssi": 45.0625,
+          "valid": true
+        },
+        {
+          "angle": 34.5,
+          "dist": 3.057,
+          "rssi": 45.0625,
+          "valid": true
+        },
+        {
+          "angle": 34.6,
+          "dist": 3.063,
+          "rssi": 45.0625,
+          "valid": true
+        },
+        {
+          "angle": 34.7,
+          "dist": 3.06,
+          "rssi": 45.0625,
+          "valid": true
+        },
+        {
+          "angle": 34.8,
+          "dist": 3.055,
+          "rssi": 44.0625,
+          "valid": true
+        },
+        {
+          "angle": 34.9,
+          "dist": 3.055,
+          "rssi": 44.0625,
+          "valid": true
+        },
+        {
+          "angle": 35,
+          "dist": 3.057,
+          "rssi": 44.0625,
+          "valid": true
+        },
+        {
+          "angle": 35.1,
+          "dist": 3.055,
+          "rssi": 45.0625,
+          "valid": true
+        },
+        {
+          "angle": 35.2,
+          "dist": 3.049,
+          "rssi": 44.0625,
+          "valid": true
+        },
+        {
+          "angle": 35.3,
+          "dist": 3.045,
+          "rssi": 44.0625,
+          "valid": true
+        },
+        {
+          "angle": 35.4,
+          "dist": 3.052,
+          "rssi": 44.0625,
+          "valid": true
+        },
+        {
+          "angle": 35.5,
+          "dist": 3.056,
+          "rssi": 44.0625,
+          "valid": true
+        },
+        {
+          "angle": 35.6,
+          "dist": 3.04,
+          "rssi": 44.0625,
+          "valid": true
+        },
+        {
+          "angle": 35.7,
+          "dist": 3.044,
+          "rssi": 45.0625,
+          "valid": true
+        },
+        {
+          "angle": 35.8,
+          "dist": 3.048,
+          "rssi": 45.0625,
+          "valid": true
+        },
+        {
+          "angle": 35.9,
+          "dist": 3.045,
+          "rssi": 44.0625,
+          "valid": true
+        },
+        {
+          "angle": 36,
+          "dist": 3.04,
+          "rssi": 44.0625,
+          "valid": true
+        },
+        {
+          "angle": 36.1,
+          "dist": 3.036,
+          "rssi": 44.0625,
+          "valid": true
+        },
+        {
+          "angle": 36.2,
+          "dist": 3.041,
+          "rssi": 45.0625,
+          "valid": true
+        },
+        {
+          "angle": 36.3,
+          "dist": 3.044,
+          "rssi": 45.0625,
+          "valid": true
+        },
+        {
+          "angle": 36.4,
+          "dist": 3.04,
+          "rssi": 45.0625,
+          "valid": true
+        },
+        {
+          "angle": 36.5,
+          "dist": 3.032,
+          "rssi": 45.0625,
+          "valid": true
+        },
+        {
+          "angle": 36.6,
+          "dist": 3.035,
+          "rssi": 45.0625,
+          "valid": true
+        },
+        {
+          "angle": 36.7,
+          "dist": 3.029,
+          "rssi": 45.0625,
+          "valid": true
+        },
+        {
+          "angle": 36.8,
+          "dist": 2.897,
+          "rssi": 47.0625,
+          "valid": true
+        },
+        {
+          "angle": 36.9,
+          "dist": 2.798,
+          "rssi": 43.0625,
+          "valid": true
+        },
+        {
+          "angle": 37,
+          "dist": 2.757,
+          "rssi": 39.0625,
+          "valid": true
+        },
+        {
+          "angle": 37.1,
+          "dist": 2.726,
+          "rssi": 32.0625,
+          "valid": true
+        },
+        {
+          "angle": 37.2,
+          "dist": 2.704,
+          "rssi": 24.0625,
+          "valid": true
+        },
+        {
+          "angle": 37.3,
+          "dist": 2.691,
+          "rssi": 24.0625,
+          "valid": true
+        },
+        {
+          "angle": 37.4,
+          "dist": 2.7,
+          "rssi": 25.0625,
+          "valid": true
+        },
+        {
+          "angle": 37.5,
+          "dist": 2.702,
+          "rssi": 25.0625,
+          "valid": true
+        },
+        {
+          "angle": 37.6,
+          "dist": 2.699,
+          "rssi": 25.0625,
+          "valid": true
+        },
+        {
+          "angle": 37.7,
+          "dist": 2.692,
+          "rssi": 26.0625,
+          "valid": true
+        },
+        {
+          "angle": 37.8,
+          "dist": 2.698,
+          "rssi": 26.0625,
+          "valid": true
+        },
+        {
+          "angle": 37.9,
+          "dist": 2.695,
+          "rssi": 26.0625,
+          "valid": true
+        },
+        {
+          "angle": 38,
+          "dist": 2.687,
+          "rssi": 26.0625,
+          "valid": true
+        },
+        {
+          "angle": 38.1,
+          "dist": 2.688,
+          "rssi": 28.0625,
+          "valid": true
+        },
+        {
+          "angle": 38.2,
+          "dist": 2.682,
+          "rssi": 30.0625,
+          "valid": true
+        },
+        {
+          "angle": 38.3,
+          "dist": 2.683,
+          "rssi": 33.0625,
+          "valid": true
+        },
+        {
+          "angle": 38.4,
+          "dist": 2.679,
+          "rssi": 35.0625,
+          "valid": true
+        },
+        {
+          "angle": 38.5,
+          "dist": 2.674,
+          "rssi": 37.0625,
+          "valid": true
+        },
+        {
+          "angle": 38.6,
+          "dist": 2.68,
+          "rssi": 38.0625,
+          "valid": true
+        },
+        {
+          "angle": 38.7,
+          "dist": 2.686,
+          "rssi": 38.0625,
+          "valid": true
+        },
+        {
+          "angle": 38.8,
+          "dist": 2.679,
+          "rssi": 38.0625,
+          "valid": true
+        },
+        {
+          "angle": 38.9,
+          "dist": 2.675,
+          "rssi": 38.0625,
+          "valid": true
+        },
+        {
+          "angle": 39,
+          "dist": 2.679,
+          "rssi": 38.0625,
+          "valid": true
+        },
+        {
+          "angle": 39.1,
+          "dist": 2.675,
+          "rssi": 38.0625,
+          "valid": true
+        },
+        {
+          "angle": 39.2,
+          "dist": 2.675,
+          "rssi": 38.0625,
+          "valid": true
+        },
+        {
+          "angle": 39.3,
+          "dist": 2.672,
+          "rssi": 38.0625,
+          "valid": true
+        },
+        {
+          "angle": 39.4,
+          "dist": 2.67,
+          "rssi": 38.0625,
+          "valid": true
+        },
+        {
+          "angle": 39.5,
+          "dist": 2.678,
+          "rssi": 38.0625,
+          "valid": true
+        },
+        {
+          "angle": 39.6,
+          "dist": 2.671,
+          "rssi": 38.0625,
+          "valid": true
+        },
+        {
+          "angle": 39.7,
+          "dist": 2.671,
+          "rssi": 38.0625,
+          "valid": true
+        },
+        {
+          "angle": 39.8,
+          "dist": 2.672,
+          "rssi": 38.0625,
+          "valid": true
+        },
+        {
+          "angle": 39.9,
+          "dist": 2.672,
+          "rssi": 38.0625,
+          "valid": true
+        },
+        {
+          "angle": 40,
+          "dist": 2.668,
+          "rssi": 39.0625,
+          "valid": true
+        },
+        {
+          "angle": 40.1,
+          "dist": 2.67,
+          "rssi": 39.0625,
+          "valid": true
+        },
+        {
+          "angle": 40.2,
+          "dist": 2.678,
+          "rssi": 39.0625,
+          "valid": true
+        },
+        {
+          "angle": 40.3,
+          "dist": 2.667,
+          "rssi": 39.0625,
+          "valid": true
+        },
+        {
+          "angle": 40.4,
+          "dist": 2.661,
+          "rssi": 39.0625,
+          "valid": true
+        },
+        {
+          "angle": 40.5,
+          "dist": 2.668,
+          "rssi": 39.0625,
+          "valid": true
+        },
+        {
+          "angle": 40.6,
+          "dist": 2.67,
+          "rssi": 40.0625,
+          "valid": true
+        },
+        {
+          "angle": 40.7,
+          "dist": 2.664,
+          "rssi": 40.0625,
+          "valid": true
+        },
+        {
+          "angle": 40.8,
+          "dist": 2.66,
+          "rssi": 40.0625,
+          "valid": true
+        },
+        {
+          "angle": 40.9,
+          "dist": 2.66,
+          "rssi": 40.0625,
+          "valid": true
+        },
+        {
+          "angle": 41,
+          "dist": 2.667,
+          "rssi": 40.0625,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "device_info": {
+        "device_name": "laser_back",
+        "id": 4,
+        "max_angle": 121,
+        "max_range": 40,
+        "min_angle": -134,
+        "min_range": 0.001,
+        "pub_step": 0.09996297667530545,
+        "real_step": 0.09996297667530545,
+        "scan_freq": 30
+      },
+      "header": {
+        "data_nsec": "984565190856",
+        "frame_id": "FocueRay-h100-TCP",
+        "pub_nsec": "984565190936"
+      },
+      "install_info": {
+        "upside": true,
+        "x": -0.55,
+        "y": 0.295,
+        "yaw": 142,
+        "z": 0.6
+      },
+      "beams": [
+        {
+          "angle": 33,
+          "dist": 16.556,
+          "rssi": 44.0625,
+          "valid": true
+        },
+        {
+          "angle": 33.1,
+          "rssi": 30
+        },
+        {
+          "angle": 33.2,
+          "rssi": 30
+        },
+        {
+          "angle": 33.3,
+          "dist": 18.421,
+          "rssi": 39.0625,
+          "valid": true
+        },
+        {
+          "angle": 33.4,
+          "dist": 18.437,
+          "rssi": 48.0625,
+          "valid": true
+        },
+        {
+          "angle": 33.5,
+          "dist": 18.456,
+          "rssi": 25.0625,
+          "valid": true
+        },
+        {
+          "angle": 33.6,
+          "rssi": 30
+        },
+        {
+          "angle": 33.7,
+          "rssi": 30
+        },
+        {
+          "angle": 33.8,
+          "rssi": 30
+        },
+        {
+          "angle": 33.9,
+          "rssi": 30
+        },
+        {
+          "angle": 34,
+          "rssi": 30
+        },
+        {
+          "angle": 34.1,
+          "rssi": 30
+        },
+        {
+          "angle": 34.2,
+          "rssi": 30
+        },
+        {
+          "angle": 34.3,
+          "rssi": 30
+        },
+        {
+          "angle": 34.4,
+          "rssi": 30
+        },
+        {
+          "angle": 34.5,
+          "rssi": 30
+        },
+        {
+          "angle": 34.6,
+          "rssi": 30
+        },
+        {
+          "angle": 34.7,
+          "rssi": 30
+        },
+        {
+          "angle": 34.8,
+          "rssi": 30
+        },
+        {
+          "angle": 34.9,
+          "rssi": 30
+        },
+        {
+          "angle": 35,
+          "rssi": 30
+        },
+        {
+          "angle": 35.1,
+          "rssi": 30
+        },
+        {
+          "angle": 35.2,
+          "rssi": 30
+        },
+        {
+          "angle": 35.3,
+          "rssi": 30
+        },
+        {
+          "angle": 35.4,
+          "rssi": 30
+        },
+        {
+          "angle": 35.5,
+          "rssi": 30
+        },
+        {
+          "angle": 35.6,
+          "rssi": 30
+        },
+        {
+          "angle": 35.7,
+          "rssi": 30
+        },
+        {
+          "angle": 35.8,
+          "rssi": 30
+        },
+        {
+          "angle": 35.9,
+          "rssi": 30
+        },
+        {
+          "angle": 36,
+          "rssi": 30
+        },
+        {
+          "angle": 36.1,
+          "rssi": 30
+        },
+        {
+          "angle": 36.2,
+          "rssi": 30
+        },
+        {
+          "angle": 36.3,
+          "rssi": 30
+        },
+        {
+          "angle": 36.4,
+          "rssi": 30
+        },
+        {
+          "angle": 36.5,
+          "rssi": 30
+        },
+        {
+          "angle": 36.6,
+          "rssi": 30
+        },
+        {
+          "angle": 36.7,
+          "rssi": 30
+        },
+        {
+          "angle": 36.8,
+          "rssi": 30
+        },
+        {
+          "angle": 36.9,
+          "rssi": 30
+        },
+        {
+          "angle": 37,
+          "rssi": 30
+        },
+        {
+          "angle": 37.1,
+          "rssi": 30
+        },
+        {
+          "angle": 37.2,
+          "rssi": 30
+        },
+        {
+          "angle": 37.3,
+          "rssi": 30
+        },
+        {
+          "angle": 37.4,
+          "rssi": 30
+        },
+        {
+          "angle": 37.5,
+          "rssi": 30
+        },
+        {
+          "angle": 37.6,
+          "rssi": 30
+        },
+        {
+          "angle": 37.7,
+          "rssi": 30
+        },
+        {
+          "angle": 37.8,
+          "rssi": 30
+        },
+        {
+          "angle": 37.9,
+          "rssi": 30
+        },
+        {
+          "angle": 38,
+          "rssi": 30
+        },
+        {
+          "angle": 38.1,
+          "rssi": 30
+        },
+        {
+          "angle": 38.2,
+          "rssi": 30
+        },
+        {
+          "angle": 38.3,
+          "rssi": 30
+        },
+        {
+          "angle": 38.4,
+          "rssi": 30
+        },
+        {
+          "angle": 38.5,
+          "rssi": 30
+        },
+        {
+          "angle": 38.6,
+          "rssi": 30
+        },
+        {
+          "angle": 38.7,
+          "rssi": 30
+        },
+        {
+          "angle": 38.8,
+          "rssi": 30
+        },
+        {
+          "angle": 38.9,
+          "rssi": 30
+        },
+        {
+          "angle": 39,
+          "rssi": 30
+        },
+        {
+          "angle": 39.1,
+          "rssi": 30
+        },
+        {
+          "angle": 39.2,
+          "rssi": 30
+        },
+        {
+          "angle": 39.3,
+          "rssi": 30
+        },
+        {
+          "angle": 39.4,
+          "rssi": 30
+        },
+        {
+          "angle": 39.5,
+          "rssi": 30
+        },
+        {
+          "angle": 39.6,
+          "rssi": 30
+        },
+        {
+          "angle": 39.7,
+          "rssi": 30
+        },
+        {
+          "angle": 39.8,
+          "rssi": 30
+        },
+        {
+          "angle": 39.9,
+          "rssi": 30
+        },
+        {
+          "angle": 40,
+          "rssi": 30
+        },
+        {
+          "angle": 40.1,
+          "rssi": 30
+        },
+        {
+          "angle": 40.2,
+          "rssi": 30
+        },
+        {
+          "angle": 40.3,
+          "rssi": 30
+        },
+        {
+          "angle": 40.4,
+          "rssi": 30
+        },
+        {
+          "angle": 40.5,
+          "rssi": 30
+        },
+        {
+          "angle": 40.6,
+          "rssi": 30
+        },
+        {
+          "angle": 40.7,
+          "rssi": 30
+        },
+        {
+          "angle": 40.8,
+          "rssi": 30
+        },
+        {
+          "angle": 40.9,
+          "rssi": 30
+        },
+        {
+          "angle": 41,
+          "rssi": 30
+        }
+      ]
+    }
+  ]
+}

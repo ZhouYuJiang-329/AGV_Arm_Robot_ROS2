@@ -1,0 +1,87 @@
+[
+  {
+    "device": "laser_back",
+    "header": {
+      "data_nsec": "9804055534920",
+      "frame_id": "FocueRay-h100-TCP",
+      "pub_nsec": "9804055534970"
+    },
+    "device_info": {
+      "device_name": "laser_back",
+      "id": 4,
+      "max_angle": 121,
+      "max_range": 40,
+      "min_angle": -134,
+      "min_range": 0.001,
+      "pub_step": 0.5,
+      "real_step": 0.5,
+      "scan_freq": 30
+    },
+    "beams_near_goal_direction": [
+      {
+        "angle": 33.1,
+        "rssi": 30
+      },
+      {
+        "angle": 33.6,
+        "rssi": 30
+      },
+      {
+        "angle": 34.1,
+        "rssi": 30
+      },
+      {
+        "angle": 34.6,
+        "rssi": 30
+      },
+      {
+        "angle": 35.1,
+        "rssi": 30
+      },
+      {
+        "angle": 35.6,
+        "rssi": 30
+      },
+      {
+        "angle": 36.1,
+        "rssi": 30
+      },
+      {
+        "angle": 36.6,
+        "rssi": 30
+      },
+      {
+        "angle": 37.1,
+        "rssi": 30
+      },
+      {
+        "angle": 37.6,
+        "rssi": 30
+      },
+      {
+        "angle": 38.1,
+        "rssi": 30
+      },
+      {
+        "angle": 38.6,
+        "rssi": 30
+      },
+      {
+        "angle": 39.1,
+        "rssi": 30
+      },
+      {
+        "angle": 39.6,
+        "rssi": 30
+      },
+      {
+        "angle": 40.1,
+        "rssi": 30
+      },
+      {
+        "angle": 40.6,
+        "rssi": 30
+      }
+    ]
+  }
+]

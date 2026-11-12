@@ -51,6 +51,7 @@ int main(int argc, char ** argv)
           }
       });
     bool heartbeat_enabled = true;
+    bool localization_expired = false;
     bool scan_enabled = true, odom_enabled = true, tf_enabled = true, localization_valid = true;
     auto timer = io->create_wall_timer(40ms, [&] {
           const auto stamp = io->now();
@@ -85,6 +86,7 @@ int main(int argc, char ** argv)
             {"response_age_sec", "0.000000"}})
           {
             diagnostic_msgs::msg::KeyValue v; v.key = field.first; v.value = field.second;
+            if (v.key == "response_age_sec" && localization_expired) {v.value = "2.000000";}
             s.values.push_back(v);
           }
           if (!localization_valid) {s.values.clear();} a.status.push_back(s);
@@ -112,16 +114,21 @@ int main(int argc, char ** argv)
         int before = motion; spin(150ms); require(motion == before, "recovery itself moved");
       };
     spin(700ms); require(state == "Ready" && motion == 0 && zeros == 0, "startup no command");
+    commands->publish(geometry_msgs::msg::Twist{}); spin(150ms);
+    require(state == "Ready" && motion == 0 && zeros == 0,
+      "idle ROS zero must not lock guard or send API2010");
     spin(350ms, true); require(motion > 2 && zeros == 0, "continuous normal commands");
     spin(650ms); require(state == "StopRequested" && zeros == 1, "watchdog zero"); reset();
-    for (int fault = 0; fault < 5; ++fault) {
+    for (int fault = 0; fault < 6; ++fault) {
       spin(150ms, true); auto before = zeros.load();
       if (fault == 0) {scan_enabled = false;} if (fault == 1) {odom_enabled = false;}
       if (fault == 2) {tf_enabled = false;} if (fault == 3) {localization_valid = false;}
       if (fault == 4) {heartbeat_enabled = false;}
+      if (fault == 5) {localization_expired = true;}
       spin(1000ms, true);
       require(state == "Fault" && zeros == before + 1, "required input fault stop");
       if (fault == 1) {require(!confirmed, "missing feedback claimed stopped");}
+      localization_expired = false;
       heartbeat_enabled = scan_enabled = odom_enabled = tf_enabled = localization_valid = true;
       reset();
     }

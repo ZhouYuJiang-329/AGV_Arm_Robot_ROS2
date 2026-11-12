@@ -38,6 +38,7 @@ private:
   SE2 map_alignment_, base_offset_;
   double rate_, max_age_, max_latency_, max_span_, odom_age_, timeout_sec_;
   bool assumptions_;
+  std::string tf_publish_mode_;
   std::unique_ptr<seer::LocalizationSource> source_;
   tf2_ros::Buffer buffer_;
   std::deque<rclcpp::Time> odom_stamps_;
@@ -50,10 +51,12 @@ private:
   std::thread worker_;
   std::mutex mutex_, wait_mutex_;
   std::condition_variable wake_;
-  std::optional<Observation> mailbox_, pending_;
-  std::optional<rclcpp::Time> last_sample_, last_clock_;
-  Clock::time_point started_ = Clock::now(), updated_{}, last_received_{};
-  bool conflict_ = false, fresh_ = false, tf_available_ = false;
+  std::optional<Observation> mailbox_, pending_, accepted_;
+  std::optional<rclcpp::Time> last_sample_, last_clock_, last_tf_stamp_;
+  Clock::time_point started_ = Clock::now(), last_received_{};
+  bool conflict_ = false, fresh_ = false;
+  double accepted_time_gap_ = -1;
+  std::string pending_reason_, accepted_message_ = "receive_time_approximation";
   std::string error_ = "waiting_for_localization", map_;
   double latency_ = -1, time_gap_ = -1, confidence_ = -1;
   int status_ = -1;

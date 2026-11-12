@@ -22,6 +22,10 @@ LocalizationNode::LocalizationNode(
       return declare_parameter<std::string>(n, v, d);
     };
   auto address = text("connection", "");
+  tf_publish_mode_ = text("tf_publish_mode", "measurement_time");
+  if (tf_publish_mode_ != "measurement_time" && tf_publish_mode_ != "bounded_odom_hold") {
+    throw std::invalid_argument("tf_publish_mode must be measurement_time or bounded_odom_hold");
+  }
   if (text("stamp_mode", "receive_time") != "receive_time") {
     throw std::invalid_argument("only receive_time is verified for this API");
   }
@@ -145,8 +149,9 @@ void LocalizationNode::tick()
 {
   auto current = now();
   if (last_clock_ && current < *last_clock_) {
-    pending_.reset(); last_sample_.reset(); odom_stamps_.clear(); buffer_.clear();
-    gate_.interrupt(); fresh_ = false; error_ = "clock_backward";
+    pending_.reset(); accepted_.reset(); last_sample_.reset(); last_tf_stamp_.reset();
+    odom_stamps_.clear(); buffer_.clear();
+    gate_.interrupt(); fresh_ = false; pending_reason_.clear(); error_ = "clock_backward";
     // Discard observations that straddle the clock jump.
     std::lock_guard<std::mutex> lock(mutex_); mailbox_.reset();
   }
@@ -156,7 +161,7 @@ void LocalizationNode::tick()
     if (mailbox_) {
       ++attempts_; latency_ = mailbox_->latency;
       if (!mailbox_->ok) {
-        ++failures_; pending_.reset(); fresh_ = false;
+        ++failures_; pending_.reset(); pending_reason_.clear(); fresh_ = false;
         gate_.interrupt(); error_ = "query_failed_or_status_map_changed_during_query";
       } else {pending_ = *mailbox_; last_received_ = mailbox_->received;}
       mailbox_.reset();
@@ -176,7 +181,7 @@ void LocalizationNode::tick()
     if (reason.empty() && (o.stamp.nanoseconds() <= 0 ||
       (last_sample_ && o.stamp <= *last_sample_))) {reason = "sample_time_not_increasing";}
     bool retry = false;
-    tf_available_ = false; time_gap_ = -1;
+    time_gap_ = -1;
     if (reason.empty()) {
       auto upper = std::lower_bound(odom_stamps_.begin(), odom_stamps_.end(), o.stamp);
       if (upper == odom_stamps_.end() || (upper == odom_stamps_.begin() && *upper != o.stamp)) {
@@ -198,7 +203,6 @@ void LocalizationNode::tick()
             {
               reason = "odom_not_planar";
             } else {
-              tf_available_ = true;
               SE2 odom_base{t.transform.translation.x, t.transform.translation.y, yaw};
               SE2 map_base = compose(compose(map_alignment_, o.sample.pose), base_offset_);
               SE2 correction = compose(map_base, inverse(odom_base));
@@ -215,9 +219,14 @@ void LocalizationNode::tick()
                 tf.transform.translation.y = correction.y;
                 tf.transform.rotation.z = std::sin(correction.angle / 2);
                 tf.transform.rotation.w = std::cos(correction.angle / 2);
-                tf2_msgs::msg::TFMessage message; message.transforms.push_back(tf);
-                tf_->publish(message); pose_->publish(p);
-                updated_ = o.received; ++updates_; fresh_ = true; last_sample_ = o.stamp;
+                if (tf_publish_mode_ == "measurement_time") {
+                  tf2_msgs::msg::TFMessage message; message.transforms.push_back(tf);
+                  tf_->publish(message); last_tf_stamp_ = o.stamp;
+                }
+                pose_->publish(p);
+                ++updates_; fresh_ = true; last_sample_ = o.stamp;
+                accepted_ = o; accepted_time_gap_ = time_gap_;
+                accepted_message_ = reason.empty() ? "receive_time_approximation" : reason;
               }
             }
           } catch (const tf2::TransformException &) {
@@ -226,35 +235,71 @@ void LocalizationNode::tick()
         }
       }
     }
-    error_ = reason;
-    if (!reason.empty() && reason != "persistent_correction_accepted") {
+    pending_reason_ = retry ? reason : "";
+    // Waiting for a newer interpolation endpoint is normal. It must not replace
+    // the accepted measurement or extend its original lifetime.
+    const bool waiting_with_accepted = retry && reason == "waiting_for_odom_bracket" &&
+      accepted_ && fresh_;
+    if (!waiting_with_accepted) {error_ = reason;}
+    if (!reason.empty() && reason != "persistent_correction_accepted" && !waiting_with_accepted) {
       fresh_ = false;
       if (!retry && reason != "jump_quarantined") {gate_.interrupt();}
     }
     if (!retry) {pending_.reset();}
   }
-  double age = updates_ ? std::chrono::duration<double>(Clock::now() - updated_).count() : -1;
+  const double age = accepted_ ? (current - accepted_->stamp).seconds() : -1;
+  const double steady_age = accepted_ ?
+    std::chrono::duration<double>(Clock::now() - accepted_->received).count() : -1;
+  const double odom_age = odom_stamps_.empty() ? -1 : (current - odom_stamps_.back()).seconds();
+  const bool source_fresh = accepted_ && age >= 0 && age < max_age_ &&
+    steady_age >= 0 && steady_age < max_age_;
+  const bool odom_fresh = odom_age >= 0 && odom_age < odom_age_;
+  const bool usable = fresh_ && !conflict_ && source_fresh && odom_fresh;
+  if (tf_publish_mode_ == "bounded_odom_hold" && usable && gate_.accepted &&
+    (!last_tf_stamp_ || odom_stamps_.back() > *last_tf_stamp_))
+  {
+    // map->odom is an estimated correction, not a new absolute pose measurement.
+    // Support only a received odometry timestamp, never now() or a future stamp.
+    // Source freshness above still expires at the ORIGINAL accepted pose time.
+    const auto & correction = *gate_.accepted;
+    geometry_msgs::msg::TransformStamped tf;
+    tf.header.frame_id = "map"; tf.child_frame_id = "odom";
+    tf.header.stamp = odom_stamps_.back();
+    tf.transform.translation.x = correction.x; tf.transform.translation.y = correction.y;
+    tf.transform.rotation.z = std::sin(correction.angle / 2);
+    tf.transform.rotation.w = std::cos(correction.angle / 2);
+    tf2_msgs::msg::TFMessage message; message.transforms.push_back(tf); tf_->publish(message);
+    last_tf_stamp_ = odom_stamps_.back();
+  }
   diagnostic_msgs::msg::DiagnosticStatus s;
   s.name = "/seer_localization/map_to_odom"; s.hardware_id = "seer_read_only";
-  s.level = (!fresh_ || conflict_ || age<0 || age> max_age_) ? 2 : 1;
+  s.level = usable ? 1 : 2;
   s.message = conflict_ ? "competing_odom_parent_publisher_restart_required" :
-    !error_.empty() ? error_ : age > max_age_ ? "stale_localization_no_republish" :
-    "receive_time_approximation";
+    usable ? accepted_message_ : !fresh_ && !error_.empty() ? error_ :
+    !source_fresh ? "stale_localization_no_republish" : "odom_stale_or_future";
   auto add = [&](const std::string & key, const std::string & value) {
       diagnostic_msgs::msg::KeyValue v; v.key = key; v.value = value; s.values.push_back(v);
     };
   auto number = [&](const std::string & k, double v) {add(k, std::to_string(v));};
   add("time_mode", "1004 receive time; internal sample age unknown; create_on ignored");
   add("coordinate_status", assumptions_ ? "UNVERIFIED_ASSUMPTION" : "configured_confirmed");
-  add("map", map_); number("reloc_status", status_); number("confidence", confidence_);
+  add("map", usable ? accepted_->sample.map : map_);
+  number("reloc_status", usable ? accepted_->sample.status : status_);
+  number("confidence", usable ? accepted_->sample.confidence.value_or(-1) : confidence_);
+  add("pending_reason", pending_reason_);
+  add("tf_publish_mode", tf_publish_mode_);
+  number("tf_support_stamp_sec", last_tf_stamp_ ? last_tf_stamp_->seconds() : -1);
+  number("accepted_pose_stamp_sec", accepted_ ? accepted_->stamp.seconds() : -1);
   number("query_pose_receive_age_sec", last_received_ == Clock::time_point{} ? -1 :
     std::chrono::duration<double>(Clock::now() - last_received_).count());
   number("latest_odom_age_sec", odom_stamps_.empty() ? -1 :
     (current - odom_stamps_.back()).seconds());
   // Exact-time tf2 interpolation: the returned transform is stamped at the pose time.
-  number("pose_odom_stamp_difference_sec", tf_available_ ? 0 : -1);
-  number("response_age_sec", age); number("query_bundle_latency_sec", latency_);
-  number("odom_bracket_sec", time_gap_); add("tf_available", tf_available_ ? "true" : "false");
+  number("pose_odom_stamp_difference_sec", usable ? 0 : -1);
+  number("response_age_sec", age);
+  number("query_bundle_latency_sec", usable ? accepted_->latency : latency_);
+  number("odom_bracket_sec", usable ? accepted_time_gap_ : time_gap_);
+  add("tf_available", usable ? "true" : "false");
   number("updates", updates_); number("queries", attempts_); number("query_failures", failures_);
   number("jump_pending_samples", gate_.count);
   add("device_sample_age", "unknown; repeated cached poses cannot be detected");

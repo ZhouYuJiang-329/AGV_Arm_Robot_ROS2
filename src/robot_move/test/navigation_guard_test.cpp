@@ -32,6 +32,13 @@ void core()
   disabled.input("odom", 100, 100, true, at(0));
   disabled.command({.1, 0, 0}, true, at(0));
   require(!disabled.next(at(0)) && !disabled.confirmed(at(1)), "default commissioning gates");
+  disabled.command({}, true, at(.1));
+  require(!disabled.next(at(.1)) && !disabled.last_command,
+    "disabled idle zero must not issue API2010 or acquire a shutdown stop obligation");
+  auto idle = ready();
+  idle.command({}, true, at(.1));
+  require(!idle.next(at(.1)) && idle.state == "Ready" && !idle.last_command,
+    "idle zero before any motion must not latch navigation or cancel another task");
   auto g = ready();
   require(g.state == "Ready" && !g.next(at(0)), "startup must not send motion/zero");
   for (int i = 0; i < 10; ++i) {

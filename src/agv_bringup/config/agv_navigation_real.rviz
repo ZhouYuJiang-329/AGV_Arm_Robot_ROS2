@@ -17,12 +17,14 @@ Visualization Manager:
     - Class: rviz_default_plugins/LaserScan
       Name: Front
       Enabled: true
+      Decay Time: 0.6
       Topic:
         Value: /scan_front
         Reliability Policy: Best Effort
     - Class: rviz_default_plugins/LaserScan
       Name: Back
       Enabled: true
+      Decay Time: 0.6
       Topic:
         Value: /scan_back
         Reliability Policy: Best Effort
@@ -32,24 +34,53 @@ Visualization Manager:
     - Class: rviz_default_plugins/Map
       Name: Global costmap
       Enabled: true
+      Alpha: 0.35
+      Color Scheme: costmap
       Topic:
         Value: /global_costmap/costmap
         Durability Policy: Transient Local
     - Class: rviz_default_plugins/Polygon
       Name: Footprint
       Enabled: true
+      Color: 255; 170; 0
       Topic:
         Value: /global_costmap/published_footprint
     - Class: rviz_default_plugins/Path
-      Name: Plan
+      Name: Planning preview (no motion)
+      Enabled: true
+      Color: 25; 255; 0
+      Line Width: 0.05
+      Topic:
+        Value: /planning_preview/path
+        Durability Policy: Transient Local
+    - Class: rviz_default_plugins/Pose
+      Name: Current planning start
       Enabled: true
       Topic:
-        Value: /plan
+        Value: /planning_preview/start_pose
+        Durability Policy: Transient Local
+      Color: 0; 150; 255
+      Shape: Arrow
+    - Class: rviz_default_plugins/Pose
+      Name: Planning goal (no motion)
+      Enabled: true
+      Topic:
+        Value: /planning_preview/goal_pose
+        Durability Policy: Transient Local
+      Color: 255; 50; 50
+      Shape: Arrow
   Tools:
     - Class: rviz_default_plugins/Interact
     - Class: rviz_default_plugins/MoveCamera
+    - Class: rviz_default_plugins/SetGoal
+      Topic: /planning_preview/goal
     - Class: rviz_default_plugins/Measure
   Views:
     Current:
       Class: rviz_default_plugins/TopDownOrtho
-      Scale: 70
+      Scale: 90
+      X: 0.0
+      Y: 0.0
+Window Geometry:
+  Width: 1280
+  Height: 900

@@ -1,0 +1,61 @@
+{
+  "date": "2026-11-12",
+  "reproduction_before_fix": "Internal ctest changing into directory: /home/zyj/Code/ROS2/AGV_new/AGV_ROS2_Control_Manager/build/robot_move\nTest project /home/zyj/Code/ROS2/AGV_new/AGV_ROS2_Control_Manager/build/robot_move\n    Start 5: localization_scan_filter_test\n1/2 Test #5: localization_scan_filter_test ....***Failed    7.26 sec\n[INFO] [1794467766.886850698] [scan_filter_timing_io]: Message Filter dropping message: frame 'laser_front_link' at time 1794467766.576 for reason 'the timestamp on the message is earlier than all the data in the transform cache'\n[INFO] [1794467769.486329130] [scan_filter_timing_io]: Message Filter dropping message: frame 'laser_front_link' at time 1794467769.175 for reason 'the timestamp on the message is earlier than all the data in the transform cache'\noriginal-stamp scans=20 transformed=8\nfresh 5Hz scans lost while waiting for 2Hz localization TF support\n\n    Start 6: localization_timing_test\n2/2 Test #6: localization_timing_test .........***Failed    1.84 sec\nnormal interpolation wait invalidated a still-fresh accepted localization\n\n\n0% tests passed, 2 tests failed out of 2\n\nTotal Test time (real) =   9.10 sec\n\nThe following tests FAILED:\n\t  5 - localization_scan_filter_test (Failed)\n\t  6 - localization_timing_test (Failed)\nErrors while running CTest\n",
+  "diagnostics_only_intermediate": "Internal ctest changing into directory: /home/zyj/Code/ROS2/AGV_new/AGV_ROS2_Control_Manager/build/robot_move\nTest project /home/zyj/Code/ROS2/AGV_new/AGV_ROS2_Control_Manager/build/robot_move\n    Start 5: localization_scan_filter_test\n1/2 Test #5: localization_scan_filter_test ....***Failed    7.26 sec\n[INFO] [1794467864.979819250] [scan_filter_timing_io]: Message Filter dropping message: frame 'laser_front_link' at time 1794467864.669 for reason 'the timestamp on the message is earlier than all the data in the transform cache'\n[INFO] [1794467867.580182645] [scan_filter_timing_io]: Message Filter dropping message: frame 'laser_front_link' at time 1794467867.270 for reason 'the timestamp on the message is earlier than all the data in the transform cache'\noriginal-stamp scans=20 transformed=8\nfresh 5Hz scans lost while waiting for 2Hz localization TF support\n\n    Start 6: localization_timing_test\n2/2 Test #6: localization_timing_test .........***Failed    2.85 sec\naccepted correction does not support subsequent fresh odometry stamps\n\n\n0% tests passed, 2 tests failed out of 2\n\nTotal Test time (real) =  10.12 sec\n\nThe following tests FAILED:\n\t  5 - localization_scan_filter_test (Failed)\n\t  6 - localization_timing_test (Failed)\nErrors while running CTest\n",
+  "packages": {
+    "robot_move": {
+      "total": 21,
+      "passed": 20,
+      "failed": [
+        "uncrustify"
+      ]
+    },
+    "lidar": {
+      "total": 4,
+      "passed": 4,
+      "failed": []
+    },
+    "agv_hardware": {
+      "total": 4,
+      "passed": 3,
+      "failed": [
+        "chassis_model_test"
+      ]
+    },
+    "agv_description": {
+      "total": 1,
+      "passed": 1,
+      "failed": []
+    },
+    "agv_bringup": {
+      "total": 2,
+      "passed": 2,
+      "failed": []
+    }
+  },
+  "full_test_command": "colcon test --packages-select robot_move lidar agv_hardware agv_description agv_bringup --event-handlers console_direct+",
+  "motion_tested": false,
+  "regression_outputs": {
+    "navigation_node_test": {
+      "status": "passed",
+      "output": ""
+    },
+    "localization_scan_filter_test": {
+      "status": "passed",
+      "output": "original-stamp scans=20 transformed=20\n"
+    },
+    "localization_timing_test": {
+      "status": "passed",
+      "output": "accepted/pending localization, source-age expiry and bounded TF support passed\n"
+    },
+    "localization_node_test": {
+      "status": "passed",
+      "output": "localization ROS TF/quality/time/failure/worker lifecycle passed\n"
+    },
+    "agv_real_navigation_test": {
+      "status": "passed",
+      "output": ".....[INFO] [1794468386.289123650] [agv_navigation_execution_gate]: Live contracts passed; requesting execution lifecycle startup\n[ERROR] [1794468387.638817329] [agv_navigation_execution_gate]: Execution paused; resolve fault and restart explicitly\n.\n----------------------------------------------------------------------\nRan 6 tests in 11.476s\n\nOK\n"
+    }
+  },
+  "final_cleanup_retest": "Internal ctest changing into directory: /home/zyj/Code/ROS2/AGV_new/AGV_ROS2_Control_Manager/build/robot_move\nTest project /home/zyj/Code/ROS2/AGV_new/AGV_ROS2_Control_Manager/build/robot_move\n    Start 5: localization_scan_filter_test\n1/2 Test #5: localization_scan_filter_test ....   Passed    7.25 sec\n    Start 6: localization_timing_test\n2/2 Test #6: localization_timing_test .........   Passed    3.49 sec\n\n100% tests passed, 0 tests failed out of 2\n\nTotal Test time (real) =  10.74 sec\n"
+}

@@ -52,6 +52,8 @@ def setup(context):
     probe.destroy_node()
     rclpy.shutdown(context=probe_context)
     new_names = ['planner_server', 'lifecycle_manager_real_planning']
+    if mode == 'observe':
+        new_names.append('agv_static_planning')
     if not boolean('reuse_map_server'):
         new_names.append('map_server')
     for reuse, name in (('reuse_lidar', 'lidar_node'), ('reuse_odometry', 'seer_odometry'),
@@ -103,6 +105,14 @@ def setup(context):
                 Node(package='nav2_lifecycle_manager', executable='lifecycle_manager',
                      name='lifecycle_manager_real_planning', parameters=[{
                          'use_sim_time': False, 'autostart': True, 'node_names': planning_names}])]
+    if mode == 'observe':
+        actions.append(Node(package='agv_bringup', executable='agv_static_planning',
+                            parameters=[{'use_sim_time': False, 'use_robot_start': True}],
+                            remappings=[('/goal_pose', '/planning_preview/goal'),
+                                        ('/plan', '/planning_preview/path'),
+                                        ('/planning_start', '/planning_preview/start_pose'),
+                                        ('/planning_goal', '/planning_preview/goal_pose')],
+                            output='screen'))
     if mode == 'execute':
         actions.append(Node(package='robot_move', executable='navigation_guard_node',
                             parameters=[value('guard_params'), {'use_sim_time': False,

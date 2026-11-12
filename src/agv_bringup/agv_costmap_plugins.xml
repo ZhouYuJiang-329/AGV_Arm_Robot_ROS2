@@ -1,0 +1,5 @@
+<library path="agv_obstacle_layer">
+  <class type="agv_bringup::MeasuredRayObstacleLayer" base_class_type="nav2_costmap_2d::Layer">
+    <description>Nav2 obstacle layer with world-coordinate measured-ray clearing and source-age bounds.</description>
+  </class>
+</library>

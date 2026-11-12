@@ -11,7 +11,8 @@ import unittest
 from unittest.mock import Mock
 
 import rclpy
-from geometry_msgs.msg import TransformStamped
+from geometry_msgs.msg import TransformStamped, PoseStamped
+from nav_msgs.msg import Path as RosPath
 from lifecycle_msgs.srv import ChangeState, GetState
 from lifecycle_msgs.msg import Transition
 from nav2_msgs.action import ComputePathToPose
@@ -22,7 +23,7 @@ from rclpy.parameter import Parameter
 from diagnostic_msgs.msg import DiagnosticArray, DiagnosticStatus, KeyValue
 from sensor_msgs.msg import LaserScan
 from geometry_msgs.msg import Twist
-from rclpy.qos import qos_profile_sensor_data
+from rclpy.qos import qos_profile_sensor_data, QoSProfile, DurabilityPolicy
 from tf2_msgs.msg import TFMessage
 import yaml
 
@@ -77,6 +78,9 @@ class PluginIntegrationTest(unittest.TestCase):
         cls.processes = []
         cls.logs = []
         cls.tf = cls.node.create_publisher(TFMessage, '/tf', 10)
+        cls.scan_fixture_enabled = True
+        cls.scan_fixture = {side: cls.node.create_publisher(
+            LaserScan, '/scan_' + side, qos_profile_sensor_data) for side in ('front', 'back')}
         def transforms():
             msg = TFMessage()
             for parent, child in [('map', 'odom'), ('odom', 'base_link'),
@@ -89,6 +93,15 @@ class PluginIntegrationTest(unittest.TestCase):
                     t.transform.translation.z = -.24
                 msg.transforms.append(t)
             cls.tf.publish(msg)
+            if cls.scan_fixture_enabled:
+                for side, publisher in cls.scan_fixture.items():
+                    scan = LaserScan()
+                    scan.header.stamp = cls.node.get_clock().now().to_msg()
+                    scan.header.frame_id = 'laser_' + side + '_link'
+                    scan.angle_min, scan.angle_max, scan.angle_increment = -.2, .2, .1
+                    scan.range_min, scan.range_max = .05, 10.
+                    scan.ranges = [4.] * 5
+                    publisher.publish(scan)
         cls.node.create_timer(.05, transforms)
         (cls.tmp / 'map.pgm').write_bytes(b'P5\n200 200\n255\n' + bytes([254]) * 40000)
         cls.map = cls.tmp / 'map.yaml'
@@ -169,6 +182,25 @@ class PluginIntegrationTest(unittest.TestCase):
         self.assertTrue(self.spin_until(result.done))
         self.assertGreater(len(result.result().result.path.poses), 2)
         client.destroy()
+        # The RViz tool's private PoseStamped topic computes a visible, latched path.
+        preview = []
+        sub = self.node.create_subscription(
+            RosPath, '/planning_preview/path', lambda msg: preview.append(msg),
+            QoSProfile(depth=1, durability=DurabilityPolicy.TRANSIENT_LOCAL))
+        select = self.node.create_publisher(PoseStamped, '/planning_preview/goal', 10)
+        self.assertTrue(self.spin_until(lambda: select.get_subscription_count() == 1))
+        selection = PoseStamped()
+        selection.header.frame_id = 'map'
+        selection.pose.position.x = 1.0
+        selection.pose.orientation.w = 1.0
+        select.publish(selection)
+        self.assertTrue(self.spin_until(lambda: any(msg.poses for msg in preview)),
+                        'RViz selection must produce a planning preview')
+        self.assertFalse(self.node.get_subscriptions_info_by_topic('/initialpose'))
+        self.assertFalse(self.node.get_subscriptions_info_by_topic('/goal_pose'))
+        self.assertFalse([t for t, _ in self.node.get_topic_names_and_types() if 'cmd_vel' in t])
+        self.node.destroy_subscription(sub)
+        self.node.destroy_publisher(select)
 
     def test_02_all_execution_plugins_configure_and_twist_wiring(self):
         for package, name, remaps in EXECUTION_NODES:
@@ -237,6 +269,7 @@ class PluginIntegrationTest(unittest.TestCase):
 
     def test_04_live_gate_configure_activate_then_latch_on_scan_loss(self):
         # Simulated interfaces only: no real guard process or SDK connection.
+        self.__class__.scan_fixture_enabled = False
         config = yaml.safe_load((PACKAGE.parent / 'robot_move/config/navigation_guard.yaml').read_text())
         guard_config = config['navigation_guard']['ros__parameters']
         for key in ('motion_enabled', 'base_transform_confirmed', 'input_freshness_contract_verified'):
@@ -258,7 +291,8 @@ class PluginIntegrationTest(unittest.TestCase):
         fake('seer_odometry', dict(tf_params, use_sim_time=False, publish_tf=True))
         fake('seer_localization', {
             'use_sim_time': False, 'base_transform_confirmed': True,
-            'map_alignment_confirmed': True, 'expected_map': 'fixture',
+            'map_alignment_confirmed': True, 'tf_publish_mode': 'bounded_odom_hold',
+            'expected_map': 'fixture',
             'expected_map_md5': 'fixture-md5', 'base_x_in_seer_m': 0.,
             'base_y_in_seer_m': 0., 'base_yaw_in_seer_rad': guard_config['base_yaw_in_seer']})
         diagnostics = guard.create_publisher(DiagnosticArray, '/diagnostics', 10)

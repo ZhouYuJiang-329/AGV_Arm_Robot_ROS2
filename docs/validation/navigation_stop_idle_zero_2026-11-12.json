@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-12",
+  "change": "Ignore valid idle zeros before accepted motion; preserve active stop/recovery contract",
+  "red_reproduction": "disabled idle zero must not issue API2010 or acquire a shutdown stop obligation",
+  "build": "robot_move passed",
+  "passed_tests": {
+    "navigation_node_test": 16.06,
+    "navigation_guard_test": 0.16,
+    "agv_real_navigation_test": 12.67
+  },
+  "style_check": "three changed C++ files passed",
+  "readonly_controller_parameters": {
+    "ret_code": 0,
+    "NetProtocol.ControlMotionDuration": {
+      "advanced": true,
+      "defaultValue": 500,
+      "desc": "The duration of open-loop motion instruction issuing speed (ms)",
+      "group": "Network",
+      "maxValue": 5000,
+      "minValue": 0,
+      "type": "uint32",
+      "value": 500
+    }
+  },
+  "controller_parameter_changed": false,
+  "motion_or_zero_api2010_sent": false,
+  "physical_expiry_stop_verified": false,
+  "mode": "observe",
+  "motion_gates_changed": false
+}

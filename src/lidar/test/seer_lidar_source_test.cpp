@@ -57,6 +57,36 @@ int main()
             require(scan.valid_points == 2 && scan.rejected_points == 6,
                     "real fixture conversion dropped/created measurements");
         });
+        // Captured API 1009 sector with sampling disabled: real far returns must
+        // survive TCP parsing + ROS conversion, while absent distances stay unknown.
+        std::ifstream sector_input(std::string(FIXTURE_DIR) + "/seer_unsampled_sector.json");
+        require(sector_input.good(), "missing live sector fixture");
+        std::ostringstream sector_contents;
+        sector_contents << sector_input.rdbuf();
+        query(sector_contents.str(), [](const auto& result)
+        {
+            require(result.status == ReadStatus::Ok && result.batch.scans.size() == 2,
+                    "unsampled live sector rejected");
+            for (const auto& source : result.batch.scans)
+            {
+                const bool back = source.name == "laser_back";
+                const auto scan = lidar::buildLaserScan(source, lidar::ScanConfig{
+                    "sector", 33 * lidar::kRadiansPerDegree, 41 * lidar::kRadiansPerDegree,
+                    0.1 * lidar::kRadiansPerDegree});
+                require(source.beams.size() == 81 && scan.collisions == 0 &&
+                        scan.valid_points == (back ? 4u : 81u) &&
+                        scan.rejected_points == (back ? 77u : 0u),
+                        "valid far returns lost or unknown returns fabricated");
+                if (back)
+                {
+                    require(scan.message.ranges[0] > 16 && scan.message.ranges[5] > 18,
+                            "far measured distances were truncated");
+                    require(std::isnan(scan.message.ranges[40]) &&
+                            std::isnan(scan.message.ranges[80]),
+                            "missing distance/valid became clearing evidence");
+                }
+            }
+        });
         // Exercise public connect -> Transport TCP -> API parse without control servers.
         {
             int listener = socket(AF_INET, SOCK_STREAM, 0);

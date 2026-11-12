@@ -1,7 +1,8 @@
 # Nav2 实机导航接入与验收
 
 适用 ROS 2 Jazzy / Nav2 1.3.13（本机安装版本）/ C++17。默认模式不创建任何运动输出节点。
-当前结论：**软件接线与离线规划通过；实机输入能恢复，但持续新鲜度未通过；实车运动未验收。**
+当前结论：**软件接线及定位/TF时间问题的只读复验通过；实车标定和运动未验收。**
+最新结果见[定位诊断与TF时间接入修复](定位诊断与TF时间接入修复_2026-11-12.md)，下文早期网络与时间问题记录作为历史保留。
 未发送非零速度或 NavigateToPose/NavigateThroughPoses 目标，未抢占控制权、执行重定位或停止用户任务。
 
 ## 能力盘点与文件
@@ -23,7 +24,7 @@
 - `src/agv_bringup/launch/agv_navigation_real.launch.py`：observe/execute入口。
 - `src/agv_bringup/agv_bringup_sim/real_navigation.py`：参数和审核记录校验、明确的节点/话题接线。
 - `src/agv_bringup/agv_bringup_sim/execution_gate.py`、`scripts/agv_navigation_execution_gate`：实际参数、输入和控制通路检查，执行生命周期管理及独立心跳。
-- `src/agv_bringup/config/agv_navigation_real.rviz`：地图、双雷达、TF、代价地图、轮廓及路径显示；不提供初始位姿或导航目标工具。
+- `src/agv_bringup/config/agv_navigation_real.rviz`：地图、双雷达、TF、代价地图、轮廓及路径显示；不提供初始位姿或实际导航动作；提供独立话题的2D Goal Pose规划预览工具。
 - `src/agv_bringup/test/test_real_navigation.py`：实际Jazzy插件配置、观察规划、类型/接线、执行门禁测试。
 
 修改 agv_bringup 的CMake/依赖，以及 robot_move 的guard、速度变换和相关测试。已有用户修改、先前只读验证文档和图片保持原样；不提交或推送Git。
@@ -99,6 +100,7 @@ Python Jazzy回调的MessageInfo没有publisher GID，因此执行门禁使用gu
 
 **observe（默认）**只启动map_server、planner_server、独立planning生命周期管理器和可选RViz/只读输入。
 不创建controller、behavior、BT navigator、速度平滑器、碰撞监测器或guard。独立规划器可以自动配置/激活并提供ComputePathToPose。
+观察模式另复用agv_static_planning，以当前新鲜map→base_link TF为起点，接收私有规划终点并显示路径。
 隔离来自节点/速度连接根本不存在，不依赖`autostart=false`。外部已经运行的控制器属于已有会话，不受本入口管理。
 
 **execute**先核验现场审核文件、ROS地图YAML及图像SHA256、仙工地图名/MD5、guard双门禁及参考变换。
@@ -269,3 +271,27 @@ ctest --test-dir build/agv_bringup --output-on-failure
 本窗口双雷达/odom最大相邻间隔约0.34s、map→odom约0.65s，观察端新鲜度覆盖无空缺；三次附近路径计算均成功。
 这补充了上文旧网络下未成功的附近路径检查，不覆盖或删除旧记录。
 但定位诊断反复waiting_for_odom_bracket以及代价地图TF过滤丢弃仍存在，执行准入未通过；确认开关和运动门禁保持关闭，未测试实际运动。
+
+
+## 定位诊断与TF时间接入修复更新
+
+[修复与复验记录](定位诊断与TF时间接入修复_2026-11-12.md)说明了已接受/待处理定位分离和bounded_odom_hold模式。
+实机120秒正常采集期间，插值等待未再产生无效定位诊断，扫描时间过滤无丢弃；退出后1条队列超时单列。
+Pose仍按2Hz原样本发布，TF仅在原样本有效期内用新鲜odom提供约5Hz支持，保护按原定位计龄。
+两次附近规划成功，第三次目标进入内切膨胀区而被检查脚本拦截；确认和运动门禁仍关闭，不能视为运动验收。
+
+
+## 在RViz点选路径预览
+
+观察模式窗口打开后：
+
+1. 点击顶部 **2D Goal Pose**。
+2. 在地图空闲区域按住鼠标左键，拖出目标朝向后松开。
+3. 起点自动采用当前机器人定位，不使用2D Pose Estimate、不发布初始位姿，也不重定位。
+4. 绿色线为计算路径，蓝色箭头为本次规划起点，红色箭头为规划终点。目标不可达时保留空路径并报告原因，可另选位置。
+
+工具只发布`/planning_preview/goal`，复用的规划节点只调用`/compute_path_to_pose`并将结果锁存到`/planning_preview/path`。
+它不订阅原始`/goal_pose`，不创建`/initialpose`订阅，不调用NavigateToPose，不发布cmd_vel。
+当前机器人TF超过0.8秒时等待新鲜定位，不使用旧起点继续计算。旧静态规划入口仍保留手工选择起点的原行为。
+本轮离线ROS测试验证私有终点生成可见路径且没有速度端点；实机示例计算0.8米路径，返回79个路径点。
+这只是显示规划，不证明实际车体沿路径有足够净空，也不启用实车运动。

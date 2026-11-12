@@ -42,7 +42,7 @@ class ExecutionGate(Node):
             'navigation_guard': ['use_sim_time', *self.guard_config.keys()],
             'seer_odometry': ['use_sim_time', 'publish_tf', *transform],
             'seer_localization': ['use_sim_time', 'base_transform_confirmed',
-                                  'map_alignment_confirmed', 'expected_map', 'expected_map_md5',
+                                  'map_alignment_confirmed', 'expected_map', 'expected_map_md5', 'tf_publish_mode',
                                   'base_x_in_seer_m', 'base_y_in_seer_m', 'base_yaw_in_seer_rad'],
             'map_server': ['use_sim_time', 'yaml_filename'],
         }
@@ -184,6 +184,7 @@ class ExecutionGate(Node):
         if (o.get('base_transform_confirmed') is not True or o.get('publish_tf') is not True
                 or loc.get('base_transform_confirmed') is not True
                 or loc.get('map_alignment_confirmed') is not True
+                or loc.get('tf_publish_mode') != 'bounded_odom_hold'
                 or loc.get('expected_map') != self.review.get('seer_map')
                 or loc.get('expected_map_md5') != self.review.get('seer_map_md5')
                 or m.get('yaml_filename') != self.map_file):

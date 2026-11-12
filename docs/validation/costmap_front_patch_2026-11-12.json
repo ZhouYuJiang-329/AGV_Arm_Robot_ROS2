@@ -1,0 +1,246 @@
+{
+  "created": "2026-11-12 19:45:34",
+  "scan_count": 75,
+  "parameters": {
+    "obstacle_layer.plugin": "agv_bringup::MeasuredRayObstacleLayer",
+    "obstacle_layer.clearing_max_age_sec": 0.6,
+    "obstacle_layer.front.raytrace_max_range": 4.0,
+    "obstacle_layer.back.raytrace_max_range": 4.0,
+    "inflation_layer.inflation_radius": 1.65
+  },
+  "clusters": [
+    {
+      "cell_count": 3,
+      "centroid": [
+        4.603666347558303,
+        -1.5383333489050466
+      ],
+      "cells": [
+        [
+          713,
+          35
+        ],
+        [
+          714,
+          34
+        ],
+        [
+          713,
+          34
+        ]
+      ],
+      "observations": [
+        {
+          "side": "front",
+          "observations": 0,
+          "finite_count": 0,
+          "last": null
+        },
+        {
+          "side": "back",
+          "observations": 37,
+          "finite_count": 37,
+          "last": {
+            "range": 2.8389999866485596,
+            "beam_deg": 8.499998546773707,
+            "distance": 2.8153212179937572,
+            "origin": [
+              2.105643156984626,
+              -0.23990595399920847
+            ],
+            "lateral_offset": 0.0022820317059971344
+          }
+        }
+      ]
+    },
+    {
+      "cell_count": 1,
+      "centroid": [
+        4.37699968595803,
+        -1.585000014528632
+      ],
+      "cells": [
+        [
+          702,
+          32
+        ]
+      ],
+      "observations": [
+        {
+          "side": "front",
+          "observations": 0,
+          "finite_count": 0,
+          "last": null
+        },
+        {
+          "side": "back",
+          "observations": 37,
+          "finite_count": 37,
+          "last": {
+            "range": 2.617000102996826,
+            "beam_deg": 5.499998570012807,
+            "distance": 2.639761071267936,
+            "origin": [
+              2.105643156984626,
+              -0.23990595399920847
+            ],
+            "lateral_offset": 0.005663067622578201
+          }
+        }
+      ]
+    },
+    {
+      "cell_count": 1,
+      "centroid": [
+        4.896999674335124,
+        -1.5450000154227017
+      ],
+      "cells": [
+        [
+          728,
+          34
+        ]
+      ],
+      "observations": [
+        {
+          "side": "front",
+          "observations": 0,
+          "finite_count": 0,
+          "last": null
+        },
+        {
+          "side": "back",
+          "observations": 37,
+          "finite_count": 37,
+          "last": {
+            "range": 3.0899999141693115,
+            "beam_deg": 10.99999852740779,
+            "distance": 3.0813863302283226,
+            "origin": [
+              2.105643156984626,
+              -0.23990595399920847
+            ],
+            "lateral_offset": 0.0025449523410068717
+          }
+        }
+      ]
+    }
+  ],
+  "diagnostics": {
+    "/seer_localization/map_to_odom": {
+      "message": "receive_time_approximation",
+      "values": {
+        "time_mode": "1004 receive time; internal sample age unknown; create_on ignored",
+        "coordinate_status": "UNVERIFIED_ASSUMPTION",
+        "map": "20251120141209997",
+        "reloc_status": "1.000000",
+        "confidence": "0.759000",
+        "pending_reason": "",
+        "tf_publish_mode": "bounded_odom_hold",
+        "tf_support_stamp_sec": "1794483934.424662",
+        "accepted_pose_stamp_sec": "1794483934.175014",
+        "query_pose_receive_age_sec": "0.349223",
+        "latest_odom_age_sec": "0.099522",
+        "pose_odom_stamp_difference_sec": "0.000000",
+        "response_age_sec": "0.349169",
+        "query_bundle_latency_sec": "0.002986",
+        "odom_bracket_sec": "0.200145",
+        "tf_available": "true",
+        "updates": "857.000000",
+        "queries": "858.000000",
+        "query_failures": "0.000000",
+        "jump_pending_samples": "0.000000",
+        "device_sample_age": "unknown; repeated cached poses cannot be detected"
+      }
+    },
+    "lifecycle_manager_real_planning: Nav2 Health": {
+      "message": "Managed nodes are active",
+      "values": {}
+    },
+    "/lidar_node/acquisition": {
+      "message": "Running",
+      "values": {
+        "request_ms": "10.849142",
+        "errors": "0",
+        "connections": "1",
+        "stamp_mode": "receive_time (network latency included)"
+      }
+    },
+    "/lidar_node/laser_front": {
+      "message": "fresh scan",
+      "values": {
+        "age_sec": "0.098044",
+        "frames": "2143",
+        "average_hz": "4.998148",
+        "duplicates": "0",
+        "clock_resets": "0",
+        "valid_points": "467",
+        "rejected_points": "49",
+        "outside_points": "0",
+        "collisions": "0",
+        "source_stamp": "1913506672417",
+        "device_id": "3",
+        "install_x_raw": "0.550000",
+        "install_y_raw": "-0.295000",
+        "install_z_raw": "0.600000",
+        "install_yaw_raw": "-47.000000",
+        "install_upside_raw": "true"
+      }
+    },
+    "/lidar_node/laser_back": {
+      "message": "fresh scan",
+      "values": {
+        "age_sec": "0.098076",
+        "frames": "2143",
+        "average_hz": "4.998147",
+        "duplicates": "0",
+        "clock_resets": "0",
+        "valid_points": "466",
+        "rejected_points": "51",
+        "outside_points": "0",
+        "collisions": "0",
+        "source_stamp": "1913489969283",
+        "device_id": "4",
+        "install_x_raw": "-0.550000",
+        "install_y_raw": "0.295000",
+        "install_z_raw": "0.600000",
+        "install_yaw_raw": "142.000000",
+        "install_upside_raw": "true"
+      }
+    },
+    "/seer_odometry/estimated_odometry": {
+      "message": "estimated odometry: receive-time approximation",
+      "values": {
+        "source": "1005 actual vx/vy/w; estimated odometry",
+        "time_mode": "steady receive intervals; ROS receive stamps",
+        "device_sample_age": "unknown; no verified sample timestamp; duplicates undetectable",
+        "response_age_sec": "0.114167",
+        "valid_response_hz": "4.998090",
+        "request_ms": "0.660506",
+        "integration_interval_sec": "0.200144",
+        "skipped_integrations": "0.000000",
+        "reconnections": "0.000000",
+        "errors": "0.000000",
+        "quality_degraded": "false"
+      }
+    }
+  },
+  "cmd_vel_publishers": 0,
+  "front_roi": {
+    "map_bounds": [
+      3,
+      -0.9,
+      6,
+      0.8
+    ],
+    "combined_lethal_cells": 0,
+    "combined_inscribed_or_lethal_cells": 0,
+    "static_lethal_cells": 0
+  },
+  "interventions": {
+    "costmap_clear": false,
+    "node_restart": false,
+    "motion_command": false
+  },
+  "finding": "Isolated front obstacle patch in the supplied earlier screenshot is absent in the current snapshot; historical creation and exact clearing event were not recorded."
+}

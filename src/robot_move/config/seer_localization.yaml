@@ -2,6 +2,9 @@ seer_localization:
   ros__parameters:
     use_sim_time: false
     stamp_mode: receive_time
+    # Bounded map->odom support at fresh odometry stamps. Absolute Pose stays at
+    # its ORIGINAL measurement stamp; response_age_sec never renews on TF support.
+    tf_publish_mode: bounded_odom_hold
     # REQUIRED: exact current_map from API 1000; do not infer from ROS YAML name.
     expected_map: ""
     expected_map_md5: ""
