@@ -118,7 +118,16 @@ int main(int argc, char ** argv)
     require(state == "Ready" && motion == 0 && zeros == 0,
       "idle ROS zero must not lock guard or send API2010");
     spin(350ms, true); require(motion > 2 && zeros == 0, "continuous normal commands");
-    spin(650ms); require(state == "StopRequested" && zeros == 1, "watchdog zero"); reset();
+    commands->publish(geometry_msgs::msg::Twist{}); spin(250ms);
+    require(state == "CommandedStop" && zeros == 1, "ordinary ROS zero must not latch navigation");
+    const auto before_resume = motion.load();
+    spin(700ms);
+    require(state == "CommandedStop" && motion == before_resume && zeros == 1 && confirmed,
+      "ordinary stop stays supervised and never replays motion while idle");
+    spin(250ms, true);
+    require(state == "Active" && motion > before_resume,
+      "fresh ROS commands resume after normal zero");
+    spin(650ms); require(state == "StopRequested" && zeros == 2, "watchdog zero"); reset();
     for (int fault = 0; fault < 6; ++fault) {
       spin(150ms, true); auto before = zeros.load();
       if (fault == 0) {scan_enabled = false;} if (fault == 1) {odom_enabled = false;}

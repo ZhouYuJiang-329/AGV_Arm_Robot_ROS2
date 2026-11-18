@@ -30,7 +30,7 @@ import yaml
 PACKAGE = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PACKAGE))
 from agv_bringup_sim.real_navigation import (
-    EXECUTION_NODES, validate_execution, validate_profile,
+    EXECUTION_NODES, REVIEW_KEYS, validate_execution, validate_profile,
 )
 from agv_bringup_sim.execution_gate import ExecutionGate
 
@@ -39,16 +39,21 @@ class ContractTest(unittest.TestCase):
     def test_profile_and_fail_closed_release(self):
         data = validate_profile(PACKAGE / 'config/agv_nav2_real.yaml')
         self.assertNotIn('amcl', data)
-        with self.assertRaisesRegex(ValueError, 'incomplete site'):
-            validate_execution(PACKAGE / 'config/agv_navigation_commissioning.yaml',
-                               PACKAGE.parent / 'robot_move/config/navigation_guard.yaml')
         with tempfile.TemporaryDirectory() as tmp:
             review = yaml.safe_load((PACKAGE / 'config/agv_navigation_commissioning.yaml').read_text())
-            review = {key: True for key in review}
+            guard = yaml.safe_load((PACKAGE.parent / 'robot_move/config/navigation_guard.yaml').read_text())
+            guard['navigation_guard']['ros__parameters']['motion_enabled'] = False
+            guard_path = Path(tmp) / 'guard.yaml'
+            guard_path.write_text(yaml.safe_dump(guard))
             path = Path(tmp) / 'review.yaml'
+            review[REVIEW_KEYS[0]] = False
+            path.write_text(yaml.safe_dump(review))
+            with self.assertRaisesRegex(ValueError, 'incomplete site'):
+                validate_execution(path, guard_path)
+            review.update({key: True for key in REVIEW_KEYS})
             path.write_text(yaml.safe_dump(review))
             with self.assertRaisesRegex(ValueError, 'motion_enabled'):
-                validate_execution(path, PACKAGE.parent / 'robot_move/config/navigation_guard.yaml')
+                validate_execution(path, guard_path)
 
     def test_launch_loads_and_execute_rejected_before_driver(self):
         spec = importlib.util.spec_from_file_location(
@@ -56,10 +61,14 @@ class ContractTest(unittest.TestCase):
         module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(module)
         self.assertTrue(module.generate_launch_description().entities)
-        result = subprocess.run(['ros2', 'launch', 'agv_bringup', 'agv_navigation_real.launch.py',
-                                 'map:=' + str(PACKAGE.parents[1] / 'maps/seer/20251120141209997.yaml'),
-                                 'mode:=execute', 'rviz:=false'], capture_output=True, text=True,
-                                timeout=10)
+        # Never let local commissioning edits enable execution in a negative test.
+        with tempfile.TemporaryDirectory() as tmp:
+            review = Path(tmp) / 'unreleased.yaml'
+            review.write_text(yaml.safe_dump({key: False for key in REVIEW_KEYS}))
+            result = subprocess.run(['ros2', 'launch', 'agv_bringup', 'agv_navigation_real.launch.py',
+                                     'map:=' + str(PACKAGE.parents[1] / 'maps/seer/20251120141209997.yaml'),
+                                     'mode:=execute', 'rviz:=false', 'commissioning_file:=' + str(review)],
+                                    capture_output=True, text=True, timeout=10)
         self.assertNotEqual(result.returncode, 0)
         self.assertIn('incomplete site', result.stdout + result.stderr)
         self.assertNotIn('process started', result.stdout + result.stderr)
@@ -240,6 +249,7 @@ class PluginIntegrationTest(unittest.TestCase):
         gate.poll_parameters = Mock()
         gate.heartbeat = Mock()
         gate.get_clock = self.node.get_clock
+        gate.get_logger = Mock(return_value=Mock())
         gate.transition = None
         gate.active = False
         gate.configured = True
@@ -266,6 +276,19 @@ class PluginIntegrationTest(unittest.TestCase):
         gate.scan_seen['back'] = 0
         gate.tick()
         gate.lifecycle.call_async.assert_not_called()
+
+        gate.scan_seen['back'] = time.monotonic() + 10
+        gate.state = 'CommandedStop'
+        gate.active = True
+        gate.heartbeat.reset_mock()
+        gate.tick()
+        gate.heartbeat.publish.assert_called_once()
+        gate.lifecycle.call_async.assert_not_called()
+        self.assertFalse(gate.latched, 'ordinary zero must not pause the execution lifecycle')
+        gate.state = 'StopRequested'
+        gate.tick()
+        self.assertTrue(gate.latched, 'a latched watchdog stop must still pause execution')
+        self.assertFalse(gate.active)
 
     def test_04_live_gate_configure_activate_then_latch_on_scan_loss(self):
         # Simulated interfaces only: no real guard process or SDK connection.
@@ -299,12 +322,13 @@ class PluginIntegrationTest(unittest.TestCase):
         scans = {side: guard.create_publisher(LaserScan, '/scan_' + side, qos_profile_sensor_data)
                  for side in ('front', 'back')}
         scans_enabled = {'front': True, 'back': True}
+        guard_state = {'value': 'Ready'}
         def inputs():
             msg = DiagnosticArray()
             msg.header.stamp = guard.get_clock().now().to_msg()
             status = DiagnosticStatus(name='/navigation_guard')
             status.values = [KeyValue(key=key, value=value) for key, value in {
-                'state': 'Ready', 'motion_enabled': 'true', 'controller_connected': 'true',
+                'state': guard_state['value'], 'motion_enabled': 'true', 'controller_connected': 'true',
                 'input_freshness_contract_verified': 'true', 'input:fixture': 'healthy',
                 'tf_ownership_valid': 'true'}.items()]
             msg.status = [status]
@@ -343,6 +367,11 @@ class PluginIntegrationTest(unittest.TestCase):
                                            [i.node_name for i in self.node.get_subscriptions_info_by_topic(t)])
                                        for t in ['/navigation/cmd_vel_raw', '/navigation/cmd_vel_smoothed',
                                                  '/navigation/cmd_vel_guard']}}))
+        guard_state['value'] = 'CommandedStop'
+        self.spin_until(lambda: False, 1)
+        self.assertEqual(gate.state, 'CommandedStop')
+        self.assertTrue(gate.active and not gate.latched,
+                        'ordinary zero must preserve live supervision and active Nav2 plugins')
         scans_enabled['back'] = False
         self.assertTrue(self.spin_until(lambda: gate.latched and not gate.active, 5))
         self.assertTrue(self.spin_until(lambda: gate.transition is None, 10),

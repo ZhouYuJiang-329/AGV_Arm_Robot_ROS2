@@ -1,0 +1,11 @@
+No code style divergence in file 'src/robot_move/include/robot_move/navigation/guard.hpp'
+
+No code style divergence in file 'src/robot_move/src/navigation/guard.cpp'
+
+No code style divergence in file 'src/robot_move/src/navigation/node.cpp'
+
+No code style divergence in file 'src/robot_move/test/navigation_guard_test.cpp'
+
+No code style divergence in file 'src/robot_move/test/navigation_node_test.cpp'
+
+No problems found

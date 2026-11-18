@@ -94,6 +94,66 @@ void core()
   }
   require(rejected, "duration zero forbidden");
 }
+void commanded_zero()
+{
+  auto g = ready();
+  g.command({.04, 0, 0}, true, at(0));
+  g.result(*g.next(at(0)), true, at(0));
+  g.command({}, true, at(.1));
+  g.command({.05, 0, 0}, true, at(.11));
+  auto zero = g.next(at(.12));
+  require(zero && zero->x == 0 && g.state == "CommandedStop",
+    "ordinary Nav2 zero must stop without latching recovery");
+  g.command({.05, 0, 0}, true, at(.13));
+  require(!g.next(at(.13)), "motion must wait for the outstanding zero ACK");
+  g.result(*zero, true, at(.14));
+  require(!g.next(at(.15)), "zero ACK must not replay a queued motion target");
+  g.command({.05, 0, 0}, true, at(.2));
+  auto next = g.next(at(.2));
+  require(next && next->x == .05 && g.state == "Active",
+    "a new healthy Nav2 command must resume after an acknowledged ordinary zero");
+  g.result(*next, true, at(.2));
+  g.command({}, true, at(.3)); zero = g.next(at(.3));
+  g.result(*zero, true, at(.3));
+  for (double t : {.4, .8, 1.2}) {
+    health(g, t); g.feedback(0, 0, at(t), true);
+    require(!g.next(at(t)) && g.state == "CommandedStop",
+      "an acknowledged commanded stop must remain idle without repeated API zeros");
+  }
+  require(g.confirmed(at(1.2)), "ordinary commanded stop still needs fresh stop feedback");
+  health(g, 1.3); g.command({.04, 0, 0}, true, at(1.3));
+  require(g.next(at(1.3)).has_value(), "a later goal may send a new command after idle");
+  health(g, 1.81); zero = g.next(at(1.81));
+  require(zero && g.state == "StopRequested", "moving command timeout must still latch");
+  g.result(*zero, true, at(1.81));
+  health(g, 1.9); g.command({}, true, at(1.9));
+  g.command({.04, 0, 0}, true, at(1.91));
+  require(!g.next(at(1.91)) && g.state == "StopRequested",
+    "normal zeros and new commands cannot clear a latched timeout");
+
+  for (const auto & name : {"scan_front", "scan_back", "odom", "tf:map->odom"}) {
+    auto fault = ready();
+    fault.command({.04, 0, 0}, true, at(0)); fault.next(at(0));
+    fault.command({}, true, at(.1));
+    fault.result(*fault.next(at(.1)), true, at(.1));
+    fault.inputs.at(name).valid = false; fault.next(at(.2));
+    require(fault.state == "Fault", "input loss during commanded stop must still latch");
+    health(fault, .3); fault.command({}, true, at(.3));
+    fault.command({.04, 0, 0}, true, at(.31));
+    require(!fault.next(at(.31)) && fault.state == "Fault",
+      "input recovery cannot restart a faulted commanded stop");
+  }
+  auto failed = ready();
+  failed.command({.04, 0, 0}, true, at(0)); failed.next(at(0));
+  failed.command({}, true, at(.1)); zero = failed.next(at(.1));
+  failed.result(*zero, false, at(.1));
+  failed.command({.04, 0, 0}, true, at(.11));
+  zero = failed.next(at(.12));
+  require(zero && zero->x == 0 && failed.state == "Fault", "zero failure must fault and retry");
+  failed.result(*zero, false, at(.12));
+  failed.command({}, true, at(.13));
+  require(!failed.next(at(.14)), "repeated upstream zeros cannot reset failed-stop retry budget");
+}
 void worker()
 {
   std::mutex log_mutex; std::vector<Velocity> sent; std::atomic<bool> entered{false};
@@ -142,7 +202,7 @@ void protocol()
 int main()
 {
   try {
-    core(); worker(); protocol();
+    core(); commanded_zero(); worker(); protocol();
   } catch (const std::exception & e) {
     std::cerr << e.what() << '\n'; return 1;
   }

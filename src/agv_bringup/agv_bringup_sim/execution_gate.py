@@ -30,6 +30,7 @@ class ExecutionGate(Node):
         self.heartbeat = self.create_publisher(Header, '/navigation/execution_heartbeat', 1)
         self.state = None
         self.guard_seen = 0.0
+        self.guard_message = 'no guard diagnostic received'
         self.edges = {}
         self.scan_seen = {}
         self.parameter_ok = False
@@ -75,6 +76,7 @@ class ExecutionGate(Node):
             if status.name != '/navigation_guard':
                 continue
             fields = {item.key: item.value for item in status.values}
+            self.guard_message = status.message
             age = self.get_clock().now().nanoseconds * 1e-9 - (
                 msg.header.stamp.sec + msg.header.stamp.nanosec * 1e-9)
             valid = (0 <= age < .5 and fields.get('motion_enabled') == 'true'
@@ -208,13 +210,13 @@ class ExecutionGate(Node):
             except Exception:
                 self.latched = True
             self.transition = None
-        contracts = (self.parameter_ok and self.state in ('WaitingForInputs', 'Ready', 'Active')
+        contracts = (self.parameter_ok and self.state in ('WaitingForInputs', 'Ready', 'Active', 'CommandedStop')
                    and now - self.guard_seen < .5 and self.graph_ok(self.configured)
                    and all(self.scan_seen.get(side, 0) > now for side in ('front', 'back')))
         if contracts and not self.latched:
             self.heartbeat.publish(Header(stamp=self.get_clock().now().to_msg(),
                                           frame_id='navigation_execution_gate'))
-        healthy = contracts and self.state in ('Ready', 'Active')
+        healthy = contracts and self.state in ('Ready', 'Active', 'CommandedStop')
         if (healthy and not self.configured and not self.latched and self.transition is None
                 and self.lifecycle.service_is_ready()):
             self.transition_kind = 'configure'
@@ -226,7 +228,11 @@ class ExecutionGate(Node):
             if self.transition is None and self.lifecycle.service_is_ready():
                 self.transition = self.lifecycle.call_async(ManageLifecycleNodes.Request(
                     command=ManageLifecycleNodes.Request.PAUSE))
-                self.get_logger().error('Execution paused; resolve fault and restart explicitly')
+                self.get_logger().error(
+                    'Execution paused: guard=%s; parameters_ok=%s; scans_fresh=%s. '
+                    'Resolve fault and restart explicitly' % (
+                        getattr(self, 'guard_message', self.state), self.parameter_ok,
+                        {side: self.scan_seen.get(side, 0) > now for side in ('front', 'back')}))
                 self.active = False
         if not healthy:
             self.healthy_since = None

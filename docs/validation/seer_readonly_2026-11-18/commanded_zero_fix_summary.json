@@ -1,0 +1,15 @@
+{
+  "motion_sent": false,
+  "runtime_restarted": false,
+  "core_and_node_tests_passed": 2,
+  "nav2_integration_ctest_passed": 1,
+  "files": {
+    "src/robot_move/src/navigation/guard.cpp": "b133f68af759f12fc641b33d126db73e5320512a3b2f398320be3d10f8aecfcd",
+    "src/robot_move/src/navigation/node.cpp": "fb2f31aa664cbbdb548a9537c7a32630c37a9efaf20b2a3ecfd660be21f2f0c4",
+    "src/robot_move/include/robot_move/navigation/guard.hpp": "450d98d7109967ca5a202a0f5a24f0df8d979cf57e54f078b52713ac50c320a9",
+    "src/agv_bringup/agv_bringup_sim/execution_gate.py": "afacd80352bc111788622f3c31614ef0b316eee5816af07453504378bf869953",
+    "src/robot_move/test/navigation_guard_test.cpp": "57d37c13afbe618928b46afa8ea6073f9c6ad97c753c3cfe17892937cb962ec7",
+    "src/robot_move/test/navigation_node_test.cpp": "09f4c88b646b8f34cc10bd68d9e4e7d0e9b2b77ab2f2039bb1fa8f12b5224d3f",
+    "src/agv_bringup/test/test_real_navigation.py": "64619243beedce7f50685711acce2fc6a59278fb4f767725b79d7c50bfffffbe"
+  }
+}

@@ -34,6 +34,8 @@ public:
   explicit Guard(Config config);
   Config config;
   std::map<std::string, Input> inputs;
+  // CommandedStop is an ordinary acknowledged zero with live input supervision.
+  // Fault/StopRequested remain latched and require explicit recovery.
   std::string state = "WaitingForInputs", reason = "startup";
   std::optional<Time> last_command;
   bool zero_ack = false, zero_sent = false;

@@ -116,7 +116,8 @@ Python Jazzy回调的MessageInfo没有publisher GID，因此执行门禁使用gu
 健康时以10Hz发送带原时间戳的执行心跳，guard要求0.4s内新鲜。图检查失败、门禁失联/崩溃或参数服务失联会停止心跳，
 即使生命周期PAUSE服务失败，独立guard仍按心跳过期锁定并请求停车。Nav2自己也持续受scan/odom/定位/TF保护。
 恢复数据不会自动恢复导航。Fault/StopRequested需要现场排障、guard显式recover、新命令和门禁显式重启；TF发布者变化需重启guard。
-取消目标通常会产生显式零速，按现有guard规则进入StopRequested，不能直接开始下一次运动。
+普通零速（包括取消目标后的零速）进入CommandedStop，发送零速、清除排队速度并继续监督输入；零速应答前丢弃运动请求，应答后也必须收到新的有效指令才能继续，不会重放旧速度。该状态不会仅因上游停止发零速而锁定。
+运动中的命令断流仍进入StopRequested；输入失效、通信失败仍进入Fault，需要按上一段显式恢复。CommandedStop期间发生输入失效也会锁定。
 网络断开时本机零速可能送不达；不能把API应答或Fault状态写成“物理停车已确认”。
 
 ## 构建与启动

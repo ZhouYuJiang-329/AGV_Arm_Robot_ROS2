@@ -189,12 +189,17 @@ Node::Node(const rclcpp::NodeOptions & options, Worker::Send sender)
   commands_ = create_subscription<geometry_msgs::msg::Twist>("cmd_vel", rclcpp::QoS(1),
       [this](geometry_msgs::msg::Twist::ConstSharedPtr m, const rclcpp::MessageInfo & info) {
         std::lock_guard<std::mutex> lock(worker_->mutex);
+        const auto source_stamp = info.get_rmw_message_info().source_timestamp;
         worker_->guard.command({m->linear.x, m->linear.y, m->angular.z},
         m->linear.z == 0 && m->angular.x == 0 && m->angular.y == 0 &&
         info.get_rmw_message_info().source_timestamp > command_barrier_ &&
         now().nanoseconds() >= info.get_rmw_message_info().source_timestamp &&
         (now().nanoseconds() - info.get_rmw_message_info().source_timestamp) * 1e-9 <
         worker_->guard.config.command_timeout, Clock::now());
+        // A delayed pre-zero DDS command must not restart a commanded stop.
+        if (worker_->guard.state == "CommandedStop" &&
+        m->linear.x == 0 && m->linear.y == 0 && m->angular.z == 0)
+        {command_barrier_ = std::max(command_barrier_, source_stamp);}
         worker_->wake();
     });
   recovery_ = create_service<std_srvs::srv::Trigger>("~/recover",

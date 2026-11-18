@@ -77,24 +77,35 @@ void Guard::command(Velocity v, bool valid, Time now)
   if (v.x == 0 && v.y == 0 && v.w == 0) {
     // An idle upstream zero is not a request to take control of the chassis.
     // API2010 can cancel an existing controller task even at zero velocity.
-    // After accepted motion, keep the normal stop/ACK/recovery contract.
     if (!last_command && (state == "WaitingForInputs" || state == "Ready")) {return;}
-    last_command = now; stop("explicit_zero", false, now); return;
+    // Ordinary controller/collision-monitor zeros must not clear a latched stop,
+    // refresh its retry budget, or require manual recovery during normal driving.
+    if (state == "Fault" || state == "StopRequested") {return;}
+    last_command = now;
+    if (state != "CommandedStop") {
+      stop("commanded_zero", false, now);
+      state = "CommandedStop";
+    }
+    return;
   }
   if (state == "Fault" || state == "StopRequested" || !healthy(now)) {return;}
+  // Discard, rather than queue, motion received before the zero has completed.
+  // The zero ACK alone never restarts motion; another fresh command is required.
+  if (state == "CommandedStop" && (!zero_sent || !zero_ack || zero_pending_)) {return;}
   last_command = now; pending_ = v; state = "Active";
   reason = "new_command"; low_since_.reset(); zero_sent = zero_ack = false; zero_count = 0;
 }
 void Guard::tick(Time now)
 {
-  if (state == "Active") {
+  if (state == "Active" || state == "CommandedStop") {
     if (!healthy(now)) {
       std::string cause = "required_input_unhealthy";
       for (const auto & item : inputs) {
         if (!item.second.valid || now >= item.second.expires) {cause += ":" + item.first; break;}
       }
       stop(cause, true, now);
-    } else if (last_command && seconds(now, *last_command) >= config.command_timeout)
+    } else if (state == "Active" && last_command &&
+      seconds(now, *last_command) >= config.command_timeout)
     {stop("command_timeout", false, now);}
   } else if (state == "WaitingForInputs" || state == "Ready") {
     state = healthy(now) ? "Ready" : "WaitingForInputs";
