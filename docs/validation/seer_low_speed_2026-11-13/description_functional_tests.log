@@ -1,0 +1,12 @@
+[OUTPUT] 
+Internal ctest changing into directory: /home/zyj/Code/ROS2/AGV_new/AGV_ROS2_Control_Manager/build/agv_description
+
+[HANDLER_OUTPUT] 
+Test project /home/zyj/Code/ROS2/AGV_new/AGV_ROS2_Control_Manager/build/agv_description
+
+    Start 1: front_lidar_mount_test
+1/1 Test #1: front_lidar_mount_test ...........   Passed    0.97 sec
+
+100% tests passed, 0 tests failed out of 1
+
+Total Test time (real) =   0.97 sec

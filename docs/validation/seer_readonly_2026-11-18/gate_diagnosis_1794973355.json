@@ -1,0 +1,5084 @@
+{
+  "read_only": true,
+  "motion_sent": false,
+  "duration": 35.00055770600011,
+  "heartbeat_messages": 0,
+  "samples": [
+    {
+      "reasons": [
+        "parameters_pending_or_mismatch",
+        "graph_invalid",
+        "scan_front_expired",
+        "scan_back_expired"
+      ],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": null,
+      "confidence": null,
+      "response_age": null
+    },
+    {
+      "reasons": [
+        "graph_invalid",
+        "scan_front_expired",
+        "scan_back_expired"
+      ],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.307934"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.407912"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.507914"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.179609"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.279626"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.379562"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.479595"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.579590"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.679588"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.278422"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.428436"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.528453"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.131630"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.231623"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.381619"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.481621"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.581629"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.681634"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.260677"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.360661"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.510679"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.135204"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.235209"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.385206"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.485212"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.585211"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.685193"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.284822"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.384842"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.484813"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.183081"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.283085"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.383052"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.483064"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.583077"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.683052"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.314562"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.414580"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.564611"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.187177"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.287194"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.387184"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.487181"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.587161"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.687150"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.271346"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.421315"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.521478"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.126674"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.226700"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.376698"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.476704"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.576672"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.676687"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.296527"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.396511"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.546551"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.164052"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.264067"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.364058"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.464042"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.564044"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.664041"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.270390"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.420385"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.520388"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.135424"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.235399"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.385426"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.485442"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.585426"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.685425"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.272315"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.372311"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.522294"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.124360"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.224361"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.324363"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.424362"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.574358"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.674370"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.260483"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.360486"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.460487"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.560496"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.237426"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.337418"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.437391"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.587421"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.687420"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.277230"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.377243"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.477254"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.577243"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.186461"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.336484"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.436483"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.536485"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.686471"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.274972"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.374974"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.474958"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.574969"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.177522"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.327571"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.427501"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.527518"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.627529"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.226661"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.376699"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.476663"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.576661"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.185119"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.285126"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.435162"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.535144"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.635127"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.214371"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.364378"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.464367"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.564401"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.185262"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.285276"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.385261"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.535258"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.635282"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.262956"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.362955"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.462947"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.562957"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.180818"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.280855"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.430845"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.530858"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.630857"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.214037"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.364010"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.464020"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.564017"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.176721"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.276725"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.426718"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.526720"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.626743"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.215292"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.365317"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.465304"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.565308"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.179315"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.279331"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.429302"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.529285"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.629304"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.217019"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.367028"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.467023"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.567027"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.185099"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.285118"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.385114"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.485119"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.635111"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.219897"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.369907"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.469879"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.569920"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.181283"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.281309"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.431316"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.531308"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.631345"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.218986"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.368953"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.468947"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.568985"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.180302"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.280321"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.430304"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.530299"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.630311"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.216308"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.366292"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.466293"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.566301"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.184339"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.284332"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.434328"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.534336"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.634346"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.221613"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.371608"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.471608"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.571609"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.184130"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.284119"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.384113"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.484113"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.634100"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.213926"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.363936"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.463919"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.563941"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.184875"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.284894"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.384869"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.484863"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.634866"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.219198"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.369204"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.469225"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.569203"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.182905"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.282883"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.432884"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.532838"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.632875"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.207868"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.357907"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.457868"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.557883"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.182745"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.282761"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.432766"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.532733"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.632760"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.205099"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.355108"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.455101"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.555130"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.184644"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.284625"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.434639"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.534621"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.634617"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.217540"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.367547"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.467534"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.567535"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.184937"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.284932"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.434922"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.534939"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.634933"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.221337"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.371347"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.471329"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.571339"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.182991"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.282986"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.433003"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.532966"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.633004"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.192303"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.342274"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.442271"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.542307"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.183027"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.283008"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.433018"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.533020"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.633014"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.260109"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.360130"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.460100"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.560121"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.167622"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.267619"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.367648"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.517620"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.617616"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.233820"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.333807"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.433775"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.533791"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.165715"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.265713"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.415708"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.515706"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.615724"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.715707"
+    },
+    {
+      "reasons": [
+        "guard_diagnostic_invalid",
+        "guard_diagnostic_expired"
+      ],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {
+        "input:localization": "fresh/expired"
+      },
+      "localization_message": "stale_localization_no_republish",
+      "confidence": "0.506800",
+      "response_age": "0.865746"
+    },
+    {
+      "reasons": [
+        "guard_diagnostic_invalid",
+        "guard_diagnostic_expired"
+      ],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {
+        "input:localization": "invalid/stale/future/expired"
+      },
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.206676"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.306687"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.173887"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.273854"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.423839"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.523828"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.623867"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.205775"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.355743"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.455722"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.555731"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.151928"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.301953"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.401929"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.501923"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.651909"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.262155"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.362163"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.462174"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.562180"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.165442"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.265448"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.415439"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.515403"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.615434"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.218135"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.368161"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.468152"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.568159"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.172808"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.272807"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.422815"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.522800"
+    },
+    {
+      "reasons": [],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.622776"
+    }
+  ],
+  "events": [
+    {
+      "at_monotonic": 4477.27709259,
+      "reasons": [
+        "parameters_pending_or_mismatch",
+        "graph_invalid",
+        "scan_front_expired",
+        "scan_back_expired"
+      ],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": null,
+      "confidence": null,
+      "response_age": null
+    },
+    {
+      "at_monotonic": 4477.398220719,
+      "reasons": [
+        "graph_invalid",
+        "scan_front_expired",
+        "scan_back_expired"
+      ],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {},
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.307934"
+    },
+    {
+      "at_monotonic": 4508.427190805,
+      "reasons": [
+        "guard_diagnostic_invalid",
+        "guard_diagnostic_expired"
+      ],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {
+        "input:localization": "fresh/expired"
+      },
+      "localization_message": "stale_localization_no_republish",
+      "confidence": "0.506800",
+      "response_age": "0.865746"
+    },
+    {
+      "at_monotonic": 4508.547840621,
+      "reasons": [
+        "guard_diagnostic_invalid",
+        "guard_diagnostic_expired"
+      ],
+      "guard_state": "WaitingForInputs",
+      "unhealthy_inputs": {
+        "input:localization": "invalid/stale/future/expired"
+      },
+      "localization_message": "receive_time_approximation",
+      "confidence": "0.506800",
+      "response_age": "0.206676"
+    }
+  ],
+  "scan_ages": {
+    "front": [
+      0.024588584899902344,
+      0.028882741928100586,
+      0.023177385330200195,
+      0.021196842193603516,
+      0.027589082717895508,
+      0.03199052810668945,
+      0.03776288032531738,
+      0.042031049728393555,
+      0.040369510650634766,
+      0.04334068298339844,
+      0.026609420776367188,
+      0.029998779296875,
+      0.029191255569458008,
+      0.03737807273864746,
+      0.03558540344238281,
+      0.022320270538330078,
+      0.030842065811157227,
+      0.03172111511230469,
+      0.040506601333618164,
+      0.031105518341064453,
+      0.023175954818725586,
+      0.028713703155517578,
+      0.035719871520996094,
+      0.028893470764160156,
+      0.054442405700683594,
+      0.033756256103515625,
+      0.02345728874206543,
+      0.027762889862060547,
+      0.04399895668029785,
+      0.032839298248291016,
+      0.030218124389648438,
+      0.0555570125579834,
+      0.04318952560424805,
+      0.03504657745361328,
+      0.028536081314086914,
+      0.036329030990600586,
+      0.07785916328430176,
+      0.03438615798950195,
+      0.029444217681884766,
+      0.0313265323638916,
+      0.05080604553222656,
+      0.0481715202331543,
+      0.029475688934326172,
+      0.0389406681060791,
+      0.027422189712524414,
+      0.019834041595458984,
+      0.028801441192626953,
+      0.033225059509277344,
+      0.02595829963684082,
+      0.030508756637573242,
+      0.03397178649902344,
+      0.026125192642211914,
+      0.026721954345703125,
+      0.02830052375793457,
+      0.02303147315979004,
+      0.02646183967590332,
+      0.024554967880249023,
+      0.029094696044921875,
+      0.023568391799926758,
+      0.024576425552368164,
+      0.027585983276367188,
+      0.026772737503051758,
+      0.02388930320739746,
+      0.026803970336914062,
+      0.03191709518432617,
+      0.02883124351501465,
+      0.03403902053833008,
+      0.025501012802124023,
+      0.03656935691833496,
+      0.028367042541503906,
+      0.02586960792541504,
+      0.03141903877258301,
+      0.03056931495666504,
+      0.022272109985351562,
+      0.019887208938598633,
+      0.020932912826538086,
+      0.025119304656982422,
+      0.02687811851501465,
+      0.030020475387573242,
+      0.026187896728515625,
+      0.017259597778320312,
+      0.023663759231567383,
+      0.02275562286376953,
+      0.0269925594329834,
+      0.02366495132446289,
+      0.03516840934753418,
+      0.020078659057617188,
+      0.028052091598510742,
+      0.027025938034057617,
+      0.028823137283325195,
+      0.026803255081176758,
+      0.07014989852905273,
+      0.029231548309326172,
+      0.026746511459350586,
+      0.0284273624420166,
+      0.024588346481323242,
+      0.0192410945892334,
+      0.02381277084350586,
+      0.02881932258605957,
+      0.0240018367767334,
+      0.02357959747314453,
+      0.026376008987426758,
+      0.026731252670288086,
+      0.023484468460083008,
+      0.024853229522705078,
+      0.030653953552246094,
+      0.03522086143493652,
+      0.024306774139404297,
+      0.029972314834594727,
+      0.024820804595947266,
+      0.02450871467590332,
+      0.019458293914794922,
+      0.023801803588867188,
+      0.025014877319335938,
+      0.02640509605407715,
+      0.03333592414855957,
+      0.028870820999145508,
+      0.031098604202270508,
+      0.0354466438293457,
+      0.022995948791503906,
+      0.02502727508544922,
+      0.032698869705200195,
+      0.026738643646240234,
+      0.03661346435546875,
+      0.02589249610900879,
+      0.02195119857788086,
+      0.024436473846435547,
+      0.019270896911621094,
+      0.02803492546081543,
+      0.02371978759765625,
+      0.02977442741394043,
+      0.028102636337280273,
+      0.02791595458984375,
+      0.024750471115112305,
+      0.026560068130493164,
+      0.024106979370117188,
+      0.02687358856201172,
+      0.03217363357543945,
+      0.040236711502075195,
+      0.0400242805480957,
+      0.0240933895111084,
+      0.028808116912841797,
+      0.03385758399963379,
+      0.025244712829589844,
+      0.051828861236572266,
+      0.04474043846130371,
+      0.06607389450073242,
+      0.1598646640777588,
+      0.1769251823425293,
+      0.14327144622802734,
+      0.04555010795593262,
+      0.03264212608337402,
+      0.029279708862304688,
+      0.0386195182800293,
+      0.17326760292053223,
+      0.029341936111450195,
+      0.03168129920959473,
+      0.026938199996948242,
+      0.2918362617492676,
+      0.06460094451904297,
+      0.1275036334991455,
+      0.0796666145324707,
+      0.055506229400634766,
+      0.07734107971191406,
+      0.06678390502929688,
+      0.0485997200012207,
+      0.04690074920654297,
+      0.026762962341308594,
+      0.03673267364501953,
+      0.031656503677368164,
+      0.02729320526123047,
+      0.02740001678466797,
+      0.028811931610107422,
+      0.02802443504333496
+    ],
+    "back": [
+      0.025738954544067383,
+      0.029581546783447266,
+      0.02433037757873535,
+      0.02179431915283203,
+      0.028753042221069336,
+      0.03329038619995117,
+      0.039191246032714844,
+      0.043291330337524414,
+      0.041527509689331055,
+      0.04423236846923828,
+      0.02783823013305664,
+      0.030597209930419922,
+      0.03005695343017578,
+      0.03825569152832031,
+      0.036316871643066406,
+      0.02326512336730957,
+      0.0317230224609375,
+      0.03289461135864258,
+      0.04109072685241699,
+      0.03245806694030762,
+      0.024562597274780273,
+      0.03031754493713379,
+      0.036748409271240234,
+      0.0312044620513916,
+      0.054755210876464844,
+      0.03449273109436035,
+      0.024850130081176758,
+      0.02875542640686035,
+      0.045298099517822266,
+      0.03411984443664551,
+      0.03154325485229492,
+      0.05664372444152832,
+      0.04415297508239746,
+      0.037657976150512695,
+      0.029604673385620117,
+      0.03746819496154785,
+      0.08142733573913574,
+      0.03559231758117676,
+      0.030759334564208984,
+      0.033840179443359375,
+      0.053369998931884766,
+      0.049375295639038086,
+      0.030185699462890625,
+      0.040201425552368164,
+      0.028602123260498047,
+      0.02072739601135254,
+      0.029791831970214844,
+      0.03448987007141113,
+      0.027231931686401367,
+      0.03160405158996582,
+      0.03521847724914551,
+      0.027367115020751953,
+      0.02779841423034668,
+      0.02935194969177246,
+      0.023576974868774414,
+      0.02885723114013672,
+      0.025854825973510742,
+      0.029771804809570312,
+      0.024109840393066406,
+      0.02506566047668457,
+      0.02879929542541504,
+      0.030241727828979492,
+      0.024367094039916992,
+      0.02757430076599121,
+      0.03307986259460449,
+      0.02951335906982422,
+      0.034758806228637695,
+      0.026869535446166992,
+      0.037656307220458984,
+      0.029152631759643555,
+      0.026833534240722656,
+      0.03361058235168457,
+      0.03183555603027344,
+      0.02340388298034668,
+      0.020788192749023438,
+      0.02190232276916504,
+      0.026180505752563477,
+      0.02741217613220215,
+      0.030473709106445312,
+      0.02663445472717285,
+      0.0180056095123291,
+      0.025327444076538086,
+      0.02365589141845703,
+      0.027657270431518555,
+      0.024861574172973633,
+      0.03628897666931152,
+      0.021739482879638672,
+      0.03045344352722168,
+      0.028151750564575195,
+      0.03013157844543457,
+      0.02794671058654785,
+      0.07164359092712402,
+      0.03041553497314453,
+      0.028049230575561523,
+      0.02889704704284668,
+      0.025821685791015625,
+      0.023674964904785156,
+      0.025330543518066406,
+      0.029592514038085938,
+      0.024446725845336914,
+      0.024285078048706055,
+      0.026664018630981445,
+      0.027362823486328125,
+      0.024501800537109375,
+      0.02541494369506836,
+      0.0323033332824707,
+      0.036839962005615234,
+      0.02671051025390625,
+      0.030639171600341797,
+      0.025616168975830078,
+      0.025498151779174805,
+      0.019936561584472656,
+      0.025593996047973633,
+      0.0259244441986084,
+      0.027516841888427734,
+      0.03361105918884277,
+      0.03226041793823242,
+      0.032082319259643555,
+      0.036173105239868164,
+      0.0234372615814209,
+      0.026193618774414062,
+      0.034116506576538086,
+      0.0280759334564209,
+      0.03770589828491211,
+      0.02714061737060547,
+      0.02269744873046875,
+      0.02707052230834961,
+      0.020218610763549805,
+      0.029568910598754883,
+      0.02494668960571289,
+      0.03201699256896973,
+      0.02933216094970703,
+      0.02916121482849121,
+      0.025968313217163086,
+      0.02760171890258789,
+      0.025326013565063477,
+      0.027467012405395508,
+      0.03340029716491699,
+      0.041786909103393555,
+      0.041692495346069336,
+      0.02524852752685547,
+      0.02999711036682129,
+      0.035092830657958984,
+      0.026204347610473633,
+      0.05251622200012207,
+      0.04531741142272949,
+      0.06773185729980469,
+      0.16151785850524902,
+      0.17796659469604492,
+      0.14400696754455566,
+      0.04628324508666992,
+      0.03521132469177246,
+      0.030247926712036133,
+      0.03987264633178711,
+      0.17447471618652344,
+      0.029854774475097656,
+      0.03288698196411133,
+      0.027881145477294922,
+      0.29360413551330566,
+      0.06547856330871582,
+      0.12847185134887695,
+      0.08071351051330566,
+      0.056638240814208984,
+      0.07812929153442383,
+      0.06815910339355469,
+      0.04933476448059082,
+      0.048140764236450195,
+      0.02774500846862793,
+      0.0388796329498291,
+      0.03264021873474121,
+      0.028456449508666992,
+      0.027875423431396484,
+      0.03001236915588379,
+      0.029246091842651367
+    ]
+  },
+  "tf_checks": [
+    {
+      "side": "front",
+      "time": 1794973320.8943489,
+      "frame": "laser_front_link",
+      "ok": false,
+      "error": "Lookup would require extrapolation into the past.  Requested time 1794973320.894349 but the earliest data is at time 1794973320.911302, when looking up transform from frame [laser_front_link] to frame [map]"
+    },
+    {
+      "side": "back",
+      "time": 1794973320.8939292,
+      "frame": "laser_back_link",
+      "ok": false,
+      "error": "Lookup would require extrapolation into the past.  Requested time 1794973320.893929 but the earliest data is at time 1794973320.911302, when looking up transform from frame [laser_back_link] to frame [map]"
+    },
+    {
+      "side": "front",
+      "time": 1794973321.094557,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973321.0942822,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973321.2945793,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973321.2942057,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973321.494944,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973321.4947608,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973321.694891,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973321.694538,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973321.8949735,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973321.8945081,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973322.0949852,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973322.0945525,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973322.2950823,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973322.2947059,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973322.4952848,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973322.4949982,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973322.6953704,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973322.6950693,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973322.8953187,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973322.894919,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973323.0955925,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973323.0952926,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973323.2957077,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973323.2954335,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973323.4957829,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973323.4955132,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973323.6957421,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973323.6953366,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973323.8962393,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973323.8960776,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973324.0963662,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973324.0962198,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973324.2962945,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973324.2960165,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973324.496294,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973324.4959126,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973324.6966646,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973324.6965213,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973324.8965528,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973324.8961668,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973325.096647,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973325.0962834,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973325.2970116,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973325.2968688,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973325.4971328,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973325.4969842,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973325.6972134,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973325.697044,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973325.8972976,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973325.8971558,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973326.097396,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973326.097131,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973326.297492,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973326.2973318,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973326.4973264,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973326.4969504,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973326.6974187,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973326.697056,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973326.8976367,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973326.897358,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973327.0976343,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973327.0972695,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973327.2977428,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973327.2973776,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973327.4978526,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973327.497453,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973327.698188,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973327.6980443,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973327.89802,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973327.8976622,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973328.0981712,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973328.0978992,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973328.2982593,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973328.297851,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973328.4983454,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973328.497967,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973328.698524,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973328.6982715,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973328.8987834,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973328.898648,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973329.098624,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973329.0982482,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973329.2989933,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973329.2988496,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973329.4988573,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973329.4984686,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973329.69904,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973329.6987708,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973329.899298,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973329.8991573,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973330.0993898,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973330.099241,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973330.2992134,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973330.298784,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973330.4992938,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973330.4988966,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973330.6994774,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973330.6991966,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973330.899515,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973330.8991377,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973331.0995955,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973331.0991988,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973331.299805,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973331.299527,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973331.4997766,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973331.499381,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973331.7001343,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973331.7000103,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973331.9000845,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973331.8998206,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973332.10033,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973332.1001732,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973332.3001413,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973332.2997859,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973332.500512,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973332.5003662,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973332.700641,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973332.7004676,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973332.9004886,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973332.9001312,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973333.100561,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973333.100175,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973333.3009636,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973333.3008146,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973333.5011024,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973333.5009515,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973333.7010336,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973333.700763,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973333.9012833,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973333.9011326,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973334.1013908,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973334.1012504,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973334.3012958,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973334.3009036,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973334.5013595,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973334.5009804,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973334.7015495,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973334.701269,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973334.9015572,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973334.9011896,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973335.1019022,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973335.101761,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973335.301991,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973335.3015306,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973335.5017986,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973335.501477,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973335.7021213,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973335.7019713,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973335.9022417,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973335.902106,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973336.1023574,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973336.1021998,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973336.3024514,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973336.302252,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973336.5025837,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973336.502433,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973336.7026958,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973336.7025483,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973336.902785,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973336.9026353,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973337.1028748,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973337.1027439,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973337.3029554,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973337.3028278,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973337.503104,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973337.5029583,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973337.7029529,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973337.702614,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973337.9032907,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973337.903109,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973338.1033847,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973338.1032405,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973338.3033268,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973338.3030555,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973338.503311,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973338.502968,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973338.7033708,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973338.7029588,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973338.903493,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973338.9031422,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973339.103634,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973339.1032639,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973339.3037212,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973339.3033519,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973339.5038137,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973339.5034337,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973339.7041647,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973339.703996,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973339.904002,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973339.9036562,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973340.1041949,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973340.1039402,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973340.3043053,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973340.3040302,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973340.5045652,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973340.5044012,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973340.704646,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973340.7044988,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973340.9047608,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973340.9046247,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973341.1048589,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973341.1047084,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973341.304831,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973341.3045194,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973341.5048199,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973341.5044832,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973341.704943,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973341.7046885,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973341.9049437,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973341.9045866,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973342.1050467,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973342.1046815,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973342.3052557,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973342.3049922,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973342.5052426,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973342.5048943,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973342.7054822,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973342.7052188,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973342.9057224,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973342.9055886,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973343.1058059,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973343.105682,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973343.3058968,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973343.305764,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973343.5060322,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973343.505849,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973343.7059908,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973343.7056012,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973343.9062681,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973343.9061406,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973344.1063616,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973344.105898,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973344.3067439,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973344.30659,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973344.506843,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973344.5067,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973344.7069638,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973344.7068322,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973344.9070544,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973344.9069235,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973345.1071196,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973345.1069736,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973345.307012,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973345.3067183,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973345.5073216,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973345.5071769,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973345.7071633,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973345.706762,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973345.9074967,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973345.9073546,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973346.1073725,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973346.106964,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973346.3077414,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973346.3076046,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973346.5076802,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973346.507427,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973346.7076514,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973346.7072735,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973346.907778,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973346.907424,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973347.1078842,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973347.1075246,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973347.3081086,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973347.307725,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973347.5082114,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973347.507904,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973347.7084224,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973347.708162,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973347.9085453,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973347.9081745,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973348.1087375,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973348.1085851,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973348.3085601,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973348.308188,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973348.5086477,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973348.5082753,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973348.7087371,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973348.7083502,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973348.9088664,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973348.9085324,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973349.1090028,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973349.1086261,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973349.3091252,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973349.308738,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973349.509322,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973349.5090365,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973349.7095551,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973349.7094162,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973349.9096453,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973349.9095035,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973350.1095178,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973350.109129,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973350.3095918,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973350.3091996,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973350.5098355,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973350.509543,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973350.710089,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973350.7099376,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973350.910143,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973350.9100008,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973351.1102705,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973351.1101258,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973351.3101149,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973351.3097112,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973351.5102942,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973351.5100312,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973351.7102969,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973351.7099187,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973351.9104154,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973351.910045,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973352.1104915,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973352.1101182,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973352.3106275,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973352.3102617,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973352.5106845,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973352.5102777,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973352.9111025,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973352.9108813,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973353.1112115,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973353.1110706,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973353.3110807,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973353.310695,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973353.5113072,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973353.511018,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973353.7115316,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973353.7114,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973353.911644,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973353.9115067,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973354.1117616,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973354.1116035,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973354.3116353,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973354.31125,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973354.5119717,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973354.5118113,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973354.7118318,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973354.7114885,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973354.9118907,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973354.9114864,
+      "frame": "laser_back_link",
+      "ok": true
+    },
+    {
+      "side": "front",
+      "time": 1794973355.1119654,
+      "frame": "laser_front_link",
+      "ok": true
+    },
+    {
+      "side": "back",
+      "time": 1794973355.1115987,
+      "frame": "laser_back_link",
+      "ok": true
+    }
+  ],
+  "runtime_parameters": {
+    "navigation_guard": {
+      "use_sim_time": false,
+      "base_transform_confirmed": true,
+      "base_x_in_seer": 0.0,
+      "base_y_in_seer": 0.0,
+      "base_yaw_in_seer": 1.5707963267948966,
+      "motion_enabled": true,
+      "input_freshness_contract_verified": true,
+      "require_execution_heartbeat": true,
+      "execution_heartbeat_timeout": 0.4,
+      "cmd_vel_timeout": 0.5,
+      "controller_duration_ms": 800,
+      "request_timeout_ms": 150,
+      "stop_attempts": 2,
+      "max_linear_speed": 0.15,
+      "max_angular_speed": 0.2,
+      "required_scan_topics": [
+        "/scan_front",
+        "/scan_back"
+      ],
+      "scan_timeout": 0.6,
+      "odom_timeout": 0.6,
+      "required_tf_edges": [
+        "map->odom",
+        "odom->base_link"
+      ],
+      "required_static_tf_edges": [
+        "base_link->laser_front_link",
+        "base_link->laser_back_link"
+      ],
+      "tf_timeout": 0.8,
+      "localization_diagnostic": "/seer_localization/map_to_odom",
+      "localization_timeout": 0.8,
+      "stopped_linear_threshold": 0.01,
+      "stopped_angular_threshold": 0.02,
+      "stopped_hold_sec": 0.5
+    },
+    "seer_odometry": {
+      "use_sim_time": false,
+      "publish_tf": true,
+      "base_transform_confirmed": true,
+      "base_x_in_seer": 0.0,
+      "base_y_in_seer": 0.0,
+      "base_yaw_in_seer": 1.5707963267948966
+    },
+    "seer_localization": {
+      "use_sim_time": false,
+      "base_transform_confirmed": true,
+      "map_alignment_confirmed": true,
+      "expected_map": "20251120141209997",
+      "expected_map_md5": "342c6d27a3ad34d10d2bd44899c4578b",
+      "tf_publish_mode": "bounded_odom_hold",
+      "base_x_in_seer_m": 0.0,
+      "base_y_in_seer_m": 0.0,
+      "base_yaw_in_seer_rad": 1.5707963267948966
+    },
+    "map_server": {
+      "use_sim_time": false,
+      "yaml_filename": "/home/zyj/Code/ROS2/AGV_new/AGV_ROS2_Control_Manager/maps/seer/20251120141209997_navigable.yaml"
+    }
+  }
+}

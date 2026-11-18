@@ -1,0 +1,18 @@
+{
+  "source": "user ruler measurements in this conversation",
+  "chassis_length_m": 1.15,
+  "chassis_width_m": 0.65,
+  "arms_tools_within_chassis_during_navigation": true,
+  "front_scan_height_above_ground_m": 0.5,
+  "back_scan_height_above_ground_m": 0.5,
+  "front_distance_to_nearest_long_edge_m": 0.05,
+  "front_distance_to_nearest_short_edge_m": 0.05,
+  "back_distance_to_nearest_long_edge_m": 0.05,
+  "back_distance_to_nearest_short_edge_m": 0.05,
+  "ruler_test_displacement_m": 0.11,
+  "ruler_test_visible_rotation": false,
+  "notes": [
+    "Positions are housing/window-center field measurements; optical origin and chassis-center-to-base_link relation require calibration.",
+    "No sample freshness or navigation release flag changed."
+  ]
+}

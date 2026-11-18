@@ -1,0 +1,21 @@
+{
+  "pid": 18876,
+  "args": [
+    "/usr/bin/python3",
+    "/opt/ros/jazzy/bin/ros2",
+    "launch",
+    "agv_bringup",
+    "agv_navigation_real.launch.py",
+    "mode:=observe",
+    "domain_id:=216",
+    "connection:=192.168.192.5",
+    "map:=/home/zyj/Code/ROS2/AGV_new/AGV_ROS2_Control_Manager/maps/seer/20251120141209997_navigable.yaml",
+    "localization_params:=/tmp/agv_localization_observe_20261113.yaml",
+    "reuse_lidar:=false",
+    "reuse_odometry:=false",
+    "reuse_localization:=false",
+    "reuse_description:=false",
+    "rviz:=true"
+  ],
+  "reason": "explicit new read-only epoch after physical emergency power cycle; old odometry marked unrecoverable displacement and lidar clock reset latched"
+}

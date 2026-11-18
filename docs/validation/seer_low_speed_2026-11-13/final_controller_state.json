@@ -1,0 +1,88 @@
+[
+  {
+    "api": 1005,
+    "response": {
+      "create_on": "2026-11-13T11:25:07.019+0800",
+      "detect_skid": false,
+      "is_stop": true,
+      "motor_steer_angles": [
+        {
+          "motor_name": "rotation",
+          "value": 1.0359964398797263
+        },
+        {
+          "motor_name": "rotation2",
+          "value": 0.4792901527596672
+        }
+      ],
+      "r_spin": -0.0,
+      "r_steer": 1.036,
+      "r_steer_angles": [
+        1.036,
+        0.479
+      ],
+      "r_vx": -0.0,
+      "r_vy": -0.0,
+      "r_w": -0.0,
+      "ret_code": 0,
+      "spin": -0.0014,
+      "steer": 1.036,
+      "steer_angles": [
+        1.036,
+        0.479
+      ],
+      "vx": -0.0,
+      "vy": -0.0,
+      "w": -0.0
+    }
+  },
+  {
+    "api": 1020,
+    "response": {
+      "containers": [],
+      "create_on": "2026-11-13T11:25:07.020+0800",
+      "finished_path": [],
+      "move_status_info": "{\"dispatch_delay_s\":null,\"dispatch_other\":null,\"dispatch_self\":{\"cnt\":0,\"owned\":{\"blocks\":[],\"points\":[]},\"request\":{\"blocks\":[],\"points\":[]},\"ts\":1125015637506},\"info\":\"\",\"objectFile\":\"\"}",
+      "ret_code": 0,
+      "running_status": 0,
+      "target_dist": 0.0,
+      "target_id": "",
+      "target_label": "",
+      "target_point": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "task_status": 0,
+      "task_type": 0,
+      "unfinished_path": []
+    }
+  },
+  {
+    "api": 1001,
+    "response": {
+      "19204": 6,
+      "19204_ip": [
+        "192.168.192.105:58552",
+        "192.168.192.105:58556",
+        "192.168.192.105:58570",
+        "127.0.0.1:53016",
+        "192.168.1.163:57514",
+        "192.168.192.105:42986"
+      ],
+      "19205": 0,
+      "19205_ip": [],
+      "19206": 0,
+      "19206_ip": [],
+      "19207": 0,
+      "19207_ip": [],
+      "19210": 1,
+      "19210_ip": [
+        "127.0.0.1:51650"
+      ],
+      "19301_ip": [],
+      "create_on": "2026-11-13T11:25:07.020+0800",
+      "ret_code": 0
+    }
+  }
+]

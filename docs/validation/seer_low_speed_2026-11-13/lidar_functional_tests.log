@@ -1,0 +1,18 @@
+[OUTPUT] 
+Internal ctest changing into directory: /home/zyj/Code/ROS2/AGV_new/AGV_ROS2_Control_Manager/build/lidar
+
+[HANDLER_OUTPUT] 
+Test project /home/zyj/Code/ROS2/AGV_new/AGV_ROS2_Control_Manager/build/lidar
+
+    Start 1: seer_lidar_source_test
+1/4 Test #1: seer_lidar_source_test ...........   Passed    0.09 sec
+    Start 2: laser_scan_builder_test
+2/4 Test #2: laser_scan_builder_test ..........   Passed    0.01 sec
+    Start 3: lidar_node_test
+3/4 Test #3: lidar_node_test ..................   Passed    4.49 sec
+    Start 4: lidar_integration_test
+4/4 Test #4: lidar_integration_test ...........   Passed    2.77 sec
+
+100% tests passed, 0 tests failed out of 4
+
+Total Test time (real) =   7.37 sec

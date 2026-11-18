@@ -1,0 +1,24 @@
+[
+  {
+    "fixture": "close",
+    "samples": 20,
+    "min_output_speed": 0.06666666666666667,
+    "max_output_speed": 0.06666666666666667,
+    "mean_output_speed": 0.06666666666666667,
+    "input_speed": 0.2,
+    "domain": 210,
+    "hardware_connected": false,
+    "passed": false
+  },
+  {
+    "fixture": "cleared",
+    "samples": 20,
+    "min_output_speed": 0.2,
+    "max_output_speed": 0.2,
+    "mean_output_speed": 0.2,
+    "input_speed": 0.2,
+    "domain": 210,
+    "hardware_connected": false,
+    "passed": true
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "command_ack_wall_time": 1794539805.6387694,
+  "zero_ack_wall_time": 1794539808.7969396,
+  "odom": {
+    "dx": 0.003071527440050256,
+    "dy": -0.11880954747803174,
+    "displacement_m": 0.11884924422456232,
+    "before_sample_wall": 1794539805.6194365,
+    "after_sample_wall": 1794539809.4218426,
+    "first_motion_feedback_after_ack_s": 0.19138360023498535
+  },
+  "localization": {
+    "dx": -0.12060000000000015,
+    "dy": -0.009699999999999986,
+    "displacement_m": 0.12098946235106608,
+    "before_sample_wall": 1794539805.6376944,
+    "after_sample_wall": 1794539809.6375597,
+    "first_5mm_pose_change_after_ack_s": 0.39882469177246094
+  }
+}

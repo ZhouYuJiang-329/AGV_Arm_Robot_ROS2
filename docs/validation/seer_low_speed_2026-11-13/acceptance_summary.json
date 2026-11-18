@@ -1,0 +1,123 @@
+{
+  "date": "2026-11-13",
+  "overall": "NOT_RELEASED_FOR_REAL_NAV2_EXECUTION",
+  "existing_software_tests": {
+    "robot_move": {
+      "passed": 15,
+      "total": 15
+    },
+    "agv_bringup": {
+      "passed": 3,
+      "total": 3
+    },
+    "lidar": {
+      "passed": 4,
+      "total": 4
+    },
+    "agv_description": {
+      "passed": 1,
+      "total": 1
+    }
+  },
+  "new_component_tests": {
+    "recorded_close_obstacle_replay": "PASS after adding site FootprintStop; original profile failed",
+    "recorded_clear_replay": "PASS",
+    "live_real_scan_stop_and_clear": "PASS component-only, no actuator output",
+    "realdata_nav2_goal_cancel_shadow": "PASS in domain220; no arrival or hardware actuation",
+    "real_guard_tf_ownership": "PASS with hardware output disabled"
+  },
+  "operator_confirmed_physical_tests": [
+    "+X,-X,+Y,-Y low speed direction and explicit stop",
+    "positive and negative yaw and explicit stop",
+    "vx/vy/w combined low speed motion and explicit stop",
+    "800ms expiry stop without fallback",
+    "owned control TCP disconnect stop without fallback",
+    "physical emergency switch cuts vehicle power and vehicle stops",
+    "after power restoration no old motion resumes"
+  ],
+  "ruler_test": {
+    "measured_mm": 110,
+    "odom_mm": 118.84924422456233,
+    "ros_localization_mm": 120.98946235106608,
+    "api_localization_mm": 122.50881600929797,
+    "classification": "difference observed; no gain/scale correction or accuracy acceptance inferred from one short run"
+  },
+  "field_measurements": {
+    "chassis_m": [
+      1.15,
+      0.65
+    ],
+    "scan_heights_m": [
+      0.5,
+      0.5
+    ],
+    "each_sensor_to_two_nearest_edges_m": [
+      0.05,
+      0.05
+    ],
+    "applied_to_tf": false
+  },
+  "recovery": {
+    "physical_estop_zero_request_delivered": false,
+    "reason": "controller power cut; control request timed out",
+    "lidar_clock_reset_latched": true,
+    "old_odometry_quality_degraded_after_gap": true,
+    "explicit_new_readonly_epoch_started": true,
+    "new_observe_launch_pid": 34667,
+    "post_recovery_streams": {
+      "/odom": {
+        "samples": 299,
+        "hz": 4.982577318157314,
+        "max_header_age_s": 0.0017704963684082031,
+        "max_receive_gap_s": 0.20761621500059846,
+        "nonincreasing_stamps": 0
+      },
+      "odom->base_link": {
+        "samples": 299,
+        "hz": 4.982577318157314,
+        "max_header_age_s": 0.002574920654296875,
+        "max_receive_gap_s": 0.2076489009996294,
+        "nonincreasing_stamps": 0
+      },
+      "/scan_front": {
+        "samples": 299,
+        "hz": 4.982577318157314,
+        "max_header_age_s": 0.022892475128173828,
+        "max_receive_gap_s": 0.20639568699971278,
+        "nonincreasing_stamps": 0
+      },
+      "/scan_back": {
+        "samples": 299,
+        "hz": 4.982577318157314,
+        "max_header_age_s": 0.024085283279418945,
+        "max_receive_gap_s": 0.20646378199944593,
+        "nonincreasing_stamps": 0
+      },
+      "map->odom": {
+        "samples": 299,
+        "hz": 4.982577318157314,
+        "max_header_age_s": 0.05142521858215332,
+        "max_receive_gap_s": 0.2513298370004122,
+        "nonincreasing_stamps": 0
+      },
+      "/seer/localization/base_pose": {
+        "samples": 119,
+        "hz": 1.9830324443502354,
+        "max_header_age_s": 0.20841050148010254,
+        "max_receive_gap_s": 0.6499280680000084,
+        "nonincreasing_stamps": 0
+      }
+    }
+  },
+  "not_executed": [
+    "actual Nav2 closed-loop arrival",
+    "actual Nav2 goal cancellation during vehicle motion",
+    "actual full Nav2 obstacle-to-physical-stop test"
+  ],
+  "remaining_release_requirements": [
+    "source sampling timestamps/sequence or bounded cache-age contract for firmware API1004/1005; create_on is API upload time",
+    "quantitative calibration/measurement assessment for ruler discrepancy and optical-origin vs window-center geometry",
+    "review remaining dynamic/braking/fault limits before release; do not enable confirmation flags merely to start execute"
+  ],
+  "default_execution_gates_changed": false
+}

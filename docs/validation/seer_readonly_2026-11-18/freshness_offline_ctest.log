@@ -1,0 +1,22 @@
+[OUTPUT] 
+Internal ctest changing into directory: /home/zyj/Code/ROS2/AGV_new/AGV_ROS2_Control_Manager/build/robot_move
+
+[HANDLER_OUTPUT] 
+Test project /home/zyj/Code/ROS2/AGV_new/AGV_ROS2_Control_Manager/build/robot_move
+
+    Start 2: navigation_guard_test
+1/6 Test #2: navigation_guard_test ............   Passed    0.16 sec
+    Start 4: localization_test
+2/6 Test #4: localization_test ................   Passed    0.01 sec
+    Start 6: localization_timing_test
+3/6 Test #6: localization_timing_test .........   Passed    3.53 sec
+    Start 7: localization_node_test
+4/6 Test #7: localization_node_test ...........   Passed   10.87 sec
+    Start 8: odometry_test
+5/6 Test #8: odometry_test ....................   Passed    0.16 sec
+    Start 9: odometry_node_test
+6/6 Test #9: odometry_node_test ...............   Passed    5.07 sec
+
+100% tests passed, 0 tests failed out of 6
+
+Total Test time (real) =  19.81 sec

@@ -1,0 +1,43 @@
+syntax = "proto3";
+package rbk.protocol;
+import "message_header.proto";
+import "message_motorinfos.proto";
+
+message Message_Slip {
+	float slip = 1; // slip dist m
+	float slip_time = 2; // slip time s
+	string name = 3; // slip object name
+}
+
+message Message_SlipSensor{
+    enum Type {
+        IMU = 0;
+        LOC = 1;
+        OPT = 2;
+    }
+    Type type = 1;   
+	Message_Slip vx = 2;
+	Message_Slip vy = 3;
+	Message_Slip vw = 4;
+	repeated Message_Slip motor = 5;
+}
+
+message Message_SlipSensors{
+	repeated Message_SlipSensor slip_sensors = 1;
+}
+
+message Message_Odometer {
+	Message_Header header = 1;
+	uint32 cycle 	= 2;	// cnt
+    double x 		= 3;	// m
+    double y 		= 4;	// m
+    float angle 	= 5;	// rad
+	bool is_stop = 6; 
+	float vel_x   = 7; // m/s
+	float vel_y   = 8; // m/s
+	float vel_rotate = 9; // rad/s
+	bool detect_skid = 10;
+	repeated Message_MotorInfo motor_info = 11;
+	bool follow_err = 12;//has motor following error(s)
+}
+

@@ -1,0 +1,23 @@
+{
+  "motion_sent": false,
+  "readonly_api_responses": 120,
+  "offline_tests_passed": 6,
+  "offline_tests_failed": 0,
+  "device_measurement_freshness_verified": false,
+  "confidence_observed": 0.3732,
+  "configured_min_confidence": 0.5,
+  "files": [
+    {
+      "path": "docs/validation/seer_readonly_2026-11-18/freshness_stationary_110329.json",
+      "sha256": "52a2b178b1bdb6816d02690cc730a6c8bf67a18c9aabf86b69a365ad60cc63fd"
+    },
+    {
+      "path": "docs/validation/seer_readonly_2026-11-18/freshness_offline_ctest.log",
+      "sha256": "f43e36e7a2d1b68f9c27aca7c8b86448c8fe897e7a33f10d0c3c0dfaf6a7a7e0"
+    },
+    {
+      "path": "docs/反馈新鲜度无运动验证_2026-11-18.md",
+      "sha256": "b85d712247253aa8021e6ed1903923381561201f2b505b362d0e148eb5dbe2e5"
+    }
+  ]
+}

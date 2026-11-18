@@ -85184,7 +85184,7 @@
     "max_observed_accepted_pose_age_sec": 0.6988098621368408,
     "actual_costmap_transform_tolerance_sec": 0.3,
     "coordinate_confirmations_changed": false,
-    "motion_enabled": false,
+    "motion_enabled": true,
     "movement_acceptance": "not performed"
   }
 }

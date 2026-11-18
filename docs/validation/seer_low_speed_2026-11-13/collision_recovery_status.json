@@ -1,0 +1,23 @@
+{
+  "elapsed_s": 15.006718994000039,
+  "phase": "finished",
+  "input_speed": 0.2,
+  "hardware_output_connected": false,
+  "latest": {
+    "elapsed_s": 14.964617179000015,
+    "output_speed": 0.2,
+    "output_w": 0.0
+  },
+  "state": {
+    "polygon_name": "",
+    "action_type": 0
+  },
+  "stats": {
+    "cleared": {
+      "samples": 73,
+      "min_speed": 0.0,
+      "max_speed": 0.2,
+      "zero_samples": 3
+    }
+  }
+}

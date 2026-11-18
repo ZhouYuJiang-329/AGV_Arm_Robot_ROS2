@@ -1,0 +1,28 @@
+# CANDIDATE ONLY. User measured 5cm from nearest edges on 1.15 x 0.65m chassis.
+# Assumes base_link at geometric center and the existing corner/sign convention.
+# Optical-origin offsets/yaw and base_link ground height are not independently certified.
+# This file has NOT been applied to running TF.
+front:
+  x_m: -0.275
+  y_m: -0.525
+  z_relative_m: -0.24
+  roll_deg: 0.0
+  pitch_deg: 0.0
+  yaw_deg: -135.0
+back:
+  x_m: 0.275
+  y_m: 0.525
+  z_relative_m: -0.24
+  roll_deg: 0.0
+  pitch_deg: 0.0
+  yaw_deg: 54.0
+reference_only:
+  controller_model:
+    x_m: 0.55
+    y_m: -0.295
+    z_m: 0.6
+    yaw_deg: -47.0
+    upside: true
+  estimated_sensor_ground_height_m: 0.5
+  base_link_ground_height_m: null
+  calibration_status: candidate_from_user_edge_measurements_not_applied_optical_origin_pending

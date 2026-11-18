@@ -1,0 +1,266 @@
+[
+  {
+    "api": 1001,
+    "request": null,
+    "response": {
+      "19204": 6,
+      "19204_ip": [
+        "127.0.0.1:57770",
+        "192.168.1.163:60486",
+        "192.168.192.105:40090",
+        "192.168.192.105:40092",
+        "192.168.192.105:40104",
+        "192.168.192.105:35170"
+      ],
+      "19205": 1,
+      "19205_ip": [
+        "192.168.1.163:59642"
+      ],
+      "19206": 0,
+      "19206_ip": [],
+      "19207": 0,
+      "19207_ip": [],
+      "19210": 1,
+      "19210_ip": [
+        "127.0.0.1:54844"
+      ],
+      "19301_ip": [],
+      "create_on": "2026-11-13T09:45:13.332+0800",
+      "ret_code": 0
+    }
+  },
+  {
+    "api": 1400,
+    "request": {
+      "plugin": "DSPChassis"
+    },
+    "response": {
+      "DSPChassis": {
+        "BatteryInternalChargeRelay": {
+          "advanced": true,
+          "defaultValue": false,
+          "desc": "use battery internal relay",
+          "group": "Chassis",
+          "type": "bool",
+          "value": false
+        },
+        "CalibRunning": {
+          "advanced": true,
+          "defaultValue": false,
+          "desc": "calibration is running",
+          "group": "Chassis",
+          "type": "bool",
+          "value": false
+        },
+        "DIODebug": {
+          "advanced": true,
+          "defaultValue": false,
+          "desc": "debug for digital input",
+          "group": "Chassis",
+          "type": "bool",
+          "value": false
+        },
+        "DisableSpecialTest": {
+          "advanced": true,
+          "defaultValue": false,
+          "desc": "don't clean error that motor disable or error",
+          "group": "Chassis",
+          "type": "bool",
+          "value": false
+        },
+        "DmxTestFlag": {
+          "advanced": true,
+          "defaultValue": false,
+          "desc": "flag for dmx512 led test",
+          "group": "Chassis",
+          "type": "bool",
+          "value": false
+        },
+        "GyroFlyTd": {
+          "advanced": true,
+          "defaultValue": 0.25,
+          "desc": "to judge the gyro if flying",
+          "group": "Chassis",
+          "maxValue": 0.3,
+          "minValue": 0.25,
+          "type": "double",
+          "value": 0.25
+        },
+        "IsMoveReady": {
+          "advanced": true,
+          "defaultValue": false,
+          "desc": "whether is the status that ready to move",
+          "group": "Chassis",
+          "type": "bool",
+          "value": false
+        },
+        "ModbusDINum": {
+          "advanced": false,
+          "defaultValue": 0,
+          "desc": "number of digital output for Modbus IO",
+          "group": "Chassis",
+          "maxValue": 64,
+          "minValue": 0,
+          "type": "int32",
+          "value": 0
+        },
+        "ModbusDIOffset": {
+          "advanced": false,
+          "defaultValue": 0,
+          "desc": "offset of digital input for Modbus IO",
+          "group": "Chassis",
+          "maxValue": 65535,
+          "minValue": 0,
+          "type": "uint32",
+          "value": 0
+        },
+        "ModbusDONum": {
+          "advanced": false,
+          "defaultValue": 0,
+          "desc": "number of digital input for Modbus IO",
+          "group": "Chassis",
+          "maxValue": 64,
+          "minValue": 0,
+          "type": "int32",
+          "value": 0
+        },
+        "ModbusDOOffset": {
+          "advanced": false,
+          "defaultValue": 0,
+          "desc": "offset of digital output for Modbus IO",
+          "group": "Chassis",
+          "maxValue": 65535,
+          "minValue": 0,
+          "type": "uint32",
+          "value": 0
+        },
+        "ModbusIODebug": {
+          "advanced": true,
+          "defaultValue": false,
+          "desc": "debug for Modbus IO",
+          "group": "Chassis",
+          "type": "bool",
+          "value": false
+        },
+        "ModbusIP": {
+          "advanced": false,
+          "defaultValue": "192.168.192.66",
+          "desc": "ip of Modbus IO extend module",
+          "group": "Chassis",
+          "type": "string",
+          "value": "192.168.192.66"
+        },
+        "ModbusPort": {
+          "advanced": false,
+          "defaultValue": 502,
+          "desc": "port of Modbus IO extend module",
+          "group": "Chassis",
+          "maxValue": 65535,
+          "minValue": 0,
+          "type": "uint32",
+          "value": 502
+        },
+        "MotorDebugPrintFrameRate": {
+          "advanced": true,
+          "defaultValue": 6,
+          "desc": "motor print debug counter",
+          "group": "Chassis",
+          "maxValue": 100,
+          "minValue": 1,
+          "type": "uint32",
+          "value": 6
+        },
+        "NewSpeedTimeoutSlowT": {
+          "advanced": true,
+          "defaultValue": 25,
+          "desc": "slow time when newspeed timeout triggered ：NewSpeedTimeoutSlowT*20 ms",
+          "group": "Chassis",
+          "maxValue": 150,
+          "minValue": 1,
+          "type": "uint32",
+          "value": 25
+        },
+        "QueryStatusFreq": {
+          "advanced": true,
+          "defaultValue": 100,
+          "desc": "freq of query for enable and error",
+          "group": "Chassis",
+          "maxValue": 1000,
+          "minValue": 10,
+          "type": "uint32",
+          "value": 100
+        },
+        "RecordCanOdo": {
+          "advanced": true,
+          "defaultValue": false,
+          "desc": "whether recoder odometer can frame",
+          "group": "Chassis",
+          "type": "bool",
+          "value": false
+        },
+        "SecondCalibVel": {
+          "advanced": false,
+          "defaultValue": 1.0,
+          "desc": "Spin Reversal calib velocity after spin zeroDI triggered",
+          "group": "Chassis",
+          "maxValue": 10.0,
+          "minValue": 0.01,
+          "type": "double",
+          "value": 1.0
+        },
+        "SpinDynamicCalib": {
+          "advanced": false,
+          "defaultValue": true,
+          "desc": "Spin use dynamic calibrating when pass zeroDI",
+          "group": "Chassis",
+          "type": "bool",
+          "value": true
+        },
+        "SpinErr": {
+          "advanced": true,
+          "defaultValue": 0.1,
+          "desc": "spin error",
+          "group": "Chassis",
+          "maxValue": 10.0,
+          "minValue": 0.01,
+          "type": "double",
+          "value": 0.1
+        },
+        "TestDebug": {
+          "advanced": false,
+          "defaultValue": false,
+          "desc": "spin error",
+          "group": "Chassis",
+          "type": "bool",
+          "value": false
+        },
+        "UseModbusIOBoard": {
+          "advanced": false,
+          "defaultValue": false,
+          "desc": "enable Modbus IO extend module",
+          "group": "Chassis",
+          "type": "bool",
+          "value": false
+        },
+        "WalkJackMotorInterLock": {
+          "advanced": true,
+          "defaultValue": false,
+          "desc": "interlock when jack and walk",
+          "group": "Chassis",
+          "type": "bool",
+          "value": false
+        },
+        "WarningLightValid": {
+          "advanced": true,
+          "defaultValue": true,
+          "desc": "enable warninglight",
+          "group": "Chassis",
+          "type": "bool",
+          "value": true
+        }
+      },
+      "create_on": "2026-11-13T09:45:13.333+0800",
+      "ret_code": 0
+    }
+  }
+]

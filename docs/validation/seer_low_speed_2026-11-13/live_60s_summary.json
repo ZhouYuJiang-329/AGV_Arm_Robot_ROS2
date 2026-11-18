@@ -1,0 +1,194 @@
+{
+  "duration_s": 60.04020438899988,
+  "streams": {
+    "/odom": {
+      "count": 300,
+      "rate_hz": 4.996651877736841,
+      "max_age_s": 0.0011858940124511719,
+      "p95_age_s": 0.0010673999786376953,
+      "max_internal_gap_s": 0.21616498299999876,
+      "window_initial_gap_s": 0.09165726599985646,
+      "window_final_gap_s": 0.11507527899993875,
+      "nonincreasing_stamps": 0
+    },
+    "odom->base_link": {
+      "count": 300,
+      "rate_hz": 4.996651877736841,
+      "max_age_s": 0.002695798873901367,
+      "p95_age_s": 0.002361297607421875,
+      "max_internal_gap_s": 0.21610540799974842,
+      "window_initial_gap_s": 0.09230742599993391,
+      "window_final_gap_s": 0.11399412299988398,
+      "nonincreasing_stamps": 0
+    },
+    "/scan_front": {
+      "count": 300,
+      "rate_hz": 4.996651877736841,
+      "max_age_s": 0.02532339096069336,
+      "p95_age_s": 0.018482685089111328,
+      "max_internal_gap_s": 0.21025087700036238,
+      "window_initial_gap_s": 0.10714301500001966,
+      "window_final_gap_s": 0.1003954539996812,
+      "nonincreasing_stamps": 0
+    },
+    "/scan_back": {
+      "count": 300,
+      "rate_hz": 4.996651877736841,
+      "max_age_s": 0.02678656578063965,
+      "p95_age_s": 0.019667863845825195,
+      "max_internal_gap_s": 0.2104881310001474,
+      "window_initial_gap_s": 0.10771383400015111,
+      "window_final_gap_s": 0.09940146199960509,
+      "nonincreasing_stamps": 0
+    },
+    "/seer/localization/base_pose": {
+      "count": 120,
+      "rate_hz": 1.9986607510947365,
+      "max_age_s": 0.15018701553344727,
+      "p95_age_s": 0.14914536476135254,
+      "max_internal_gap_s": 0.6008875409997927,
+      "window_initial_gap_s": 0.1399519890001102,
+      "window_final_gap_s": 0.2990618359999644,
+      "nonincreasing_stamps": 0
+    },
+    "map->odom": {
+      "count": 300,
+      "rate_hz": 4.996651877736841,
+      "max_age_s": 0.050108909606933594,
+      "p95_age_s": 0.04838061332702637,
+      "max_internal_gap_s": 0.20178622900039045,
+      "window_initial_gap_s": 0.14029491400015104,
+      "window_final_gap_s": 0.09910616999968624,
+      "nonincreasing_stamps": 0
+    }
+  },
+  "diagnostics": {
+    "/seer_odometry/estimated_odometry": {
+      "levels": {
+        "1": 240
+      },
+      "messages": {
+        "estimated odometry: receive-time approximation": 240
+      },
+      "last_values": {
+        "source": "1005 actual vx/vy/w; estimated odometry",
+        "time_mode": "steady receive intervals; ROS receive stamps",
+        "device_sample_age": "unknown; no verified sample timestamp; duplicates undetectable",
+        "response_age_sec": "0.108408",
+        "valid_response_hz": "4.997323",
+        "request_ms": "0.476812",
+        "integration_interval_sec": "0.200010",
+        "skipped_integrations": "0.000000",
+        "reconnections": "0.000000",
+        "errors": "0.000000",
+        "quality_degraded": "false"
+      }
+    },
+    "/lidar_node/acquisition": {
+      "levels": {
+        "0": 240
+      },
+      "messages": {
+        "Running": 240
+      },
+      "last_values": {
+        "request_ms": "9.909262",
+        "errors": "0",
+        "connections": "1",
+        "stamp_mode": "receive_time (network latency included)"
+      }
+    },
+    "/lidar_node/laser_front": {
+      "levels": {
+        "0": 240
+      },
+      "messages": {
+        "fresh scan": 240
+      },
+      "last_values": {
+        "age_sec": "0.098228",
+        "frames": "10818",
+        "average_hz": "4.997322",
+        "duplicates": "0",
+        "clock_resets": "0",
+        "valid_points": "492",
+        "rejected_points": "19",
+        "outside_points": "0",
+        "collisions": "0",
+        "source_stamp": "3430081603520",
+        "device_id": "3",
+        "install_x_raw": "0.550000",
+        "install_y_raw": "-0.295000",
+        "install_z_raw": "0.600000",
+        "install_yaw_raw": "-47.000000",
+        "install_upside_raw": "true"
+      }
+    },
+    "/lidar_node/laser_back": {
+      "levels": {
+        "0": 240
+      },
+      "messages": {
+        "fresh scan": 240
+      },
+      "last_values": {
+        "age_sec": "0.098263",
+        "frames": "10818",
+        "average_hz": "4.997322",
+        "duplicates": "0",
+        "clock_resets": "0",
+        "valid_points": "468",
+        "rejected_points": "48",
+        "outside_points": "0",
+        "collisions": "0",
+        "source_stamp": "3430064698289",
+        "device_id": "4",
+        "install_x_raw": "-0.550000",
+        "install_y_raw": "0.295000",
+        "install_z_raw": "0.600000",
+        "install_yaw_raw": "142.000000",
+        "install_upside_raw": "true"
+      }
+    },
+    "/seer_localization/map_to_odom": {
+      "levels": {
+        "1": 1200
+      },
+      "messages": {
+        "receive_time_approximation": 1200
+      },
+      "last_values": {
+        "time_mode": "1004 receive time; internal sample age unknown; create_on ignored",
+        "coordinate_status": "UNVERIFIED_ASSUMPTION",
+        "map": "20251120141209997",
+        "reloc_status": "1.000000",
+        "confidence": "0.898700",
+        "pending_reason": "",
+        "tf_publish_mode": "bounded_odom_hold",
+        "tf_support_stamp_sec": "1794537801.271872",
+        "accepted_pose_stamp_sec": "1794537800.950805",
+        "query_pose_receive_age_sec": "0.436111",
+        "latest_odom_age_sec": "0.114990",
+        "pose_odom_stamp_difference_sec": "0.000000",
+        "response_age_sec": "0.436058",
+        "query_bundle_latency_sec": "0.002923",
+        "odom_bracket_sec": "0.200010",
+        "tf_available": "true",
+        "updates": "4328.000000",
+        "queries": "4329.000000",
+        "query_failures": "0.000000",
+        "jump_pending_samples": "0.000000",
+        "device_sample_age": "unknown; repeated cached poses cannot be detected"
+      }
+    },
+    "lifecycle_manager_real_planning: Nav2 Health": {
+      "levels": {
+        "0": 60
+      },
+      "messages": {
+        "Managed nodes are active": 60
+      },
+      "last_values": {}
+    }
+  }
+}

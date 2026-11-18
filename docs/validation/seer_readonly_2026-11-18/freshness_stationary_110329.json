@@ -1,0 +1,3313 @@
+{
+  "ip": "192.168.1.109",
+  "status_port": 19204,
+  "read_only": true,
+  "motion_sent": false,
+  "freshness_verified": false,
+  "rows": [
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2166.009110334,
+      "received_monotonic_s": 2166.019951768,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:03.251+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2166.019960967,
+      "received_monotonic_s": 2166.02605377,
+      "response": {
+        "create_on": "2026-11-18T10:32:03.258+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2166.226178401,
+      "received_monotonic_s": 2166.229451903,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:03.461+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2166.229456713,
+      "received_monotonic_s": 2166.232100455,
+      "response": {
+        "create_on": "2026-11-18T10:32:03.465+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2166.432223633,
+      "received_monotonic_s": 2166.437172133,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:03.667+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2166.437177374,
+      "received_monotonic_s": 2166.44280266,
+      "response": {
+        "create_on": "2026-11-18T10:32:03.672+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2166.642894198,
+      "received_monotonic_s": 2166.646912702,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:03.880+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2166.646917442,
+      "received_monotonic_s": 2166.648777158,
+      "response": {
+        "create_on": "2026-11-18T10:32:03.882+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2166.848896331,
+      "received_monotonic_s": 2166.853018257,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:04.086+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2166.853023748,
+      "received_monotonic_s": 2166.854787869,
+      "response": {
+        "create_on": "2026-11-18T10:32:04.088+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2167.054915659,
+      "received_monotonic_s": 2167.059808994,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:04.291+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2167.059815407,
+      "received_monotonic_s": 2167.066185895,
+      "response": {
+        "create_on": "2026-11-18T10:32:04.299+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2167.266306,
+      "received_monotonic_s": 2167.268572238,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:04.501+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2167.268576748,
+      "received_monotonic_s": 2167.271468626,
+      "response": {
+        "create_on": "2026-11-18T10:32:04.504+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2167.471591026,
+      "received_monotonic_s": 2167.479271525,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:04.709+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2167.479276285,
+      "received_monotonic_s": 2167.480945672,
+      "response": {
+        "create_on": "2026-11-18T10:32:04.714+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2167.681064299,
+      "received_monotonic_s": 2167.685098444,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:04.918+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2167.685105027,
+      "received_monotonic_s": 2167.687767635,
+      "response": {
+        "create_on": "2026-11-18T10:32:04.920+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2167.887927655,
+      "received_monotonic_s": 2167.892134733,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:05.125+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2167.892137048,
+      "received_monotonic_s": 2167.897353291,
+      "response": {
+        "create_on": "2026-11-18T10:32:05.128+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2168.097476826,
+      "received_monotonic_s": 2168.102808465,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:05.335+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2168.102813155,
+      "received_monotonic_s": 2168.112956109,
+      "response": {
+        "create_on": "2026-11-18T10:32:05.338+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2168.313076798,
+      "received_monotonic_s": 2168.315559257,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:05.548+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2168.315564408,
+      "received_monotonic_s": 2168.317236329,
+      "response": {
+        "create_on": "2026-11-18T10:32:05.550+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2168.517327317,
+      "received_monotonic_s": 2168.522518128,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:05.755+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2168.522521766,
+      "received_monotonic_s": 2168.526456677,
+      "response": {
+        "create_on": "2026-11-18T10:32:05.757+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2168.726550165,
+      "received_monotonic_s": 2168.730914162,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:05.964+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2168.730916056,
+      "received_monotonic_s": 2168.742865881,
+      "response": {
+        "create_on": "2026-11-18T10:32:05.965+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2168.942987426,
+      "received_monotonic_s": 2168.955383985,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:06.188+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2168.955388735,
+      "received_monotonic_s": 2168.959684853,
+      "response": {
+        "create_on": "2026-11-18T10:32:06.192+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2169.1597784,
+      "received_monotonic_s": 2169.172637125,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:06.405+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2169.172641604,
+      "received_monotonic_s": 2169.177432986,
+      "response": {
+        "create_on": "2026-11-18T10:32:06.409+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2169.377555612,
+      "received_monotonic_s": 2169.385549044,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:06.612+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2169.385555197,
+      "received_monotonic_s": 2169.390157812,
+      "response": {
+        "create_on": "2026-11-18T10:32:06.622+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2169.590329709,
+      "received_monotonic_s": 2169.603994647,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:06.834+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2169.604040831,
+      "received_monotonic_s": 2169.608689077,
+      "response": {
+        "create_on": "2026-11-18T10:32:06.841+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2169.808810936,
+      "received_monotonic_s": 2169.816247545,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:07.046+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2169.816253758,
+      "received_monotonic_s": 2169.822125387,
+      "response": {
+        "create_on": "2026-11-18T10:32:07.051+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2170.022244991,
+      "received_monotonic_s": 2170.029493836,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:07.260+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2170.029500229,
+      "received_monotonic_s": 2170.039721694,
+      "response": {
+        "create_on": "2026-11-18T10:32:07.271+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2170.239791987,
+      "received_monotonic_s": 2170.245444788,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:07.477+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2170.245449889,
+      "received_monotonic_s": 2170.271764387,
+      "response": {
+        "create_on": "2026-11-18T10:32:07.499+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2170.471843158,
+      "received_monotonic_s": 2170.490667727,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:07.721+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2170.490671926,
+      "received_monotonic_s": 2170.505120587,
+      "response": {
+        "create_on": "2026-11-18T10:32:07.731+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2170.70522245,
+      "received_monotonic_s": 2170.712885709,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:07.941+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2170.712891952,
+      "received_monotonic_s": 2170.72559685,
+      "response": {
+        "create_on": "2026-11-18T10:32:07.950+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2170.925716909,
+      "received_monotonic_s": 2170.932365764,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:08.161+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2170.932370924,
+      "received_monotonic_s": 2170.937071496,
+      "response": {
+        "create_on": "2026-11-18T10:32:08.167+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2171.137165151,
+      "received_monotonic_s": 2171.144320582,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:08.376+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2171.144326173,
+      "received_monotonic_s": 2171.14893146,
+      "response": {
+        "create_on": "2026-11-18T10:32:08.381+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2171.349050887,
+      "received_monotonic_s": 2171.356822959,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:08.584+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2171.356827779,
+      "received_monotonic_s": 2171.371358159,
+      "response": {
+        "create_on": "2026-11-18T10:32:08.603+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2171.57147971,
+      "received_monotonic_s": 2171.585182502,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:08.816+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2171.585188935,
+      "received_monotonic_s": 2171.593315378,
+      "response": {
+        "create_on": "2026-11-18T10:32:08.819+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2171.793422414,
+      "received_monotonic_s": 2171.798813666,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:09.029+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2171.798819317,
+      "received_monotonic_s": 2171.802655128,
+      "response": {
+        "create_on": "2026-11-18T10:32:09.034+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2172.00275008,
+      "received_monotonic_s": 2172.007815064,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:09.239+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2172.007821217,
+      "received_monotonic_s": 2172.01439733,
+      "response": {
+        "create_on": "2026-11-18T10:32:09.243+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2172.21449589,
+      "received_monotonic_s": 2172.225048402,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:09.456+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2172.225054845,
+      "received_monotonic_s": 2172.232819047,
+      "response": {
+        "create_on": "2026-11-18T10:32:09.459+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2172.43290503,
+      "received_monotonic_s": 2172.441237894,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:09.669+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2172.441244117,
+      "received_monotonic_s": 2172.443963126,
+      "response": {
+        "create_on": "2026-11-18T10:32:09.675+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2172.644048854,
+      "received_monotonic_s": 2172.655269496,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:09.886+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2172.655274446,
+      "received_monotonic_s": 2172.876409494,
+      "response": {
+        "create_on": "2026-11-18T10:32:10.108+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2173.076504241,
+      "received_monotonic_s": 2173.092331879,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:10.321+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2173.092338192,
+      "received_monotonic_s": 2173.099758998,
+      "response": {
+        "create_on": "2026-11-18T10:32:10.331+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2173.299892123,
+      "received_monotonic_s": 2173.310335507,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:10.540+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2173.310341028,
+      "received_monotonic_s": 2173.320965312,
+      "response": {
+        "create_on": "2026-11-18T10:32:10.552+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2173.521045879,
+      "received_monotonic_s": 2173.534978571,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:10.759+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2173.534984313,
+      "received_monotonic_s": 2173.76286486,
+      "response": {
+        "create_on": "2026-11-18T10:32:10.992+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2173.962968509,
+      "received_monotonic_s": 2173.968554884,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:11.199+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2173.968559804,
+      "received_monotonic_s": 2173.98505081,
+      "response": {
+        "create_on": "2026-11-18T10:32:11.216+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2174.18518856,
+      "received_monotonic_s": 2174.191087062,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:11.422+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2174.191093375,
+      "received_monotonic_s": 2174.227349437,
+      "response": {
+        "create_on": "2026-11-18T10:32:11.452+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2174.427451564,
+      "received_monotonic_s": 2174.431176345,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:11.662+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2174.431179802,
+      "received_monotonic_s": 2174.436301176,
+      "response": {
+        "create_on": "2026-11-18T10:32:11.664+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2174.63639735,
+      "received_monotonic_s": 2174.641911985,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:11.873+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2174.641918058,
+      "received_monotonic_s": 2174.645038171,
+      "response": {
+        "create_on": "2026-11-18T10:32:11.876+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2174.845125013,
+      "received_monotonic_s": 2174.852974919,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:12.082+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0.006942772094771499,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2174.85298029,
+      "received_monotonic_s": 2174.858160963,
+      "response": {
+        "create_on": "2026-11-18T10:32:12.089+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2175.058264408,
+      "received_monotonic_s": 2175.068069538,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:12.299+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2175.068076112,
+      "received_monotonic_s": 2175.072481511,
+      "response": {
+        "create_on": "2026-11-18T10:32:12.303+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2175.272602482,
+      "received_monotonic_s": 2175.276872846,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:12.508+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2175.276878357,
+      "received_monotonic_s": 2175.279163876,
+      "response": {
+        "create_on": "2026-11-18T10:32:12.510+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2175.47930083,
+      "received_monotonic_s": 2175.484601989,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:12.713+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2175.484608312,
+      "received_monotonic_s": 2175.492225312,
+      "response": {
+        "create_on": "2026-11-18T10:32:12.722+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2175.692345985,
+      "received_monotonic_s": 2175.707265115,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:12.935+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2175.707271177,
+      "received_monotonic_s": 2175.712761581,
+      "response": {
+        "create_on": "2026-11-18T10:32:12.944+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2175.91289325,
+      "received_monotonic_s": 2175.918688786,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:13.150+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2175.918695049,
+      "received_monotonic_s": 2175.920974715,
+      "response": {
+        "create_on": "2026-11-18T10:32:13.152+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2176.12112412,
+      "received_monotonic_s": 2176.127507868,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:13.356+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2176.127513319,
+      "received_monotonic_s": 2176.130068117,
+      "response": {
+        "create_on": "2026-11-18T10:32:13.361+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2176.330166467,
+      "received_monotonic_s": 2176.332620509,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:13.563+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2176.332627263,
+      "received_monotonic_s": 2176.335996073,
+      "response": {
+        "create_on": "2026-11-18T10:32:13.567+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2176.536075362,
+      "received_monotonic_s": 2176.538420831,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:13.769+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2176.538426683,
+      "received_monotonic_s": 2176.540917218,
+      "response": {
+        "create_on": "2026-11-18T10:32:13.772+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2176.741034494,
+      "received_monotonic_s": 2176.744601568,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:13.975+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2176.744605896,
+      "received_monotonic_s": 2176.748823659,
+      "response": {
+        "create_on": "2026-11-18T10:32:13.979+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2176.948945043,
+      "received_monotonic_s": 2176.95157338,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:14.181+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2176.951577047,
+      "received_monotonic_s": 2176.956516333,
+      "response": {
+        "create_on": "2026-11-18T10:32:14.185+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": 0.0,
+        "steer_angles": [
+          0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2177.156613968,
+      "received_monotonic_s": 2177.158741282,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:14.389+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2177.158743366,
+      "received_monotonic_s": 2177.163265309,
+      "response": {
+        "create_on": "2026-11-18T10:32:14.393+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": -0.0,
+        "steer_angles": [
+          -0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2177.363400311,
+      "received_monotonic_s": 2177.368130961,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:14.598+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2177.368134147,
+      "received_monotonic_s": 2177.372408094,
+      "response": {
+        "create_on": "2026-11-18T10:32:14.602+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": -0.0,
+        "steer_angles": [
+          -0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2177.572498004,
+      "received_monotonic_s": 2177.581807719,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:14.810+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2177.581812679,
+      "received_monotonic_s": 2177.592573136,
+      "response": {
+        "create_on": "2026-11-18T10:32:14.815+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": -0.0,
+        "steer_angles": [
+          -0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2177.792696481,
+      "received_monotonic_s": 2177.811302042,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:15.035+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2177.81131059,
+      "received_monotonic_s": 2177.82218046,
+      "response": {
+        "create_on": "2026-11-18T10:32:15.050+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": -0.0,
+        "steer_angles": [
+          -0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2178.022289846,
+      "received_monotonic_s": 2178.032863572,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:15.258+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2178.032870686,
+      "received_monotonic_s": 2178.040657793,
+      "response": {
+        "create_on": "2026-11-18T10:32:15.270+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": -0.0,
+        "steer_angles": [
+          -0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2178.240779926,
+      "received_monotonic_s": 2178.247528282,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:15.474+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2178.247534104,
+      "received_monotonic_s": 2178.250173622,
+      "response": {
+        "create_on": "2026-11-18T10:32:15.481+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": -0.0,
+        "steer_angles": [
+          -0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2178.450321928,
+      "received_monotonic_s": 2178.45274774,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:15.683+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2178.452752039,
+      "received_monotonic_s": 2178.454909674,
+      "response": {
+        "create_on": "2026-11-18T10:32:15.685+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": -0.0,
+        "steer_angles": [
+          -0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2178.655051267,
+      "received_monotonic_s": 2178.656910752,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:15.887+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2178.656914249,
+      "received_monotonic_s": 2178.660139301,
+      "response": {
+        "create_on": "2026-11-18T10:32:15.890+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": -0.0,
+        "steer_angles": [
+          -0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2178.860228073,
+      "received_monotonic_s": 2178.862318419,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:16.093+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2178.862321846,
+      "received_monotonic_s": 2178.865297339,
+      "response": {
+        "create_on": "2026-11-18T10:32:16.096+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": -0.0,
+        "steer_angles": [
+          -0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    },
+    {
+      "api": 1004,
+      "request": null,
+      "sent_monotonic_s": 2179.065418928,
+      "received_monotonic_s": 2179.067831432,
+      "response": {
+        "angle": -1.5353,
+        "confidence": 0.3732,
+        "correction_errs": [],
+        "create_on": "2026-11-18T10:32:16.298+0800",
+        "current_station": "",
+        "in_forbidden_area": false,
+        "last_station": "",
+        "loc_method": 0,
+        "loc_notify": "",
+        "loc_state": 1,
+        "reliabilities": [],
+        "ret_code": 0,
+        "similarity": 0,
+        "update_reason": 0,
+        "x": -0.5059,
+        "y": 4.3742
+      }
+    },
+    {
+      "api": 1005,
+      "request": null,
+      "sent_monotonic_s": 2179.067836121,
+      "received_monotonic_s": 2179.070347727,
+      "response": {
+        "create_on": "2026-11-18T10:32:16.300+0800",
+        "detect_skid": false,
+        "is_stop": true,
+        "motor_steer_angles": [],
+        "r_spin": -0.0,
+        "r_steer": -0.0,
+        "r_steer_angles": [
+          -0.0
+        ],
+        "r_vx": -0.0,
+        "r_vy": -0.0,
+        "r_w": -0.0,
+        "ret_code": 0,
+        "spin": -0.0013,
+        "steer": -0.0,
+        "steer_angles": [
+          -0.0,
+          0.0
+        ],
+        "vx": -0.0,
+        "vy": -0.0,
+        "w": -0.0
+      }
+    }
+  ],
+  "errors": [],
+  "summary": {
+    "1004": {
+      "responses": 60,
+      "nonzero_ret_codes": 0,
+      "latency_ms_min": 1.859484999840788,
+      "latency_ms_median": 5.724168500137239,
+      "latency_ms_max": 18.824569000116753,
+      "distinct_payloads_excluding_create_on": 2,
+      "distinct_selected_values": 1,
+      "selected_fields": [
+        "x",
+        "y",
+        "angle",
+        "loc_state",
+        "confidence"
+      ],
+      "first_selected_values": [
+        "-0.5059",
+        "4.3742",
+        "-1.5353",
+        "1",
+        "0.3732"
+      ],
+      "last_selected_values": [
+        "-0.5059",
+        "4.3742",
+        "-1.5353",
+        "1",
+        "0.3732"
+      ],
+      "source_timestamp_candidates": [],
+      "create_on_distinct_count": 60
+    },
+    "1005": {
+      "responses": 60,
+      "nonzero_ret_codes": 0,
+      "latency_ms_min": 1.6693869997652655,
+      "latency_ms_median": 4.7459769998567936,
+      "latency_ms_max": 227.88054699958593,
+      "distinct_payloads_excluding_create_on": 2,
+      "distinct_selected_values": 1,
+      "selected_fields": [
+        "vx",
+        "vy",
+        "w",
+        "is_stop"
+      ],
+      "first_selected_values": [
+        "-0.0",
+        "-0.0",
+        "-0.0",
+        "True"
+      ],
+      "last_selected_values": [
+        "-0.0",
+        "-0.0",
+        "-0.0",
+        "True"
+      ],
+      "source_timestamp_candidates": [],
+      "create_on_distinct_count": 60
+    }
+  }
+}

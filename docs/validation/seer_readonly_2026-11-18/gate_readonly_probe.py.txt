@@ -1,0 +1,90 @@
+import collections,json,time,sys
+from pathlib import Path
+import rclpy
+from rclpy.node import Node
+from rclpy.qos import QoSProfile,DurabilityPolicy,qos_profile_sensor_data
+from rcl_interfaces.srv import GetParameters
+from diagnostic_msgs.msg import DiagnosticArray
+from sensor_msgs.msg import LaserScan
+from tf2_msgs.msg import TFMessage
+from std_msgs.msg import Header
+from tf2_ros import Buffer
+from rclpy.time import Time
+sys.path.insert(0,str(Path('src/agv_bringup').resolve()))
+from agv_bringup_sim.execution_gate import ExecutionGate
+from agv_bringup_sim.real_navigation import parameters,load_yaml
+class Probe(Node):
+ def __init__(self):
+  super().__init__('execution_gate_readonly_observer')
+  self.guard_config=parameters('src/robot_move/config/navigation_guard.yaml','navigation_guard')
+  self.review=load_yaml('src/agv_bringup/config/agv_navigation_commissioning.yaml')
+  self.map_file=str(Path('maps/seer/20251120141209997_navigable.yaml').resolve())
+  transform=['base_transform_confirmed','base_x_in_seer','base_y_in_seer','base_yaw_in_seer']
+  self.queries={'navigation_guard':['use_sim_time',*self.guard_config],'seer_odometry':['use_sim_time','publish_tf',*transform],'seer_localization':['use_sim_time','base_transform_confirmed','map_alignment_confirmed','expected_map','expected_map_md5','tf_publish_mode','base_x_in_seer_m','base_y_in_seer_m','base_yaw_in_seer_rad'],'map_server':['use_sim_time','yaml_filename']}
+  self.queries={k:list(dict.fromkeys(v)) for k,v in self.queries.items()}
+  self.results={};self.parameter_clients={k:self.create_client(GetParameters,'/'+k+'/get_parameters') for k in self.queries};self.futures={};self.paramtime=0.;self.edges={};self.scan_seen={};self.state=None;self.guard_seen=0.;self.latestloc={};self.latestguard={};self.samples=[];self.events=[];self.previous=None;self.buf=Buffer();self.pending=[];self.scanmetrics={k:[] for k in ('front','back')};self.tfchecks=[];self.subs=[];self.heartbeats=0
+  self.subs.append(self.create_subscription(DiagnosticArray,'/diagnostics',self.diag,30))
+  self.subs.append(self.create_subscription(Header,'/navigation/execution_heartbeat',lambda m:setattr(self,'heartbeats',self.heartbeats+1),10))
+  for topic in ('/tf','/tf_static'):
+   self.subs.append(self.create_subscription(TFMessage,topic,lambda m,static=topic=='/tf_static':self.transforms(m,static),QoSProfile(depth=100,durability=DurabilityPolicy.TRANSIENT_LOCAL) if topic=='/tf_static' else 100))
+  for side in ('front','back'):self.subs.append(self.create_subscription(LaserScan,'/scan_'+side,lambda m,side=side:self.scan(m,side),qos_profile_sensor_data))
+ def transforms(self,m,static):
+  ExecutionGate.tf(self,m,None)
+  for t in m.transforms:
+   if static:self.buf.set_transform_static(t,'readonly')
+   else:self.buf.set_transform(t,'readonly')
+ def scan(self,m,side):
+  ExecutionGate.scan(self,m,side)
+  age=self.get_clock().now().nanoseconds/1e9-(m.header.stamp.sec+m.header.stamp.nanosec/1e9)
+  self.scanmetrics[side].append(age);self.pending.append((time.monotonic()+.45,side,m.header))
+ def diag(self,m):
+  ExecutionGate.diagnostics(self,m)
+  for s in m.status:
+   if s.name=='/seer_localization/map_to_odom':self.latestloc={'message':s.message,'fields':{v.key:v.value for v in s.values}}
+   if s.name=='/navigation_guard':self.latestguard={v.key:v.value for v in s.values}
+ def sample(self):
+  now=time.monotonic()
+  for k,f in list(self.futures.items()):
+   if f.done():
+    try:self.results[k]=dict(zip(self.queries[k],map(ExecutionGate.decode,f.result().values)))
+    except Exception as e:self.events.append({'error':str(e)})
+    del self.futures[k]
+  paramok=ExecutionGate.parameters_ok(self)
+  if now-self.paramtime>1 and not self.futures:
+   self.paramtime=now;self.results={}
+   for k,c in self.parameter_clients.items():
+    if c.service_is_ready():self.futures[k]=c.call_async(GetParameters.Request(names=self.queries[k]))
+  reasons=[]
+  if not paramok:reasons.append('parameters_pending_or_mismatch')
+  if self.state not in ('WaitingForInputs','Ready','Active'):reasons.append('guard_diagnostic_invalid')
+  if now-self.guard_seen>=.5:reasons.append('guard_diagnostic_expired')
+  if not ExecutionGate.graph_ok(self,True):reasons.append('graph_invalid')
+  for side in ('front','back'):
+   if self.scan_seen.get(side,0)<=now:reasons.append('scan_'+side+'_expired')
+  details={'reasons':reasons,'guard_state':self.latestguard.get('state'),'unhealthy_inputs':{k:v for k,v in self.latestguard.items() if k.startswith('input:') and k!='input:execution_heartbeat' and v!='healthy'},'localization_message':self.latestloc.get('message'),'confidence':self.latestloc.get('fields',{}).get('confidence'),'response_age':self.latestloc.get('fields',{}).get('response_age_sec')}
+  self.samples.append(details)
+  signature=json.dumps(details,sort_keys=True)
+  if reasons and signature!=self.previous:self.events.append({'at_monotonic':now,**details})
+  self.previous=signature
+  todo=[]
+  for due,side,h in self.pending:
+   if now<due:todo.append((due,side,h));continue
+   result={'side':side,'time':h.stamp.sec+h.stamp.nanosec/1e9,'frame':h.frame_id}
+   try:self.buf.lookup_transform('map',h.frame_id,Time.from_msg(h.stamp));result['ok']=True
+   except Exception as e:result['ok']=False;result['error']=str(e)
+   self.tfchecks.append(result)
+  self.pending=todo
+rclpy.init();n=Probe();start=time.monotonic();nextsample=start
+try:
+ while time.monotonic()-start<35:
+  rclpy.spin_once(n,timeout_sec=.02)
+  if time.monotonic()>=nextsample:n.sample();nextsample=time.monotonic()+.1
+ report={'read_only':True,'motion_sent':False,'duration':time.monotonic()-start,'heartbeat_messages':n.heartbeats,'samples':n.samples,'events':n.events,'scan_ages':n.scanmetrics,'tf_checks':n.tfchecks,'runtime_parameters':n.results}
+ path=Path('docs/validation/seer_readonly_2026-11-18')/('gate_diagnosis_'+str(int(time.time()))+'.json');path.write_text(json.dumps(report,ensure_ascii=False,indent=2))
+ print('saved',path)
+ print('failed_conditions',dict(collections.Counter(r for s in n.samples[20:] for r in s['reasons'])))
+ print('localization_messages',dict(collections.Counter(s['localization_message'] for s in n.samples)))
+ print('unhealthy_inputs',dict(collections.Counter(k+':'+v for s in n.samples for k,v in s['unhealthy_inputs'].items())))
+ print('tf_checks',dict(collections.Counter(str(r['ok']) for r in n.tfchecks)))
+ print('tf_error_examples',[r for r in n.tfchecks if not r['ok']][:3]);print('events_examples',n.events[-5:])
+finally:n.destroy_node();rclpy.shutdown()

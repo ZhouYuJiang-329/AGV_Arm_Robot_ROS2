@@ -1,0 +1,66 @@
+{
+  "duration_s": 10.014398502999939,
+  "counts": {
+    "/odom": 50,
+    "odom->base_link": 50,
+    "/scan_front": 50,
+    "/scan_back": 50,
+    "map->odom": 50
+  },
+  "max_header_age_s": {
+    "/odom": 0.0010929066558837894,
+    "odom->base_link": 0.0026946234213867104,
+    "/scan_front": 0.02115911993933106,
+    "/scan_back": 0.021886552112915042,
+    "map->odom": 0.021111321503906266
+  },
+  "max_receive_gap_s": {
+    "/odom": 0.21076283899992632,
+    "odom->base_link": 0.21033966000004511,
+    "/scan_front": 0.2045100979999006,
+    "/scan_back": 0.20416109300003882,
+    "map->odom": 0.20123898800011375
+  },
+  "final_receive_age_s": {
+    "/odom": 0.06497766099982982,
+    "odom->base_link": 0.06398596200006068,
+    "/scan_front": 0.04850653699986651,
+    "/scan_back": 0.047634128000026976,
+    "map->odom": 0.05068144500000926
+  },
+  "localization_diagnostics": {
+    "/seer_localization/map_to_odom": {
+      "level": 1,
+      "message": "receive_time_approximation",
+      "values": {
+        "time_mode": "1004 receive time; internal sample age unknown; create_on ignored",
+        "coordinate_status": "UNVERIFIED_ASSUMPTION",
+        "map": "20251120141209997",
+        "reloc_status": "1.000000",
+        "confidence": "0.854200",
+        "pending_reason": "",
+        "tf_publish_mode": "bounded_odom_hold",
+        "tf_support_stamp_sec": "1794537359.222512",
+        "accepted_pose_stamp_sec": "1794537358.847987",
+        "query_pose_receive_age_sec": "0.438927",
+        "latest_odom_age_sec": "0.064348",
+        "pose_odom_stamp_difference_sec": "0.000000",
+        "response_age_sec": "0.438874",
+        "query_bundle_latency_sec": "0.003098",
+        "odom_bracket_sec": "0.200134",
+        "tf_available": "true",
+        "updates": "3444.000000",
+        "queries": "3445.000000",
+        "query_failures": "0.000000",
+        "jump_pending_samples": "0.000000",
+        "device_sample_age": "unknown; repeated cached poses cannot be detected"
+      }
+    }
+  },
+  "map_base_pose": {
+    "x": 1.0617,
+    "y": 0.20439999999999986,
+    "yaw": -1.3940036732051033
+  },
+  "motion_topics": []
+}

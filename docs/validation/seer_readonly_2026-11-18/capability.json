@@ -1,0 +1,3852 @@
+{
+  "read_only": true,
+  "status_port": 19204,
+  "motion_sent": false,
+  "freshness_verified": false,
+  "interpretation": "Candidate fields and clock comparisons only; create_on is API upload time, not accepted as measurement time.",
+  "inventory": [
+    {
+      "api": 1004,
+      "ret_code": 0,
+      "fields": [
+        "angle",
+        "confidence",
+        "correction_errs",
+        "create_on",
+        "current_station",
+        "in_forbidden_area",
+        "last_station",
+        "loc_method",
+        "loc_notify",
+        "loc_state",
+        "reliabilities",
+        "ret_code",
+        "similarity",
+        "update_reason",
+        "x",
+        "y"
+      ],
+      "timestamp_candidates": []
+    },
+    {
+      "api": 1005,
+      "ret_code": 0,
+      "fields": [
+        "create_on",
+        "detect_skid",
+        "is_stop",
+        "motor_steer_angles",
+        "r_spin",
+        "r_steer",
+        "r_steer_angles",
+        "r_vx",
+        "r_vy",
+        "r_w",
+        "ret_code",
+        "spin",
+        "steer",
+        "steer_angles",
+        "vx",
+        "vy",
+        "w"
+      ],
+      "timestamp_candidates": []
+    }
+  ],
+  "clock_samples": [
+    {
+      "before": {
+        "api": 1002,
+        "request": null,
+        "sent_monotonic_s": 1194.395398554,
+        "received_monotonic_s": 1194.398410131,
+        "response": {
+          "controller_humi": 25.341,
+          "controller_temp": 36.176,
+          "controller_voltage": 24.061,
+          "create_on": "2026-11-18T10:15:51.736+0800",
+          "odo": 13170.2,
+          "ret_code": 0,
+          "time": 340502,
+          "today_odo": -0.0,
+          "today_time": 372958,
+          "total_time": 4779454905
+        }
+      },
+      "motors": {
+        "api": 1040,
+        "request": null,
+        "sent_monotonic_s": 1194.398414098,
+        "received_monotonic_s": 1194.401574041,
+        "response": {
+          "create_on": "2026-11-18T10:15:51.739+0800",
+          "motor_info": [
+            {
+              "calib": true,
+              "can_id": 1,
+              "can_router": 1,
+              "current": 1.44999993,
+              "emc": false,
+              "encoder": 6560,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "374708736668",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "motor",
+              "passive": false,
+              "position": 0.00195067236,
+              "raw_position": 0.00195067236,
+              "speed": 0,
+              "stop": true,
+              "temperature": 0,
+              "type": 0,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 2,
+              "can_router": 1,
+              "current": 0.22,
+              "emc": false,
+              "encoder": -5930647,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "374709183763",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "rotation",
+              "passive": false,
+              "position": 8.84548285e-07,
+              "raw_position": -0.0115073314,
+              "speed": 0,
+              "stop": true,
+              "temperature": 0,
+              "type": 1,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 3,
+              "can_router": 1,
+              "current": 0.719999969,
+              "emc": false,
+              "encoder": 19228,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "374710611573",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "motor1",
+              "passive": false,
+              "position": 0.00573777361,
+              "raw_position": 0.00573777361,
+              "speed": 0,
+              "stop": true,
+              "temperature": 0,
+              "type": 0,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 4,
+              "can_router": 1,
+              "current": 0.979999959,
+              "emc": false,
+              "encoder": -5900743,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "374711124430",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "rotation2",
+              "passive": false,
+              "position": 1.70774047e-06,
+              "raw_position": -0.000888882729,
+              "speed": 0,
+              "stop": true,
+              "temperature": 0,
+              "type": 1,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 2,
+              "can_router": 2,
+              "current": 0.294,
+              "emc": false,
+              "encoder": 216,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "374708904049",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "motor3",
+              "passive": false,
+              "position": -0.00132147467,
+              "raw_position": -0.00132147467,
+              "speed": 0,
+              "stop": true,
+              "temperature": 25,
+              "type": 2,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 1,
+              "can_router": 2,
+              "current": 0,
+              "emc": false,
+              "encoder": -2,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "374708576573",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "lift",
+              "passive": false,
+              "position": 0.00999998767,
+              "raw_position": -1.22070309e-08,
+              "speed": 0,
+              "stop": true,
+              "temperature": 22,
+              "type": 3,
+              "voltage": 0
+            }
+          ],
+          "ret_code": 0
+        }
+      },
+      "after": {
+        "api": 1002,
+        "request": null,
+        "sent_monotonic_s": 1194.401577206,
+        "received_monotonic_s": 1194.404209519,
+        "response": {
+          "controller_humi": 25.341,
+          "controller_temp": 36.176,
+          "controller_voltage": 24.061,
+          "create_on": "2026-11-18T10:15:51.743+0800",
+          "odo": 13170.2,
+          "ret_code": 0,
+          "time": 340502,
+          "today_odo": -0.0,
+          "today_time": 372958,
+          "total_time": 4779454905
+        }
+      },
+      "candidate_ages_if_same_clock": [
+        {
+          "motor": "motor",
+          "header": {
+            "data_nsec": "374708736668",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.20673666799996,
+            -34.20673666799996
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "rotation",
+          "header": {
+            "data_nsec": "374709183763",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.20718376299999,
+            -34.20718376299999
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "motor1",
+          "header": {
+            "data_nsec": "374710611573",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.208611572999985,
+            -34.208611572999985
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "rotation2",
+          "header": {
+            "data_nsec": "374711124430",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.209124429999974,
+            -34.209124429999974
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "motor3",
+          "header": {
+            "data_nsec": "374708904049",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.206904049,
+            -34.206904049
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "lift",
+          "header": {
+            "data_nsec": "374708576573",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.20657657300001,
+            -34.20657657300001
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        }
+      ]
+    },
+    {
+      "before": {
+        "api": 1002,
+        "request": null,
+        "sent_monotonic_s": 1194.704409075,
+        "received_monotonic_s": 1194.707775678,
+        "response": {
+          "controller_humi": 25.355,
+          "controller_temp": 36.176,
+          "controller_voltage": 24.04,
+          "create_on": "2026-11-18T10:15:52.045+0800",
+          "odo": 13170.2,
+          "ret_code": 0,
+          "time": 340502,
+          "today_odo": -0.0,
+          "today_time": 372958,
+          "total_time": 4779454905
+        }
+      },
+      "motors": {
+        "api": 1040,
+        "request": null,
+        "sent_monotonic_s": 1194.707781588,
+        "received_monotonic_s": 1194.715520801,
+        "response": {
+          "create_on": "2026-11-18T10:15:52.050+0800",
+          "motor_info": [
+            {
+              "calib": true,
+              "can_id": 1,
+              "can_router": 1,
+              "current": 1.44999993,
+              "emc": false,
+              "encoder": 6560,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "375023801488",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "motor",
+              "passive": false,
+              "position": 0.00195067236,
+              "raw_position": 0.00195067236,
+              "speed": 0,
+              "stop": true,
+              "temperature": 0,
+              "type": 0,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 2,
+              "can_router": 1,
+              "current": 0.199999988,
+              "emc": false,
+              "encoder": -5930647,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "375025635630",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "rotation",
+              "passive": false,
+              "position": 8.84548285e-07,
+              "raw_position": -0.0115073314,
+              "speed": 0,
+              "stop": true,
+              "temperature": 0,
+              "type": 1,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 3,
+              "can_router": 1,
+              "current": 0.719999969,
+              "emc": false,
+              "encoder": 19228,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "375024742678",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "motor1",
+              "passive": false,
+              "position": 0.00573777361,
+              "raw_position": 0.00573777361,
+              "speed": 0,
+              "stop": true,
+              "temperature": 0,
+              "type": 0,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 4,
+              "can_router": 1,
+              "current": 0.979999959,
+              "emc": false,
+              "encoder": -5900743,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "375026159440",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "rotation2",
+              "passive": false,
+              "position": 1.70774047e-06,
+              "raw_position": -0.000888882729,
+              "speed": 0,
+              "stop": true,
+              "temperature": 0,
+              "type": 1,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 2,
+              "can_router": 2,
+              "current": 0.307,
+              "emc": false,
+              "encoder": 216,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "375022136916",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "motor3",
+              "passive": false,
+              "position": -0.00132147467,
+              "raw_position": -0.00132147467,
+              "speed": 0,
+              "stop": true,
+              "temperature": 25,
+              "type": 2,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 1,
+              "can_router": 2,
+              "current": 0,
+              "emc": false,
+              "encoder": -2,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "375021600964",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "lift",
+              "passive": false,
+              "position": 0.00999998767,
+              "raw_position": -1.22070309e-08,
+              "speed": 0,
+              "stop": true,
+              "temperature": 22,
+              "type": 3,
+              "voltage": 0
+            }
+          ],
+          "ret_code": 0
+        }
+      },
+      "after": {
+        "api": 1002,
+        "request": null,
+        "sent_monotonic_s": 1194.715527903,
+        "received_monotonic_s": 1194.719168479,
+        "response": {
+          "controller_humi": 25.355,
+          "controller_temp": 36.176,
+          "controller_voltage": 24.04,
+          "create_on": "2026-11-18T10:15:52.057+0800",
+          "odo": 13170.2,
+          "ret_code": 0,
+          "time": 340502,
+          "today_odo": -0.0,
+          "today_time": 372958,
+          "total_time": 4779454905
+        }
+      },
+      "candidate_ages_if_same_clock": [
+        {
+          "motor": "motor",
+          "header": {
+            "data_nsec": "375023801488",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.521801487999994,
+            -34.521801487999994
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "rotation",
+          "header": {
+            "data_nsec": "375025635630",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.52363563,
+            -34.52363563
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "motor1",
+          "header": {
+            "data_nsec": "375024742678",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.522742677999986,
+            -34.522742677999986
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "rotation2",
+          "header": {
+            "data_nsec": "375026159440",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.524159440000005,
+            -34.524159440000005
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "motor3",
+          "header": {
+            "data_nsec": "375022136916",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.52013691600001,
+            -34.52013691600001
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "lift",
+          "header": {
+            "data_nsec": "375021600964",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.519600964000006,
+            -34.519600964000006
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        }
+      ]
+    },
+    {
+      "before": {
+        "api": 1002,
+        "request": null,
+        "sent_monotonic_s": 1195.019434286,
+        "received_monotonic_s": 1195.058848089,
+        "response": {
+          "controller_humi": 25.325,
+          "controller_temp": 36.176,
+          "controller_voltage": 24.054,
+          "create_on": "2026-11-18T10:15:52.397+0800",
+          "odo": 13170.2,
+          "ret_code": 0,
+          "time": 340502,
+          "today_odo": -0.0,
+          "today_time": 372958,
+          "total_time": 4779454905
+        }
+      },
+      "motors": {
+        "api": 1040,
+        "request": null,
+        "sent_monotonic_s": 1195.058853688,
+        "received_monotonic_s": 1195.063800169,
+        "response": {
+          "create_on": "2026-11-18T10:15:52.400+0800",
+          "motor_info": [
+            {
+              "calib": true,
+              "can_id": 1,
+              "can_router": 1,
+              "current": 1.44999993,
+              "emc": false,
+              "encoder": 6560,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "375369800249",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "motor",
+              "passive": false,
+              "position": 0.00195067236,
+              "raw_position": 0.00195067236,
+              "speed": 0,
+              "stop": true,
+              "temperature": 0,
+              "type": 0,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 2,
+              "can_router": 1,
+              "current": 0.21,
+              "emc": false,
+              "encoder": -5930647,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "375371723535",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "rotation",
+              "passive": false,
+              "position": 8.84548285e-07,
+              "raw_position": -0.0115073314,
+              "speed": 0,
+              "stop": true,
+              "temperature": 0,
+              "type": 1,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 3,
+              "can_router": 1,
+              "current": 0.719999969,
+              "emc": false,
+              "encoder": 19228,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "375370339916",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "motor1",
+              "passive": false,
+              "position": 0.00573777361,
+              "raw_position": 0.00573777361,
+              "speed": 0,
+              "stop": true,
+              "temperature": 0,
+              "type": 0,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 4,
+              "can_router": 1,
+              "current": 0.979999959,
+              "emc": false,
+              "encoder": -5900743,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "375372248392",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "rotation2",
+              "passive": false,
+              "position": 1.70774047e-06,
+              "raw_position": -0.000888882729,
+              "speed": 0,
+              "stop": true,
+              "temperature": 0,
+              "type": 1,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 2,
+              "can_router": 2,
+              "current": 0.307,
+              "emc": false,
+              "encoder": 216,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "375367961297",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "motor3",
+              "passive": false,
+              "position": -0.00132147467,
+              "raw_position": -0.00132147467,
+              "speed": 0,
+              "stop": true,
+              "temperature": 25,
+              "type": 2,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 1,
+              "can_router": 2,
+              "current": 3,
+              "emc": false,
+              "encoder": -2,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "375367671154",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "lift",
+              "passive": false,
+              "position": 0.00999998767,
+              "raw_position": -1.22070309e-08,
+              "speed": 0,
+              "stop": true,
+              "temperature": 22,
+              "type": 3,
+              "voltage": 0
+            }
+          ],
+          "ret_code": 0
+        }
+      },
+      "after": {
+        "api": 1002,
+        "request": null,
+        "sent_monotonic_s": 1195.063804076,
+        "received_monotonic_s": 1195.070894588,
+        "response": {
+          "controller_humi": 25.325,
+          "controller_temp": 36.176,
+          "controller_voltage": 24.054,
+          "create_on": "2026-11-18T10:15:52.407+0800",
+          "odo": 13170.2,
+          "ret_code": 0,
+          "time": 340502,
+          "today_odo": -0.0,
+          "today_time": 372958,
+          "total_time": 4779454905
+        }
+      },
+      "candidate_ages_if_same_clock": [
+        {
+          "motor": "motor",
+          "header": {
+            "data_nsec": "375369800249",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.86780024899997,
+            -34.86780024899997
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "rotation",
+          "header": {
+            "data_nsec": "375371723535",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.86972353499999,
+            -34.86972353499999
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "motor1",
+          "header": {
+            "data_nsec": "375370339916",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.86833991599997,
+            -34.86833991599997
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "rotation2",
+          "header": {
+            "data_nsec": "375372248392",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.87024839200001,
+            -34.87024839200001
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "motor3",
+          "header": {
+            "data_nsec": "375367961297",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.86596129700001,
+            -34.86596129700001
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "lift",
+          "header": {
+            "data_nsec": "375367671154",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.86567115399998,
+            -34.86567115399998
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        }
+      ]
+    },
+    {
+      "before": {
+        "api": 1002,
+        "request": null,
+        "sent_monotonic_s": 1195.371037572,
+        "received_monotonic_s": 1195.379274945,
+        "response": {
+          "controller_humi": 25.325,
+          "controller_temp": 36.176,
+          "controller_voltage": 24.054,
+          "create_on": "2026-11-18T10:15:52.717+0800",
+          "odo": 13170.2,
+          "ret_code": 0,
+          "time": 341403,
+          "today_odo": -0.0,
+          "today_time": 373859,
+          "total_time": 4779455806
+        }
+      },
+      "motors": {
+        "api": 1040,
+        "request": null,
+        "sent_monotonic_s": 1195.379279223,
+        "received_monotonic_s": 1195.386898388,
+        "response": {
+          "create_on": "2026-11-18T10:15:52.722+0800",
+          "motor_info": [
+            {
+              "calib": true,
+              "can_id": 1,
+              "can_router": 1,
+              "current": 1.44999993,
+              "emc": false,
+              "encoder": 6560,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "375702671249",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "motor",
+              "passive": false,
+              "position": 0.00195067236,
+              "raw_position": 0.00195067236,
+              "speed": 0,
+              "stop": true,
+              "temperature": 0,
+              "type": 0,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 2,
+              "can_router": 1,
+              "current": 0.22,
+              "emc": false,
+              "encoder": -5930647,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "375704648773",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "rotation",
+              "passive": false,
+              "position": 8.84548285e-07,
+              "raw_position": -0.0115073314,
+              "speed": 0,
+              "stop": true,
+              "temperature": 0,
+              "type": 1,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 3,
+              "can_router": 1,
+              "current": 0.719999969,
+              "emc": false,
+              "encoder": 19228,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "375703194916",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "motor1",
+              "passive": false,
+              "position": 0.00573777361,
+              "raw_position": 0.00573777361,
+              "speed": 0,
+              "stop": true,
+              "temperature": 0,
+              "type": 0,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 4,
+              "can_router": 1,
+              "current": 0.979999959,
+              "emc": false,
+              "encoder": -5900743,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "375705170297",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "rotation2",
+              "passive": false,
+              "position": 1.70774047e-06,
+              "raw_position": -0.000888882729,
+              "speed": 0,
+              "stop": true,
+              "temperature": 0,
+              "type": 1,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 2,
+              "can_router": 2,
+              "current": 0.294,
+              "emc": false,
+              "encoder": 216,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "375700753107",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "motor3",
+              "passive": false,
+              "position": -0.00132147467,
+              "raw_position": -0.00132147467,
+              "speed": 0,
+              "stop": true,
+              "temperature": 25,
+              "type": 2,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 1,
+              "can_router": 2,
+              "current": 3,
+              "emc": false,
+              "encoder": -2,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "375700580345",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "lift",
+              "passive": false,
+              "position": 0.00999998767,
+              "raw_position": -1.22070309e-08,
+              "speed": 0,
+              "stop": true,
+              "temperature": 22,
+              "type": 3,
+              "voltage": 0
+            }
+          ],
+          "ret_code": 0
+        }
+      },
+      "after": {
+        "api": 1002,
+        "request": null,
+        "sent_monotonic_s": 1195.386902054,
+        "received_monotonic_s": 1195.389816547,
+        "response": {
+          "controller_humi": 25.325,
+          "controller_temp": 36.176,
+          "controller_voltage": 24.054,
+          "create_on": "2026-11-18T10:15:52.728+0800",
+          "odo": 13170.2,
+          "ret_code": 0,
+          "time": 341403,
+          "today_odo": -0.0,
+          "today_time": 373859,
+          "total_time": 4779455806
+        }
+      },
+      "candidate_ages_if_same_clock": [
+        {
+          "motor": "motor",
+          "header": {
+            "data_nsec": "375702671249",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.29967124899997,
+            -34.29967124899997
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "rotation",
+          "header": {
+            "data_nsec": "375704648773",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.301648772999954,
+            -34.301648772999954
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "motor1",
+          "header": {
+            "data_nsec": "375703194916",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.30019491599995,
+            -34.30019491599995
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "rotation2",
+          "header": {
+            "data_nsec": "375705170297",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.302170296999975,
+            -34.302170296999975
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "motor3",
+          "header": {
+            "data_nsec": "375700753107",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.297753107000005,
+            -34.297753107000005
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "lift",
+          "header": {
+            "data_nsec": "375700580345",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.29758034499997,
+            -34.29758034499997
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        }
+      ]
+    },
+    {
+      "before": {
+        "api": 1002,
+        "request": null,
+        "sent_monotonic_s": 1195.68995765,
+        "received_monotonic_s": 1195.700746268,
+        "response": {
+          "controller_humi": 25.343,
+          "controller_temp": 36.19,
+          "controller_voltage": 24.047,
+          "create_on": "2026-11-18T10:15:53.039+0800",
+          "odo": 13170.2,
+          "ret_code": 0,
+          "time": 341403,
+          "today_odo": -0.0,
+          "today_time": 373859,
+          "total_time": 4779455806
+        }
+      },
+      "motors": {
+        "api": 1040,
+        "request": null,
+        "sent_monotonic_s": 1195.700750616,
+        "received_monotonic_s": 1195.709605844,
+        "response": {
+          "create_on": "2026-11-18T10:15:53.047+0800",
+          "motor_info": [
+            {
+              "calib": true,
+              "can_id": 1,
+              "can_router": 1,
+              "current": 1.44999993,
+              "emc": false,
+              "encoder": 6560,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "376026640768",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "motor",
+              "passive": false,
+              "position": 0.00195067236,
+              "raw_position": 0.00195067236,
+              "speed": 0,
+              "stop": true,
+              "temperature": 0,
+              "type": 0,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 2,
+              "can_router": 1,
+              "current": 0.22,
+              "emc": false,
+              "encoder": -5930647,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "376029673292",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "rotation",
+              "passive": false,
+              "position": 8.84548285e-07,
+              "raw_position": -0.0115073314,
+              "speed": 0,
+              "stop": true,
+              "temperature": 0,
+              "type": 1,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 3,
+              "can_router": 1,
+              "current": 0.719999969,
+              "emc": false,
+              "encoder": 19228,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "376027719768",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "motor1",
+              "passive": false,
+              "position": 0.00573777361,
+              "raw_position": 0.00573777361,
+              "speed": 0,
+              "stop": true,
+              "temperature": 0,
+              "type": 0,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 4,
+              "can_router": 1,
+              "current": 0.979999959,
+              "emc": false,
+              "encoder": -5900743,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "376029713863",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "rotation2",
+              "passive": false,
+              "position": 1.70774047e-06,
+              "raw_position": -0.000888882729,
+              "speed": 0,
+              "stop": true,
+              "temperature": 0,
+              "type": 1,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 2,
+              "can_router": 2,
+              "current": 0.307,
+              "emc": false,
+              "encoder": 216,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "376029753959",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "motor3",
+              "passive": false,
+              "position": -0.00132147467,
+              "raw_position": -0.00132147467,
+              "speed": 0,
+              "stop": true,
+              "temperature": 25,
+              "type": 2,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 1,
+              "can_router": 2,
+              "current": 0,
+              "emc": false,
+              "encoder": -2,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "376024610673",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "lift",
+              "passive": false,
+              "position": 0.00999998767,
+              "raw_position": -1.22070309e-08,
+              "speed": 0,
+              "stop": true,
+              "temperature": 22,
+              "type": 3,
+              "voltage": 0
+            }
+          ],
+          "ret_code": 0
+        }
+      },
+      "after": {
+        "api": 1002,
+        "request": null,
+        "sent_monotonic_s": 1195.709609921,
+        "received_monotonic_s": 1195.714450994,
+        "response": {
+          "controller_humi": 25.343,
+          "controller_temp": 36.19,
+          "controller_voltage": 24.047,
+          "create_on": "2026-11-18T10:15:53.053+0800",
+          "odo": 13170.2,
+          "ret_code": 0,
+          "time": 341403,
+          "today_odo": -0.0,
+          "today_time": 373859,
+          "total_time": 4779455806
+        }
+      },
+      "candidate_ages_if_same_clock": [
+        {
+          "motor": "motor",
+          "header": {
+            "data_nsec": "376026640768",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.62364076799997,
+            -34.62364076799997
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "rotation",
+          "header": {
+            "data_nsec": "376029673292",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.626673291999964,
+            -34.626673291999964
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "motor1",
+          "header": {
+            "data_nsec": "376027719768",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.62471976799998,
+            -34.62471976799998
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "rotation2",
+          "header": {
+            "data_nsec": "376029713863",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.626713862999964,
+            -34.626713862999964
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "motor3",
+          "header": {
+            "data_nsec": "376029753959",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.626753958999984,
+            -34.626753958999984
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "lift",
+          "header": {
+            "data_nsec": "376024610673",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.621610672999964,
+            -34.621610672999964
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        }
+      ]
+    },
+    {
+      "before": {
+        "api": 1002,
+        "request": null,
+        "sent_monotonic_s": 1196.014801258,
+        "received_monotonic_s": 1196.016623636,
+        "response": {
+          "controller_humi": 25.37,
+          "controller_temp": 36.19,
+          "controller_voltage": 24.054,
+          "create_on": "2026-11-18T10:15:53.355+0800",
+          "odo": 13170.2,
+          "ret_code": 0,
+          "time": 342303,
+          "today_odo": -0.0,
+          "today_time": 374759,
+          "total_time": 4779456706
+        }
+      },
+      "motors": {
+        "api": 1040,
+        "request": null,
+        "sent_monotonic_s": 1196.016628555,
+        "received_monotonic_s": 1196.028303203,
+        "response": {
+          "create_on": "2026-11-18T10:15:53.363+0800",
+          "motor_info": [
+            {
+              "calib": true,
+              "can_id": 1,
+              "can_router": 1,
+              "current": 1.44999993,
+              "emc": false,
+              "encoder": 6560,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "376341556625",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "motor",
+              "passive": false,
+              "position": 0.00195067236,
+              "raw_position": 0.00195067236,
+              "speed": 0,
+              "stop": true,
+              "temperature": 0,
+              "type": 0,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 2,
+              "can_router": 1,
+              "current": 0.229999989,
+              "emc": false,
+              "encoder": -5930647,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "376347968387",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "rotation",
+              "passive": false,
+              "position": 8.84548285e-07,
+              "raw_position": -0.0115073314,
+              "speed": 0,
+              "stop": true,
+              "temperature": 0,
+              "type": 1,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 3,
+              "can_router": 1,
+              "current": 0.719999969,
+              "emc": false,
+              "encoder": 19228,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "376342055197",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "motor1",
+              "passive": false,
+              "position": 0.00573777361,
+              "raw_position": 0.00573777361,
+              "speed": 0,
+              "stop": true,
+              "temperature": 0,
+              "type": 0,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 4,
+              "can_router": 1,
+              "current": 0.979999959,
+              "emc": false,
+              "encoder": -5900743,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "376348505530",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "rotation2",
+              "passive": false,
+              "position": 1.70774047e-06,
+              "raw_position": -0.000888882729,
+              "speed": 0,
+              "stop": true,
+              "temperature": 0,
+              "type": 1,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 2,
+              "can_router": 2,
+              "current": 0.307,
+              "emc": false,
+              "encoder": 216,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "376339418149",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "motor3",
+              "passive": false,
+              "position": -0.00132147467,
+              "raw_position": -0.00132147467,
+              "speed": 0,
+              "stop": true,
+              "temperature": 25,
+              "type": 2,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 1,
+              "can_router": 2,
+              "current": 0,
+              "emc": false,
+              "encoder": -2,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "376339712292",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "lift",
+              "passive": false,
+              "position": 0.00999998767,
+              "raw_position": -1.22070309e-08,
+              "speed": 0,
+              "stop": true,
+              "temperature": 22,
+              "type": 3,
+              "voltage": 0
+            }
+          ],
+          "ret_code": 0
+        }
+      },
+      "after": {
+        "api": 1002,
+        "request": null,
+        "sent_monotonic_s": 1196.028308653,
+        "received_monotonic_s": 1196.036790916,
+        "response": {
+          "controller_humi": 25.37,
+          "controller_temp": 36.19,
+          "controller_voltage": 24.054,
+          "create_on": "2026-11-18T10:15:53.375+0800",
+          "odo": 13170.2,
+          "ret_code": 0,
+          "time": 342303,
+          "today_odo": -0.0,
+          "today_time": 374759,
+          "total_time": 4779456706
+        }
+      },
+      "candidate_ages_if_same_clock": [
+        {
+          "motor": "motor",
+          "header": {
+            "data_nsec": "376341556625",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.03855662500001,
+            -34.03855662500001
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "rotation",
+          "header": {
+            "data_nsec": "376347968387",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.04496838699998,
+            -34.04496838699998
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "motor1",
+          "header": {
+            "data_nsec": "376342055197",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.03905519699998,
+            -34.03905519699998
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "rotation2",
+          "header": {
+            "data_nsec": "376348505530",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.045505530000014,
+            -34.045505530000014
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "motor3",
+          "header": {
+            "data_nsec": "376339418149",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.036418148999985,
+            -34.036418148999985
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "lift",
+          "header": {
+            "data_nsec": "376339712292",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.036712292000004,
+            -34.036712292000004
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        }
+      ]
+    },
+    {
+      "before": {
+        "api": 1002,
+        "request": null,
+        "sent_monotonic_s": 1196.336934963,
+        "received_monotonic_s": 1196.343092862,
+        "response": {
+          "controller_humi": 25.37,
+          "controller_temp": 36.19,
+          "controller_voltage": 24.054,
+          "create_on": "2026-11-18T10:15:53.681+0800",
+          "odo": 13170.2,
+          "ret_code": 0,
+          "time": 342303,
+          "today_odo": -0.0,
+          "today_time": 374759,
+          "total_time": 4779456706
+        }
+      },
+      "motors": {
+        "api": 1040,
+        "request": null,
+        "sent_monotonic_s": 1196.34309766,
+        "received_monotonic_s": 1196.349374574,
+        "response": {
+          "create_on": "2026-11-18T10:15:53.686+0800",
+          "motor_info": [
+            {
+              "calib": true,
+              "can_id": 1,
+              "can_router": 1,
+              "current": 1.44999993,
+              "emc": false,
+              "encoder": 6560,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "376661288721",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "motor",
+              "passive": false,
+              "position": 0.00195067236,
+              "raw_position": 0.00195067236,
+              "speed": 0,
+              "stop": true,
+              "temperature": 0,
+              "type": 0,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 2,
+              "can_router": 1,
+              "current": 0.229999989,
+              "emc": false,
+              "encoder": -5930647,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "376661327863",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "rotation",
+              "passive": false,
+              "position": 8.84548285e-07,
+              "raw_position": -0.0115073314,
+              "speed": 0,
+              "stop": true,
+              "temperature": 0,
+              "type": 1,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 3,
+              "can_router": 1,
+              "current": 0.719999969,
+              "emc": false,
+              "encoder": 19228,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "376662553482",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "motor1",
+              "passive": false,
+              "position": 0.00573777361,
+              "raw_position": 0.00573777361,
+              "speed": 0,
+              "stop": true,
+              "temperature": 0,
+              "type": 0,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 4,
+              "can_router": 1,
+              "current": 0.979999959,
+              "emc": false,
+              "encoder": -5900743,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "376663049959",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "rotation2",
+              "passive": false,
+              "position": 1.70774047e-06,
+              "raw_position": -0.000888882729,
+              "speed": 0,
+              "stop": true,
+              "temperature": 0,
+              "type": 1,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 2,
+              "can_router": 2,
+              "current": 0.294,
+              "emc": false,
+              "encoder": 216,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "376660389625",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "motor3",
+              "passive": false,
+              "position": -0.00132147467,
+              "raw_position": -0.00132147467,
+              "speed": 0,
+              "stop": true,
+              "temperature": 25,
+              "type": 2,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 1,
+              "can_router": 2,
+              "current": 0,
+              "emc": false,
+              "encoder": -2,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "376661371292",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "lift",
+              "passive": false,
+              "position": 0.00999998767,
+              "raw_position": -1.22070309e-08,
+              "speed": 0,
+              "stop": true,
+              "temperature": 22,
+              "type": 3,
+              "voltage": 0
+            }
+          ],
+          "ret_code": 0
+        }
+      },
+      "after": {
+        "api": 1002,
+        "request": null,
+        "sent_monotonic_s": 1196.349379352,
+        "received_monotonic_s": 1196.354880485,
+        "response": {
+          "controller_humi": 25.37,
+          "controller_temp": 36.19,
+          "controller_voltage": 24.054,
+          "create_on": "2026-11-18T10:15:53.693+0800",
+          "odo": 13170.2,
+          "ret_code": 0,
+          "time": 342303,
+          "today_odo": -0.0,
+          "today_time": 374759,
+          "total_time": 4779456706
+        }
+      },
+      "candidate_ages_if_same_clock": [
+        {
+          "motor": "motor",
+          "header": {
+            "data_nsec": "376661288721",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.35828872100001,
+            -34.35828872100001
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "rotation",
+          "header": {
+            "data_nsec": "376661327863",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.358327863,
+            -34.358327863
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "motor1",
+          "header": {
+            "data_nsec": "376662553482",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.359553482000024,
+            -34.359553482000024
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "rotation2",
+          "header": {
+            "data_nsec": "376663049959",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.36004995899998,
+            -34.36004995899998
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "motor3",
+          "header": {
+            "data_nsec": "376660389625",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.357389624999996,
+            -34.357389624999996
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "lift",
+          "header": {
+            "data_nsec": "376661371292",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.358371292000015,
+            -34.358371292000015
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        }
+      ]
+    },
+    {
+      "before": {
+        "api": 1002,
+        "request": null,
+        "sent_monotonic_s": 1196.65504827,
+        "received_monotonic_s": 1196.663251369,
+        "response": {
+          "controller_humi": 25.357,
+          "controller_temp": 36.216,
+          "controller_voltage": 24.054,
+          "create_on": "2026-11-18T10:15:54.000+0800",
+          "odo": 13170.2,
+          "ret_code": 0,
+          "time": 342303,
+          "today_odo": -0.0,
+          "today_time": 374759,
+          "total_time": 4779456706
+        }
+      },
+      "motors": {
+        "api": 1040,
+        "request": null,
+        "sent_monotonic_s": 1196.663255596,
+        "received_monotonic_s": 1196.717722983,
+        "response": {
+          "create_on": "2026-11-18T10:15:54.048+0800",
+          "motor_info": [
+            {
+              "calib": true,
+              "can_id": 1,
+              "can_router": 1,
+              "current": 1.44999993,
+              "emc": false,
+              "encoder": 6560,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "377030585150",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "motor",
+              "passive": false,
+              "position": 0.00195067236,
+              "raw_position": 0.00195067236,
+              "speed": 0,
+              "stop": true,
+              "temperature": 0,
+              "type": 0,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 2,
+              "can_router": 1,
+              "current": 0.24,
+              "emc": false,
+              "encoder": -5930647,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "377032620722",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "rotation",
+              "passive": false,
+              "position": 8.84548285e-07,
+              "raw_position": -0.0115073314,
+              "speed": 0,
+              "stop": true,
+              "temperature": 0,
+              "type": 1,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 3,
+              "can_router": 1,
+              "current": 0.719999969,
+              "emc": false,
+              "encoder": 19228,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "377031616008",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "motor1",
+              "passive": false,
+              "position": 0.00573777361,
+              "raw_position": 0.00573777361,
+              "speed": 0,
+              "stop": true,
+              "temperature": 0,
+              "type": 0,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 4,
+              "can_router": 1,
+              "current": 0.979999959,
+              "emc": false,
+              "encoder": -5900743,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "377033112865",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "rotation2",
+              "passive": false,
+              "position": 1.70774047e-06,
+              "raw_position": -0.000888882729,
+              "speed": 0,
+              "stop": true,
+              "temperature": 0,
+              "type": 1,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 2,
+              "can_router": 2,
+              "current": 0.307,
+              "emc": false,
+              "encoder": 216,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "377032903817",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "motor3",
+              "passive": false,
+              "position": -0.00132147467,
+              "raw_position": -0.00132147467,
+              "speed": 0,
+              "stop": true,
+              "temperature": 25,
+              "type": 2,
+              "voltage": 0
+            },
+            {
+              "calib": true,
+              "can_id": 1,
+              "can_router": 2,
+              "current": 0,
+              "emc": false,
+              "encoder": -2,
+              "err": false,
+              "error_code": 0,
+              "follow_err": false,
+              "header": {
+                "data_nsec": "377028516674",
+                "frame_id": "",
+                "pub_nsec": "0",
+                "seq": "0"
+              },
+              "motor_name": "lift",
+              "passive": false,
+              "position": 0.00999998767,
+              "raw_position": -1.22070309e-08,
+              "speed": 0,
+              "stop": true,
+              "temperature": 22,
+              "type": 3,
+              "voltage": 0
+            }
+          ],
+          "ret_code": 0
+        }
+      },
+      "after": {
+        "api": 1002,
+        "request": null,
+        "sent_monotonic_s": 1196.717729414,
+        "received_monotonic_s": 1196.727375367,
+        "response": {
+          "controller_humi": 25.357,
+          "controller_temp": 36.216,
+          "controller_voltage": 24.054,
+          "create_on": "2026-11-18T10:15:54.061+0800",
+          "odo": 13170.2,
+          "ret_code": 0,
+          "time": 342303,
+          "today_odo": -0.0,
+          "today_time": 374759,
+          "total_time": 4779456706
+        }
+      },
+      "candidate_ages_if_same_clock": [
+        {
+          "motor": "motor",
+          "header": {
+            "data_nsec": "377030585150",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.72758514999998,
+            -34.72758514999998
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "rotation",
+          "header": {
+            "data_nsec": "377032620722",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.72962072199999,
+            -34.72962072199999
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "motor1",
+          "header": {
+            "data_nsec": "377031616008",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.72861600800002,
+            -34.72861600800002
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "rotation2",
+          "header": {
+            "data_nsec": "377033112865",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.730112865000024,
+            -34.730112865000024
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "motor3",
+          "header": {
+            "data_nsec": "377032903817",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.72990381699998,
+            -34.72990381699998
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        },
+        {
+          "motor": "lift",
+          "header": {
+            "data_nsec": "377028516674",
+            "frame_id": "",
+            "pub_nsec": "0",
+            "seq": "0"
+          },
+          "age_interval_s": [
+            -34.725516674000005,
+            -34.725516674000005
+          ],
+          "warning": "Assumes data_nsec is ns in the same clock epoch as API1002 uptime; this assumption must be validated."
+        }
+      ]
+    }
+  ],
+  "controller": {
+    "version": "v3.4.8.0011",
+    "current_map": "20251120141209997",
+    "current_map_md5": "342c6d27a3ad34d10d2bd44899c4578b",
+    "model_md5": "a658889ad3641f3909e5463219e98ff7",
+    "calibrated": false
+  },
+  "script_inventory": {
+    "create_on": "2026-11-18T10:15:51.682+0800",
+    "list": [
+      {
+        "md5": "df3b1d8a6d00e1c4dcd330e320b8ac43",
+        "relative_path": "btCanPass_CDD16.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "1bfc79c00bf07b09d749e3066bb0fa79",
+        "relative_path": "btCanPass_CPD20_YF.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "fa0114d6a13df54735185c7d3b18a40c",
+        "relative_path": "btCanPass_CPD30_YF.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "de2784492c089148efa273bcc2dca933",
+        "relative_path": "btCanPass_CleanRobot.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "654ee6913c2549824cf959644faa330a",
+        "relative_path": "btCanPass_CleanRobot_arm.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "896e90e0005c3382b19ebd088ec5504e",
+        "relative_path": "btCanPass_Greenway2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "d5ef1c7f6f936fa7b5aae0993707402d",
+        "relative_path": "btCanPass_Greenway_arm.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "d799a3a5b137d77e021449f9a780312f",
+        "relative_path": "btCanPass_YFQH.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "83f65f9f3013f52e31f44f9a8bfb3cb8",
+        "relative_path": "btCanPass_demo.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "e7c3fad2caf1387f899482e8f46a8f01",
+        "relative_path": "btCanPass_huafu.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "82cbeb83c936981e42dbcf9aa0529174",
+        "relative_path": "btCanPass_zhongli.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "16e6b616b1485b70f109c00522780f89",
+        "relative_path": "dmx512_CDD16.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "8a27e726a091cfe5d69e8fa4650cbaa0",
+        "relative_path": "dmx512_demo.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "8c0a5c7c86efb57ac8903178ce3ae003",
+        "relative_path": "net2Serial_1363_arm.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "8293162d01d3341471fb17f988dc2412",
+        "relative_path": "net2Serial_Bona_bms.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "8d1f2e94cc9a504d81ee00a9d58f3a85",
+        "relative_path": "net2Serial_ChaoSiWei.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "582e92e2020f4b499d6efbb99d40a8d5",
+        "relative_path": "net2Serial_GreenEnergy_bms.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "e4b9a9ae6ab28e84868f5e8968da6444",
+        "relative_path": "net2Serial_HuoKe.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "d979f7a83012a851098594ec77bfaf6f",
+        "relative_path": "net2Serial_TTIAN.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "a0d0d6f35363ff3f06348ba1386fefc0",
+        "relative_path": "net2Serial_ZhongTaiXing.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "fb5347cab1eb3f043adabbef28e03597",
+        "relative_path": "net2Serial_demo.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "97432ed25f0be68b55497f32908a00e6",
+        "relative_path": "net2Serial_demo_arm.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "3df53f80603e8c89d87ffc69781c9b7a",
+        "relative_path": "net2Serial_fushikang.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "c3849f92428ffac37164e37f8847c0fa",
+        "relative_path": "net2Serial_pace_bms.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "4fc2828cbb10519f6715a7a8b53f9387",
+        "relative_path": "net2Serial_udan-bms.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "bc0065430f15d9d0bee85ce13b441b1b",
+        "relative_path": "net2serial_jgne-bms.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "d41d8cd98f00b204e9800998ecf8427e",
+        "relative_path": "syspy/battery_Can/__init__.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "ddbc857cd6e579c0a010fd878c5721f4",
+        "relative_path": "syspy/battery_Can/canpass_aarch64.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "d5e22c8c46a84f9dc4a74975a90b151a",
+        "relative_path": "syspy/battery_Can/canpass_base.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "d8964533633dfeb72f62eca3a0d49a01",
+        "relative_path": "syspy/battery_Can/canpass_x86.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "d41d8cd98f00b204e9800998ecf8427e",
+        "relative_path": "syspy/battery_Serial/__init__.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "a023e9c8a31a57d7282efc14af018b86",
+        "relative_path": "syspy/battery_Serial/battery_base.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "5dcfb7e30a737ff3ba49c5af3d2821aa",
+        "relative_path": "syspy/battery_Serial/serialpass_aarch64.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "0b83daa4a946e8c04ab7f8a2b87f91dc",
+        "relative_path": "syspy/battery_Serial/serialpass_x86.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "7e15cec05aeb4091d260fa71798867ac",
+        "relative_path": "syspy/canLogger/CanData.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "1d7995140d7001fa187cc8950e38e17b",
+        "relative_path": "syspy/canLogger/CanFrame_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "ba10a3259ed7378391d8561a631eaeb1",
+        "relative_path": "syspy/canLogger/Receive.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "2db97e7fef0ccf2bbf7235d090b31b81",
+        "relative_path": "syspy/canLogger/Recode2Log.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "d31739d8de3587f9147b8b930359b1ea",
+        "relative_path": "syspy/canLogger/candump.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "74cebb009aa891bd9576cbb5d5c78006",
+        "relative_path": "syspy/canLogger/kinco.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "d41d8cd98f00b204e9800998ecf8427e",
+        "relative_path": "syspy/dmx512/__init__.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "da82561a7a6b170b0aa7978ce593c8eb",
+        "relative_path": "syspy/dmx512/dmx512_aarch64.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "77aac2fa9d34566c11be848b73fd6b10",
+        "relative_path": "syspy/dmx512/dmx512_base.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "c7dcf6f51f53952d6f7e420de415f373",
+        "relative_path": "syspy/dmx512/dmx512_x86.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "d41d8cd98f00b204e9800998ecf8427e",
+        "relative_path": "syspy/lib/__init__.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "8315c508010a024e1c55b80fe11b1a13",
+        "relative_path": "syspy/lib/char_utility.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "11422cdec8159b7e3e9d2e7e2a4ebf07",
+        "relative_path": "syspy/lib/misc_utility.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "2b78b1430f418ae2adadff5e9025ab84",
+        "relative_path": "syspy/lib/pass_through.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "11984ddda7a6046f5a8cab9dcde7f1e0",
+        "relative_path": "syspy/lib/rpc_client.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "6a6946227750ead38bbd1ee13625f64a",
+        "relative_path": "syspy/lib/rpc_server.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "cf645572c0500fd431ae52720a2644e0",
+        "relative_path": "syspy/lib/udp_client.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "407c96e4168ffe8ba74539108ac769e3",
+        "relative_path": "syspy/lib/udp_debug.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "2b531ed8ed53ce9a9c52ea8f8eacfd38",
+        "relative_path": "syspy/protobuf/arm/CanFrame_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "55ad8fb0a119b8712b316244177dfbd9",
+        "relative_path": "syspy/protobuf/arm/google/protobuf/google/protobuf/any_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "5bea62245b09d679b0241acec626f947",
+        "relative_path": "syspy/protobuf/arm/google/protobuf/google/protobuf/api_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "86652fb13f43f676a544d26491ba7e0b",
+        "relative_path": "syspy/protobuf/arm/google/protobuf/google/protobuf/descriptor_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "348c7b44e39720c0a71aef651f81bb14",
+        "relative_path": "syspy/protobuf/arm/google/protobuf/google/protobuf/duration_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "4e448aef03c2dbc7dd2b0497c414803b",
+        "relative_path": "syspy/protobuf/arm/google/protobuf/google/protobuf/empty_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "a8606d764d5c778d0f770b9db80d187d",
+        "relative_path": "syspy/protobuf/arm/google/protobuf/google/protobuf/field_mask_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "1921df26811afa42caadae5c175006d6",
+        "relative_path": "syspy/protobuf/arm/google/protobuf/google/protobuf/source_context_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "b73f1ddef59f3a47f670d917960d6ec0",
+        "relative_path": "syspy/protobuf/arm/google/protobuf/google/protobuf/struct_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "9ae0573dc5d383fb1ebff7d8ec194c8f",
+        "relative_path": "syspy/protobuf/arm/google/protobuf/google/protobuf/timestamp_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "208c5d024076797f80bd0be5e5b2a06a",
+        "relative_path": "syspy/protobuf/arm/google/protobuf/google/protobuf/type_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "57f05fcfb425b8ee67a840b1a916c90a",
+        "relative_path": "syspy/protobuf/arm/google/protobuf/google/protobuf/wrappers_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "f2f51bdabab0bd529444520cb01a1c4f",
+        "relative_path": "syspy/protobuf/arm/message_407Param_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "84e7c89966adfb96e20b5dcf855b9d63",
+        "relative_path": "syspy/protobuf/arm/message_adcollisionsensor_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "9d462a035c5ea139cc252467822abd8c",
+        "relative_path": "syspy/protobuf/arm/message_arminfo_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "0fb9dfe473a3baa6cdcac30b92b41659",
+        "relative_path": "syspy/protobuf/arm/message_battery_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "a62d6ca4141503d2e8c267c3937979ab",
+        "relative_path": "syspy/protobuf/arm/message_bin_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "39bc638492dc9f8df8122eae52f9fd7e",
+        "relative_path": "syspy/protobuf/arm/message_block_group_status_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "8f66f041877cf6cd0f6235f08d91e25c",
+        "relative_path": "syspy/protobuf/arm/message_calibration_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "ecdd82a3f2d1a72e4264f4fbd68a1ae0",
+        "relative_path": "syspy/protobuf/arm/message_calibstatus_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "5fb9d0755bd269f66a9634bf8f18ef3e",
+        "relative_path": "syspy/protobuf/arm/message_chargers_status_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "e6f4b0fec60ea2edb38a6af258aefc95",
+        "relative_path": "syspy/protobuf/arm/message_chassisconfig_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "c53e517dcf0a86c2ce8cb2e063142db3",
+        "relative_path": "syspy/protobuf/arm/message_collisionswitch_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "dfb9ac138395f4ebcb49678e6b472082",
+        "relative_path": "syspy/protobuf/arm/message_controller_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "5bc0fd30b7b2a816768351f8510df608",
+        "relative_path": "syspy/protobuf/arm/message_debug_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "e79a5c5e2310e91c4b02c8ecd79e2b1a",
+        "relative_path": "syspy/protobuf/arm/message_depthcamera_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "bf8e4139e39e258df10a7c3d396a698a",
+        "relative_path": "syspy/protobuf/arm/message_dispatcher_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "ea04ba20756b397c342723ad65f1a64b",
+        "relative_path": "syspy/protobuf/arm/message_distancesensor_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "1b530d3d8d7304de9e428be0839c314e",
+        "relative_path": "syspy/protobuf/arm/message_dmx512_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "4bd7373138fa645d5c203dcd292ba0b2",
+        "relative_path": "syspy/protobuf/arm/message_encoder_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "be1a6fd5f902c4c485740863360958ab",
+        "relative_path": "syspy/protobuf/arm/message_environment_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "d5a0234697e258df38bf57f8bac196c8",
+        "relative_path": "syspy/protobuf/arm/message_error_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "e7befc38170c551ed8e629eb13135d99",
+        "relative_path": "syspy/protobuf/arm/message_face_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "b1e3bc49c54723856a7ce78d1d295b78",
+        "relative_path": "syspy/protobuf/arm/message_fallingdown_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "9e98f5beb547d16d0d87cf78225c5c90",
+        "relative_path": "syspy/protobuf/arm/message_force_sensor_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "b623f2dbd222540d97cfcde515329287",
+        "relative_path": "syspy/protobuf/arm/message_fork_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "07ae3f6858dcd8312c986dc993c3e8a8",
+        "relative_path": "syspy/protobuf/arm/message_geometry_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "37cab5cc7f782ffe305028c30970d549",
+        "relative_path": "syspy/protobuf/arm/message_gnss_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "a4642d574a253717e913d49ff7673afc",
+        "relative_path": "syspy/protobuf/arm/message_graphics_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "75d9a11bf97eae5f8bc1686ad596e508",
+        "relative_path": "syspy/protobuf/arm/message_gripper_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "9402db21c71fdd5095c72e1f4c436d9b",
+        "relative_path": "syspy/protobuf/arm/message_header_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "8ebc51cf8ae3099b74e3d3b2a433f1fe",
+        "relative_path": "syspy/protobuf/arm/message_hook_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "8bd624e897c5eb6c29ffae32c44512a9",
+        "relative_path": "syspy/protobuf/arm/message_imu_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "79751ee0c9b6374dc978156b38be0a12",
+        "relative_path": "syspy/protobuf/arm/message_infrared_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "048ed8abaf5f9cb8e7984d541c31a9d1",
+        "relative_path": "syspy/protobuf/arm/message_io_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "5d23e1f06070e413cd604013d2bb9bd0",
+        "relative_path": "syspy/protobuf/arm/message_jack_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "f5735d83e88b224f8270cf17a819b8d9",
+        "relative_path": "syspy/protobuf/arm/message_laser_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "1e9fc1c7e0544f93fc15f9cf56ee5624",
+        "relative_path": "syspy/protobuf/arm/message_liftconfig_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "17b6c14c42fa819a63c73e10f3b1b0d1",
+        "relative_path": "syspy/protobuf/arm/message_liftret_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "ac499af74bf42905b27ace86cdcf7c53",
+        "relative_path": "syspy/protobuf/arm/message_localization_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "98dd5c69733cdb63e11151d907dc3d09",
+        "relative_path": "syspy/protobuf/arm/message_lock_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "3b0b877239003b362a8ca1084027b8e8",
+        "relative_path": "syspy/protobuf/arm/message_magnetic_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "0b6bc928f49a8d766ac4c8eed9eeafd1",
+        "relative_path": "syspy/protobuf/arm/message_map_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "f8afe826c2744919b594b7cdd1cf324e",
+        "relative_path": "syspy/protobuf/arm/message_model_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "acf8adf35875f5d2063f2a795db5fc00",
+        "relative_path": "syspy/protobuf/arm/message_motorinfos_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "10ea1b639f0d26bc91641d1801a9ae6a",
+        "relative_path": "syspy/protobuf/arm/message_movetask_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "be805e2ea7b9ea0970569b12f15999e2",
+        "relative_path": "syspy/protobuf/arm/message_navigation_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "588dd7a429ca9c3be06239815f079616",
+        "relative_path": "syspy/protobuf/arm/message_object_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "5925833f17cb4902a78f5218c3a78d96",
+        "relative_path": "syspy/protobuf/arm/message_odometer_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "793b079919b50526104bfa6d414f3aa6",
+        "relative_path": "syspy/protobuf/arm/message_optical_flow_status_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "5d694b06ad1d73f61e1790696c09e5f1",
+        "relative_path": "syspy/protobuf/arm/message_pgv_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "25ae7e9f98eb0dad7219d8cc0c97a8a8",
+        "relative_path": "syspy/protobuf/arm/message_pgvconfig_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "3c7e58b3615be85672ce17aa5ec222d5",
+        "relative_path": "syspy/protobuf/arm/message_picture_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "6a1595d256530f94e01dbecb2a9df4a9",
+        "relative_path": "syspy/protobuf/arm/message_plots_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "79c86bef58a18c584aa92e87f63c2534",
+        "relative_path": "syspy/protobuf/arm/message_plugin_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "8251cfcea241dc3d580065d16bbb12fb",
+        "relative_path": "syspy/protobuf/arm/message_pointcloud_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "6cf328c044ed5a4e3532b2f29adfd501",
+        "relative_path": "syspy/protobuf/arm/message_rbk4_3dcameradata_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "1b9c6a43dd3fc98bb07e170f30bd48f9",
+        "relative_path": "syspy/protobuf/arm/message_rbk4_cameraintrinsic_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "690845663db0ee52d831a2afb5570ae8",
+        "relative_path": "syspy/protobuf/arm/message_rbk4_header_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "f62a4531de86d28d1485c3bc9dbb00e4",
+        "relative_path": "syspy/protobuf/arm/message_rbk4_image_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "6f354b035b1e0d8520e8bc7a5360dd97",
+        "relative_path": "syspy/protobuf/arm/message_rbk4_pointcloud_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "19b507740b305e0e34402a1e46b631ed",
+        "relative_path": "syspy/protobuf/arm/message_rds_door_status_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "4440278bebfcb5045af18b12591c83bc",
+        "relative_path": "syspy/protobuf/arm/message_rds_lift_status_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "32d6bf6d4e0f3644c66f6a157d796cad",
+        "relative_path": "syspy/protobuf/arm/message_rds_order_status_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "10577b9a76cad154a133ca25b66e917d",
+        "relative_path": "syspy/protobuf/arm/message_rds_robots_cmds_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "21b10b82d9f8e50e4c484e338c0d7558",
+        "relative_path": "syspy/protobuf/arm/message_rds_robots_status_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "7e7a8f69fcb89b60b48125c03bf60d62",
+        "relative_path": "syspy/protobuf/arm/message_rds_scene_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "215ee257bc6244de06bf760bdd12f0cf",
+        "relative_path": "syspy/protobuf/arm/message_rds_wind_shower_status_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "b25b8dc81a3ffebb201854af6a7597aa",
+        "relative_path": "syspy/protobuf/arm/message_recogresult_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "023e88511e8661eb385430cabc0fa61f",
+        "relative_path": "syspy/protobuf/arm/message_rfid_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "c2adf99541090b78ffec0cd53e45300f",
+        "relative_path": "syspy/protobuf/arm/message_rgbd_camera_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "7011905f0dfe7ed6cc7d2f2ac807561a",
+        "relative_path": "syspy/protobuf/arm/message_roller_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "95a2051824c1a7ed7769c8d9c15d760a",
+        "relative_path": "syspy/protobuf/arm/message_rpc_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "52f5bf342b0c5670dfd02313713ab6f3",
+        "relative_path": "syspy/protobuf/arm/message_rv_calibtool3d_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "7d3ff31a019e96d53892067d7c23068b",
+        "relative_path": "syspy/protobuf/arm/message_rv_recoresult_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "662af124eb5158a97934629536523217",
+        "relative_path": "syspy/protobuf/arm/message_rv_resultplotter_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "d1f7d48767f7878c9a9a4ac7895c63a4",
+        "relative_path": "syspy/protobuf/arm/message_rv_storage_bin_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "79e728814c6c3b66f955d58c82b161f7",
+        "relative_path": "syspy/protobuf/arm/message_rv_storage_status_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "d47ba84a5112ad6d207c534889652eb7",
+        "relative_path": "syspy/protobuf/arm/message_safe_slowdown_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "589f568fa7374256d0b4c008703ddf6f",
+        "relative_path": "syspy/protobuf/arm/message_scanners_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "5892152cef01629051397d78cdeff0c7",
+        "relative_path": "syspy/protobuf/arm/message_script_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "21af560ad4f19b0d64c26d18aa8a5fcd",
+        "relative_path": "syspy/protobuf/arm/message_sound_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "d1333623a2fdd78171f7b06e68005c53",
+        "relative_path": "syspy/protobuf/arm/message_ssl_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "fab1a5d7f832aa4b04e1ca4cd638fe26",
+        "relative_path": "syspy/protobuf/arm/message_subrobot_status_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "f9eab66cedf9b5742861e22226904d1f",
+        "relative_path": "syspy/protobuf/arm/message_task_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "b5df9d6f5294e061192e8b5e5984d352",
+        "relative_path": "syspy/protobuf/arm/message_tcp_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "e1de7d5e76ab7495942f34c3bd264fa9",
+        "relative_path": "syspy/protobuf/arm/message_tcs_comm_v1_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "5427f0522259e1fb8a3b0fc8ffe21e13",
+        "relative_path": "syspy/protobuf/arm/message_tcs_comm_v2_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "cb7f447cb1723290452ec9e1118fede3",
+        "relative_path": "syspy/protobuf/arm/message_tracking_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "8f7c814b908214b0deba3950fe1aa1ed",
+        "relative_path": "syspy/protobuf/arm/message_tts_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "1e37ecb1ce93a04131dbe6f18fbef226",
+        "relative_path": "syspy/protobuf/arm/message_ultrasonic_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "3a319d6b0ebccd988e1526ca3e29824e",
+        "relative_path": "syspy/protobuf/arm/message_voice_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "98a0e901e8445ac1b6af23a1b06c0d3a",
+        "relative_path": "syspy/protobuf/arm/message_voicerec_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "7145eb586c2453b588f083867fc674e7",
+        "relative_path": "syspy/protobuf/arm/messgae_rds_terminals_status_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "ccb27a024bf1ce39fed3d789386a40fa",
+        "relative_path": "syspy/protobuf/arm/protoc-23.3/bin/protoc",
+        "type": "genetic"
+      },
+      {
+        "md5": "d9512a3619ad909b4b3884c979be5c89",
+        "relative_path": "syspy/protobuf/arm/protoc-23.3/include/google/protobuf/any.proto",
+        "type": "genetic"
+      },
+      {
+        "md5": "a38250338a5e09d09ed7ce463b79cba7",
+        "relative_path": "syspy/protobuf/arm/protoc-23.3/include/google/protobuf/api.proto",
+        "type": "genetic"
+      },
+      {
+        "md5": "cb0bdbe6c987cd7b995bfe775b5a9cb5",
+        "relative_path": "syspy/protobuf/arm/protoc-23.3/include/google/protobuf/compiler/plugin.proto",
+        "type": "genetic"
+      },
+      {
+        "md5": "c792e0e2604138a83bc492b41654281e",
+        "relative_path": "syspy/protobuf/arm/protoc-23.3/include/google/protobuf/descriptor.proto",
+        "type": "genetic"
+      },
+      {
+        "md5": "dd56ea16a545e0367c6651de7b307856",
+        "relative_path": "syspy/protobuf/arm/protoc-23.3/include/google/protobuf/duration.proto",
+        "type": "genetic"
+      },
+      {
+        "md5": "67a03986af2fb49d8fb1d54d96c632b2",
+        "relative_path": "syspy/protobuf/arm/protoc-23.3/include/google/protobuf/empty.proto",
+        "type": "genetic"
+      },
+      {
+        "md5": "bf66559e797b59e6962f4fa2fd89a031",
+        "relative_path": "syspy/protobuf/arm/protoc-23.3/include/google/protobuf/field_mask.proto",
+        "type": "genetic"
+      },
+      {
+        "md5": "436e0896eb0908a9ae888b09618e74a5",
+        "relative_path": "syspy/protobuf/arm/protoc-23.3/include/google/protobuf/source_context.proto",
+        "type": "genetic"
+      },
+      {
+        "md5": "9598941007c0804a8bc2b4dfa94c60ac",
+        "relative_path": "syspy/protobuf/arm/protoc-23.3/include/google/protobuf/struct.proto",
+        "type": "genetic"
+      },
+      {
+        "md5": "a8b268a87611ca201510f759b460a569",
+        "relative_path": "syspy/protobuf/arm/protoc-23.3/include/google/protobuf/timestamp.proto",
+        "type": "genetic"
+      },
+      {
+        "md5": "24376af17cf39c86fdda1b796c6dd993",
+        "relative_path": "syspy/protobuf/arm/protoc-23.3/include/google/protobuf/type.proto",
+        "type": "genetic"
+      },
+      {
+        "md5": "a12f523eadf372665ff1353007a0c0e3",
+        "relative_path": "syspy/protobuf/arm/protoc-23.3/include/google/protobuf/wrappers.proto",
+        "type": "genetic"
+      },
+      {
+        "md5": "324465db1c87de2c5893795657cd7ab9",
+        "relative_path": "syspy/protobuf/arm/protoc-23.3/readme.txt",
+        "type": "genetic"
+      },
+      {
+        "md5": "936221bbeeddcf6693d5248648ec8cbf",
+        "relative_path": "syspy/protobuf/updataProto.sh",
+        "type": "genetic"
+      },
+      {
+        "md5": "d6c278aaa9e9589f35e63e389994d65d",
+        "relative_path": "syspy/protobuf/x86/CanFrame_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "cbda76280f9c672e66a969b63384349c",
+        "relative_path": "syspy/protobuf/x86/google/protobuf/google/protobuf/any_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "a4e3b73604e4c92e27371ec87e5b0e82",
+        "relative_path": "syspy/protobuf/x86/google/protobuf/google/protobuf/api_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "aa13b5c97dc7a66e2ce53c736974ab71",
+        "relative_path": "syspy/protobuf/x86/google/protobuf/google/protobuf/descriptor_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "5abafbc9779a19311b7289802c928eae",
+        "relative_path": "syspy/protobuf/x86/google/protobuf/google/protobuf/duration_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "e13c4bc4336229ff2d21136c21301e9d",
+        "relative_path": "syspy/protobuf/x86/google/protobuf/google/protobuf/empty_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "36658bbbf8637459fded7c917aa77d4c",
+        "relative_path": "syspy/protobuf/x86/google/protobuf/google/protobuf/field_mask_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "4cae66064256a95a50b3d89cc586c701",
+        "relative_path": "syspy/protobuf/x86/google/protobuf/google/protobuf/source_context_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "94bb0afc932b4bc30ad6a7d1b1fc354d",
+        "relative_path": "syspy/protobuf/x86/google/protobuf/google/protobuf/struct_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "582cae7639a7108daf3b359672cae337",
+        "relative_path": "syspy/protobuf/x86/google/protobuf/google/protobuf/timestamp_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "83bca849d02c676cec76f33bb132c52a",
+        "relative_path": "syspy/protobuf/x86/google/protobuf/google/protobuf/type_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "653b704dd6b3827e141e58473feac81e",
+        "relative_path": "syspy/protobuf/x86/google/protobuf/google/protobuf/wrappers_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "f6cbee907f74926495e37836499b81fc",
+        "relative_path": "syspy/protobuf/x86/message_407Param_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "aaf6953b4195cd72969581ebf67094b9",
+        "relative_path": "syspy/protobuf/x86/message_adcollisionsensor_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "e7e1a8401d335475318c22676958359d",
+        "relative_path": "syspy/protobuf/x86/message_arminfo_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "b01db291851a433962e87f973f8ad2ad",
+        "relative_path": "syspy/protobuf/x86/message_battery_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "b147bb7b2d4eab969dd57a8e4d71955a",
+        "relative_path": "syspy/protobuf/x86/message_bin_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "78da3cad75a0147fd5533257d5066975",
+        "relative_path": "syspy/protobuf/x86/message_block_group_status_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "5156dc0984bd0a75bb8fac82531556a7",
+        "relative_path": "syspy/protobuf/x86/message_calibration_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "180fac1764405f4263645f0bc237b9b9",
+        "relative_path": "syspy/protobuf/x86/message_calibstatus_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "69be4f8d936bdb48596aa41501890b43",
+        "relative_path": "syspy/protobuf/x86/message_chargers_status_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "22df1e942afdaa27eb6da90b798b539e",
+        "relative_path": "syspy/protobuf/x86/message_chassisconfig_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "1752409dd818b4e17affe7dd3cfd91f1",
+        "relative_path": "syspy/protobuf/x86/message_collisionswitch_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "9e7d777e382a8fbc65ab28bd77547a5d",
+        "relative_path": "syspy/protobuf/x86/message_controller_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "8af327c1bc52e0cc66ac661270123b81",
+        "relative_path": "syspy/protobuf/x86/message_debug_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "93fbe9c0cb34ee02e6e30655f3286ca6",
+        "relative_path": "syspy/protobuf/x86/message_depthcamera_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "ffb3c6d13a4149a0bd256411288b9881",
+        "relative_path": "syspy/protobuf/x86/message_dispatcher_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "0fcb908c5a86772271ab6989fa5cf7e7",
+        "relative_path": "syspy/protobuf/x86/message_distancesensor_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "17cd0b5569f7c2f26021186ad2d37881",
+        "relative_path": "syspy/protobuf/x86/message_dmx512_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "04dd84e6545fa000fbf81a61bd067748",
+        "relative_path": "syspy/protobuf/x86/message_encoder_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "f2a7301c90a8c20f96e8a05717ab52e0",
+        "relative_path": "syspy/protobuf/x86/message_environment_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "9bf28b08ddb62876b2f54b06fbf0ded7",
+        "relative_path": "syspy/protobuf/x86/message_error_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "31b8d21bb23b8b3c098f3e9c2dbabe61",
+        "relative_path": "syspy/protobuf/x86/message_face_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "9d19c9a16d9f4785bcf83fcb0878e5c3",
+        "relative_path": "syspy/protobuf/x86/message_fallingdown_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "9e1ffcca6c1ce64faadc2c0c1847d533",
+        "relative_path": "syspy/protobuf/x86/message_force_sensor_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "b494d3acfc129f60abc089cffb0a9c37",
+        "relative_path": "syspy/protobuf/x86/message_fork_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "eb6f537289ab0f764efd6f3a527dcfcc",
+        "relative_path": "syspy/protobuf/x86/message_geometry_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "0ab51bfced34cecc9a0e1c71a410ad33",
+        "relative_path": "syspy/protobuf/x86/message_gnss_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "03cc63b19e843f5abb92a4dd68fa6e7c",
+        "relative_path": "syspy/protobuf/x86/message_graphics_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "208652b274e1ba9da042cd9bbb89a15f",
+        "relative_path": "syspy/protobuf/x86/message_gripper_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "1e792cfc9af2581e461ac66e6be9c177",
+        "relative_path": "syspy/protobuf/x86/message_header_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "e6a35b35e5e5058fff86d5023b4cf32f",
+        "relative_path": "syspy/protobuf/x86/message_hook_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "2caf385fc91fdf20c1c2e43b52fa3db1",
+        "relative_path": "syspy/protobuf/x86/message_imu_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "a07e57f26452c4f25b3811c30cce9bcd",
+        "relative_path": "syspy/protobuf/x86/message_infrared_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "ba0476ff94ac46e59e6e205af1943a08",
+        "relative_path": "syspy/protobuf/x86/message_io_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "a63449a612babccbf827a6426b8d8f6d",
+        "relative_path": "syspy/protobuf/x86/message_jack_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "ffd48db509f16a91c5c13275e6dba7fa",
+        "relative_path": "syspy/protobuf/x86/message_laser_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "190813ddea138a42a992e60a24396b47",
+        "relative_path": "syspy/protobuf/x86/message_liftconfig_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "dda7a0285415fabaedf5f5ddf59cf0cc",
+        "relative_path": "syspy/protobuf/x86/message_liftret_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "ba31544d7874edf01b8555825210d338",
+        "relative_path": "syspy/protobuf/x86/message_localization_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "991801ef8373bb92bd967a295ad02fb4",
+        "relative_path": "syspy/protobuf/x86/message_lock_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "bb7bf3a379e0844fb77526c6132ba767",
+        "relative_path": "syspy/protobuf/x86/message_magnetic_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "1f838220750143e30317c32c1d56c0f5",
+        "relative_path": "syspy/protobuf/x86/message_map_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "b3eeb506177c0572d396bb071b6c747c",
+        "relative_path": "syspy/protobuf/x86/message_model_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "d966f7edd7e80d1961ab1f1d3019dac1",
+        "relative_path": "syspy/protobuf/x86/message_motorinfos_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "3d42945d21b8b13d2af731731b07925d",
+        "relative_path": "syspy/protobuf/x86/message_movetask_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "2517997100a32e7ef69749f8e0de4041",
+        "relative_path": "syspy/protobuf/x86/message_navigation_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "186dc00106d117aa61ee8ca8e5faa382",
+        "relative_path": "syspy/protobuf/x86/message_object_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "00d26850480a736c449231573ccdac88",
+        "relative_path": "syspy/protobuf/x86/message_odometer_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "4171abe1582bc429f2b7a1e055bfd2b7",
+        "relative_path": "syspy/protobuf/x86/message_optical_flow_status_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "b538622d1221d609eaa5462a72ff3b0d",
+        "relative_path": "syspy/protobuf/x86/message_pgv_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "e214be07ceecdddb20c3d10ed660e257",
+        "relative_path": "syspy/protobuf/x86/message_pgvconfig_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "6120ff5ad8ae7092ae65cdb4e8276c16",
+        "relative_path": "syspy/protobuf/x86/message_picture_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "579a25e5c0bb70ddcb949ba48d8154c8",
+        "relative_path": "syspy/protobuf/x86/message_plots_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "a2b62fba2bf8e65f7dc8dbe028e972e1",
+        "relative_path": "syspy/protobuf/x86/message_plugin_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "18210671db0b618ed3f7a96229833841",
+        "relative_path": "syspy/protobuf/x86/message_pointcloud_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "c8a75390ed8525cbdb87c713943035b1",
+        "relative_path": "syspy/protobuf/x86/message_rbk4_3dcameradata_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "25086c00f2ac915962c0bd8a46dd2ee5",
+        "relative_path": "syspy/protobuf/x86/message_rbk4_cameraintrinsic_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "787b3e27330d95ef004b7a8ab6d8c41c",
+        "relative_path": "syspy/protobuf/x86/message_rbk4_header_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "bcdd7f7f681c51bec1dc5580bd5e9a4f",
+        "relative_path": "syspy/protobuf/x86/message_rbk4_image_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "b7981407cba3e1166866d06c03fbd643",
+        "relative_path": "syspy/protobuf/x86/message_rbk4_pointcloud_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "dc5b5ffe068a8f1e93d87638d4c2e3e5",
+        "relative_path": "syspy/protobuf/x86/message_rds_door_status_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "7ab86677fe4b01dd4bede524b7d8a5f5",
+        "relative_path": "syspy/protobuf/x86/message_rds_lift_status_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "1cf153bf26982c8b486d3d78a30e5147",
+        "relative_path": "syspy/protobuf/x86/message_rds_order_status_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "046e179180e2d20eeb248e8568bb703d",
+        "relative_path": "syspy/protobuf/x86/message_rds_robots_cmds_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "0fc29cbf5beefd7fda36e0ea0866ea04",
+        "relative_path": "syspy/protobuf/x86/message_rds_robots_status_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "7ccaa1868bb5b271e48961ff4dd39d97",
+        "relative_path": "syspy/protobuf/x86/message_rds_scene_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "a277bc4ad84a5f2fb2f9422fdbfc202b",
+        "relative_path": "syspy/protobuf/x86/message_rds_wind_shower_status_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "9bf34857f41d20f4032bde4bf8f5a464",
+        "relative_path": "syspy/protobuf/x86/message_recogresult_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "df30cf12f9d23cc1484d93b27a926490",
+        "relative_path": "syspy/protobuf/x86/message_rfid_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "8f1b5c56d23ce3ee549893d6ac657012",
+        "relative_path": "syspy/protobuf/x86/message_rgbd_camera_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "d33e746b5782499b7061615f5446847f",
+        "relative_path": "syspy/protobuf/x86/message_roller_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "2892a3b69837a8277f26727b7182c559",
+        "relative_path": "syspy/protobuf/x86/message_rpc_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "6e42d4470553e0c337e338cc31ea951d",
+        "relative_path": "syspy/protobuf/x86/message_rv_calibtool3d_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "cb7dc54fda5acd3b750d2d629b2eba2f",
+        "relative_path": "syspy/protobuf/x86/message_rv_recoresult_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "9d85c5aca26a8e28c0587f8ef93074de",
+        "relative_path": "syspy/protobuf/x86/message_rv_resultplotter_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "7a0608730186e5d99e3659dfda54e11e",
+        "relative_path": "syspy/protobuf/x86/message_rv_storage_bin_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "8daacdde4b0da74abe548ddd85b382ed",
+        "relative_path": "syspy/protobuf/x86/message_rv_storage_status_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "07f0aebe1ec7554af803d9f83e3adf27",
+        "relative_path": "syspy/protobuf/x86/message_safe_slowdown_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "7acb12ecf62025f8b84e1c28a2380ac9",
+        "relative_path": "syspy/protobuf/x86/message_scanners_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "6671dad59463add1f3a491d83057cbe8",
+        "relative_path": "syspy/protobuf/x86/message_script_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "2378b0df99122373cf91a436726e707b",
+        "relative_path": "syspy/protobuf/x86/message_sound_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "3b2cd7504bcf74d4023647df6acd5c85",
+        "relative_path": "syspy/protobuf/x86/message_ssl_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "5884952a3fe03607a4134ce0ec73173e",
+        "relative_path": "syspy/protobuf/x86/message_subrobot_status_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "3582dada960b001f117f636257e0d05a",
+        "relative_path": "syspy/protobuf/x86/message_task_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "96fe8cad8ee24500cb4755ff6737d489",
+        "relative_path": "syspy/protobuf/x86/message_tcp_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "0c7ddcb4050a0b2cfb8ee4c113404e60",
+        "relative_path": "syspy/protobuf/x86/message_tcs_comm_v1_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "b3b25b0db104a3fe51c4a50b5cac8cb5",
+        "relative_path": "syspy/protobuf/x86/message_tcs_comm_v2_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "42e4d4f2624daf7450c4fb4ec74f47fe",
+        "relative_path": "syspy/protobuf/x86/message_tracking_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "3904a5ae50d95e4c40b47ad061e59640",
+        "relative_path": "syspy/protobuf/x86/message_tts_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "6c04d96cc0f4f9449d3eddaae809de7e",
+        "relative_path": "syspy/protobuf/x86/message_ultrasonic_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "5bf2daecf9998bd32a34c42b622bb385",
+        "relative_path": "syspy/protobuf/x86/message_voice_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "862ba2316e06801de3d15270a29f01a9",
+        "relative_path": "syspy/protobuf/x86/message_voicerec_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "d3e5633eabd45f0ba34ec0f0b68776f1",
+        "relative_path": "syspy/protobuf/x86/messgae_rds_terminals_status_pb2.py",
+        "type": "genetic"
+      },
+      {
+        "md5": "ac1ecd45b7f21e60d765c7fef9ae72b8",
+        "relative_path": "syspy/protobuf/x86/protoc-3.15.7/bin/protoc",
+        "type": "genetic"
+      },
+      {
+        "md5": "895208209ac81648f590069120739b5a",
+        "relative_path": "syspy/protobuf/x86/protoc-3.15.7/include/google/protobuf/any.proto",
+        "type": "genetic"
+      },
+      {
+        "md5": "6d737c3fd6ed9b4bf3a16600b852079b",
+        "relative_path": "syspy/protobuf/x86/protoc-3.15.7/include/google/protobuf/api.proto",
+        "type": "genetic"
+      },
+      {
+        "md5": "0976fc349e3bf20fdea4d03a9dd5552a",
+        "relative_path": "syspy/protobuf/x86/protoc-3.15.7/include/google/protobuf/compiler/plugin.proto",
+        "type": "genetic"
+      },
+      {
+        "md5": "25729e36bed6185dafdf580575aaca5e",
+        "relative_path": "syspy/protobuf/x86/protoc-3.15.7/include/google/protobuf/descriptor.proto",
+        "type": "genetic"
+      },
+      {
+        "md5": "b93c8bf1294054564c22e6d7d152e068",
+        "relative_path": "syspy/protobuf/x86/protoc-3.15.7/include/google/protobuf/duration.proto",
+        "type": "genetic"
+      },
+      {
+        "md5": "d07e1dcc1777e86c3ba2eee58584fd52",
+        "relative_path": "syspy/protobuf/x86/protoc-3.15.7/include/google/protobuf/empty.proto",
+        "type": "genetic"
+      },
+      {
+        "md5": "2129346b9ff8f426dab219b74cb6d524",
+        "relative_path": "syspy/protobuf/x86/protoc-3.15.7/include/google/protobuf/field_mask.proto",
+        "type": "genetic"
+      },
+      {
+        "md5": "15938265916b7404e997149338632c3a",
+        "relative_path": "syspy/protobuf/x86/protoc-3.15.7/include/google/protobuf/source_context.proto",
+        "type": "genetic"
+      },
+      {
+        "md5": "e7299347bdf0ddf2f207bd5623cbf211",
+        "relative_path": "syspy/protobuf/x86/protoc-3.15.7/include/google/protobuf/struct.proto",
+        "type": "genetic"
+      },
+      {
+        "md5": "963744a45ac48dcdc5037a647cbc0d24",
+        "relative_path": "syspy/protobuf/x86/protoc-3.15.7/include/google/protobuf/timestamp.proto",
+        "type": "genetic"
+      },
+      {
+        "md5": "2f0b711a89ebbd5440785b2217e40d96",
+        "relative_path": "syspy/protobuf/x86/protoc-3.15.7/include/google/protobuf/type.proto",
+        "type": "genetic"
+      },
+      {
+        "md5": "db41827603911b85ebfd121467f90d58",
+        "relative_path": "syspy/protobuf/x86/protoc-3.15.7/include/google/protobuf/wrappers.proto",
+        "type": "genetic"
+      },
+      {
+        "md5": "f180fb938e56c42981edfb728a76ef01",
+        "relative_path": "syspy/protobuf/x86/protoc-3.15.7/readme.txt",
+        "type": "genetic"
+      }
+    ],
+    "ret_code": 0
+  }
+}

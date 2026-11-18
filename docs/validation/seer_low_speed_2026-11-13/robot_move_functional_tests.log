@@ -1,0 +1,40 @@
+[OUTPUT] 
+Internal ctest changing into directory: /home/zyj/Code/ROS2/AGV_new/AGV_ROS2_Control_Manager/build/robot_move
+
+[HANDLER_OUTPUT] 
+Test project /home/zyj/Code/ROS2/AGV_new/AGV_ROS2_Control_Manager/build/robot_move
+
+      Start  1: navigation_node_test
+ 1/15 Test  #1: navigation_node_test .............   Passed   16.09 sec
+      Start  2: navigation_guard_test
+ 2/15 Test  #2: navigation_guard_test ............   Passed    0.16 sec
+      Start  3: localization_source_test
+ 3/15 Test  #3: localization_source_test .........   Passed    0.11 sec
+      Start  4: localization_test
+ 4/15 Test  #4: localization_test ................   Passed    0.01 sec
+      Start  5: localization_scan_filter_test
+ 5/15 Test  #5: localization_scan_filter_test ....   Passed    7.29 sec
+      Start  6: localization_timing_test
+ 6/15 Test  #6: localization_timing_test .........   Passed    3.51 sec
+      Start  7: localization_node_test
+ 7/15 Test  #7: localization_node_test ...........   Passed   10.89 sec
+      Start  8: odometry_test
+ 8/15 Test  #8: odometry_test ....................   Passed    0.16 sec
+      Start  9: odometry_node_test
+ 9/15 Test  #9: odometry_node_test ...............   Passed    4.58 sec
+      Start 10: seer_transport_test
+10/15 Test #10: seer_transport_test ..............   Passed    3.07 sec
+      Start 11: seer_client_test
+11/15 Test #11: seer_client_test .................   Passed    0.82 sec
+      Start 12: agv_robot_move_test
+12/15 Test #12: agv_robot_move_test ..............   Passed    2.23 sec
+      Start 13: agv_integration_test
+13/15 Test #13: agv_integration_test .............   Passed    0.21 sec
+      Start 14: driver_lifecycle_test
+14/15 Test #14: driver_lifecycle_test ............   Passed    0.62 sec
+      Start 15: driver_node_test
+15/15 Test #15: driver_node_test .................   Passed    0.07 sec
+
+100% tests passed, 0 tests failed out of 15
+
+Total Test time (real) =  49.84 sec

@@ -1,0 +1,35 @@
+{
+  "elapsed_s": 200.57623486399916,
+  "phase": "finished",
+  "input_speed": 0.2,
+  "hardware_output_connected": false,
+  "latest": {
+    "elapsed_s": 200.47130058699986,
+    "output_speed": 0.2,
+    "output_w": 0.0
+  },
+  "state": {
+    "polygon_name": "",
+    "action_type": 0
+  },
+  "stats": {
+    "fixed_clear_baseline": {
+      "samples": 93,
+      "min_speed": 0.0,
+      "max_speed": 0.2,
+      "zero_samples": 15
+    },
+    "fixed_clear_after_retreat": {
+      "samples": 152,
+      "min_speed": 0.0,
+      "max_speed": 0.2,
+      "zero_samples": 7
+    },
+    "fixed_remove_and_recover": {
+      "samples": 54,
+      "min_speed": 0.2,
+      "max_speed": 0.2,
+      "zero_samples": 0
+    }
+  }
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+package rbk.protocol;
+
+message Message_ScriptStatus{
+    enum Status {
+        StatusNone = 0;
+        Waiting = 1;
+        Running = 2;
+        Suspended = 3;
+        Completed = 4;
+        Failed = 5;
+        Canceled = 6;
+        OverTime = 7;
+    }
+    Status status = 1;
+    string res = 2;
+}

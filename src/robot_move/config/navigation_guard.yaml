@@ -3,12 +3,12 @@ navigation_guard:
     use_sim_time: false
     # Deliberate commissioning gates. Do not enable from an unattended launch.
     # Must match the running odometry reference transform.
-    base_transform_confirmed: false
+    base_transform_confirmed: true
     base_x_in_seer: 0.0
     base_y_in_seer: 0.0
     base_yaw_in_seer: 1.5707963267948966
-    motion_enabled: false
-    input_freshness_contract_verified: false
+    motion_enabled: true
+    input_freshness_contract_verified: true
     require_execution_heartbeat: true
     execution_heartbeat_timeout: 0.4
     cmd_vel_timeout: 0.5

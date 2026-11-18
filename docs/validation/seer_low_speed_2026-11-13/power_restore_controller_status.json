@@ -1,0 +1,310 @@
+[
+  {
+    "api": 1000,
+    "response": {
+      "MAC": "34008AC2ACB1",
+      "VERSION_LIST": {
+        "ArmAdapter": "1.0.0-git:3.4.8-d4eed63-desc:Oct 10 2025 17:49:36",
+        "Calib": "1.0.0-git:3.4.8-37a0217-desc:Oct 10 2025 17:51:46",
+        "CalibrationTask": "1.0.0-git:3.4.8-b2ce253-desc:Oct 10 2025 17:49:37",
+        "ChargerAdapter": "1.0.0-git:3.4.8-43acb53-desc:Oct 10 2025 17:49:35",
+        "DSPChassis": "1.0.0-git:3.4.8-4b6f8de6-desc:Oct 10 2025 17:49:46",
+        "GNSSModulesDriver": "0.1.0-git:3.4.8-e414da8-desc:Oct 10 2025 17:49:36",
+        "IRCameraPose": "1.0.0-git:3.4.8-a9cd700-desc:Oct 10 2025 17:49:38",
+        "LocalReMap": "1.0.0-git:3.4.8-186ea26-desc:Oct 10 2025 17:49:38",
+        "MCLoc": "1.0.0-git:3.4.8-9b2894c-desc:Oct 10 2025 17:52:24",
+        "MagneticSensor": "1.0.0-git:3.4.8-565dcd0-desc:Oct 10 2025 17:50:28",
+        "MailSender": "1.0.0-git:3.4.8-b6d670c-desc:Oct 10 2025 17:50:31",
+        "MoveFactory": "4.5.26-git:3.4.8-a5b98fef-desc:Oct 10 2025 17:52:11",
+        "MultiDcamera": "1.0.0-git:3.4.8-a10c90d4-desc:Oct 10 2025 17:56:22",
+        "MultiLaser": "1.0.0-git:3.4.8-91c95f3-desc:Oct 10 2025 17:50:54",
+        "NetProtocol": "1.0.0-git:3.4.8-b4537fc-desc:Oct 10 2025 17:50:46",
+        "OdoCalculator": "1.0.0-git:3.4.8-3cdd3c1-desc:Oct 10 2025 17:50:43",
+        "OnlineMapLogger": "1.0.0-git:3.4.8-4907bc2-desc:Oct 10 2025 17:50:47",
+        "OpticalMotionCapture": "1.0.0-git:3.4.8-1de3e5b-desc:Oct 10 2025 17:50:51",
+        "RFIDSensor": "1.0.0-git:3.4.8-e2ff95b-desc:Oct 10 2025 17:51:02",
+        "RecoFactory": "1.0.0-git:3.4.8-8acde91-desc:Oct 10 2025 17:56:10",
+        "Scanner": "1.0.0-git:3.4.8-1049267-desc:Oct 10 2025 17:51:19",
+        "SeerRoller": "1.0.0-git:3.4.8-f4fd0f9-desc:Oct 10 2025 17:51:17",
+        "SensorFuser": "1.0.0-git:3.4.8-22e544e-desc:Oct 10 2025 17:51:54",
+        "SlaMapping": "1.0.0-git:3.4.8-2c4e23b-desc:Oct 10 2025 17:51:20",
+        "SoundPlayer": "1.0.0-git:3.4.8-37fc9a3-desc:Oct 10 2025 17:51:27",
+        "SystemVersion": "",
+        "TaskManager": "1.0.0-git:3.4.8-cd41ea0-desc:Oct 10 2025 17:51:36",
+        "x86-patch": "0.3.12"
+      },
+      "WLANMAC": "28DFEBDE4991",
+      "ap_addr": "",
+      "architecture": "x86_64",
+      "calibrated": false,
+      "create_on": "2026-11-13T11:10:47.155+0800",
+      "current_ip": "",
+      "current_map": "20251120141209997",
+      "current_map_entries": [
+        {
+          "3dFeatureTrans": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "md5": "342c6d27a3ad34d10d2bd44899c4578b",
+          "name": "20251120141209997"
+        }
+      ],
+      "current_map_md5": "342c6d27a3ad34d10d2bd44899c4578b",
+      "dsp_version": "v2.2.31.H1-2-14",
+      "echoid": "b91fd347-d0facadc-60cce818-032616ac",
+      "echoid_type": "",
+      "features": [
+        {
+          "active": true,
+          "expiry_date": "never-expire",
+          "name": "rbk_diff"
+        },
+        {
+          "active": false,
+          "name": "pro_loc_func"
+        },
+        {
+          "active": false,
+          "name": "pro_rec_func"
+        },
+        {
+          "active": false,
+          "name": "pro_mod_func"
+        },
+        {
+          "active": false,
+          "name": "rbk_omni"
+        },
+        {
+          "active": false,
+          "name": "rbk_steer"
+        },
+        {
+          "active": true,
+          "expiry_date": "never-expire",
+          "name": "rbk_multisteer"
+        },
+        {
+          "active": false,
+          "name": "rbk_dualdiff"
+        },
+        {
+          "active": false,
+          "name": "rbk_rgv"
+        },
+        {
+          "active": false,
+          "name": "rbk_fork"
+        },
+        {
+          "active": false,
+          "name": "rbk_pallet"
+        },
+        {
+          "active": false,
+          "name": "rbk_pgv_loc"
+        },
+        {
+          "active": false,
+          "name": "rbk_pgv_nav"
+        },
+        {
+          "active": false,
+          "name": "rbk_spin"
+        },
+        {
+          "active": false,
+          "name": "rbk_reflector"
+        },
+        {
+          "active": true,
+          "expiry_date": "never-expire",
+          "name": "rbk_3dcamera"
+        },
+        {
+          "active": false,
+          "name": "rbk_dynamic_nav"
+        },
+        {
+          "active": true,
+          "expiry_date": "never-expire",
+          "name": "rbk_roaming"
+        },
+        {
+          "active": false,
+          "name": "rbk_script"
+        },
+        {
+          "active": false,
+          "name": "rbk_tagrecognize"
+        },
+        {
+          "active": false,
+          "name": "rbk_shapedetect"
+        },
+        {
+          "active": true,
+          "expiry_date": "never-expire",
+          "name": "rbk_laser_loc"
+        },
+        {
+          "active": false,
+          "name": "rbk_charger"
+        }
+      ],
+      "gyro_version": "v2.1.3-RC2-7442b727-2025-03-05 10:49:52",
+      "hardware": {
+        "cpus": [
+          {
+            "configuration": {
+              "cores": "2",
+              "enabledcores": "2",
+              "threads": "4"
+            },
+            "product": "Intel(R) Core(TM) i5-6300U CPU @ 2.40GHz"
+          }
+        ]
+      },
+      "id": "2D0024001647393436343431",
+      "map_version": "v1.0.7",
+      "modbus_version": "v2.1.0",
+      "model": "unknown",
+      "model_md5": "a658889ad3641f3909e5463219e98ff7",
+      "model_version": "v3.0.2",
+      "netprotocol_version": "v3.0.0",
+      "network_controllers": [
+        {
+          "description": "Ethernet interface",
+          "driver": "igb",
+          "driverversion": "5.4.0-k",
+          "logicalname": "eth0",
+          "product": "I211 Gigabit Network Connection",
+          "serial": "34:00:8a:c2:ac:b0",
+          "vendor": "Intel Corporation"
+        },
+        {
+          "description": "Ethernet interface",
+          "driver": "igb",
+          "driverversion": "5.4.0-k",
+          "logicalname": "eth1",
+          "product": "I211 Gigabit Network Connection",
+          "serial": "34:00:8a:c2:ac:b1",
+          "vendor": "Intel Corporation"
+        },
+        {
+          "description": "Wireless interface",
+          "driver": "iwlwifi",
+          "driverversion": "4.15.0-51-generic",
+          "logicalname": "wlan0",
+          "product": "Dual Band Wireless-AC 3168NGW [Stone Peak]",
+          "serial": "28:df:eb:de:49:91",
+          "vendor": "Intel Corporation"
+        }
+      ],
+      "ret_code": 0,
+      "roboshop_min_version_required": "v2.4.2.0",
+      "robot_note": "",
+      "rssi": 0,
+      "safe_model_md5": "",
+      "ssid": "",
+      "vehicle_id": "AMB-01",
+      "version": "v3.4.8.0011"
+    }
+  },
+  {
+    "api": 1012,
+    "response": {
+      "create_on": "2026-11-13T11:10:47.157+0800",
+      "driver_emc": false,
+      "electric": true,
+      "emergency": false,
+      "ret_code": 0,
+      "soft_emc": false
+    }
+  },
+  {
+    "api": 1005,
+    "response": {
+      "create_on": "2026-11-13T11:10:47.158+0800",
+      "detect_skid": false,
+      "is_stop": true,
+      "motor_steer_angles": [],
+      "r_spin": -0.0,
+      "r_steer": -0.0,
+      "r_steer_angles": [
+        -0.0
+      ],
+      "r_vx": -0.0,
+      "r_vy": -0.0,
+      "r_w": -0.0,
+      "ret_code": 0,
+      "spin": -0.0015,
+      "steer": -0.0,
+      "steer_angles": [
+        -0.0,
+        -0.0
+      ],
+      "vx": -0.0,
+      "vy": -0.0,
+      "w": -0.0
+    }
+  },
+  {
+    "api": 1020,
+    "response": {
+      "containers": [],
+      "create_on": "2026-11-13T11:10:47.158+0800",
+      "finished_path": [],
+      "move_status_info": "{\"dispatch_delay_s\":null,\"dispatch_other\":null,\"dispatch_self\":{\"cnt\":0,\"owned\":{\"blocks\":[],\"points\":[]},\"request\":{\"blocks\":[],\"points\":[]},\"ts\":265154673721},\"info\":\"\",\"objectFile\":\"\"}",
+      "ret_code": 0,
+      "running_status": 0,
+      "target_dist": 0.0,
+      "target_id": "",
+      "target_label": "",
+      "target_point": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "task_status": 0,
+      "task_type": 0,
+      "unfinished_path": []
+    }
+  },
+  {
+    "api": 1060,
+    "response": {
+      "create_on": "2026-11-13T11:10:47.159+0800",
+      "locked": false,
+      "ret_code": 0
+    }
+  },
+  {
+    "api": 1001,
+    "response": {
+      "19204": 5,
+      "19204_ip": [
+        "192.168.192.105:51498",
+        "192.168.192.105:51516",
+        "192.168.192.105:44082",
+        "127.0.0.1:53016",
+        "192.168.192.105:57366"
+      ],
+      "19205": 0,
+      "19205_ip": [],
+      "19206": 0,
+      "19206_ip": [],
+      "19207": 0,
+      "19207_ip": [],
+      "19210": 1,
+      "19210_ip": [
+        "127.0.0.1:51650"
+      ],
+      "19301_ip": [],
+      "create_on": "2026-11-13T11:10:47.159+0800",
+      "ret_code": 0
+    }
+  }
+]

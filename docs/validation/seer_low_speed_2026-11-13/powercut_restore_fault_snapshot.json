@@ -1,0 +1,114 @@
+{
+  "mode": "read-only after operator-confirmed physical emergency power cut",
+  "duration_s": 4.0002914959995906,
+  "counts": {
+    "/odom": 21,
+    "map->odom": 20,
+    "odom->base_link": 19
+  },
+  "diagnostics": {
+    "/seer_localization/map_to_odom": {
+      "level": 1,
+      "message": "receive_time_approximation",
+      "values": {
+        "time_mode": "1004 receive time; internal sample age unknown; create_on ignored",
+        "coordinate_status": "UNVERIFIED_ASSUMPTION",
+        "map": "20251120141209997",
+        "reloc_status": "1.000000",
+        "confidence": "0.740000",
+        "pending_reason": "waiting_for_odom_bracket",
+        "tf_publish_mode": "bounded_odom_hold",
+        "tf_support_stamp_sec": "1794541174.523710",
+        "accepted_pose_stamp_sec": "1794541174.100778",
+        "query_pose_receive_age_sec": "0.085923",
+        "latest_odom_age_sec": "0.163192",
+        "pose_odom_stamp_difference_sec": "0.000000",
+        "response_age_sec": "0.586124",
+        "query_bundle_latency_sec": "0.002926",
+        "odom_bracket_sec": "0.199821",
+        "tf_available": "true",
+        "updates": "10943.000000",
+        "queries": "10968.000000",
+        "query_failures": "13.000000",
+        "jump_pending_samples": "0.000000",
+        "device_sample_age": "unknown; repeated cached poses cannot be detected"
+      }
+    },
+    "/seer_odometry/estimated_odometry": {
+      "level": 1,
+      "message": "estimated odometry degraded: lost displacement unrecoverable",
+      "values": {
+        "source": "1005 actual vx/vy/w; estimated odometry",
+        "time_mode": "steady receive intervals; ROS receive stamps",
+        "device_sample_age": "unknown; no verified sample timestamp; duplicates undetectable",
+        "response_age_sec": "0.156485",
+        "valid_response_hz": "4.943250",
+        "request_ms": "0.692036",
+        "integration_interval_sec": "0.200303",
+        "skipped_integrations": "13.000000",
+        "reconnections": "1.000000",
+        "errors": "13.000000",
+        "quality_degraded": "true"
+      }
+    },
+    "/lidar_node/acquisition": {
+      "level": 0,
+      "message": "Running",
+      "values": {
+        "request_ms": "10.457296",
+        "errors": "14",
+        "connections": "3",
+        "stamp_mode": "receive_time (network latency included)"
+      }
+    },
+    "/lidar_node/laser_front": {
+      "level": 2,
+      "message": "source clock reset; restart required",
+      "values": {
+        "age_sec": "132.928720",
+        "frames": "27012",
+        "average_hz": "4.877345",
+        "duplicates": "0",
+        "clock_resets": "1",
+        "valid_points": "491",
+        "rejected_points": "19",
+        "outside_points": "0",
+        "collisions": "0",
+        "source_stamp": "6670614048652",
+        "device_id": "3",
+        "install_x_raw": "0.550000",
+        "install_y_raw": "-0.295000",
+        "install_z_raw": "0.600000",
+        "install_yaw_raw": "-47.000000",
+        "install_upside_raw": "true"
+      }
+    },
+    "/lidar_node/laser_back": {
+      "level": 2,
+      "message": "source clock reset; restart required",
+      "values": {
+        "age_sec": "132.928753",
+        "frames": "27012",
+        "average_hz": "4.877345",
+        "duplicates": "0",
+        "clock_resets": "1",
+        "valid_points": "464",
+        "rejected_points": "47",
+        "outside_points": "0",
+        "collisions": "0",
+        "source_stamp": "6670604347790",
+        "device_id": "4",
+        "install_x_raw": "-0.550000",
+        "install_y_raw": "0.295000",
+        "install_z_raw": "0.600000",
+        "install_yaw_raw": "142.000000",
+        "install_upside_raw": "true"
+      }
+    },
+    "lifecycle_manager_real_planning: Nav2 Health": {
+      "level": 0,
+      "message": "Managed nodes are active",
+      "values": {}
+    }
+  }
+}

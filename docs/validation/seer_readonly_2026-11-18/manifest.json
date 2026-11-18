@@ -1,0 +1,81 @@
+{
+  "ip": "192.168.1.109",
+  "date": "2026-11-18",
+  "status_port": 19204,
+  "motion_sent": false,
+  "remote_code_executed": false,
+  "freshness_verified": false,
+  "files": [
+    {
+      "file": "capability.json",
+      "bytes": 119775,
+      "sha256": "fc163da91e77b392439c443f97761c89161fe537f32eb3bbedbf5d712818a1f6"
+    },
+    {
+      "file": "native_inventory.json",
+      "bytes": 11628,
+      "sha256": "d171867b7d3646dcdc25b6cddfecfe5540dd24a4117bd67454c567ad3c90f63e"
+    },
+    {
+      "file": "message_localization.proto",
+      "bytes": 1948,
+      "sha256": "2c901c85971f254d62eff45b4ee9994dff938ee1e7e692f2214d87f9767f69f9",
+      "source_type": "app",
+      "source_path": "proto/message_localization.proto"
+    },
+    {
+      "file": "message_script.proto",
+      "bytes": 317,
+      "sha256": "112f8efbc57685093e17f49977a0bd60454a415b5bb2f80d34cecf5552e0f285",
+      "source_type": "app",
+      "source_path": "proto/message_script.proto"
+    },
+    {
+      "file": "message_odometer.proto",
+      "bytes": 981,
+      "sha256": "d9e1fff4b5b2f1390f83b25003c50ca7fcb6001ea034747b25812ea448741580",
+      "source_type": "app",
+      "source_path": "proto/message_odometer.proto"
+    },
+    {
+      "file": "addMoveTask.py.txt",
+      "bytes": 1687,
+      "sha256": "c183a5847d2447e0f74312959756d2fbb5c1dcbdaafe76fde791d318051d2882",
+      "source_type": "users",
+      "source_path": "resources/scripts/module/syspy/addMoveTask.py",
+      "inventory_md5": "73f3823afc10a71252d790b0d3bf45fc",
+      "download_md5": "73f3823afc10a71252d790b0d3bf45fc"
+    },
+    {
+      "file": "rbkSim_reference.py.txt",
+      "bytes": 7737,
+      "sha256": "f1fdc76618882e2949c512eeba2c34e3ab60c7f86de01e3836cd3b1e15467f0a",
+      "source_type": "app",
+      "source_path": "assets/scripts/module/rbkSim.py",
+      "reference_only": true
+    },
+    {
+      "file": "message_rpc.proto",
+      "bytes": 641,
+      "sha256": "a3cf5516f8d72fd74d2b37f9c272803f7a93f43ca30dcc0a2280e012770e266e",
+      "source_type": "app",
+      "source_path": "proto/message_rpc.proto"
+    },
+    {
+      "file": "message_header.proto",
+      "bytes": 306,
+      "sha256": "94023ec51e5b0ed92e5bb8483521398144d1f5b067341518237401497d02c365",
+      "source_type": "app",
+      "source_path": "proto/message_header.proto"
+    },
+    {
+      "file": "goPath.py.txt",
+      "bytes": 5395,
+      "sha256": "8f41653df54f11756a30ac91322e4c1b62df2b16d643ce6a734c0d648234cd42",
+      "source_type": "users",
+      "source_path": "resources/scripts/module/syspy/goPath.py",
+      "inventory_md5": "e947f2ac6609e8887f1c2ed2724651a3",
+      "download_md5": "e947f2ac6609e8887f1c2ed2724651a3"
+    }
+  ]
+}
