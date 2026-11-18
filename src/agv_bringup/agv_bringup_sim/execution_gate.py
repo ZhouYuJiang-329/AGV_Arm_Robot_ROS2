@@ -129,15 +129,19 @@ class ExecutionGate(Node):
             '/navigation/cmd_vel_guard': ({'collision_monitor'}, {'navigation_guard'}),
         }
         for topic, (publishers, subscribers) in expected.items():
-            for infos, allowed in ((self.get_publishers_info_by_topic(topic), publishers),
-                                   (self.get_subscriptions_info_by_topic(topic), subscribers)):
-                observed = {i.node_name for i in infos}
-                if not observed.issubset(allowed):
-                    return False
-                if configured and observed != allowed:
-                    return False
-                if any(i.topic_type != 'geometry_msgs/msg/Twist' for i in infos):
-                    return False
+            pub_infos = self.get_publishers_info_by_topic(topic)
+            sub_infos = self.get_subscriptions_info_by_topic(topic)
+            observed_publishers = {i.node_name for i in pub_infos}
+            observed_subscribers = {i.node_name for i in sub_infos}
+            # Only publishers can inject a command. Passive subscribers such as
+            # rosbag and diagnostics must not prevent startup or pause navigation.
+            if not observed_publishers.issubset(publishers):
+                return False
+            if configured and (observed_publishers != publishers or
+                               not subscribers.issubset(observed_subscribers)):
+                return False
+            if any(i.topic_type != 'geometry_msgs/msg/Twist' for i in pub_infos + sub_infos):
+                return False
         for edge in (('map', 'odom'), ('odom', 'base_link'),
                      ('base_link', 'laser_front_link'), ('base_link', 'laser_back_link')):
             if len(self.edges.get(edge, ())) != 1:

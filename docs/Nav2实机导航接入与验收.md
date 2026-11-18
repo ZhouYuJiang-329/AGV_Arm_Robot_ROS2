@@ -40,7 +40,7 @@
 | 运动模型 | DWB平面全向，允许x/y/旋转 | 现有API2010支持vx/vy/w，odom保留vy，项目全向底盘文档；仍需实车轴向、横移、组合运动验收 |
 | 速度 | DWB合成线速度≤0.05m/s，角速度≤0.10rad/s | 调试软件上限，不是标定能力；平滑器各轴±0.05m/s，合成上限约0.071m/s，低于guard的0.15m/s |
 | 加减速度 | 线0.10m/s²、角0.20rad/s²，减速参数负号 | 保守指令斜率；不证明实车制动能力，需测停车距离/时延 |
-| 规划/控制 | Navfn A*、DWB、SimpleGoalChecker、SimpleProgressChecker | 本机Jazzy实际配置测试通过；XY/yaw到达容差0.10m/0.10rad，进展0.05m/20s |
+| 规划/控制 | Navfn A*、DWB、SimpleGoalChecker、SimpleProgressChecker | 本机Jazzy实际配置测试通过；XY/yaw到达容差0.15m/0.10rad（位置窗口与DWB旋转到目标窗口一致），进展0.05m/20s |
 | 代价地图 | global=map，local=odom滚动6×6m，0.05m分辨率 | static + 双雷达obstacle + inflation；局部不含static |
 | 障碍处理 | marking/clearing；3.5m障碍、4m射线处理上限 | 工程处理范围，真实LaserScan仍报告设备量程，本轮实测0.001～40m、541束 |
 | 高度 | layer及每个source均[−1,1]m | 当前map/odom/base变换z=0，雷达安装z=−0.24m，必须包含负高度；不是雷达离地标定 |

@@ -9,6 +9,7 @@ import tempfile
 import time
 import unittest
 from unittest.mock import Mock
+from types import SimpleNamespace
 
 import rclpy
 from geometry_msgs.msg import TransformStamped, PoseStamped
@@ -33,6 +34,60 @@ from agv_bringup_sim.real_navigation import (
     EXECUTION_NODES, REVIEW_KEYS, validate_execution, validate_profile,
 )
 from agv_bringup_sim.execution_gate import ExecutionGate
+
+
+class GraphObserverTest(unittest.TestCase):
+    def fixture(self):
+        endpoints = {
+            '/navigation/cmd_vel_raw': (['controller_server', 'behavior_server'], ['velocity_smoother']),
+            '/navigation/cmd_vel_smoothed': (['velocity_smoother'], ['collision_monitor']),
+            '/navigation/cmd_vel_guard': (['collision_monitor'], ['navigation_guard']),
+        }
+        def infos(topic, side):
+            return [SimpleNamespace(node_name=name, topic_type='geometry_msgs/msg/Twist')
+                    for name in endpoints.get(topic, ([], []))[side]]
+        gate = SimpleNamespace(
+            get_node_names=lambda: ['navigation_guard', 'controller_server', 'velocity_smoother',
+                                   'collision_monitor', 'behavior_server', 'bt_navigator',
+                                   'smoother_server', 'seer_odometry', 'seer_localization', 'map_server'],
+            get_publishers_info_by_topic=lambda topic: infos(topic, 0),
+            get_subscriptions_info_by_topic=lambda topic: infos(topic, 1),
+            edges={edge: {True} for edge in [('map', 'odom'), ('odom', 'base_link'),
+                   ('base_link', 'laser_front_link'), ('base_link', 'laser_back_link')]})
+        return gate, endpoints
+
+    def test_readonly_recorders_do_not_block_control_graph(self):
+        gate, endpoints = self.fixture()
+        for _, subscribers in endpoints.values():
+            subscribers.extend(['rosbag2_recorder', 'navigation_session_recorder_123'])
+        self.assertTrue(ExecutionGate.graph_ok(gate))
+        # During initial configuration publishers do not exist yet.
+        for publishers, _ in endpoints.values():
+            publishers.clear()
+        self.assertTrue(ExecutionGate.graph_ok(gate, configured=False))
+        self.assertFalse(ExecutionGate.graph_ok(gate, configured=True))
+
+    def test_competing_publishers_and_missing_control_subscribers_still_block(self):
+        for topic in ('/navigation/cmd_vel_raw', '/navigation/cmd_vel_smoothed',
+                      '/navigation/cmd_vel_guard'):
+            gate, endpoints = self.fixture()
+            endpoints[topic][0].append('unexpected_controller')
+            self.assertFalse(ExecutionGate.graph_ok(gate, configured=False))
+            self.assertFalse(ExecutionGate.graph_ok(gate, configured=True))
+            gate, endpoints = self.fixture()
+            endpoints[topic][1][:] = ['rosbag2_recorder']
+            self.assertFalse(ExecutionGate.graph_ok(gate))
+        gate, endpoints = self.fixture()
+        endpoints['/cmd_vel'] = ([], ['legacy_driver'])
+        self.assertFalse(ExecutionGate.graph_ok(gate))
+
+    def test_wrong_observer_message_type_still_blocks(self):
+        gate, _ = self.fixture()
+        original = gate.get_subscriptions_info_by_topic
+        gate.get_subscriptions_info_by_topic = lambda topic: original(topic) + (
+            [SimpleNamespace(node_name='observer', topic_type='geometry_msgs/msg/TwistStamped')]
+            if topic == '/navigation/cmd_vel_guard' else [])
+        self.assertFalse(ExecutionGate.graph_ok(gate))
 
 
 class ContractTest(unittest.TestCase):
@@ -318,6 +373,11 @@ class PluginIntegrationTest(unittest.TestCase):
             'expected_map': 'fixture',
             'expected_map_md5': 'fixture-md5', 'base_x_in_seer_m': 0.,
             'base_y_in_seer_m': 0., 'base_yaw_in_seer_rad': guard_config['base_yaw_in_seer']})
+        for observer_name in ('navigation_session_recorder_fixture', 'rosbag2_recorder'):
+            observer = fake(observer_name, {})
+            for topic in ('/navigation/cmd_vel_raw', '/navigation/cmd_vel_smoothed',
+                          '/navigation/cmd_vel_guard'):
+                observer.create_subscription(Twist, topic, lambda _: None, 1)
         diagnostics = guard.create_publisher(DiagnosticArray, '/diagnostics', 10)
         scans = {side: guard.create_publisher(LaserScan, '/scan_' + side, qos_profile_sensor_data)
                  for side in ('front', 'back')}
