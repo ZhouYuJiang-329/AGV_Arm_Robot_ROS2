@@ -157,7 +157,7 @@ Node::Node(const rclcpp::NodeOptions & options, Worker::Send sender)
             try {
               size_t used = 0; const auto text = fields.at("confidence");
               const double confidence = std::stod(text, &used);
-              valid &= used == text.size() && finite(confidence) && confidence >= 0.5 &&
+              valid &= used == text.size() && finite(confidence) && confidence >= 0.1 &&
               confidence <= 1;
             // Timer diagnostics must not renew the age of the underlying pose.
               const auto age_text = fields.at("response_age_sec");

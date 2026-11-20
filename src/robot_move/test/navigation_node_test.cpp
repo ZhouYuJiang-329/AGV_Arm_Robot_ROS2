@@ -52,6 +52,7 @@ int main(int argc, char ** argv)
       });
     bool heartbeat_enabled = true;
     bool localization_expired = false;
+    bool localization_low_confidence = false;
     bool scan_enabled = true, odom_enabled = true, tf_enabled = true, localization_valid = true;
     auto timer = io->create_wall_timer(40ms, [&] {
           const auto stamp = io->now();
@@ -82,11 +83,12 @@ int main(int argc, char ** argv)
           s.level = 1;
           s.message = "receive_time_approximation";
           for (auto field : {std::pair{"coordinate_status", "configured_confirmed"},
-            {"reloc_status", "1.000000"}, {"tf_available", "true"}, {"confidence", "0.900000"},
+            {"reloc_status", "1.000000"}, {"tf_available", "true"}, {"confidence", "0.100000"},
             {"response_age_sec", "0.000000"}})
           {
             diagnostic_msgs::msg::KeyValue v; v.key = field.first; v.value = field.second;
             if (v.key == "response_age_sec" && localization_expired) {v.value = "2.000000";}
+            if (v.key == "confidence" && localization_low_confidence) {v.value = "0.099000";}
             s.values.push_back(v);
           }
           if (!localization_valid) {s.values.clear();} a.status.push_back(s);
@@ -128,16 +130,18 @@ int main(int argc, char ** argv)
     require(state == "Active" && motion > before_resume,
       "fresh ROS commands resume after normal zero");
     spin(650ms); require(state == "StopRequested" && zeros == 2, "watchdog zero"); reset();
-    for (int fault = 0; fault < 6; ++fault) {
+    for (int fault = 0; fault < 7; ++fault) {
       spin(150ms, true); auto before = zeros.load();
       if (fault == 0) {scan_enabled = false;} if (fault == 1) {odom_enabled = false;}
       if (fault == 2) {tf_enabled = false;} if (fault == 3) {localization_valid = false;}
       if (fault == 4) {heartbeat_enabled = false;}
       if (fault == 5) {localization_expired = true;}
+      if (fault == 6) {localization_low_confidence = true;}
       spin(1000ms, true);
       require(state == "Fault" && zeros == before + 1, "required input fault stop");
       if (fault == 1) {require(!confirmed, "missing feedback claimed stopped");}
       localization_expired = false;
+      localization_low_confidence = false;
       heartbeat_enabled = scan_enabled = odom_enabled = tf_enabled = localization_valid = true;
       reset();
     }
