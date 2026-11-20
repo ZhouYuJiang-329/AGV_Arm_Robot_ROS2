@@ -1,5 +1,7 @@
 # Nav2 实机导航接入与验收
 
+当前配置文件清单、全部参数、启动命令与修改位置统一见 [docs/导航](导航/README.md)。本页保留接入过程及各日期验收记录。
+
 适用 ROS 2 Jazzy / Nav2 1.3.13（本机安装版本）/ C++17。默认模式不创建任何运动输出节点。
 当前结论：**软件接线及定位/TF时间问题的只读复验通过；实车标定和运动未验收。**
 最新结果见[定位诊断与TF时间接入修复](定位诊断与TF时间接入修复_2026-11-12.md)，下文早期网络与时间问题记录作为历史保留。
@@ -121,6 +123,47 @@ Python Jazzy回调的MessageInfo没有publisher GID，因此执行门禁使用gu
 网络断开时本机零速可能送不达；不能把API应答或Fault状态写成“物理停车已确认”。
 
 ## 构建与启动
+
+### 当前现场完整启动命令（2026-11-20）
+
+在新终端中进入工作区并加载环境。控制器地址为 `192.168.192.5`，ROS 域为 `216`：
+
+```bash
+cd /home/zyj/Code/ROS2/AGV_new/AGV_ROS2_Control_Manager
+export PATH="/usr/bin:$PATH"
+source /opt/ros/jazzy/setup.bash
+source install/setup.bash
+export ROS_DOMAIN_ID=216
+export ROS_AUTOMATIC_DISCOVERY_RANGE=LOCALHOST
+
+ros2 launch agv_bringup agv_navigation_real.launch.py \
+  mode:=execute \
+  connection:=192.168.192.5 \
+  map:="$PWD/maps/seer/20251120141209997_navigable.yaml" \
+  params_file:="$PWD/docs/validation/seer_low_speed_2026-11-13/nav2_locked_arm_site.yaml" \
+  guard_params:="$PWD/src/robot_move/config/navigation_guard.yaml" \
+  localization_params:="$PWD/docs/validation/seer_low_speed_2026-11-13/localization_observe_site.yaml" \
+  commissioning_file:="$PWD/src/agv_bringup/config/agv_navigation_commissioning.yaml" \
+  reuse_lidar:=false \
+  reuse_odometry:=false \
+  reuse_localization:=false \
+  reuse_description:=false \
+  rviz:=true
+```
+
+这条命令新建采集、定位、TF、规划及执行节点，并打开 RViz；不会自动发送导航目标。执行链激活后，使用 RViz 的 `Navigation 2` 面板配合 `Nav2 Goal` 工具下发目标。
+
+需要同步记录路径、速度和舵轮角度时，在另一个已加载同一工作区环境的终端执行：
+
+```bash
+/usr/bin/python3 tools/record_navigation.py --domain-id 216 --seer-ip 192.168.192.5
+```
+
+记录的启动、结束与回看方法见[导航过程记录与回看](导航过程记录与回看.md)。
+
+### 通用构建与观察示例
+
+以下保留通用示例及早期验收说明；当前现场完整启动使用上面的具体命令。
 
 ```bash
 cd /home/zyj/Code/ROS2/AGV_new/AGV_ROS2_Control_Manager

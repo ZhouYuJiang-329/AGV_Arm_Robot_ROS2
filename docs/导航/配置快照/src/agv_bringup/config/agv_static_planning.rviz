@@ -1,0 +1,72 @@
+Panels:
+- Class: rviz_common/Displays
+  Name: Displays
+Visualization Manager:
+  Class: ''
+  Global Options:
+    Fixed Frame: map
+    Background Color: 48; 48; 48
+    Frame Rate: 30
+  Displays:
+  - Class: rviz_default_plugins/Grid
+    Name: Grid
+    Enabled: true
+    Cell Size: 1
+    Plane Cell Count: 20
+  - Class: rviz_default_plugins/Map
+    Name: Map
+    Enabled: true
+    Topic:
+      Value: /map
+      Durability Policy: Transient Local
+      Reliability Policy: Reliable
+      Depth: 1
+    Alpha: 0.8
+  - Class: rviz_default_plugins/Path
+    Name: Global path
+    Enabled: true
+    Topic:
+      Value: /plan
+      Reliability Policy: Reliable
+      Depth: 5
+      Durability Policy: Transient Local
+    Color: 25; 255; 0
+    Line Style: Lines
+    Line Width: 0.04
+  - Class: rviz_default_plugins/Pose
+    Name: Start
+    Enabled: true
+    Topic:
+      Value: /planning_start
+      Durability Policy: Transient Local
+      Reliability Policy: Reliable
+      Depth: 1
+    Shape: Arrow
+    Color: 0; 255; 0
+  - Class: rviz_default_plugins/Pose
+    Name: Goal
+    Enabled: true
+    Topic:
+      Value: /planning_goal
+      Durability Policy: Transient Local
+      Reliability Policy: Reliable
+      Depth: 1
+    Shape: Arrow
+    Color: 255; 50; 50
+  Tools:
+  - Class: rviz_default_plugins/Interact
+  - Class: rviz_default_plugins/MoveCamera
+  - Class: rviz_default_plugins/SetInitialPose
+    Topic: /initialpose
+  - Class: rviz_default_plugins/SetGoal
+    Topic: /goal_pose
+  Views:
+    Current:
+      Class: rviz_default_plugins/TopDownOrtho
+      Scale: 27
+      Angle: 0
+      X: 10
+      Y: 4
+Window Geometry:
+  Width: 1100
+  Height: 850

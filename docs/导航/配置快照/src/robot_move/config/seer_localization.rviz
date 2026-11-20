@@ -1,0 +1,99 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+  - Class: rviz_common/Views
+    Name: Views
+Visualization Manager:
+  Class: ""
+  Global Options:
+    Fixed Frame: map
+    Background Color: 35; 35; 35
+    Frame Rate: 30
+  Displays:
+    - Class: rviz_default_plugins/Map
+      Name: Seer converted map
+      Enabled: true
+      Topic:
+        Value: /map
+        Reliability Policy: Reliable
+        Durability Policy: Transient Local
+    - Class: rviz_default_plugins/Pose
+      Name: Seer base_link pose (receive time approximation)
+      Enabled: true
+      Topic:
+        Value: /seer/localization/base_pose
+      Shape: Arrow
+    - Class: rviz_default_plugins/LaserScan
+      Name: Front scan
+      Enabled: true
+      Size (Pixels): 3
+      Topic:
+        Value: /scan_front
+        Reliability Policy: Best Effort
+    - Class: rviz_default_plugins/LaserScan
+      Name: Back scan
+      Enabled: true
+      Size (Pixels): 3
+      Topic:
+        Value: /scan_back
+        Reliability Policy: Best Effort
+    - Class: rviz_default_plugins/Grid
+      Name: Grid (0.25 m cells)
+      Enabled: true
+      Cell Size: 0.25
+      Plane Cell Count: 40
+      Color: 130; 130; 130
+      Alpha: 0.5
+      Reference Frame: <Fixed Frame>
+    - Class: rviz_default_plugins/Odometry
+      Name: Odometry trail (heading arrows)
+      Enabled: true
+      Keep: 500
+      Position Tolerance: 0.02
+      Angle Tolerance: 0.03
+      Topic:
+        Value: /odom
+        Depth: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Durability Policy: Volatile
+      Covariance:
+        Value: false
+      Shape:
+        Value: Arrow
+        Alpha: 1
+        Color: 255; 70; 40
+        Shaft Length: 0.15
+        Shaft Radius: 0.015
+        Head Length: 0.08
+        Head Radius: 0.04
+    - Class: rviz_default_plugins/Axes
+      Name: Current base_link (red X, green Y)
+      Enabled: true
+      Reference Frame: base_link
+      Length: 0.5
+      Radius: 0.025
+  Tools:
+    - Class: rviz_default_plugins/Interact
+    - Class: rviz_default_plugins/MoveCamera
+    - Class: rviz_default_plugins/Select
+    - Class: rviz_default_plugins/Measure
+  Transformation:
+    Current:
+      Class: rviz_default_plugins/TF
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Distance: 7.0
+      Pitch: 1.57
+      Yaw: 0.0
+      Target Frame: <Fixed Frame>
+      Focal Point:
+        X: 0
+        Y: 0
+        Z: 0
+      Near Clip Distance: 0.01
+  Enabled: true
+Window Geometry:
+  Width: 1200
+  Height: 850

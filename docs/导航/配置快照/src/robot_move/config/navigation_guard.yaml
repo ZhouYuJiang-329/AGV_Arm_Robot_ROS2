@@ -1,0 +1,30 @@
+navigation_guard:
+  ros__parameters:
+    use_sim_time: false
+    # Deliberate commissioning gates. Do not enable from an unattended launch.
+    # Must match the running odometry reference transform.
+    base_transform_confirmed: true
+    base_x_in_seer: 0.0
+    base_y_in_seer: 0.0
+    base_yaw_in_seer: 1.5707963267948966
+    motion_enabled: true
+    input_freshness_contract_verified: true
+    require_execution_heartbeat: true
+    execution_heartbeat_timeout: 0.4
+    cmd_vel_timeout: 0.5
+    controller_duration_ms: 800
+    request_timeout_ms: 150
+    stop_attempts: 2
+    max_linear_speed: 0.15
+    max_angular_speed: 0.2
+    required_scan_topics: [/scan_front, /scan_back]
+    scan_timeout: 0.6
+    odom_timeout: 0.6
+    required_tf_edges: ['map->odom', 'odom->base_link']
+    required_static_tf_edges: ['base_link->laser_front_link', 'base_link->laser_back_link']
+    tf_timeout: 0.8
+    localization_diagnostic: /seer_localization/map_to_odom
+    localization_timeout: 0.8
+    stopped_linear_threshold: 0.01
+    stopped_angular_threshold: 0.02
+    stopped_hold_sec: 0.5

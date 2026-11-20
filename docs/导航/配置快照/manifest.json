@@ -1,0 +1,205 @@
+{
+  "generated_utc": "2026-11-20T02:31:13.096198+00:00",
+  "note": "Documentation snapshots only; launch continues reading original files. Not runtime parameter proof.",
+  "files": [
+    {
+      "source": "docs/validation/seer_low_speed_2026-11-13/nav2_locked_arm_site.yaml",
+      "snapshot": "配置快照/docs/validation/seer_low_speed_2026-11-13/nav2_locked_arm_site.yaml",
+      "category": "当前实机",
+      "role": "params_file：当前现场 Nav2 参数",
+      "sha256": "3e7f8cb7fdbcd19d3004e4b303c2205f45e9957f1c1cc1028b7afd36d0b88a37"
+    },
+    {
+      "source": "docs/validation/seer_low_speed_2026-11-13/localization_observe_site.yaml",
+      "snapshot": "配置快照/docs/validation/seer_low_speed_2026-11-13/localization_observe_site.yaml",
+      "category": "当前实机",
+      "role": "localization_params：当前现场定位参数",
+      "sha256": "2d20da9482a39ee5be11443482d6ab4a8fa10d726654cd605d696d922766a597"
+    },
+    {
+      "source": "src/robot_move/config/navigation_guard.yaml",
+      "snapshot": "配置快照/src/robot_move/config/navigation_guard.yaml",
+      "category": "当前实机",
+      "role": "guard_params：执行保护与速度上限",
+      "sha256": "5a7d0a65542f72dd31692c31c104701e3f37b3b9ede3f98d86b711259880c40c"
+    },
+    {
+      "source": "src/agv_bringup/config/agv_navigation_commissioning.yaml",
+      "snapshot": "配置快照/src/agv_bringup/config/agv_navigation_commissioning.yaml",
+      "category": "当前实机",
+      "role": "commissioning_file：现场确认与地图身份",
+      "sha256": "d9df830b19a5a09b748b4f5b4d30409fcb25b1d4b9deac54ebce83e23cfb4844"
+    },
+    {
+      "source": "src/robot_move/config/seer_odometry_confirmed.yaml",
+      "snapshot": "配置快照/src/robot_move/config/seer_odometry_confirmed.yaml",
+      "category": "当前实机",
+      "role": "odom_params 默认：已确认参考轴的里程计",
+      "sha256": "5015c56937c7fe37cabb800525f6e92eacc897f2ec74d65bc26ae1d5b4229adf"
+    },
+    {
+      "source": "src/lidar/config/seer_lidar.yaml",
+      "snapshot": "配置快照/src/lidar/config/seer_lidar.yaml",
+      "category": "当前实机",
+      "role": "lidar_params 默认：前后雷达采集",
+      "sha256": "ede6c392d8a8539c4b5b6ccba9373c9ae76c8d5c07ed3c73e3d6dd9303294916"
+    },
+    {
+      "source": "src/agv_description/config/lidar_mounts.yaml",
+      "snapshot": "配置快照/src/agv_description/config/lidar_mounts.yaml",
+      "category": "当前实机",
+      "role": "lidar_mounts_file 默认：雷达相对 base_link 外参",
+      "sha256": "53dcd1725182f812ecdbac50281c915e99068811ecbbc7d64a08dea6f8917521"
+    },
+    {
+      "source": "src/agv_bringup/config/agv_navigation_real.rviz",
+      "snapshot": "配置快照/src/agv_bringup/config/agv_navigation_real.rviz",
+      "category": "当前实机",
+      "role": "rviz=true 时加载：当前实机显示配置",
+      "sha256": "ab834461c66abe62ef75427a45f19352d1f6dec8109195cb0531e5c0f8c85222"
+    },
+    {
+      "source": "maps/seer/20251120141209997_navigable.yaml",
+      "snapshot": "配置快照/maps/seer/20251120141209997_navigable.yaml",
+      "category": "当前实机",
+      "role": "map：当前可导航地图元数据",
+      "sha256": "f21f37431198c5c75f6587830dfc4de1915a75fa1caa8732866c67a2202a94ca"
+    },
+    {
+      "source": "src/agv_bringup/config/agv_nav2_real.yaml",
+      "snapshot": "配置快照/src/agv_bringup/config/agv_nav2_real.yaml",
+      "category": "模板/仿真/历史/关联",
+      "role": "实机通用模板；当前命令已被现场 params_file 覆盖",
+      "sha256": "e3bc28e07ad49402fb3ba9620752033569442e720bf718d553f487475280c7b1"
+    },
+    {
+      "source": "src/robot_move/config/seer_localization.yaml",
+      "snapshot": "配置快照/src/robot_move/config/seer_localization.yaml",
+      "category": "模板/仿真/历史/关联",
+      "role": "定位通用模板；当前命令已被现场定位参数覆盖",
+      "sha256": "8c4cc6d0aa4c74591a10d635cb83e9205f641c2844675e9a0439d763ec852a40"
+    },
+    {
+      "source": "src/robot_move/config/seer_odometry.yaml",
+      "snapshot": "配置快照/src/robot_move/config/seer_odometry.yaml",
+      "category": "模板/仿真/历史/关联",
+      "role": "里程计通用模板；当前使用 confirmed 版本",
+      "sha256": "e5848194a603f4e5ab3f9179774710cb5f8c4789bee7d7b6a1556b890b6ddbe7"
+    },
+    {
+      "source": "src/agv_bringup/config/agv_nav2_sim.yaml",
+      "snapshot": "配置快照/src/agv_bringup/config/agv_nav2_sim.yaml",
+      "category": "模板/仿真/历史/关联",
+      "role": "仿真 Nav2 参数，不用于当前实机启动",
+      "sha256": "e3bd9ba26ecaf97533bac05de8efb4c67b8f0aa95529d046465c61620587965d"
+    },
+    {
+      "source": "src/agv_bringup/config/agv_slam_sim.yaml",
+      "snapshot": "配置快照/src/agv_bringup/config/agv_slam_sim.yaml",
+      "category": "模板/仿真/历史/关联",
+      "role": "仿真建图参数",
+      "sha256": "6b3e0e0c35216f7a510f8c9c4116e6821327bb44aa9b2179e741992806131e66"
+    },
+    {
+      "source": "src/agv_bringup/config/agv_navigation_scene.yaml",
+      "snapshot": "配置快照/src/agv_bringup/config/agv_navigation_scene.yaml",
+      "category": "模板/仿真/历史/关联",
+      "role": "仿真场景、车体和障碍物",
+      "sha256": "1593845eee8641f710ee8977570ea33019da10a33593ac03362b4196333381b3"
+    },
+    {
+      "source": "src/agv_bringup/config/agv_static_planning.yaml",
+      "snapshot": "配置快照/src/agv_bringup/config/agv_static_planning.yaml",
+      "category": "模板/仿真/历史/关联",
+      "role": "静态离线规划参数",
+      "sha256": "77923d53a9969a6ab59fc1df5675036a8d711d64d85b42cefacbdaf46f88ca38"
+    },
+    {
+      "source": "src/agv_bringup/config/ros2_controllers.yaml",
+      "snapshot": "配置快照/src/agv_bringup/config/ros2_controllers.yaml",
+      "category": "模板/仿真/历史/关联",
+      "role": "整机 ros2_control 关联配置；当前实机导航入口不加载",
+      "sha256": "a34912707e8bc064952c9c4603ad6702148f8f2ce56bed7c2144964365647c84"
+    },
+    {
+      "source": "src/pathplannernode/src/config/params.yaml",
+      "snapshot": "配置快照/src/pathplannernode/src/config/params.yaml",
+      "category": "模板/仿真/历史/关联",
+      "role": "旧独立路径规划器参数；当前 Nav2 实机入口不加载",
+      "sha256": "750b206dd9fd7b48dc55a5026f4638954501cf0c8ca6727952d2fc18f08e6dde"
+    },
+    {
+      "source": "maps/seer/20251120141209997.yaml",
+      "snapshot": "配置快照/maps/seer/20251120141209997.yaml",
+      "category": "模板/仿真/历史/关联",
+      "role": "原始转换地图；当前使用 navigable 版本",
+      "sha256": "ae0a0d698275ce962eeb59b4410d924a42d3e3d459d40c7cc632da9130d8e128"
+    },
+    {
+      "source": "docs/validation/seer_low_speed_2026-11-13/nav2_locked_arm_site_before_stop.yaml",
+      "snapshot": "配置快照/docs/validation/seer_low_speed_2026-11-13/nav2_locked_arm_site_before_stop.yaml",
+      "category": "模板/仿真/历史/关联",
+      "role": "历史版本：添加独立停车区域之前，不用于当前启动",
+      "sha256": "da7b88c1cac05efee7d965abcb9e560b370346120dc326be12bcff8e19d5a155"
+    },
+    {
+      "source": "docs/validation/seer_low_speed_2026-11-13/lidar_mounts_measured_candidate.yaml",
+      "snapshot": "配置快照/docs/validation/seer_low_speed_2026-11-13/lidar_mounts_measured_candidate.yaml",
+      "category": "模板/仿真/历史/关联",
+      "role": "测量候选外参，未作为当前默认挂载文件",
+      "sha256": "3972936e86b2dc753201340578d20eefea1c5cef08ac089eaa98806a42db6e90"
+    },
+    {
+      "source": "src/agv_bringup/config/agv_mapping_sim.rviz",
+      "snapshot": "配置快照/src/agv_bringup/config/agv_mapping_sim.rviz",
+      "category": "模板/仿真/历史/关联",
+      "role": "其他导航/定位/里程计显示配置，不是当前实机 RViz 默认",
+      "sha256": "84a4d073fe3c09516a4ac135ea436bb59a76591e9cbb921f7887d9f8aaf5a9fe"
+    },
+    {
+      "source": "src/agv_bringup/config/agv_navigation_sim.rviz",
+      "snapshot": "配置快照/src/agv_bringup/config/agv_navigation_sim.rviz",
+      "category": "模板/仿真/历史/关联",
+      "role": "其他导航/定位/里程计显示配置，不是当前实机 RViz 默认",
+      "sha256": "3fa3d1a82d2f4c6c94bc34f9d5af2fb7c8cd04c0177532d4e17e6ea1ac8baf60"
+    },
+    {
+      "source": "src/agv_bringup/config/agv_static_planning.rviz",
+      "snapshot": "配置快照/src/agv_bringup/config/agv_static_planning.rviz",
+      "category": "模板/仿真/历史/关联",
+      "role": "其他导航/定位/里程计显示配置，不是当前实机 RViz 默认",
+      "sha256": "6a018bf8223ed55d4f8b62324f2326a6783d973def396ce637299dbc442b9934"
+    },
+    {
+      "source": "src/agv_bringup/config/seer_localization_demo.rviz",
+      "snapshot": "配置快照/src/agv_bringup/config/seer_localization_demo.rviz",
+      "category": "模板/仿真/历史/关联",
+      "role": "其他导航/定位/里程计显示配置，不是当前实机 RViz 默认",
+      "sha256": "e389e25e2b535edd54833ef2d0e5be0247f40376eecce778e44960e3104aeea5"
+    },
+    {
+      "source": "src/robot_move/config/seer_localization.rviz",
+      "snapshot": "配置快照/src/robot_move/config/seer_localization.rviz",
+      "category": "模板/仿真/历史/关联",
+      "role": "其他导航/定位/里程计显示配置，不是当前实机 RViz 默认",
+      "sha256": "73c061e50a07d7caa7464e9521e0a1c04ba8a8e6e2f1065cadd241aa073e1c1e"
+    },
+    {
+      "source": "src/robot_move/config/seer_odometry.rviz",
+      "snapshot": "配置快照/src/robot_move/config/seer_odometry.rviz",
+      "category": "模板/仿真/历史/关联",
+      "role": "其他导航/定位/里程计显示配置，不是当前实机 RViz 默认",
+      "sha256": "5f6574f4e8cf60e476a84c30f759d79f51992970e666ccba0706f985a21e5310"
+    }
+  ],
+  "related_assets": [
+    {
+      "source": "maps/seer/20251120141209997.pgm",
+      "sha256": "6b662c6fe56c584a8b89a91ab082ca337ea49a1dacc343e52c9ec2a478491716"
+    },
+    {
+      "source": "maps/seer/20251120141209997_navigable.pgm",
+      "sha256": "1a1a73c0c1d53ddbd954501981429a4814c0d7a3770c39c68d60e52519466809"
+    }
+  ]
+}
